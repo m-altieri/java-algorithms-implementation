@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+// TODO: Auto-generated Javadoc
 /**
  * A k-d tree (short for k-dimensional tree) is a space-partitioning data
  * structure for organizing points in a k-dimensional space. k-d trees are a
@@ -528,6 +529,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         return results.descendingIterator();
     }
 
+    /**
+     * 
+     */
     public static class KdNode implements Comparable<KdNode> {
 
         private final XYZPoint id;
@@ -538,18 +542,39 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         private KdNode lesser = null;
         private KdNode greater = null;
 
+        /**
+         * 
+         *
+         * @param id 
+         */
         public KdNode(XYZPoint id) {
             this.id = id;
             this.k = 3;
             this.depth = 0;
         }
 
+        /**
+         * 
+         *
+         * @param id 
+         * @param k 
+         * @param depth 
+         */
         public KdNode(XYZPoint id, int k, int depth) {
             this.id = id;
             this.k = k;
             this.depth = depth;
         }
 
+        /**
+         * 
+         *
+         * @param depth 
+         * @param k 
+         * @param o1 
+         * @param o2 
+         * @return 
+         */
         public static int compareTo(int depth, int k, XYZPoint o1, XYZPoint o2) {
             int axis = depth % k;
             if (axis == X_AXIS)
@@ -604,6 +629,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         }
     }
 
+    /**
+     * 
+     */
     public static class XYZPoint implements Comparable<XYZPoint> {
 
         protected final double x;
@@ -646,12 +674,29 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
             z = sin(Math.toRadians(latitude));
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getX() {
             return x;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getY() {
             return y;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getZ() {
             return z;
         }

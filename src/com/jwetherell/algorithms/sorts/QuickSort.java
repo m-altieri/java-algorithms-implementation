@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.sorts;
 
 import java.util.Random;
 
+// TODO: Auto-generated Javadoc
 /**
  * Quicksort is a sorting algorithm which, on average, makes O(n*log n) comparisons to sort
  * n items. In the worst case, it makes O(n^2) comparisons, though this behavior is
@@ -23,14 +24,28 @@ public class QuickSort<T extends Comparable<T>> {
 
     private static final Random RAND = new Random();
 
+    /**
+     * 
+     */
     public static enum PIVOT_TYPE {
         FIRST, MIDDLE, RANDOM
     }
 
+    /**
+     * 
+     */
     public static PIVOT_TYPE type = PIVOT_TYPE.RANDOM;
 
     private QuickSort() { }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param pivotType 
+     * @param unsorted 
+     * @return 
+     */
     public static <T extends Comparable<T>> T[] sort(PIVOT_TYPE pivotType, T[] unsorted) {
         int pivot = 0;
         if (pivotType == PIVOT_TYPE.MIDDLE) {

@@ -3,13 +3,17 @@ package com.jwetherell.algorithms.graph.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 import com.jwetherell.algorithms.graph.DepthFirstTraversal;
 
+import junit.framework.Assert;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class DepthFirstTraversalTest {
 
     private static final byte[][]                       adjacencyMatrix = new byte[4][4];
@@ -26,6 +30,9 @@ public class DepthFirstTraversalTest {
         adjacencyMatrix[3][3] = 1;
     }
 
+    /**
+     * 
+     */
     @Test
     public void test0() {
         final int[] result = DepthFirstTraversal.depthFirstTraversal(4, adjacencyMatrix, 2);
@@ -35,6 +42,9 @@ public class DepthFirstTraversalTest {
         Assert.assertTrue(result[3]==3);
     }
 
+    /**
+     * 
+     */
     @Test
     public void test1() {
         final int[] result = DepthFirstTraversal.depthFirstTraversal(4, adjacencyMatrix, 0);
@@ -68,6 +78,9 @@ public class DepthFirstTraversalTest {
 
     private static final Graph<Integer>                 graph       = new Graph<Integer>(Graph.TYPE.DIRECTED, vertices, edges);
 
+    /**
+     * 
+     */
     @Test
     public void test2() {
         final Graph.Vertex<Integer>[] result = DepthFirstTraversal.depthFirstTraversal(graph, v2);
@@ -77,6 +90,9 @@ public class DepthFirstTraversalTest {
         Assert.assertTrue(result[3].getValue()==3);
     }
 
+    /**
+     * 
+     */
     @Test
     public void test3() {
         final Graph.Vertex<Integer>[] result = DepthFirstTraversal.depthFirstTraversal(graph, v0);

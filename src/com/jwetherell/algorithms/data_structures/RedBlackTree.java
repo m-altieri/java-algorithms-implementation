@@ -6,6 +6,7 @@ import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * A red–black tree is a type of self-balancing binary search tree, a data
  * structure used in computer science, typically to implement associative
@@ -561,14 +562,27 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleRedBlackTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private RedBlackTree<T> tree = null;
 
+        /**
+         * 
+         */
         public JavaCompatibleRedBlackTree() {
             this.tree = new RedBlackTree<T> ();
         }
 
+        /**
+         * 
+         *
+         * @param tree 
+         */
         public JavaCompatibleRedBlackTree(RedBlackTree<T> tree) {
             this.tree = tree;
         }

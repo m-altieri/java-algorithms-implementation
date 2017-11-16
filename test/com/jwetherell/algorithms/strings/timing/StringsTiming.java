@@ -4,10 +4,19 @@ import java.text.DecimalFormat;
 
 import com.jwetherell.algorithms.strings.StringFunctions;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class StringsTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         // REVERSE CHARS IN A STRING
         {

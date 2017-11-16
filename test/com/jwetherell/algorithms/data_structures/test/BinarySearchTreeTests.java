@@ -14,6 +14,10 @@ import com.jwetherell.algorithms.data_structures.test.common.TreeTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class BinarySearchTreeTests {
 
     /**
@@ -30,6 +34,9 @@ public class BinarySearchTreeTests {
         testBST.add(3);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testBST() {
         TestData data = Utils.generateTestData(1000);
@@ -87,6 +94,9 @@ public class BinarySearchTreeTests {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLargePreOrderDFS() {
         TestData data = Utils.generateTestData(1000);
@@ -108,6 +118,9 @@ public class BinarySearchTreeTests {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLargeInOrderDFS() {
         TestData data = Utils.generateTestData(1000);
@@ -129,6 +142,9 @@ public class BinarySearchTreeTests {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLargePostOrderDFS() {
         TestData data = Utils.generateTestData(1000);

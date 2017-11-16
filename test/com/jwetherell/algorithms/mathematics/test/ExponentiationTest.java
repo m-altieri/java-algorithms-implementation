@@ -1,17 +1,23 @@
 package com.jwetherell.algorithms.mathematics.test;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Test;
+
 import com.jwetherell.algorithms.mathematics.Exponentiation;
 
-
-import static org.junit.Assert.assertEquals;
-
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class ExponentiationTest {
 
+    /**
+     * 
+     */
     @Test
     public void recusriveExponentiationTest() {
         final List<Integer> baseList = Arrays.asList(1, 2, 4, 6, 8, 17, 24);
@@ -22,6 +28,9 @@ public class ExponentiationTest {
             assertEquals(expectedResultList.get(i), Exponentiation.recursiveExponentiation(baseList.get(i), exponentList.get(i)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void fastRecusriveExponentiationTest() {
         final List<Integer> baseList = Arrays.asList(1, 2, 4, 6, 8, 17, 24);
@@ -32,6 +41,9 @@ public class ExponentiationTest {
             assertEquals(expectedResultList.get(i), Exponentiation.fastRecursiveExponentiation(baseList.get(i), exponentList.get(i)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void fastRecusriveExponentiationModuloTest() {
         final List<Integer> baseList = Arrays.asList(1, 2, 4, 6, 8, 17, 24, 2);

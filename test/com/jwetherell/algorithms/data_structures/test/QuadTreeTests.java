@@ -8,6 +8,10 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.QuadTree;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class QuadTreeTests {
 
     private static final Random RANDOM = new Random();
@@ -31,6 +35,9 @@ public class QuadTreeTests {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testPointBasedQuadTree() {
         QuadTree<QuadTree.XYPoint> tree = new QuadTree.PointRegionQuadTree<QuadTree.XYPoint>(0,0,SIZE,SIZE);
@@ -71,6 +78,9 @@ public class QuadTreeTests {
             }
         }
 
+    /**
+     * 
+     */
     @Test
     public void testRectangleBasedQuadTree() {
         QuadTree<QuadTree.AxisAlignedBoundingBox> tree = new QuadTree.MxCifQuadTree<QuadTree.AxisAlignedBoundingBox>(0,0,SIZE,SIZE,10,10);

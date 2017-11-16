@@ -1,15 +1,21 @@
 package com.jwetherell.algorithms.graph.test;
 
-import com.jwetherell.algorithms.data_structures.Graph;
-import com.jwetherell.algorithms.graph.TurboMatching;
-import org.junit.Test;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import com.jwetherell.algorithms.data_structures.Graph;
+import com.jwetherell.algorithms.graph.TurboMatching;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class TurboMatchingTest {
 
     private final Graph.Vertex<Integer> v_a1 = new Graph.Vertex<Integer>(1);
@@ -29,6 +35,10 @@ public class TurboMatchingTest {
         vertices.add(v_b2);
         vertices.add(v_b3);
     }
+    
+    /**
+     * 
+     */
     @Test
     public void testFullBipartiteGraph(){
         List<Graph.Edge<Integer>> edges = new ArrayList<Graph.Edge<Integer>>();
@@ -53,6 +63,9 @@ public class TurboMatchingTest {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testSingleEdgeForVertex(){
         List<Graph.Edge<Integer>> edges = new ArrayList<Graph.Edge<Integer>>();
@@ -75,6 +88,9 @@ public class TurboMatchingTest {
         assertTrue(matchingResult.getMate().get(v_b3).equals(v_a3));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testEmptyGraph(){
         List<Graph.Edge<Integer>> edges = new ArrayList<Graph.Edge<Integer>>();
@@ -89,6 +105,9 @@ public class TurboMatchingTest {
         assertTrue(matchingResult.getMate().isEmpty());
     }
 
+    /**
+     * 
+     */
     @Test
     public void testTwoMatched(){
         List<Graph.Edge<Integer>> edges = new ArrayList<Graph.Edge<Integer>>();
@@ -109,6 +128,9 @@ public class TurboMatchingTest {
         assertTrue(matchingResult.getMate().containsValue(v_b2));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testOneMatched(){
         List<Graph.Edge<Integer>> edges = new ArrayList<Graph.Edge<Integer>>();

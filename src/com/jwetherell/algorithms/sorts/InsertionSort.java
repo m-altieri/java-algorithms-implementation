@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sorts;
 
+// TODO: Auto-generated Javadoc
 /**
  * Insertion sort is a simple sorting algorithm: a comparison sort in which the
  * sorted array (or list) is built one entry at a time. It is much less
@@ -22,6 +23,13 @@ public class InsertionSort<T extends Comparable<T>> {
 
     private InsertionSort() { }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param unsorted 
+     * @return 
+     */
     public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
         int length = unsorted.length;
         for (int i = 1; i < length; i++) {

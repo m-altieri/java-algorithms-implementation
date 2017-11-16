@@ -1,9 +1,10 @@
 package com.jwetherell.algorithms.mathematics;
 
-import java.util.HashMap;
-
 import static java.lang.Math.sqrt;
 
+import java.util.HashMap;
+
+// TODO: Auto-generated Javadoc
 /**
  * In mathematics, a discrete logarithm is an integer k exponent solving the equation bk = g, where b and g are 
  * elements of a group. Discrete logarithms are thus the group-theoretic analogue of ordinary logarithms, which 
@@ -17,6 +18,9 @@ import static java.lang.Math.sqrt;
  */
 public class DiscreteLogarithm {
 
+    /**
+     * 
+     */
     public static final long NO_SOLUTION = -1;
 
     private static final HashMap<Long, Long> set = new HashMap<Long, Long>();

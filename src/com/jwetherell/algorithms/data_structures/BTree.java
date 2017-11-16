@@ -7,6 +7,7 @@ import java.util.Deque;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
+// TODO: Auto-generated Javadoc
 /**
  * B-tree is a tree data structure that keeps data sorted and allows searches,
  * sequential access, insertions, and deletions in logarithmic time. The B-tree
@@ -776,10 +777,20 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleBTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private BTree<T> tree = null;
 
+        /**
+         * 
+         *
+         * @param tree 
+         */
         public JavaCompatibleBTree(BTree<T> tree) {
             this.tree = tree;
         }

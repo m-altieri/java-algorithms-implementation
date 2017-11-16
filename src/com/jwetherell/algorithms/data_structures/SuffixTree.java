@@ -10,6 +10,7 @@ import java.util.TreeSet;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ISuffixTree;
 
+// TODO: Auto-generated Javadoc
 /**
  * A suffix tree is a data structure that presents the suffixes of a given
  * string in a way that allows for a particularly fast implementation of many

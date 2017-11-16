@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
+// TODO: Auto-generated Javadoc
 /**
  * Floyd–Warshall algorithm is a graph analysis algorithm for finding shortest
  * paths in a weighted graph (with positive or negative edge weights).
@@ -20,6 +21,12 @@ public class FloydWarshall {
 
     private FloydWarshall() { }
 
+    /**
+     * 
+     *
+     * @param graph 
+     * @return 
+     */
     public static Map<Graph.Vertex<Integer>, Map<Graph.Vertex<Integer>, Integer>> getAllPairsShortestPaths(Graph<Integer> graph) {
         if (graph == null)
             throw (new NullPointerException("Graph must be non-NULL."));

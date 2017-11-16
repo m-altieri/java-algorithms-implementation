@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.strings;
 
+// TODO: Auto-generated Javadoc
 /**
  * The longest palindromic substring or longest symmetric factor problem
  * is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.

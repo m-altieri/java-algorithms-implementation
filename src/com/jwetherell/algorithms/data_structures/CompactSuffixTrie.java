@@ -3,6 +3,7 @@ package com.jwetherell.algorithms.data_structures;
 import java.util.Set;
 import java.util.TreeSet;
 
+// TODO: Auto-generated Javadoc
 /**
  * A suffix trie is a data structure that presents the suffixes of a given
  * string in a way that allows for a particularly fast implementation of many

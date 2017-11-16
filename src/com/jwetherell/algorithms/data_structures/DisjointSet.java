@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.data_structures;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that keeps track of a set of 
  * elements partitioned into a number of disjoint (non-overlapping) subsets. 
@@ -89,6 +90,11 @@ public class DisjointSet<T extends Object> {
         return "Nothing here to see, yet.";
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static final class Item<T> {
 
         private Item<T> parent;
@@ -96,15 +102,32 @@ public class DisjointSet<T extends Object> {
         /** Rank is not the actual depth of the tree rather it is an upper bound. As such, on a find operation, the rank is allowed to get out of sync with the depth. **/
         private long rank;
 
+        /**
+         * 
+         *
+         * @param parent 
+         * @param value 
+         */
         public Item(Item<T> parent, T value) {
             this.parent = parent;
             this.value = value;
             this.rank = 0;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public T getValue() {
             return value;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public long getRank() {
             return rank;
         }

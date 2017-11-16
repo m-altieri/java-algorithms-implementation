@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * A quadtree is a tree data structure in which each internal node has exactly four children. Quadtrees 
  * are most often used to partition a two dimensional space by recursively subdividing it into four 
@@ -728,26 +729,55 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         }
     }
 
+    /**
+     * 
+     */
     public static class XYPoint implements Comparable<Object> {
 
         protected double x = Float.MIN_VALUE;
         protected double y = Float.MIN_VALUE;
 
+        /**
+         * 
+         */
         public XYPoint() { }
 
+        /**
+         * 
+         *
+         * @param x 
+         * @param y 
+         */
         public XYPoint(double x, double y) {
             this.x = x;
             this.y = y;
         }
 
+        /**
+         * 
+         *
+         * @param x 
+         * @param y 
+         */
         public void set(double x, double y) {
             this.x = x;
             this.y = y;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getX() {
             return x;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getY() {
             return y;
         }
@@ -806,6 +836,9 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         }
     }
 
+    /**
+     * 
+     */
     public static class AxisAlignedBoundingBox extends XYPoint {
 
         private double height = 0;
@@ -816,8 +849,18 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         private double maxX = 0;
         private double maxY = 0;
 
+        /**
+         * 
+         */
         public AxisAlignedBoundingBox() { }
 
+        /**
+         * 
+         *
+         * @param upperLeft 
+         * @param width 
+         * @param height 
+         */
         public AxisAlignedBoundingBox(XYPoint upperLeft, double width, double height) {
             super(upperLeft.x, upperLeft.y);
             this.width = width;
@@ -829,6 +872,13 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
             maxY = upperLeft.y+height;
         }
 
+        /**
+         * 
+         *
+         * @param upperLeft 
+         * @param width 
+         * @param height 
+         */
         public void set(XYPoint upperLeft, double width, double height) {
             set(upperLeft.x, upperLeft.y);
             this.width = width;
@@ -840,13 +890,30 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
             maxY = upperLeft.y+height;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getHeight() {
             return height;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public double getWidth() {
             return width;
         }
 
+        /**
+         * 
+         *
+         * @param p 
+         * @return 
+         */
         public boolean containsPoint(XYPoint p) {
             if (p.x>=maxX) return false;
             if (p.x<minX) return false;

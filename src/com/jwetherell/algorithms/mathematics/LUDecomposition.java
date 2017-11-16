@@ -1,11 +1,12 @@
 package com.jwetherell.algorithms.mathematics;
 
-import com.jwetherell.algorithms.data_structures.Matrix;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.jwetherell.algorithms.data_structures.Matrix;
+
+// TODO: Auto-generated Javadoc
 /**
  * LU decomposition of matrix M produces 2 matrices L and U such that M = L*U
  * where L is lower triangular matrix and U is upper triangular matrix
@@ -22,18 +23,38 @@ public class LUDecomposition {
     private Double[][] A = null;
     private Integer[] permutation = null;
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public Matrix<Double> getL() {
         return new Matrix<Double>(n, n, L);
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public Matrix<Double> getU() {
         return new Matrix<Double>(n, n, A);
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public List<Integer> getPermutation() {
         return new ArrayList<Integer>(Arrays.asList(permutation));
     }
 
+    /**
+     * 
+     *
+     * @param input 
+     */
     public LUDecomposition(Matrix<Double> input) {
         if (input.getCols() != input.getRows())
             throw new IllegalArgumentException("Matrix is not square");

@@ -1,13 +1,25 @@
 package com.jwetherell.algorithms.strings.test;
 
 import static org.junit.Assert.assertEquals;
-import java.util.List;
+
 import java.util.Arrays;
-import com.jwetherell.algorithms.strings.Manacher;
+import java.util.List;
+
 import org.junit.Test;
 
+import com.jwetherell.algorithms.strings.Manacher;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class ManacherTests {
 
+    /**
+     * 
+     *
+     * @throws Exception 
+     */
     @Test
     public void testGetLongestPalindromicSubstring() throws Exception {
         final List<Object[]> data = Arrays.asList(

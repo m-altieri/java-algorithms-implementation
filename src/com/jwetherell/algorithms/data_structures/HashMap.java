@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
+// TODO: Auto-generated Javadoc
 /**
  * Hash Map using either chaining or probing. hash map is a data structure that
  * uses a hash function to map identifying values, known as keys, to their
@@ -17,6 +18,9 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 @SuppressWarnings("unchecked")
 public class HashMap<K, V> implements IMap<K,V> {
 
+    /**
+     * 
+     */
     public static enum Type { CHAINING, PROBING }
 
     private HashMap<K,V> delegateMap = null;

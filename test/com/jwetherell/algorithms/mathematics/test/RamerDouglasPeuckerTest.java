@@ -8,8 +8,15 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.mathematics.RamerDouglasPeucker;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class RamerDouglasPeuckerTest {
 
+    /**
+     * 
+     */
     @Test
     public void test1() {
         final List<Double[]> list = new ArrayList<Double[]>();
@@ -24,6 +31,9 @@ public class RamerDouglasPeuckerTest {
         Assert.assertTrue(simplified.size()==2 && simplified.equals(expected));
     }
 
+    /**
+     * 
+     */
     @Test
     public void test2() {
         final List<Double[]> list = new ArrayList<Double[]>();
@@ -39,6 +49,9 @@ public class RamerDouglasPeuckerTest {
         Assert.assertTrue(simplified.size()==3 && simplified.equals(expected));
     }
 
+    /**
+     * 
+     */
     @Test
     public void test3() {
         final List<Double[]> list = new ArrayList<Double[]>();

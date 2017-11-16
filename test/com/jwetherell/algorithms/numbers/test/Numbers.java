@@ -10,10 +10,17 @@ import org.junit.Test;
 import com.jwetherell.algorithms.numbers.Integers;
 import com.jwetherell.algorithms.numbers.Longs;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Numbers {
 
     private static final Random RANDOM = new Random();
 
+    /**
+     * 
+     */
     @Test
     public void testPowerOf2() {
         int is = 256;
@@ -40,6 +47,9 @@ public class Numbers {
         assertFalse("Is power of 2 using recursion error", isPowOf2isNot);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntegerToBinaryString() {
         int a = Math.abs(RANDOM.nextInt());
@@ -58,6 +68,9 @@ public class Numbers {
         assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot="+result4+"\n", (check.equals(result4)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLongToBinaryString() {
         long a = Math.abs(RANDOM.nextLong());
@@ -73,6 +86,9 @@ public class Numbers {
         assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot=\n"+result3+"\n", (check.equals(result3)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testToEnglish() {
         int a = -1001; 

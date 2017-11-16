@@ -1,11 +1,21 @@
 package com.jwetherell.algorithms.mathematics.test;
 
-import com.jwetherell.algorithms.mathematics.Modular;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Test;
+
+import com.jwetherell.algorithms.mathematics.Modular;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class ModularArithmeticTest {
 
+    /**
+     * 
+     */
     @Test
     public void sumTest() {
         assertEquals(4, Modular.add(-3, 22, 5));
@@ -28,6 +38,9 @@ public class ModularArithmeticTest {
         assertTrue("Exception expected", exception);
     }
 
+    /**
+     * 
+     */
     @Test
     public void subtractTest() {
         assertEquals(0, Modular.subtract(-22, 3, 5));
@@ -48,6 +61,9 @@ public class ModularArithmeticTest {
         assertTrue("Exception expected", exception);
     }
 
+    /**
+     * 
+     */
     @Test
     public void multiplyTest() {
         assertEquals(10, Modular.multiply(Long.MAX_VALUE-2, Long.MAX_VALUE-5, Long.MAX_VALUE));
@@ -64,6 +80,9 @@ public class ModularArithmeticTest {
         assertTrue("Exception expected", exception);
     }
 
+    /**
+     * 
+     */
     @Test
     public void powerTest() {
         assertEquals(1, Modular.pow(3, 1000000006, 1000000007));
@@ -102,6 +121,9 @@ public class ModularArithmeticTest {
         assertTrue("Exception expected", exception);
     }
 
+    /**
+     * 
+     */
     @Test
     public void divideTest() {
         assertEquals(1, Modular.divide(7, 7, 125));

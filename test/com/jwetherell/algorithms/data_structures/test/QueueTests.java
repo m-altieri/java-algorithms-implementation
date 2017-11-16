@@ -12,8 +12,15 @@ import com.jwetherell.algorithms.data_structures.test.common.QueueTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class QueueTests {
 
+    /**
+     * 
+     */
     @Test
     public void testArrayQueue() {
         TestData data = Utils.generateTestData(100);
@@ -28,6 +35,9 @@ public class QueueTests {
                                                      data.unsorted, data.sorted, data.invalid));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLinkedQueue() {
         TestData data = Utils.generateTestData(100);

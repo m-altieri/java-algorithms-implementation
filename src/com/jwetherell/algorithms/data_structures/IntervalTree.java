@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// TODO: Auto-generated Javadoc
 /**
  * An interval tree is an ordered tree data structure to hold intervals.
  * Specifically, it allows one to efficiently find all intervals that overlap
@@ -158,6 +159,11 @@ public class IntervalTree<O extends Object> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <O> 
+     */
     public static final class Interval<O> {
 
         private long center = Long.MIN_VALUE;

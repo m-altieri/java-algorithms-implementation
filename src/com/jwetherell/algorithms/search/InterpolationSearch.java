@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.search;
 
+// TODO: Auto-generated Javadoc
 /**
  * Interpolation search is an algorithm for searching for a given key in an indexed array that has been ordered by numerical values assigned to the keys (key values). It parallels how humans search 
  * through a telephone book for a particular name, the key value by which the book's entries are ordered.
@@ -15,6 +16,13 @@ public class InterpolationSearch {
 
     private static int[] sorted = null;
 
+    /**
+     * 
+     *
+     * @param value 
+     * @param array 
+     * @return 
+     */
     // Assuming the array is sorted
     public static final int find(int value, int[] array) {
         InterpolationSearch.sorted = array;

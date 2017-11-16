@@ -9,8 +9,15 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.strings.StringFunctions;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Strings {
 
+    /**
+     * 
+     */
     @Test
     public void testReverseCharsInString() {
         // REVERSE CHARS IN A STRING
@@ -32,6 +39,9 @@ public class Strings {
         assertTrue("Reverse With XOR error. expect="+check+" got="+result, check.equals(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testReverseWordsInString() {
         // REVERSE WORDS IN A STRING
@@ -50,6 +60,9 @@ public class Strings {
         assertTrue("Reverse Words In-Place error. expect="+check+" got="+result, check.equals(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIsPalinDrone() {
         // PALINDROME
@@ -68,6 +81,9 @@ public class Strings {
         assertTrue("Is Palindrome In Place error. expected=true got="+result, result);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testGenerateSubSets() {
         // COMBINATIONS
@@ -77,6 +93,9 @@ public class Strings {
         assertTrue("Generate Subsets error. expected="+print(check)+" got="+print(result), Arrays.equals(check, result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testEditDistanceRecursive() {
         // Edit Distance
@@ -87,6 +106,9 @@ public class Strings {
         assertTrue("Edit Distance error. expected="+check+" got="+result, (check==result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testEditDistanceDP() {
         // Edit Distance

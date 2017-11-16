@@ -3,6 +3,7 @@ package com.jwetherell.algorithms.data_structures;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * Structure for storing rooted tree which allows to find lowest common ancestor.
  * <p>
@@ -67,6 +68,11 @@ public class LowestCommonAncestor<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static final class TreeNode<T> {
 
         private final List<TreeNode<T>>     ancestors   = new ArrayList<TreeNode<T>>();
@@ -105,6 +111,12 @@ public class LowestCommonAncestor<T> {
             }
         }
 
+        /**
+         * 
+         *
+         * @param value 
+         * @return 
+         */
         public TreeNode<T> setValue(T value) {
             this.value = value;
             return this;

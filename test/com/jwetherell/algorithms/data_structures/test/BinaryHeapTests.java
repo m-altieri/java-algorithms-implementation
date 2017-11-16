@@ -7,13 +7,20 @@ import java.util.Collection;
 import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.BinaryHeap;
-import com.jwetherell.algorithms.data_structures.test.common.JavaCollectionTest;
 import com.jwetherell.algorithms.data_structures.test.common.HeapTest;
+import com.jwetherell.algorithms.data_structures.test.common.JavaCollectionTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class BinaryHeapTests {
 
+    /**
+     * 
+     */
     @Test
     public void testMinHeap() {
         TestData data = Utils.generateTestData(100);
@@ -35,6 +42,9 @@ public class BinaryHeapTests {
                                                      data.unsorted, data.sorted, data.invalid));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testMaxHeap() {
         TestData data = Utils.generateTestData(1000);

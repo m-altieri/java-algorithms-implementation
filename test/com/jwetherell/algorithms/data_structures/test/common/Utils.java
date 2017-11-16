@@ -3,8 +3,20 @@ package com.jwetherell.algorithms.data_structures.test.common;
 import java.util.Arrays;
 import java.util.Random;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Utils {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param value 
+     * @param type 
+     * @return 
+     */
     public static final <T> T parseT(final Integer value, final Class<T> type) {
         T returnValue = null;
 
@@ -20,17 +32,34 @@ public class Utils {
         return returnValue;
     }
 
+    /**
+     * 
+     *
+     * @param obj 
+     */
     public static void handleError(Object obj) {
         System.err.println("Object={\n"+obj.toString()+"\n}");
         throw new RuntimeException("Error in test.");
     }
 
+    /**
+     * 
+     *
+     * @param data 
+     * @param obj 
+     */
     public static void handleError(Object data, Object obj) {
         System.err.println("Data={"+data+"}");
         System.err.println("Object={\n"+obj.toString()+"\n}");
         throw new RuntimeException("Error in test.");
     }
 
+    /**
+     * 
+     *
+     * @param data 
+     * @param obj 
+     */
     public static void handleError(Object[] data, Object obj) {
         System.err.println("Data={");
         for (Object o : data)
@@ -42,6 +71,12 @@ public class Utils {
 
     private static final Random RANDOM = new Random();
 
+    /**
+     * 
+     *
+     * @param integers 
+     * @return 
+     */
     public static TestData testData(int... integers) {
         TestData data = new TestData(integers.length);
 
@@ -66,6 +101,12 @@ public class Utils {
         return data;
     }
 
+    /**
+     * 
+     *
+     * @param data_size 
+     * @return 
+     */
     public static TestData generateTestData(int data_size) {
         TestData data = new TestData(data_size);
 
@@ -101,19 +142,51 @@ public class Utils {
         return data;
     }
 
+    /**
+     * 
+     */
     public static class TestData {
 
+        /**
+         * 
+         */
         public int random_size = 0;
+        
+        /**
+         * 
+         */
         public Integer invalid = 0;
+        
+        /**
+         * 
+         */
         public Integer[] unsorted = null;
+        
+        /**
+         * 
+         */
         public Integer[] sorted = null;
+        
+        /**
+         * 
+         */
         public String string = null;
 
+        /**
+         * 
+         *
+         * @param size 
+         */
         public TestData(int size) {
             this.random_size = 1000 * size;
             this.invalid = random_size + 10;
         }
 
+        /**
+         * 
+         *
+         * @param _unsorted 
+         */
         public TestData(Integer[] _unsorted) {
             this(_unsorted.length);
             unsorted = _unsorted;

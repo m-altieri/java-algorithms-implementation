@@ -1,6 +1,7 @@
 package com.jwetherell.algorithms.mathematics.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -10,8 +11,15 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.mathematics.Permutations;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class PermutationsTest {
 
+	/**
+	 * 
+	 */
 	@Test
 	public void test1NumberOfPermutations() {
 		final Integer[] numbers = {1,2,3,4};
@@ -19,6 +27,9 @@ public class PermutationsTest {
 		assertEquals(expectedNumberOfPermutations, (Permutations.getAllPermutations(numbers)).size());
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void test2NumberOfPermutations() {
 	    final Integer[] numbers = {3,4,2};
@@ -26,6 +37,9 @@ public class PermutationsTest {
 		assertEquals(expectedNumberOfPermutations, (Permutations.getAllPermutations(numbers)).size());
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void test3NumberOfPermutations() {
 	    final Integer[] numbers = {3,4,2,5,4,9};
@@ -33,6 +47,9 @@ public class PermutationsTest {
 		assertEquals(expectedNumberOfPermutations, (Permutations.getAllPermutations(numbers)).size());
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testComparePermutations() {
 	    final Integer[] numbers = {4,2};
@@ -53,6 +70,9 @@ public class PermutationsTest {
 		assertTrue("allPermutations="+allPermutations+" result="+result, allPermutations.equals(result));
 	}
 
+    /**
+     * 
+     */
     @Test
     public void testPermutation1() {
         final String string = "abc";
@@ -61,6 +81,9 @@ public class PermutationsTest {
         Assert.assertTrue(list[5].equals("cba"));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testPermutation2() {
         final String string = "abcd";

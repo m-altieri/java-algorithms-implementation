@@ -6,12 +6,13 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Set;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
+// TODO: Auto-generated Javadoc
 /**
  * A binary search tree (BST), which may sometimes also be called an ordered or
  * sorted binary tree, is a node-based binary tree data structure which has the
@@ -35,6 +36,9 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
     protected int size = 0;
     protected INodeCreator<T> creator = null;
 
+    /**
+     * 
+     */
     public enum DepthFirstSearchOrder {
         inOrder, preOrder, postOrder
     }

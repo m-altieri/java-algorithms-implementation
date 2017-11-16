@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * Graph. Could be directed or undirected depending on the TYPE enum. A graph is
  * an abstract representation of a set of objects where some pairs of the
@@ -21,6 +22,9 @@ public class Graph<T extends Comparable<T>> {
     private List<Vertex<T>> allVertices = new ArrayList<Vertex<T>>();
     private List<Edge<T>> allEdges = new ArrayList<Edge<T>>();
 
+    /**
+     * 
+     */
     public enum TYPE {
         DIRECTED, UNDIRECTED
     }
@@ -28,8 +32,16 @@ public class Graph<T extends Comparable<T>> {
     /** Defaulted to undirected */
     private TYPE type = TYPE.UNDIRECTED;
 
+    /**
+     * 
+     */
     public Graph() { }
 
+    /**
+     * 
+     *
+     * @param type 
+     */
     public Graph(TYPE type) {
         this.type = type;
     }
@@ -93,14 +105,29 @@ public class Graph<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public TYPE getType() {
         return type;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public List<Vertex<T>> getVertices() {
         return allVertices;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public List<Edge<T>> getEdges() {
         return allEdges;
     }
@@ -178,16 +205,32 @@ public class Graph<T extends Comparable<T>> {
         return builder.toString();
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
 
         private T value = null;
         private int weight = 0;
         private List<Edge<T>> edges = new ArrayList<Edge<T>>();
 
+        /**
+         * 
+         *
+         * @param value 
+         */
         public Vertex(T value) {
             this.value = value;
         }
 
+        /**
+         * 
+         *
+         * @param value 
+         * @param weight 
+         */
         public Vertex(T value, int weight) {
             this(value);
             this.weight = weight;
@@ -200,26 +243,57 @@ public class Graph<T extends Comparable<T>> {
             this.edges.addAll(vertex.edges);
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public T getValue() {
             return value;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int getWeight() {
             return weight;
         }
 
+        /**
+         * 
+         *
+         * @param weight 
+         */
         public void setWeight(int weight) {
             this.weight = weight;
         }
 
+        /**
+         * 
+         *
+         * @param e 
+         */
         public void addEdge(Edge<T> e) {
             edges.add(e);
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public List<Edge<T>> getEdges() {
             return edges;
         }
 
+        /**
+         * 
+         *
+         * @param v 
+         * @return 
+         */
         public Edge<T> getEdge(Vertex<T> v) {
             for (Edge<T> e : edges) {
                 if (e.to.equals(v))
@@ -228,6 +302,12 @@ public class Graph<T extends Comparable<T>> {
             return null;
         }
 
+        /**
+         * 
+         *
+         * @param v 
+         * @return 
+         */
         public boolean pathTo(Vertex<T> v) {
             for (Edge<T> e : edges) {
                 if (e.to.equals(v))
@@ -327,12 +407,24 @@ public class Graph<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class Edge<T extends Comparable<T>> implements Comparable<Edge<T>> {
 
         private Vertex<T> from = null;
         private Vertex<T> to = null;
         private int cost = 0;
 
+        /**
+         * 
+         *
+         * @param cost 
+         * @param from 
+         * @param to 
+         */
         public Edge(int cost, Vertex<T> from, Vertex<T> to) {
             if (from == null || to == null)
                 throw (new NullPointerException("Both 'to' and 'from' vertices need to be non-NULL."));
@@ -342,22 +434,47 @@ public class Graph<T extends Comparable<T>> {
             this.to = to;
         }
 
+        /**
+         * 
+         *
+         * @param e 
+         */
         public Edge(Edge<T> e) {
             this(e.cost, e.from, e.to);
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int getCost() {
             return cost;
         }
 
+        /**
+         * 
+         *
+         * @param cost 
+         */
         public void setCost(int cost) {
             this.cost = cost;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Vertex<T> getFromVertex() {
             return from;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Vertex<T> getToVertex() {
             return to;
         }
@@ -429,11 +546,22 @@ public class Graph<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class CostVertexPair<T extends Comparable<T>> implements Comparable<CostVertexPair<T>> {
 
         private int cost = Integer.MAX_VALUE;
         private Vertex<T> vertex = null;
 
+        /**
+         * 
+         *
+         * @param cost 
+         * @param vertex 
+         */
         public CostVertexPair(int cost, Vertex<T> vertex) {
             if (vertex == null)
                 throw (new NullPointerException("vertex cannot be NULL."));
@@ -442,14 +570,29 @@ public class Graph<T extends Comparable<T>> {
             this.vertex = vertex;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int getCost() {
             return cost;
         }
 
+        /**
+         * 
+         *
+         * @param cost 
+         */
         public void setCost(int cost) {
             this.cost = cost;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Vertex<T> getVertex() {
             return vertex;
         }
@@ -506,11 +649,22 @@ public class Graph<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class CostPathPair<T extends Comparable<T>> {
 
         private int cost = 0;
         private List<Edge<T>> path = null;
 
+        /**
+         * 
+         *
+         * @param cost 
+         * @param path 
+         */
         public CostPathPair(int cost, List<Edge<T>> path) {
             if (path == null)
                 throw (new NullPointerException("path cannot be NULL."));
@@ -519,14 +673,29 @@ public class Graph<T extends Comparable<T>> {
             this.path = path;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int getCost() {
             return cost;
         }
 
+        /**
+         * 
+         *
+         * @param cost 
+         */
         public void setCost(int cost) {
             this.cost = cost;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public List<Edge<T>> getPath() {
             return path;
         }

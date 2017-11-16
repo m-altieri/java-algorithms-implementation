@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IStack;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, a stack is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes 
  * the most recently added element that was not yet removed. 
@@ -203,6 +204,9 @@ public interface Stack<T> extends IStack<T> {
         private Node<T> top = null;
         private int size = 0;
 
+        /**
+         * 
+         */
         public LinkedStack() {
             top = null;
             size = 0;
@@ -418,10 +422,20 @@ public interface Stack<T> extends IStack<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleArrayStack<T> extends java.util.AbstractQueue<T> {
 
         private ArrayStack<T> stack = null;
 
+        /**
+         * 
+         *
+         * @param stack 
+         */
         public JavaCompatibleArrayStack(ArrayStack<T> stack) {
             this.stack = stack;
         }
@@ -529,10 +543,20 @@ public interface Stack<T> extends IStack<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleLinkedStack<T> extends java.util.AbstractQueue<T> {
 
         private LinkedStack<T> stack = null;
 
+        /**
+         * 
+         *
+         * @param stack 
+         */
         public JavaCompatibleLinkedStack(LinkedStack<T> stack) {
             this.stack = stack;
         }

@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sorts;
 
+// TODO: Auto-generated Javadoc
 /**
  * An American flag sort is an efficient, in-place variant of radix sort that
  * distributes items into hundreds of buckets. Non-comparative sorting
@@ -27,6 +28,12 @@ public class AmericanFlagSort {
 
     private AmericanFlagSort() { }
 
+    /**
+     * 
+     *
+     * @param unsorted 
+     * @return 
+     */
     public static Integer[] sort(Integer[] unsorted) {
         int numberOfDigits = getMaxNumberOfDigits(unsorted); // Max number of digits
         int max = 1;
@@ -36,6 +43,14 @@ public class AmericanFlagSort {
         return unsorted;
     }
 
+    /**
+     * 
+     *
+     * @param unsorted 
+     * @param start 
+     * @param length 
+     * @param divisor 
+     */
     public static void sort(Integer[] unsorted, int start, int length, int divisor) {
         // First pass - find counts
         int[] count = new int[NUMBER_OF_BUCKETS];

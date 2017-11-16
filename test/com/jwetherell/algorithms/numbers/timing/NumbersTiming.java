@@ -5,10 +5,19 @@ import java.text.DecimalFormat;
 import com.jwetherell.algorithms.numbers.Integers;
 import com.jwetherell.algorithms.numbers.Longs;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class NumbersTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         // Integers
         {

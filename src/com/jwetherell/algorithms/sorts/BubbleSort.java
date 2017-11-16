@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sorts;
 
+// TODO: Auto-generated Javadoc
 /**
  * Bubble sort is a simple sorting algorithm that works by repeatedly stepping
  * through the list to be sorted, comparing each pair of adjacent items and
@@ -22,6 +23,13 @@ public class BubbleSort<T extends Comparable<T>> {
 
     private BubbleSort() { }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param unsorted 
+     * @return 
+     */
     public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
         boolean swapped = true;
         int length = unsorted.length;

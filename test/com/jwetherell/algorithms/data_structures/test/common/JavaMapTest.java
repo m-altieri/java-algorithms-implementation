@@ -1,8 +1,26 @@
 package com.jwetherell.algorithms.data_structures.test.common;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 @SuppressWarnings("unchecked")
 public class JavaMapTest {
 
+    /**
+     * 
+     *
+     * @param <K> 
+     * @param <V> 
+     * @param <T> 
+     * @param map 
+     * @param type 
+     * @param name 
+     * @param unsorted 
+     * @param sorted 
+     * @param _invalid 
+     * @return 
+     */
     public static <K,V, T extends Comparable<T>> boolean testJavaMap(java.util.Map<K,V> map, Class<T> type, String name,
                                                                      Integer[] unsorted, Integer[] sorted, Integer _invalid) {
         // Make sure the map is empty

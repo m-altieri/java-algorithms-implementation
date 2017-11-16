@@ -9,6 +9,7 @@ import java.util.Set;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
+// TODO: Auto-generated Javadoc
 /**
  * Prim's minimum spanning tree. Only works on undirected graphs. It finds a
  * subset of the edges that forms a tree that includes every vertex, where the
@@ -22,6 +23,13 @@ public class Prim {
 
     private Prim() { }
 
+    /**
+     * 
+     *
+     * @param graph 
+     * @param start 
+     * @return 
+     */
     public static Graph.CostPathPair<Integer> getMinimumSpanningTree(Graph<Integer> graph, Graph.Vertex<Integer> start) {
         if (graph == null)
             throw (new NullPointerException("Graph must be non-NULL."));

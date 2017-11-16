@@ -7,19 +7,25 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.jwetherell.algorithms.sequence.LongestIncreasingSubsequence;
-import com.jwetherell.algorithms.sequence.LongestPalindromicSubsequence;
-
 import org.junit.Test;
 
+import com.jwetherell.algorithms.sequence.ArithmeticProgression;
 import com.jwetherell.algorithms.sequence.FibonacciSequence;
 import com.jwetherell.algorithms.sequence.LargestSumContiguousSubarray;
 import com.jwetherell.algorithms.sequence.LongestCommonSubsequence;
+import com.jwetherell.algorithms.sequence.LongestIncreasingSubsequence;
+import com.jwetherell.algorithms.sequence.LongestPalindromicSubsequence;
 import com.jwetherell.algorithms.sequence.SubsequenceCounter;
-import com.jwetherell.algorithms.sequence.ArithmeticProgression;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Sequences {
 
+    /**
+     * 
+     */
     @Test
     public void testArithmeticProgression() {
         // TOTAL OF A SEQUENCE OF NUMBERS
@@ -33,6 +39,9 @@ public class Sequences {
         assertTrue("Sequence Total Using Triangular Numbers error. result=" + result + " check=" + check, (result == check));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testFibonacci() {
         // COMPUTE FIBONACCI SEQUENCE
@@ -51,6 +60,9 @@ public class Sequences {
         assertTrue("Fibonacci Sequence Using Binet's formula error. result=" + result + " check=" + check, (result == check));
     }
 
+    /**
+     * 
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciLoopExceptions() {
         // COMPUTE FIBONACCI SEQUENCE
@@ -58,6 +70,9 @@ public class Sequences {
         FibonacciSequence.fibonacciSequenceUsingLoop(element);
     }
 
+    /**
+     * 
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciRecursionExceptions() {
         // COMPUTE FIBONACCI SEQUENCE
@@ -65,6 +80,9 @@ public class Sequences {
         FibonacciSequence.fibonacciSequenceUsingRecursion(element);
     }
 
+    /**
+     * 
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciMatrixExceptions() {
         // COMPUTE FIBONACCI SEQUENCE
@@ -72,6 +90,9 @@ public class Sequences {
         FibonacciSequence.fibonacciSequenceUsingMatrixMultiplication(element);
     }
 
+    /**
+     * 
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciBinetsExceptions() {
         // COMPUTE FIBONACCI SEQUENCE
@@ -79,6 +100,9 @@ public class Sequences {
         FibonacciSequence.fibonacciSequenceUsingBinetsFormula(element);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLongestCommonSubSequences() {
         // LONGEST COMMON SUBSEQUENCE
@@ -114,6 +138,9 @@ public class Sequences {
                         resultSequence.equals(pair.getLongestSequences())));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLongestIncreasingSubsequence() {
         ArrayList<int[]> sequences = new ArrayList<int[]>();
@@ -151,6 +178,9 @@ public class Sequences {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testSubsequenceCount() {
         final String a = "GeeksforGeeks";
@@ -159,6 +189,9 @@ public class Sequences {
         assertTrue("Subsequence Counter, expected="+4+" result="+result, result==4);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLargestSumContiguousSubarray() {
         final int result = LargestSumContiguousSubarray.getLargestSumContiguousSubarray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
@@ -167,6 +200,9 @@ public class Sequences {
         assertTrue("Largest Sum of Contiguous Subarray, expected="+-1+" result1="+result1, result1==-1);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLongestPalindromicSubsequence() {
         final int result = LongestPalindromicSubsequence.getLongestPalindromeSubsequence("AABCDEBAZ");

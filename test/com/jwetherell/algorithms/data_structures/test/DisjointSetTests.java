@@ -5,11 +5,18 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.DisjointSet;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 @SuppressWarnings("unchecked")
 public class DisjointSetTests {
 
     private static boolean DEBUG = false;
 
+    /**
+     * 
+     */
     @Test
     public void testDisjointSet1() {
         final int max = 10;
@@ -75,6 +82,9 @@ public class DisjointSetTests {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testDisjointSet2() {
         final int max = 10;

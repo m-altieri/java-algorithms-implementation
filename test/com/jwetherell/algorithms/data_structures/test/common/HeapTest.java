@@ -5,8 +5,25 @@ import java.util.Arrays;
 import com.jwetherell.algorithms.data_structures.BinaryHeap;
 import com.jwetherell.algorithms.data_structures.interfaces.IHeap;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class HeapTest {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param heapType 
+     * @param heap 
+     * @param type 
+     * @param name 
+     * @param unsorted 
+     * @param sorted 
+     * @param _invalid 
+     * @return 
+     */
     public static <T extends Comparable<T>> boolean testHeap(BinaryHeap.Type heapType, IHeap<T> heap, Class<T> type, String name, 
                                                              Integer[] unsorted, Integer[] sorted, Integer _invalid) {
         for (int i = 0; i < unsorted.length; i++) {

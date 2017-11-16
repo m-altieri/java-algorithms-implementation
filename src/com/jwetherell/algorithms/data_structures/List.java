@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IList;
 
+// TODO: Auto-generated Javadoc
 /**
  * In mathematics, a sequence is an enumerated collection of objects in which repetitions are allowed. Like a set, it contains members (also called elements, or terms). The number of elements 
  * (possibly infinite) is called the length of the sequence. Unlike a set, order matters, and exactly the same elements can appear multiple times at different positions in the sequence.
@@ -209,10 +210,20 @@ public abstract class List<T> implements IList<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleArrayList<T> extends java.util.AbstractList<T> implements java.util.RandomAccess {
 
         private List.ArrayList<T> list = null;
 
+        /**
+         * 
+         *
+         * @param list 
+         */
         public JavaCompatibleArrayList(List.ArrayList<T> list) {
             this.list = list;
         }
@@ -466,7 +477,7 @@ public abstract class List<T> implements IList<T> {
             private T value = null;
             private Node<T> next = null;
 
-            private Node() { }
+//            private Node() { }
 
             private Node(T value) {
                 this.value = value;
@@ -494,6 +505,11 @@ public abstract class List<T> implements IList<T> {
 
         private List.SinglyLinkedList<T> list = null;
 
+        /**
+         * 
+         *
+         * @param list 
+         */
         public JavaCompatibleSinglyLinkedList(List.SinglyLinkedList<T> list) {
             this.list = list;
         }
@@ -876,7 +892,7 @@ public abstract class List<T> implements IList<T> {
             private Node<T> prev = null;
             private Node<T> next = null;
 
-            private Node() { }
+//            private Node() { }
 
             private Node(T value) {
                 this.value = value;
@@ -893,10 +909,20 @@ public abstract class List<T> implements IList<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleDoublyLinkedList<T> extends java.util.AbstractSequentialList<T> {
 
         private List.DoublyLinkedList<T> list = null;
 
+        /**
+         * 
+         *
+         * @param list 
+         */
         public JavaCompatibleDoublyLinkedList(List.DoublyLinkedList<T> list) {
             this.list = list;
         }

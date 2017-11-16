@@ -33,6 +33,10 @@ import com.jwetherell.algorithms.data_structures.Trie;
 import com.jwetherell.algorithms.data_structures.TrieMap;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class DataStructuresTiming {
 
     private static final Random RANDOM = new Random();
@@ -53,6 +57,11 @@ public class DataStructuresTiming {
     private static int testIndex = 0; // Index into the tests
     private static boolean firstTimeThru = true; // We throw away the first set of data to avoid JITing
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         System.out.println("Starting tests.");
         boolean passed = false;
@@ -281,12 +290,36 @@ public class DataStructuresTiming {
         throw new RuntimeException("Error in test.");
     }
 
+    /**
+     * 
+     */
     public static abstract class Testable {
         String input = null;
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public String getInput() {
             return input;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public abstract String getName();
+        
+        /**
+         * 
+         *
+         * @param unsorted 
+         * @param sorted 
+         * @param input 
+         * @return 
+         */
         public abstract boolean run(Integer[] unsorted, Integer[] sorted, String input);
     }
 

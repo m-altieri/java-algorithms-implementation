@@ -1,16 +1,24 @@
 package com.jwetherell.algorithms.data_structures.test;
 
-import com.jwetherell.algorithms.data_structures.SuffixArray;
-import com.jwetherell.algorithms.data_structures.SuffixTree;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
+import com.jwetherell.algorithms.data_structures.SuffixArray;
+import com.jwetherell.algorithms.data_structures.SuffixTree;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SuffixArrayTest {
 
+    /**
+     * 
+     */
     @Test
     public void testSuffixArray(){
         String string = "aasfaasdsadasdfasdasdasdasfdasfassdfas";
@@ -28,6 +36,9 @@ public class SuffixArrayTest {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testKMRarray(){
         String string = "aasfaasdsadasdfasdasdasdasfdasfassdfas";

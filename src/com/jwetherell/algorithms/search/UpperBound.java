@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.search;
 
+// TODO: Auto-generated Javadoc
 /**
  * Upper bound search algorithm.<br>
  * Upper bound is kind of binary search algorithm but:<br>
@@ -17,6 +18,14 @@ public class UpperBound {
 
     private UpperBound() { }
 
+    /**
+     * 
+     *
+     * @param array 
+     * @param length 
+     * @param value 
+     * @return 
+     */
     public static int upperBound(int[] array, int length, int value) {
         int low = 0;
         int high = length;

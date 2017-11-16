@@ -3,10 +3,14 @@ package com.jwetherell.algorithms.search.timing;
 import java.text.DecimalFormat;
 
 import com.jwetherell.algorithms.search.BinarySearch;
-import com.jwetherell.algorithms.search.LinearSearch;
 import com.jwetherell.algorithms.search.InterpolationSearch;
+import com.jwetherell.algorithms.search.LinearSearch;
 import com.jwetherell.algorithms.search.QuickSelect;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SearchTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
@@ -15,6 +19,11 @@ public class SearchTiming {
 
     private static int[] sorted = null;
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         System.out.println("Generating sorted array.");
         sorted = new int[SIZE];

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
+// TODO: Auto-generated Javadoc
 /**
  * A Patricia trie (radix tree) is a space-optimized trie data structure where each
  * non-terminating (black) node with only one child is merged with its child.
@@ -24,6 +25,9 @@ public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
     protected static final boolean BLACK = false; // non-terminating
     protected static final boolean WHITE = true; // terminating
 
+    /**
+     * 
+     */
     public PatriciaTrie() { 
         this.creator = new INodeCreator() {
             /**
@@ -554,10 +558,20 @@ public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <C> 
+     */
     public static class JavaCompatiblePatriciaTrie<C extends CharSequence> extends java.util.AbstractCollection<C> {
 
         private PatriciaTrie<C> trie = null;
 
+        /**
+         * 
+         *
+         * @param list 
+         */
         public JavaCompatiblePatriciaTrie(PatriciaTrie<C> list) {
             this.trie = list;
         }

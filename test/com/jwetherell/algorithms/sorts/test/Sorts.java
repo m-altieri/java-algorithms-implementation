@@ -16,6 +16,10 @@ import com.jwetherell.algorithms.sorts.QuickSort;
 import com.jwetherell.algorithms.sorts.RadixSort;
 import com.jwetherell.algorithms.sorts.ShellSort;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Sorts {
 
     private static final Random RANDOM = new Random();
@@ -42,6 +46,9 @@ public class Sorts {
             reverse[i] = (SIZE - 1) - i;
     }
 
+    /**
+     * 
+     */
     @Test
     public void testInsertionSorts() {
         // Insertion sort
@@ -53,6 +60,9 @@ public class Sorts {
         assertTrue("Inerstion sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testBubbleSorts() {
         // Bubble sort
@@ -64,6 +74,9 @@ public class Sorts {
         assertTrue("Bubble sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testShellsSorts() {
         int[] shells = new int[] { 10, 5, 3, 1 };
@@ -76,6 +89,9 @@ public class Sorts {
         assertTrue("Shell's sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testMergeSortsInPlace() {
         // Merge sort
@@ -87,6 +103,9 @@ public class Sorts {
         assertTrue("merge sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testMergeSortsNotInPlace() {
         // Merge sort
@@ -98,6 +117,9 @@ public class Sorts {
         assertTrue("merge sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testQuickSorts() {
         // Quicksort
@@ -121,6 +143,9 @@ public class Sorts {
         assertTrue("Quick sort pivot random reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testHeapSorts() {
         // Heapsort
@@ -132,6 +157,9 @@ public class Sorts {
         assertTrue("Heap sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testCountingSorts() {
         // Counting sort
@@ -143,6 +171,9 @@ public class Sorts {
         assertTrue("Counting sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testRadixSorts() {
         // Radix sort
@@ -154,6 +185,9 @@ public class Sorts {
         assertTrue("Radix sort reverse error. result="+print(result), check(result));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testAmericanFlagSorts() {
         // American Flag sort

@@ -9,8 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.jwetherell.algorithms.graph.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +16,21 @@ import com.jwetherell.algorithms.data_structures.Graph;
 import com.jwetherell.algorithms.data_structures.Graph.Edge;
 import com.jwetherell.algorithms.data_structures.Graph.TYPE;
 import com.jwetherell.algorithms.data_structures.Graph.Vertex;
+import com.jwetherell.algorithms.graph.AStar;
+import com.jwetherell.algorithms.graph.BellmanFord;
+import com.jwetherell.algorithms.graph.ConnectedComponents;
+import com.jwetherell.algorithms.graph.CycleDetection;
+import com.jwetherell.algorithms.graph.Dijkstra;
+import com.jwetherell.algorithms.graph.FloydWarshall;
+import com.jwetherell.algorithms.graph.Johnson;
+import com.jwetherell.algorithms.graph.Kruskal;
+import com.jwetherell.algorithms.graph.Prim;
+import com.jwetherell.algorithms.graph.TopologicalSort;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Graphs {
 
     // Undirected
@@ -360,6 +372,9 @@ public class Graphs {
         return (new Graph.CostPathPair<Integer>(cost, list));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testDijstraUndirected() {
         final UndirectedGraph undirected = new UndirectedGraph();
@@ -382,6 +397,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testBellmanFordUndirected() {
         final UndirectedGraph undirected = new UndirectedGraph();
@@ -402,6 +420,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testPrimUndirected() {
         final UndirectedGraph undirected = new UndirectedGraph();
@@ -470,6 +491,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testKruskalUndirected() {
         final UndirectedGraph undirected = new UndirectedGraph();
@@ -535,6 +559,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testDijkstraDirected() {
         final DirectedGraph directed = new DirectedGraph();
@@ -556,6 +583,9 @@ public class Graphs {
         assertTrue("Dijstra's shortest path error. pair1="+pair1+" idealPathPair="+getIdealPathPair(directed), pair1.equals(getIdealPathPair(directed)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testBellmanFordDirected() {
         final DirectedGraph directed = new DirectedGraph();
@@ -578,6 +608,9 @@ public class Graphs {
         assertTrue("Bellman-Ford's shortest path error. pair2="+pair2+" idealPathPair="+getIdealPathPair(directed), pair2.equals(getIdealPathPair(directed)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testDijstraDirectedWihtNegativeWeights() {
         final DirectedWithNegativeWeights directedWithNegWeights = new DirectedWithNegativeWeights();
@@ -601,6 +634,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testJohnonsonsAllPairsShortestPathOnDirecteWithNegWeights() {
         final DirectedWithNegativeWeights directedWithNegWeights = new DirectedWithNegativeWeights();
@@ -703,6 +739,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testFloydWarshallonDirectedWithNegWeights() {
         final DirectedWithNegativeWeights directedWithNegWeights = new DirectedWithNegativeWeights();
@@ -783,6 +822,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void cycleCheckOnUndirected() {
         final List<Vertex<Integer>> cycledVerticies = new ArrayList<Vertex<Integer>>();
@@ -852,6 +894,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void topologicalSortOnDirectedGraph() {
         {   // DIRECTED GRAPH
@@ -912,6 +957,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void connectedComponents() {
         {
@@ -954,6 +1002,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testAStarUndirected() {
         final UndirectedGraph undirected = new UndirectedGraph();
@@ -967,6 +1018,9 @@ public class Graphs {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testAStarDirected() {
         final DirectedGraph directed = new DirectedGraph();

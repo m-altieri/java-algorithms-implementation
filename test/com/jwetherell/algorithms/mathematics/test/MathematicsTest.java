@@ -3,7 +3,11 @@ package com.jwetherell.algorithms.mathematics.test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 import org.junit.Test;
 
@@ -13,6 +17,10 @@ import com.jwetherell.algorithms.mathematics.Knapsack;
 import com.jwetherell.algorithms.mathematics.Multiplication;
 import com.jwetherell.algorithms.mathematics.Primes;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class MathematicsTest {
 
     private static final int MIN = 1;
@@ -26,6 +34,9 @@ public class MathematicsTest {
         return RANDOM.nextInt((max - min) + 1) + min;
     }
 
+    /**
+     * 
+     */
     @Test
     public void multiplication() {
         int a = Math.abs(nextRandomInt(MIN, MAX));
@@ -156,6 +167,9 @@ public class MathematicsTest {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void division() {
         int a = nextRandomInt(MIN, MAX);
@@ -181,6 +195,9 @@ public class MathematicsTest {
         assertTrue("Division using multiplication. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
     }
 
+    /**
+     * 
+     */
     @Test
     public void knapsack() {
         int[] values = {7, 4, 8, 6, 2, 5};
@@ -195,6 +212,9 @@ public class MathematicsTest {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void chebyshevDistance() {
         long[] point1 = new long[]{1, 2};
@@ -204,6 +224,9 @@ public class MathematicsTest {
         assertTrue("Chebyshev Distance error. expected=" + expected + " got=" + result, (result == expected));
     }
 
+    /**
+     * 
+     */
     @Test
     public void squaredDistance() {
         int x1 = 1;
@@ -215,6 +238,9 @@ public class MathematicsTest {
         assertTrue("squaredDistance error. expected=" + expected + " got=" + result, (result == expected));
     }
 
+    /**
+     * 
+     */
     @Test
     public void euclideanDistance() {
         int x1 = 1;
@@ -226,6 +252,9 @@ public class MathematicsTest {
         assertTrue("squaredDistance error. expected=" + expected + " got=" + result, (result == expected));
     }
 
+    /**
+     * 
+     */
     @Test
     public void getPrimeFactorization() {
         int number = 234;
@@ -243,6 +272,9 @@ public class MathematicsTest {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void isPrime() {
         int number = 1234;
@@ -254,6 +286,9 @@ public class MathematicsTest {
         assertTrue("isPrime error. isPrime=" + isPrime, isPrime);
     }
 
+    /**
+     * 
+     */
     @Test
     public void sieveOfEratosthenes() {
         int number = 1;
@@ -297,6 +332,9 @@ public class MathematicsTest {
         assertTrue("Sieve Of Eratosthenes error.", isPrime);
     }
 
+    /**
+     * 
+     */
     @Test
     public void millerRabin() {
         final List<Integer> primeNumbers = Arrays.asList(2, 3, 7, 23, 2179, 25657, 34123);

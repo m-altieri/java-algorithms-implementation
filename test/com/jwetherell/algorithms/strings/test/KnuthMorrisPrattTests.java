@@ -9,8 +9,17 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.strings.KnuthMorrisPratt;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class KnuthMorrisPrattTests {
 
+    /**
+     * 
+     *
+     * @throws Exception 
+     */
     @Test
     @SuppressWarnings("unchecked")
     public void getPrefixSuffixes() throws Exception {

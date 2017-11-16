@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sequence;
 
+// TODO: Auto-generated Javadoc
 /**
  * In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the 
  * sum of the two preceding ones: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
@@ -15,6 +16,12 @@ public class FibonacciSequence {
 
     private FibonacciSequence() {} 
 
+    /**
+     * 
+     *
+     * @param n 
+     * @return 
+     */
     public static final long fibonacciSequenceUsingLoop(int n) {
         final long[] array = new long[n + 1];
         int counter = 0;
@@ -76,6 +83,12 @@ public class FibonacciSequence {
         return r;
     }
 
+    /**
+     * 
+     *
+     * @param n 
+     * @return 
+     */
     public static final long fibonacciSequenceUsingMatrixMultiplication(int n) {
         // m = [ 1 , 1 ]
         //     [ 1 , 0 ]
@@ -124,6 +137,12 @@ public class FibonacciSequence {
         return B;
     }
 
+    /**
+     * 
+     *
+     * @param n 
+     * @return 
+     */
     public static final long fibonacciSequenceUsingBinetsFormula(int n) {
         final long r = (long) Math.floor(Math.pow(PHI, n) * INVERSE_SQUARE_ROOT_OF_5 + 0.5);
         // If r hits max value then we have run out of bits in the long

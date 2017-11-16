@@ -11,8 +11,15 @@ import org.junit.Test;
 import com.jwetherell.algorithms.data_structures.KdTree;
 import com.jwetherell.algorithms.data_structures.KdTree.XYZPoint;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class KdTreeTests {
 
+    /**
+     * 
+     */
     @Test
     public void testKdTree() {
         List<XYZPoint> points = new ArrayList<XYZPoint>();
@@ -49,6 +56,9 @@ public class KdTreeTests {
         kdTree.remove(p2);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testKdTree_as_iterable() {
         List<XYZPoint> points = new ArrayList<XYZPoint>();

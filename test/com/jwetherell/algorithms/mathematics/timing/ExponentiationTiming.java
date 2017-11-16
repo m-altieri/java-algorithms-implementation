@@ -2,12 +2,19 @@ package com.jwetherell.algorithms.mathematics.timing;
 
 import com.jwetherell.algorithms.mathematics.Exponentiation;
 
+// TODO: Auto-generated Javadoc
 /**
  * Notice that 2^1000 is out of integer range so returned result is not correct.
  * It is a reason why exponentiation modulo is useful.
  * But it does not matter when you want to compare speed of these two algorithms.
  */
 public class ExponentiationTiming {
+    
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         System.out.println("Calculating a power using a recursive function.");
         long before = System.nanoTime();

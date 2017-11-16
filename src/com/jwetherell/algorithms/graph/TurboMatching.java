@@ -1,12 +1,13 @@
 package com.jwetherell.algorithms.graph;
 
-import com.jwetherell.algorithms.data_structures.Graph;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.jwetherell.algorithms.data_structures.Graph;
+
+// TODO: Auto-generated Javadoc
 /**
  * In the mathematical discipline of graph theory, a matching or independent edge set
  * in a graph is a set of edges without common vertices. In some matchings, all the vertices
@@ -83,6 +84,11 @@ public class TurboMatching {
     }
 
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class MatchingResult<T extends Comparable<T>>{
 
         private final Map<Graph.Vertex<T>, Graph.Vertex<T>> mate;

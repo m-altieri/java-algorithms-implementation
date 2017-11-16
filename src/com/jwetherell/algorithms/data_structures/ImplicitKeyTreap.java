@@ -6,6 +6,7 @@ import java.util.Random;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IList;
 
+// TODO: Auto-generated Javadoc
 /**
  * A Treap is a self-balancing binary search tree that uses randomization to maintain 
  * a low height. In this version, it is used emulate the operations of an array and linked list.
@@ -219,6 +220,12 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         return p;
     }
 
+    /**
+     * 
+     *
+     * @param index 
+     * @param value 
+     */
     public void addAtIndexAndUpdate(int index, T value) {
         root = insert(((Node<T>)root), index, value);
         if (root == null)
@@ -433,10 +440,23 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         return i;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public T[] inOrder() {
         return inOrder(root,size);
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param node 
+     * @param size 
+     * @return 
+     */
     public static <T> T[] inOrder(Node<T> node, int size) {
         T[] data = (T[]) new Object[size];
         if (node == null)
@@ -464,6 +484,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         return TreePrinter.getString(this);
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class Node<T> {
 
         private T value = null;
@@ -484,6 +509,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
             this.priority = RANDOM.nextInt(randomSeed);
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int getSize() {
             return size;
         }
@@ -509,6 +539,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class Pair<T>  {
 
         private Node<T> left;
@@ -519,10 +554,20 @@ public class ImplicitKeyTreap<T> implements IList<T> {
             this.right = right;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Node<T> getLesser() {
             return left;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Node<T> getGreater() {
             return right;
         }
@@ -536,10 +581,20 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleArrayList<T> extends java.util.AbstractList<T> implements java.util.RandomAccess {
 
         private ImplicitKeyTreap<T> list = null;
 
+        /**
+         * 
+         *
+         * @param list 
+         */
         public JavaCompatibleArrayList(ImplicitKeyTreap<T> list) {
             this.list = list;
         }

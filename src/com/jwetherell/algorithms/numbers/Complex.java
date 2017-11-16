@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.numbers;
 
+// TODO: Auto-generated Javadoc
 /**
  * A complex number is a number that can be expressed in the form a + bi, where a and b are real numbers and i is the 
  * imaginary unit, satisfying the equation i2 = −1.[1] In this expression, a is the real part and b is the imaginary 
@@ -12,19 +13,41 @@ package com.jwetherell.algorithms.numbers;
  */
 public class Complex {
 
+    /**
+     * 
+     */
     public double real;
+    
+    /**
+     * 
+     */
     public double imaginary;
 
+    /**
+     * 
+     */
     public Complex() {
         this.real = 0.0;
         this.imaginary = 0.0;
     }
 
+    /**
+     * 
+     *
+     * @param r 
+     * @param i 
+     */
     public Complex(double r, double i) {
         this.real = r;
         this.imaginary = i;
     }
 
+    /**
+     * 
+     *
+     * @param x 
+     * @return 
+     */
     public Complex multiply(final Complex x) {
         final Complex copy = new Complex(this.real, this.imaginary);
         copy.real = this.real * x.real - this.imaginary * x.imaginary;
@@ -32,6 +55,12 @@ public class Complex {
         return copy;
     }
 
+    /**
+     * 
+     *
+     * @param x 
+     * @return 
+     */
     public Complex add(final Complex x) {
         final Complex copy = new Complex(this.real, this.imaginary);
         copy.real += x.real;
@@ -39,6 +68,12 @@ public class Complex {
         return copy;
     }
 
+    /**
+     * 
+     *
+     * @param x 
+     * @return 
+     */
     public Complex sub(final Complex x) {
         final Complex copy = new Complex(this.real, this.imaginary);
         copy.real -= x.real;
@@ -46,14 +81,29 @@ public class Complex {
         return copy;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public double abs() {
         return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     public String toString() {
         return "(" + this.real + "," + this.imaginary + ")";
     }
 
+    /**
+     * 
+     *
+     * @param rho 
+     * @param theta 
+     * @return 
+     */
     public static Complex polar(final double rho, final double theta) {
         return (new Complex(rho * Math.cos(theta), rho * Math.sin(theta)));
     }

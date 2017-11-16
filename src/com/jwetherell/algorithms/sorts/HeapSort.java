@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sorts;
 
+// TODO: Auto-generated Javadoc
 /**
  * Heapsort is a comparison-based sorting algorithm to create a sorted array (or
  * list), and is part of the selection sort family. Although somewhat slower in
@@ -22,6 +23,13 @@ public class HeapSort<T extends Comparable<T>> {
 
     private HeapSort() { }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param unsorted 
+     * @return 
+     */
     public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
         createHeap(unsorted);
         sortHeap(unsorted);

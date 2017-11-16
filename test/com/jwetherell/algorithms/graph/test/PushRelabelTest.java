@@ -1,14 +1,19 @@
 package com.jwetherell.algorithms.graph.test;
 
-import com.jwetherell.algorithms.data_structures.Graph;
-import com.jwetherell.algorithms.graph.PushRelabel;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Map;
 import java.util.TreeMap;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
+import com.jwetherell.algorithms.data_structures.Graph;
+import com.jwetherell.algorithms.graph.PushRelabel;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class PushRelabelTest {
 
     private static class ExampleInput1 {
@@ -39,6 +44,9 @@ public class PushRelabelTest {
         final Graph.Vertex<Integer> sink = v4;
     }
 
+    /**
+     * 
+     */
     @Test
     public void testPushRelabel1() {
         final ExampleInput1 exampleInput = new ExampleInput1();
@@ -83,6 +91,9 @@ public class PushRelabelTest {
         final Graph.Vertex<Integer> sink = v5;
     }
 
+    /**
+     * 
+     */
     @Test
     public void testPushRelabel2() {
         final ExampleInput2 exampleInput = new ExampleInput2();

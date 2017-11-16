@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.search;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, linear search or sequential search is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is 
  * found or until all the elements have been searched.
@@ -15,6 +16,13 @@ package com.jwetherell.algorithms.search;
  */
 public class LinearSearch {
 
+    /**
+     * 
+     *
+     * @param value 
+     * @param array 
+     * @return 
+     */
     public static final int find(int value, int[] array) {
         for (int i = 0; i < array.length; i++) {
             int iValue = array[i];

@@ -2,8 +2,23 @@ package com.jwetherell.algorithms.data_structures.test.common;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class TreeTest {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param tree 
+     * @param type 
+     * @param name 
+     * @param data 
+     * @param _invalid 
+     * @return 
+     */
     public static <T extends Comparable<T>> boolean testTree(ITree<T> tree, Class<T> type, String name, 
                                                              Integer[] data, Integer _invalid) {
         for (int i = 0; i < data.length; i++) {

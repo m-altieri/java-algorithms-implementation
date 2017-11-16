@@ -3,6 +3,7 @@ package com.jwetherell.algorithms.data_structures;
 import com.jwetherell.algorithms.data_structures.SkipList.Node;
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
+// TODO: Auto-generated Javadoc
 /**
  * A set used to store key->values pairs, this is an implementation of an
  * associative array.
@@ -19,6 +20,9 @@ public class SkipListMap<K extends Comparable<K>, V> implements SkipList.INodeCr
 
     private SkipList<K> list = null;
 
+    /**
+     * 
+     */
     public SkipListMap() {
         list = new SkipList<K>(this);
     }

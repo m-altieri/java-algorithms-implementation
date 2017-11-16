@@ -5,13 +5,31 @@ import java.util.Collections;
 
 import com.jwetherell.algorithms.numbers.Complex;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Multiplication {
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long multiplication(int a, int b) {
         long result = ((long) a) * ((long) b);
         return result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long multiplyUsingLoop(int a, int b) {
         int absB = Math.abs(b);
         long result = a;
@@ -21,6 +39,13 @@ public class Multiplication {
         return (b < 0) ? -result : result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long multiplyUsingRecursion(int a, int b) {
         int absB = Math.abs(b);
         long result = a;
@@ -31,6 +56,13 @@ public class Multiplication {
         return (b < 0) ? -result : result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long multiplyUsingShift(int a, int b) {
         int absA = Math.abs(a);
         int absB = Math.abs(b);
@@ -46,6 +78,13 @@ public class Multiplication {
         return (a > 0 && b > 0 || a < 0 && b < 0) ? result : -result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long multiplyUsingLogs(int a, int b) {
         long absA = Math.abs(a);
         long absB = Math.abs(b);
@@ -53,6 +92,13 @@ public class Multiplication {
         return (a > 0 && b > 0 || a < 0 && b < 0) ? result : -result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static String multiplyUsingFFT(String a, String b) {
         if (a.equals("0") || b.equals("0")) {
             return "0";
@@ -125,6 +171,13 @@ public class Multiplication {
         return result.toString();
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static String multiplyUsingLoopWithStringInput(String a, String b) {
         int k,i,j,carry=0,rem,flag=0,lim1,lim2,mul;
 
@@ -191,6 +244,13 @@ public class Multiplication {
         return sb.toString();
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static int multiplyUsingLoopWithIntegerInput(int a, int b) {
         boolean aIsNegative = a<0;
         boolean bIsNegative = b<0;

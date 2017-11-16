@@ -3,6 +3,7 @@ package com.jwetherell.algorithms.strings;
 import java.util.BitSet;
 import java.util.StringTokenizer;
 
+// TODO: Auto-generated Javadoc
 /**
  * This class contains methods for modifying text.
  * <p>
@@ -12,6 +13,12 @@ public class StringFunctions {
 
     private static final char SPACE = ' ';
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWithStringConcat(String string) {
         String output = new String();
         for (int i = (string.length() - 1); i >= 0; i--) {
@@ -20,6 +27,12 @@ public class StringFunctions {
         return output;
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWithStringBuilder(String string) {
         final StringBuilder builder = new StringBuilder();
         for (int i = (string.length() - 1); i >= 0; i--) {
@@ -28,11 +41,23 @@ public class StringFunctions {
         return builder.toString();
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWithStringBuilderBuiltinMethod(String string) {
         final StringBuilder builder = new StringBuilder(string);
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWithSwaps(String string) {
         final char[] array = string.toCharArray();
         final int length = array.length - 1;
@@ -47,6 +72,12 @@ public class StringFunctions {
         return String.valueOf(array);
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWithXOR(String string) {
         final char[] array = string.toCharArray();
         final int length = array.length;
@@ -60,6 +91,12 @@ public class StringFunctions {
         return String.valueOf(array);
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWordsByCharWithAdditionalStorage(String string) {
         final StringBuilder builder = new StringBuilder();
         final int length = string.length() - 1;
@@ -84,6 +121,12 @@ public class StringFunctions {
         return builder.toString();
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWordsUsingStringTokenizerWithAdditionalStorage(String string) {
         final StringTokenizer st = new StringTokenizer(string);
         String output = new String();
@@ -94,6 +137,12 @@ public class StringFunctions {
         return output.trim();
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWordsUsingSplitWithAdditionalStorage(String string) {
         final StringBuilder builder = new StringBuilder();
         final String[] temp = string.split(" ");
@@ -104,6 +153,12 @@ public class StringFunctions {
         return builder.toString().trim();
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final String reverseWordsInPlace(String string) {
         char[] chars = string.toCharArray();
 
@@ -189,11 +244,23 @@ public class StringFunctions {
         }
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final boolean isPalindromeWithAdditionalStorage(String string) {
         final String reversed = new StringBuilder(string).reverse().toString();
         return string.equals(reversed);
     }
 
+    /**
+     * 
+     *
+     * @param string 
+     * @return 
+     */
     public static final boolean isPalindromeInPlace(String string) {
         final char[] array = string.toCharArray();
         final int length = array.length - 1;
@@ -208,6 +275,12 @@ public class StringFunctions {
         return true;
     }
 
+    /**
+     * 
+     *
+     * @param inputString 
+     * @return 
+     */
     public static final String[] generateSubsets(String inputString) {
         final int length = inputString.length();
         final int size = (int) Math.pow(2, length);

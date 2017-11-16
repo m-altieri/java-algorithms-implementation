@@ -1,11 +1,16 @@
 package com.jwetherell.algorithms.mathematics.test;
 
-import com.jwetherell.algorithms.data_structures.Matrix;
-import com.jwetherell.algorithms.mathematics.LUDecomposition;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import com.jwetherell.algorithms.data_structures.Matrix;
+import com.jwetherell.algorithms.mathematics.LUDecomposition;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class LUDecompositionTest {
 
     private boolean epsiMatrixCompare(Matrix<Double> a, Matrix<Double> b, double epsi) {
@@ -22,6 +27,11 @@ public class LUDecompositionTest {
         return true;
     }
 
+    /**
+     * 
+     *
+     * @throws Exception 
+     */
     @Test
     public void decompositionTest1() throws Exception {
         Double[][] m = new Double[][]{{4.0, 3.0}, {6.0, 3.0}};
@@ -33,6 +43,11 @@ public class LUDecompositionTest {
         assertTrue(epsiMatrixCompare(luDecomposition.getU(), new Matrix<Double>(2, 2, resultU), 10e-4));
     }
 
+    /**
+     * 
+     *
+     * @throws Exception 
+     */
     @Test
     public void decompositionTest2() throws Exception {
         Double[][] m = new Double[][]{{5.0, 3.0, 2.0}, {1.0, 2.0, 0.0}, {3.0, 0.0, 4.0}};

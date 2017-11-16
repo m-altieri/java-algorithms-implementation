@@ -1,15 +1,23 @@
 package com.jwetherell.algorithms.data_structures.test;
 
-import com.jwetherell.algorithms.data_structures.LCPArray;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
+import com.jwetherell.algorithms.data_structures.LCPArray;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class LCPArrayTest {
 
+    /**
+     * 
+     */
     @Test
     public void smallTest(){
         String string = "asdasdd";
@@ -22,6 +30,9 @@ public class LCPArrayTest {
         assertEquals(LCPArray, result);
     }
 
+    /**
+     * 
+     */
     @Test
     public void longTest(){
         String string = "aasfaasdsadasdfasdasdasdasfdasfassdfas";
@@ -35,6 +46,9 @@ public class LCPArrayTest {
         assertEquals(LCPArray, result);
     }
 
+    /**
+     * 
+     */
     @Test
     public void singleLetterTest(){
         String string = "aaaaaaaaaaaa";

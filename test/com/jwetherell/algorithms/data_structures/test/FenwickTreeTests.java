@@ -11,8 +11,15 @@ import org.junit.Test;
 import com.jwetherell.algorithms.data_structures.FenwickTree;
 import com.jwetherell.algorithms.data_structures.FenwickTree.Data;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class FenwickTreeTests {
 
+    /**
+     * 
+     */
     @Test
     public void testRangeSumFenwickTree() {
         List<FenwickTree.Data.RangeSumData<Integer>> segments = new ArrayList<FenwickTree.Data.RangeSumData<Integer>>();
@@ -65,6 +72,9 @@ public class FenwickTreeTests {
         assertTrue("Segment tree query error. query=17 result="+query, tree, query.sum==7);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testRangeSumFenwickTree2() {
         List<FenwickTree.Data.RangeSumData<Integer>> segments = new ArrayList<FenwickTree.Data.RangeSumData<Integer>>();

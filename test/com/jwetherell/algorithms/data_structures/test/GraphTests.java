@@ -11,8 +11,15 @@ import com.jwetherell.algorithms.data_structures.Graph.Edge;
 import com.jwetherell.algorithms.data_structures.Graph.TYPE;
 import com.jwetherell.algorithms.data_structures.Graph.Vertex;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class GraphTests {
 
+    /**
+     * 
+     */
     @Test
     public void testVertex() {
         final Vertex<Integer> p1 = new Vertex<Integer>(10,1);
@@ -32,6 +39,9 @@ public class GraphTests {
         Assert.assertTrue(p5.equals(p1) && p5.hashCode()==p1.hashCode());
     }
 
+    /**
+     * 
+     */
     @Test
     public void testEdge() {
         final Vertex<Integer> p1 = new Vertex<Integer>(10,1);
@@ -58,6 +68,9 @@ public class GraphTests {
         Assert.assertTrue(e5.equals(e1) && e5.hashCode()==e1.hashCode());
     }
 
+    /**
+     * 
+     */
     @Test
     public void testGraph() {
         final List<Vertex<Integer>> vertices = new ArrayList<Vertex<Integer>>();
@@ -88,6 +101,9 @@ public class GraphTests {
         Assert.assertTrue(graph.equals(clone) && graph.hashCode()==clone.hashCode());
     }
 
+    /**
+     * 
+     */
     @Test
     public void testCostVertexPair() {
         final Graph.CostVertexPair<Integer> p1 = new Graph.CostVertexPair<Integer>(1, new Vertex<Integer>(10));
@@ -104,6 +120,9 @@ public class GraphTests {
         Assert.assertTrue(p4.equals(p1) && p4.hashCode()==p1.hashCode());
     }
 
+    /**
+     * 
+     */
     @Test
     public void testCostPathPair() {
         final List<Edge<Integer>> s1 = new ArrayList<Graph.Edge<Integer>>(3);

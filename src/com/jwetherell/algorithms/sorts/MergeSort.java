@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sorts;
 
+// TODO: Auto-generated Javadoc
 /**
  * Merge sort is an O(n log n) comparison-based sorting algorithm. Most
  * implementations produce a stable sort, which means that the implementation
@@ -20,10 +21,21 @@ package com.jwetherell.algorithms.sorts;
 @SuppressWarnings("unchecked")
 public class MergeSort<T extends Comparable<T>> {
 
+    /**
+     * 
+     */
     public static enum SPACE_TYPE { IN_PLACE, NOT_IN_PLACE }
 
     private MergeSort() { }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param type 
+     * @param unsorted 
+     * @return 
+     */
     public static <T extends Comparable<T>> T[] sort(SPACE_TYPE type, T[] unsorted) {
         sort(type, 0, unsorted.length, unsorted);
         return unsorted;

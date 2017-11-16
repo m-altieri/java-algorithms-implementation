@@ -10,6 +10,7 @@ import com.jwetherell.algorithms.data_structures.Graph;
 import com.jwetherell.algorithms.data_structures.Graph.Edge;
 import com.jwetherell.algorithms.data_structures.Graph.Vertex;
 
+// TODO: Auto-generated Javadoc
 /**
  * Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. One starts at the root (selecting some arbitrary node as the root in the case of a graph) and 
  * explores as far as possible along each branch before backtracking.
@@ -20,6 +21,14 @@ import com.jwetherell.algorithms.data_structures.Graph.Vertex;
  */
 public class DepthFirstTraversal {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param graph 
+     * @param source 
+     * @return 
+     */
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<T>> Graph.Vertex<T>[] depthFirstTraversal(Graph<T> graph, Graph.Vertex<T> source) {
         // use for look-up via index
@@ -91,6 +100,14 @@ public class DepthFirstTraversal {
         return arr;
     }
 
+    /**
+     * 
+     *
+     * @param n 
+     * @param adjacencyMatrix 
+     * @param source 
+     * @return 
+     */
     public static int[] depthFirstTraversal(int n, byte[][] adjacencyMatrix, int source) {
         final int[] visited = new int[n];
         for (int i = 0; i < visited.length; i++)

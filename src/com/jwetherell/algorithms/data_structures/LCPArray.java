@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.data_structures;
 
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, the longest common prefix array (LCP array) is an auxiliary
  * data structure to the suffix array. It stores the lengths of the longest common
@@ -21,15 +22,31 @@ public class LCPArray<C extends CharSequence> {
     private SuffixArray suffixArray;
     private ArrayList<Integer> lcp;
 
+    /**
+     * 
+     *
+     * @param sequence 
+     */
     public LCPArray(C sequence){
         this(sequence, DEFAULT_END_SEQ_CHAR);
     }
 
+    /**
+     * 
+     *
+     * @param sequence 
+     * @param endChar 
+     */
     public LCPArray(C sequence, char endChar) {
         endSeqChar = endChar;
         suffixArray = new SuffixArray(sequence, endSeqChar);
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public ArrayList<Integer> getLCPArray() {
         if (lcp == null)
             LCPAlgorithm();

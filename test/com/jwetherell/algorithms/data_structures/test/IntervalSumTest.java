@@ -11,8 +11,15 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.IntervalSum;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class IntervalSumTest {
 
+    /**
+     * 
+     */
     @Test
     public void properSumAllElementsTest() {
         final IntervalSum sub = new IntervalSum();
@@ -23,6 +30,9 @@ public class IntervalSumTest {
         assertEquals(100*101/2, sub.sum());
     }
 
+    /**
+     * 
+     */
     @Test
     public void randomGeneratedTest() {
         final Random generator = new Random(42);
@@ -53,6 +63,9 @@ public class IntervalSumTest {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void setIndexOutOfRangeTest() {
         final IntervalSum sum = new IntervalSum(100);
@@ -65,6 +78,9 @@ public class IntervalSumTest {
         assertTrue(thrown);
     }
 
+    /**
+     * 
+     */
     @Test
     public void sumIndexOutOfRangeTest() {
         final IntervalSum sum = new IntervalSum(100);
@@ -77,6 +93,9 @@ public class IntervalSumTest {
         assertTrue(thrown);
     }
 
+    /**
+     * 
+     */
     @Test
     public void endBeforeStartTest() {
         final IntervalSum sum = new IntervalSum(100);

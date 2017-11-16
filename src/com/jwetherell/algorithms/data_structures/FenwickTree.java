@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * A Fenwick tree or binary indexed tree is a data structure providing efficient methods 
  * for calculation and manipulation of the prefix sums of a table of values. Fenwick trees 
@@ -24,6 +25,11 @@ public class FenwickTree<D extends FenwickTree.Data> {
 
     private Object[] array;
 
+    /**
+     * 
+     *
+     * @param data 
+     */
     public FenwickTree(List<D> data) {
         // Find the largest index
         int n = 0;
@@ -161,6 +167,9 @@ public class FenwickTree<D extends FenwickTree.Data> {
         }
     }
 
+    /**
+     * 
+     */
     public abstract static class Data implements Comparable<Data> {
 
         protected int index = Integer.MIN_VALUE;
@@ -245,8 +254,17 @@ public class FenwickTree<D extends FenwickTree.Data> {
          */
         public static final class RangeSumData<N extends Number> extends Data {
 
+            /**
+             * 
+             */
             public N sum = null;
 
+            /**
+             * 
+             *
+             * @param index 
+             * @param number 
+             */
             public RangeSumData(int index, N number) {
                 super(index);
 

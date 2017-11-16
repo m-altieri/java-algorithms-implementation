@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.data_structures;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, a ternary search tree is a type of trie (sometimes called a prefix tree) where nodes are arranged in a manner similar to a binary search tree, but with up to three 
  * children rather than the binary tree's limit of two.
@@ -19,6 +20,9 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
 
     private int size = 0;
 
+    /**
+     * 
+     */
     public TernarySearchTree() {
         this.creator = new INodeCreator() {
             /**
@@ -182,11 +186,17 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
         return node;
     }
 
+    /* (non-Javadoc)
+     * @see com.jwetherell.algorithms.data_structures.interfaces.ITree#size()
+     */
     @Override
     public int size() {
         return size;
     }
 
+    /* (non-Javadoc)
+     * @see com.jwetherell.algorithms.data_structures.interfaces.ITree#validate()
+     */
     @Override
     public boolean validate() {
         if (this.root == null)
@@ -319,11 +329,21 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <C> 
+     */
     @SuppressWarnings("unchecked")
     public static class JavaCompatibleTree<C extends CharSequence> extends java.util.AbstractCollection<C> {
 
         private TernarySearchTree<C> tree = null;
 
+        /**
+         * 
+         *
+         * @param tree 
+         */
         public JavaCompatibleTree(TernarySearchTree<C> tree) {
             this.tree = tree;
         }

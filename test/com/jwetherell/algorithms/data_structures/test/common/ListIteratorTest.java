@@ -3,8 +3,22 @@ package com.jwetherell.algorithms.data_structures.test.common;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class ListIteratorTest {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param iter 
+     * @param type 
+     * @param data 
+     * @param size 
+     * @return 
+     */
     public static <T extends Comparable<T>> boolean testListIterator(ListIterator<T> iter, Class<T> type, 
                                                                      Integer[] data, int size) {
         // Make sure you catch going prev at the start

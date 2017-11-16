@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.sorts;
 
 import java.util.Arrays;
 
+// TODO: Auto-generated Javadoc
 /**
  * Radix sort is a non-comparative integer sorting algorithm that sorts data
  * with integer keys by grouping keys by the individual digits which share the
@@ -30,6 +31,12 @@ public class RadixSort {
 
     private RadixSort() { }
 
+    /**
+     * 
+     *
+     * @param unsorted 
+     * @return 
+     */
     public static Integer[] sort(Integer[] unsorted) {
         int[][] buckets = new int[NUMBER_OF_BUCKETS][10];
         for (int i = 0; i < NUMBER_OF_BUCKETS; i++)

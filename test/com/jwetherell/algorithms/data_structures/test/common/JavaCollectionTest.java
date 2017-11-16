@@ -2,8 +2,24 @@ package com.jwetherell.algorithms.data_structures.test.common;
 
 import java.util.Collection;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class JavaCollectionTest {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param collection 
+     * @param type 
+     * @param name 
+     * @param unsorted 
+     * @param sorted 
+     * @param _invalid 
+     * @return 
+     */
     public static  <T extends Comparable<T>> boolean testCollection(Collection<T> collection, Class<T> type, String name,
                                                                     Integer[] unsorted, Integer[] sorted, Integer _invalid) {
         // Make sure the collection is empty
@@ -179,6 +195,17 @@ public class JavaCollectionTest {
         return true;
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param collection 
+     * @param type 
+     * @param name 
+     * @param data 
+     * @param _invalid 
+     * @return 
+     */
     public static <T extends Comparable<T>> boolean addInOrderRemoveInReverseOrder(Collection<T> collection, Class<T> type, String name,
                                                                                    Integer[] data, Integer _invalid) {
         T invalid = Utils.parseT(_invalid, type);

@@ -8,8 +8,15 @@ import org.junit.Test;
 import com.jwetherell.algorithms.mathematics.GreatestCommonDivisor;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class GCDTest {
 
+    /**
+     * 
+     */
     @Test
     public void testRecursiveGCD() {
         assertEquals(3, GreatestCommonDivisor.gcdUsingRecursion(15, 138));
@@ -17,6 +24,9 @@ public class GCDTest {
         assertEquals(750, GreatestCommonDivisor.gcdUsingRecursion(-750*1000000009L, -750*123));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testEuclideanGCD() {
         long x = 1989;

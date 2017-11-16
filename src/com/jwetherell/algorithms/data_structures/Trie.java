@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
+// TODO: Auto-generated Javadoc
 /**
  * A trie, or prefix tree, is an ordered tree data structure that is used to
  * store an associative array where the keys are usually strings.
@@ -22,6 +23,9 @@ public class Trie<C extends CharSequence> implements ITree<C> {
 
     private int size = 0;
 
+    /**
+     * 
+     */
     public Trie() {
         this.creator = new INodeCreator() {
             /**
@@ -382,10 +386,20 @@ public class Trie<C extends CharSequence> implements ITree<C> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <C> 
+     */
     public static class JavaCompatibleTrie<C extends CharSequence> extends java.util.AbstractCollection<C> {
 
         private Trie<C> trie = null;
 
+        /**
+         * 
+         *
+         * @param trie 
+         */
         public JavaCompatibleTrie(Trie<C> trie) {
             this.trie = trie;
         }

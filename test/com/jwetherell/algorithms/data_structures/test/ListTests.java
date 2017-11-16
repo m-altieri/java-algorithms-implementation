@@ -12,8 +12,15 @@ import com.jwetherell.algorithms.data_structures.test.common.ListTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class ListTests {
 
+    /**
+     * 
+     */
     @Test
     public void testArrayList() {
         TestData data = Utils.generateTestData(1000);
@@ -154,6 +161,9 @@ public class ListTests {
         }
     }
 
+    /**
+     * 
+     */
     @Test
     public void testSinglyLinkedList() {
         TestData data = Utils.generateTestData(1000);
@@ -168,6 +178,9 @@ public class ListTests {
                                                       data.unsorted, data.sorted, data.invalid));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testDoublyLinkedList() {
         TestData data = Utils.generateTestData(1000);

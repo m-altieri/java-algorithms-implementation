@@ -2,8 +2,22 @@ package com.jwetherell.algorithms.data_structures.test.common;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ISet;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SetTest {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param set 
+     * @param name 
+     * @param data 
+     * @param _invalid 
+     * @return 
+     */
     public static <T extends Comparable<T>> boolean testSet(ISet<T> set, String name,
                                                             T[] data, T _invalid) {
         for (int i = 0; i < data.length; i++) {

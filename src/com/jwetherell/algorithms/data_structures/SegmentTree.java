@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+// TODO: Auto-generated Javadoc
 /**
  * Segment tree using objects and pointers. A segment tree is a tree data
  * structure for storing intervals, or segments. It allows querying which of the
@@ -62,6 +63,9 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
         return builder.toString();
     }
 
+    /**
+     * 
+     */
     public abstract static class Data implements Comparable<Data> {
 
         protected long start = Long.MIN_VALUE;
@@ -154,15 +158,45 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
          */
         public static final class QuadrantData extends Data {
 
+            /**
+             * 
+             */
             public long quad0 = 0;
+            
+            /**
+             * 
+             */
             public long quad1 = 0;
+            
+            /**
+             * 
+             */
             public long quad2 = 0;
+            
+            /**
+             * 
+             */
             public long quad3 = 0;
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             */
             public QuadrantData(long start, long end) {
                 super(start, end);
             }
 
+            /**
+             * 
+             *
+             * @param index 
+             * @param quad1 
+             * @param quad2 
+             * @param quad3 
+             * @param quad4 
+             */
             public QuadrantData(long index, long quad1, long quad2, long quad3, long quad4) {
                 super(index);
 
@@ -272,18 +306,40 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
          */
         public static final class RangeMaximumData<N extends Number> extends Data {
 
+            /**
+             * 
+             */
             public N maximum = null;
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             */
             public RangeMaximumData(long start, long end) {
                 super(start, end);
             }
 
+            /**
+             * 
+             *
+             * @param index 
+             * @param number 
+             */
             public RangeMaximumData(long index, N number) {
                 super(index);
 
                 this.maximum = number;
             }
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             * @param number 
+             */
             public RangeMaximumData(long start, long end, N number) {
                 super(start, end);
 
@@ -403,18 +459,40 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
          */
         public static final class RangeMinimumData<N extends Number> extends Data {
 
+            /**
+             * 
+             */
             public N minimum = null;
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             */
             public RangeMinimumData(long start, long end) {
                 super(start, end);
             }
 
+            /**
+             * 
+             *
+             * @param index 
+             * @param number 
+             */
             public RangeMinimumData(long index, N number) {
                 super(index);
 
                 this.minimum = number;
             }
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             * @param number 
+             */
             public RangeMinimumData(long start, long end, N number) {
                 super(start, end);
 
@@ -535,18 +613,40 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
          */
         public static final class RangeSumData<N extends Number> extends Data {
 
+            /**
+             * 
+             */
             public N sum = null;
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             */
             public RangeSumData(long start, long end) {
                 super(start, end);
             }
 
+            /**
+             * 
+             *
+             * @param index 
+             * @param number 
+             */
             public RangeSumData(long index, N number) {
                 super(index);
 
                 this.sum = number;
             }
 
+            /**
+             * 
+             *
+             * @param start 
+             * @param end 
+             * @param number 
+             */
             public RangeSumData(long start, long end, N number) {
                 super(start, end);
 
@@ -918,10 +1018,21 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
      */
     public static final class FlatSegmentTree<D extends Data> extends SegmentTree<D> {
 
+        /**
+         * 
+         *
+         * @param data 
+         */
         public FlatSegmentTree(List<D> data) {
             this(data, 1);
         }
 
+        /**
+         * 
+         *
+         * @param data 
+         * @param minLength 
+         */
         public FlatSegmentTree(List<D> data, int minLength) {
             if (data.size() <= 0)
                 throw new InvalidParameterException("Segments list is empty.");
@@ -1174,10 +1285,21 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
             }
         };
 
+        /**
+         * 
+         *
+         * @param data 
+         */
         public DynamicSegmentTree(List<D> data) {
             this(data, 1);
         }
 
+        /**
+         * 
+         *
+         * @param data 
+         * @param minLength 
+         */
         public DynamicSegmentTree(List<D> data, int minLength) {
             if (data.size() <= 0)
                 return;

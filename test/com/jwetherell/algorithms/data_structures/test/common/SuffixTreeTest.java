@@ -2,6 +2,10 @@ package com.jwetherell.algorithms.data_structures.test.common;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ISuffixTree;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SuffixTreeTest {
 
     /**

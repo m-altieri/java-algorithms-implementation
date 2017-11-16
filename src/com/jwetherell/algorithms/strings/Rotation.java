@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.strings;
 
+// TODO: Auto-generated Javadoc
 /**
  * Rotation of the string is some cyclic transformation of that string.
  * More formally a string s = uv is said to be a rotation of t if t = vu.

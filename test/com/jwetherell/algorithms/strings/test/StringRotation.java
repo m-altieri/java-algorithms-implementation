@@ -1,16 +1,24 @@
 package com.jwetherell.algorithms.strings.test;
 
-import com.jwetherell.algorithms.strings.Rotation;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import com.jwetherell.algorithms.strings.Rotation;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class StringRotation {
 
     private String reverse(String text) {
         return new StringBuilder(text).reverse().toString();
     }
 
+    /**
+     * 
+     */
     @Test
     public void minimalRotationTest() {
         assertEquals("",
@@ -45,6 +53,9 @@ public class StringRotation {
                 Rotation.getLexicographicallyMinimalRotation(reverse(str) + str + 'A' + str));
     }
 
+    /**
+     * 
+     */
     @Test
     public void maximalRotationTest() {
         assertEquals("",

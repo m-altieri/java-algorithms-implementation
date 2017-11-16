@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IHeap;
 
+// TODO: Auto-generated Javadoc
 /**
  * A binary heap is a heap data structure created using a binary tree. It can be
  * seen as a binary tree with two additional constraints: 1) The shape property:
@@ -24,10 +25,16 @@ import com.jwetherell.algorithms.data_structures.interfaces.IHeap;
 @SuppressWarnings("unchecked")
 public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
 
+    /**
+     * 
+     */
     public enum HeapType {
         Tree, Array
     }
 
+    /**
+     * 
+     */
     public enum Type {
         MIN, MAX
     }
@@ -413,6 +420,11 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
 
         private Type type = Type.MIN;
@@ -982,14 +994,27 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleBinaryHeapArray<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private BinaryHeapArray<T> heap = null;
 
+        /**
+         * 
+         */
         public JavaCompatibleBinaryHeapArray() {
             heap = new BinaryHeapArray<T>();
         }
 
+        /**
+         * 
+         *
+         * @param heap 
+         */
         public JavaCompatibleBinaryHeapArray(BinaryHeapArray<T> heap) {
             this.heap = heap;
         }
@@ -1073,14 +1098,27 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleBinaryHeapTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private BinaryHeapTree<T> heap = null;
 
+        /**
+         * 
+         */
         public JavaCompatibleBinaryHeapTree() {
             heap = new BinaryHeapTree<T>();
         }
 
+        /**
+         * 
+         *
+         * @param heap 
+         */
         public JavaCompatibleBinaryHeapTree(BinaryHeapTree<T> heap) {
             this.heap = heap;
         }

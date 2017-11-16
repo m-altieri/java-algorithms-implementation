@@ -12,6 +12,10 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.IntervalTree;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class IntervalTreeTests {
 	
 	private static boolean collectionsEqual(Collection<?> c1, Collection<?> c2) {
@@ -34,6 +38,9 @@ public class IntervalTreeTests {
     final String mozart     = "Mozart";
     final String schuetz    = "Schuetz";
 
+    /**
+     * 
+     */
     @Test
     public void testLifespanIntervalTree() {
         java.util.List<IntervalTree.IntervalData<String>> intervals = new ArrayList<IntervalTree.IntervalData<String>>();
@@ -62,6 +69,11 @@ public class IntervalTreeTests {
         testLifespanIntervalTree(intervals);
     }
 
+    /**
+     * 
+     *
+     * @param intervals 
+     */
     public void testLifespanIntervalTree(java.util.List<IntervalTree.IntervalData<String>> intervals) {   // Lifespan Interval tree
         IntervalTree<String> tree = new IntervalTree<String>(intervals);
 
@@ -86,6 +98,9 @@ public class IntervalTreeTests {
     final String PURPLE     = "PURPLE";
     final String BLACK      = "BLACK";
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalTree() {
         java.util.List<IntervalTree.IntervalData<String>> intervals = new java.util.ArrayList<IntervalTree.IntervalData<String>>();
@@ -137,6 +152,9 @@ public class IntervalTreeTests {
         assertTrue("Interval Tree query error. query=14->15 returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList(PURPLE, BLACK)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalTree2() {
         List<IntervalTree.IntervalData<String>> intervals = new ArrayList<IntervalTree.IntervalData<String>>();
@@ -164,6 +182,9 @@ public class IntervalTreeTests {
         assertTrue("Interval Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("e")));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalTree3() {
         List<IntervalTree.IntervalData<String>> intervals = new ArrayList<IntervalTree.IntervalData<String>>();
@@ -180,6 +201,9 @@ public class IntervalTreeTests {
         assertTrue("Interval Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("a")));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalTree4() {
         List<IntervalTree.IntervalData<String>> intervals = new ArrayList<IntervalTree.IntervalData<String>>();
@@ -193,6 +217,9 @@ public class IntervalTreeTests {
         assertTrue("Interval Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("c")));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalTree5() {
         List<IntervalTree.IntervalData<String>> intervals = new ArrayList<IntervalTree.IntervalData<String>>();

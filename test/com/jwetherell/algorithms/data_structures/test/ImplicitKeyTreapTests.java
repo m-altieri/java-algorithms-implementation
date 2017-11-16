@@ -4,8 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.ImplicitKeyTreap;
@@ -16,8 +14,17 @@ import com.jwetherell.algorithms.data_structures.test.common.ListTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+import junit.framework.Assert;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class ImplicitKeyTreapTests {
 
+    /**
+     * 
+     */
     @Test
     public void testCollection() {
         TestData data = Utils.generateTestData(100);
@@ -31,6 +38,9 @@ public class ImplicitKeyTreapTests {
                                                      data.unsorted, data.sorted, data.invalid));
     }
 
+    /**
+     * 
+     */
     @Test
     public void implicitKeyInsertTests() {
         final int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
@@ -43,6 +53,9 @@ public class ImplicitKeyTreapTests {
         Assert.assertTrue(inOrder.equals("1 2 3 4 5 6 7 8 "));
     }
 
+    /**
+     * 
+     */
     @Test
     public void implicitKeyRemoveTests() {
         final int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
@@ -93,6 +106,9 @@ public class ImplicitKeyTreapTests {
         Assert.assertTrue(inOrder.equals(""));
     }
 
+    /**
+     * 
+     */
     @Test
     public void implicitKeySplitMergeTests() {
         final int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
@@ -125,6 +141,9 @@ public class ImplicitKeyTreapTests {
         Assert.assertTrue(inOrder.equals("2 3 6 5 7 8 4 1 "));
     }
 
+    /**
+     * 
+     */
     @Test
     public void implicitKeyTests() {
         final int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 8};

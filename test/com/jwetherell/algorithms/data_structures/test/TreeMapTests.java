@@ -10,8 +10,15 @@ import com.jwetherell.algorithms.data_structures.test.common.MapTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class TreeMapTests {
 
+    /**
+     * 
+     */
     @Test
     public void testTreeMap() {
         TestData data = Utils.generateTestData(1000);

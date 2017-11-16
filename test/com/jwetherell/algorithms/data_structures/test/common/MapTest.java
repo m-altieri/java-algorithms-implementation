@@ -2,8 +2,25 @@ package com.jwetherell.algorithms.data_structures.test.common;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class MapTest {
 
+    /**
+     * 
+     *
+     * @param <K> 
+     * @param <V> 
+     * @param <T> 
+     * @param map 
+     * @param type 
+     * @param name 
+     * @param data 
+     * @param _invalid 
+     * @return 
+     */
     @SuppressWarnings("unchecked")
     public static <K,V, T extends Comparable<T>> boolean testMap(IMap<K,V> map, Class<T> type, String name,
                                                                  Integer[] data, Integer _invalid) {

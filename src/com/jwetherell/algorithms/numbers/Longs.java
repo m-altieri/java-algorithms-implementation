@@ -2,8 +2,18 @@ package com.jwetherell.algorithms.numbers;
 
 import java.math.BigDecimal;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Longs {
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingDivideAndModulus(long numberToConvert) {
         long longNumber = numberToConvert;
         if (longNumber<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+longNumber);
@@ -17,6 +27,12 @@ public class Longs {
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingShiftsAndModulus(long numberToConvert) {
         long longNumber = numberToConvert;
         if (longNumber<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+longNumber);
@@ -30,6 +46,12 @@ public class Longs {
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingBigDecimal(long numberToConvert) {
         long longNumber = numberToConvert;
         if (longNumber<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+longNumber);

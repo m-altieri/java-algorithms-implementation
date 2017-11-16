@@ -5,10 +5,19 @@ import java.text.DecimalFormat;
 import com.jwetherell.algorithms.mathematics.Division;
 import com.jwetherell.algorithms.mathematics.Multiplication;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class MathematicsTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         // MULTIPLICATION
         {

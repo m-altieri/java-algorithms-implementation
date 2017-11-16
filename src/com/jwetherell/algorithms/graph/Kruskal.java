@@ -1,9 +1,14 @@
 package com.jwetherell.algorithms.graph;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+
 import com.jwetherell.algorithms.data_structures.Graph;
 
-import java.util.*;
-
+// TODO: Auto-generated Javadoc
 /**
  * Kruskal's minimum spanning tree. Only works on undirected graphs. It finds a
  * subset of the edges that forms a tree that includes every vertex, where the
@@ -18,6 +23,12 @@ public class Kruskal {
 
     private Kruskal() { }
 
+    /**
+     * 
+     *
+     * @param graph 
+     * @return 
+     */
     public static Graph.CostPathPair<Integer> getMinimumSpanningTree(Graph<Integer> graph) {
         if (graph == null)
             throw (new NullPointerException("Graph must be non-NULL."));

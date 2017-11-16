@@ -8,11 +8,15 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import junit.framework.Assert;
-
 import com.jwetherell.algorithms.data_structures.KdTree;
 import com.jwetherell.algorithms.data_structures.QuadTree;
 
+import junit.framework.Assert;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SpatialDataStructuresTiming {
 
     private static final int NUMBER_OF_TESTS = 3; // There will always be NUMBER_OF_TESTS+1 runs since the first round is thrown away (JITing)
@@ -28,6 +32,11 @@ public class SpatialDataStructuresTiming {
     private static int[][] data = null;
     private static String stringifiedData = null;
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         System.out.println("Starting tests.");
         for (int i=0; i<NUMBER_OF_TESTS+1; i++)

@@ -5,6 +5,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 @RunWith(Suite.class)
 @SuiteClasses( {
                 AVLTreeTests.class,

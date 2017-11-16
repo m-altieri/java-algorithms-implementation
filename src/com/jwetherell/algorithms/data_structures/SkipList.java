@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ISet;
 
+// TODO: Auto-generated Javadoc
 /**
  * Skip List. A skip list is a data structure for storing a sorted list of items
  * using a hierarchy of linked lists that connect increasingly sparse
@@ -28,10 +29,18 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
 
     protected Node<T> head = null;
 
+    /**
+     * 
+     */
     public SkipList() {
         randomSeed = seedGenerator.nextInt() | 0x0100;
     }
 
+    /**
+     * 
+     *
+     * @param creator 
+     */
     public SkipList(INodeCreator<T> creator) {
         this();
         this.creator = creator;
@@ -308,6 +317,13 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
     }
 
     // Output a String version of the skip list. If a value and level is passed
+    /**
+     * 
+     *
+     * @param value 
+     * @param level 
+     * @return 
+     */
     // then output with that node highlighted.
     public String getString(T value, int level) {
         StringBuilder builder = new StringBuilder();
@@ -417,10 +433,20 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleSkipList<T extends Comparable<T>> extends java.util.AbstractSet<T> {
 
         private SkipList<T> list = null;
 
+        /**
+         * 
+         *
+         * @param list 
+         */
         public JavaCompatibleSkipList(SkipList<T> list) {
             this.list = list;
         }

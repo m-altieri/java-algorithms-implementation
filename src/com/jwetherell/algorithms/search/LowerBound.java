@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.search;
 
+// TODO: Auto-generated Javadoc
 /**
  * Lower bound search algorithm.<br>
  * Lower bound is kind of binary search algorithm but:<br>
@@ -18,6 +19,14 @@ public class LowerBound {
 
     private LowerBound() { }
 
+    /**
+     * 
+     *
+     * @param array 
+     * @param length 
+     * @param value 
+     * @return 
+     */
     public static int lowerBound(int[] array, int length, int value) {
         int low = 0;
         int high = length;

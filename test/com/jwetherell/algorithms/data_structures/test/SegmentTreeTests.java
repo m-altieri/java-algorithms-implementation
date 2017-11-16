@@ -15,8 +15,15 @@ import com.jwetherell.algorithms.data_structures.SegmentTree.Data;
 import com.jwetherell.algorithms.data_structures.SegmentTree.DynamicSegmentTree;
 import com.jwetherell.algorithms.data_structures.SegmentTree.FlatSegmentTree;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SegmentTreeTests {
 
+    /**
+     * 
+     */
     @Test
     public void testQuadrantSegmentTree() {
         java.util.List<SegmentTree.Data.QuadrantData> segments = new ArrayList<SegmentTree.Data.QuadrantData>();
@@ -56,6 +63,9 @@ public class SegmentTreeTests {
         assertTrue("Quad tree query error. query=0->2 result="+query, tree, (query.quad0==1 && query.quad1==1 && query.quad2==1 && query.quad3==0));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testRangeMaxSegmentTree() {
         java.util.List<SegmentTree.Data.RangeMaximumData<Integer>> segments = new ArrayList<SegmentTree.Data.RangeMaximumData<Integer>>();
@@ -115,6 +125,9 @@ public class SegmentTreeTests {
         assertTrue("Segment tree query error. query=7 result="+query, tree, query.maximum==7);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testRangeMinSegmentTree() {
         java.util.List<SegmentTree.Data.RangeMinimumData<Integer>> segments = new ArrayList<SegmentTree.Data.RangeMinimumData<Integer>>();
@@ -173,6 +186,9 @@ public class SegmentTreeTests {
         assertTrue("Segment tree query error. query=7 result="+query, tree, query.minimum==null);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testRangeSumSegmentTree() {
         java.util.List<SegmentTree.Data.RangeSumData<Integer>> segments = new ArrayList<SegmentTree.Data.RangeSumData<Integer>>();
@@ -232,6 +248,9 @@ public class SegmentTreeTests {
     final String mozart     = "Mozart";
     final String schuetz    = "Schuetz";
 
+    /**
+     * 
+     */
     @Test
     public void testLifespanSegmentTree() {
         java.util.List<SegmentTree.Data.IntervalData<String>> segments = new ArrayList<SegmentTree.Data.IntervalData<String>>();
@@ -287,6 +306,9 @@ public class SegmentTreeTests {
     final String PURPLE     = "PURPLE";
     final String BLACK      = "BLACK";
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalSegmentTree() { 
         java.util.List<SegmentTree.Data.IntervalData<String>> segments = new ArrayList<SegmentTree.Data.IntervalData<String>>();
@@ -338,6 +360,9 @@ public class SegmentTreeTests {
         assertTrue("Segment tree query error. query=14->15 result="+query, tree, collectionsEqual(query.getData(), Arrays.asList(PURPLE, BLACK)));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalSegmentTree2() {
         List<SegmentTree.Data.IntervalData<String>> intervals = new ArrayList<SegmentTree.Data.IntervalData<String>>();
@@ -365,6 +390,9 @@ public class SegmentTreeTests {
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("e")));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalSegmentTree3() {
         List<SegmentTree.Data.IntervalData<String>> intervals = new ArrayList<SegmentTree.Data.IntervalData<String>>();
@@ -381,6 +409,9 @@ public class SegmentTreeTests {
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("a")));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalSegmentTree4() {
         List<SegmentTree.Data.IntervalData<String>> intervals = new ArrayList<SegmentTree.Data.IntervalData<String>>();
@@ -394,6 +425,9 @@ public class SegmentTreeTests {
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("c")));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testIntervalSegmentTree5() {
         List<SegmentTree.Data.IntervalData<String>> intervals = new ArrayList<SegmentTree.Data.IntervalData<String>>();

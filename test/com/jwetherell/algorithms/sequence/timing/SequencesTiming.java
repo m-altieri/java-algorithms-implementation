@@ -2,13 +2,22 @@ package com.jwetherell.algorithms.sequence.timing;
 
 import java.text.DecimalFormat;
 
-import com.jwetherell.algorithms.sequence.FibonacciSequence;
 import com.jwetherell.algorithms.sequence.ArithmeticProgression;
+import com.jwetherell.algorithms.sequence.FibonacciSequence;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SequencesTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         {
             // TOTAL OF A SEQUENCE OF NUMBERS

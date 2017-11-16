@@ -1,17 +1,21 @@
 package com.jwetherell.algorithms.graph.test;
 
-import com.jwetherell.algorithms.graph.EdmondsKarp;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import com.jwetherell.algorithms.graph.EdmondsKarp;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Created by mateusz on 27.02.17.
  */
 public class EdmondsKarpTest {
 
+    /**
+     * 
+     */
     @Test
     public void Test1() {
         int A = 0, B = 1, C = 2, D = 3, E = 4, F = 5, G = 6;
@@ -30,6 +34,9 @@ public class EdmondsKarpTest {
         assertTrue(ek.getMaxFlow(A, G) == 5);
     }
 
+    /**
+     * 
+     */
     @Test
     public void Test2() {
         EdmondsKarp ek = new EdmondsKarp(2, 1);
@@ -38,6 +45,9 @@ public class EdmondsKarpTest {
         assertTrue(ek.getMaxFlow(1, 0) == 10);
     }
 
+    /**
+     * 
+     */
     @Test
     public void Test3() {
         EdmondsKarp ek = new EdmondsKarp(4, 5);
@@ -49,6 +59,9 @@ public class EdmondsKarpTest {
         assertTrue(ek.getMaxFlow(0, 3) == 2000);
     }
 
+    /**
+     * 
+     */
     @Test
     public void Test4() {
         EdmondsKarp ek = new EdmondsKarp(6, 8);

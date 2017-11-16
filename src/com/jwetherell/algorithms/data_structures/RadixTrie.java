@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.data_structures;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
+// TODO: Auto-generated Javadoc
 /**
  * A radix trie or radix tree is a space-optimized trie data structure where
  * each node with only one child is merged with its child. The result is that
@@ -24,6 +25,9 @@ public class RadixTrie<K extends CharSequence, V> implements PatriciaTrie.INodeC
 
     private PatriciaTrie<K> trie = null;
 
+    /**
+     * 
+     */
     public RadixTrie() {
         trie = new PatriciaTrie<K>(this);
     }

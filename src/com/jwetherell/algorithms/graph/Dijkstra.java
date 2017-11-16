@@ -10,6 +10,7 @@ import java.util.Queue;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
+// TODO: Auto-generated Javadoc
 /**
  * Dijkstra's shortest path. Only works on non-negative path weights. Returns a
  * tuple of total cost of shortest path and the path.
@@ -24,6 +25,13 @@ public class Dijkstra {
 
     private Dijkstra() { }
 
+    /**
+     * 
+     *
+     * @param graph 
+     * @param start 
+     * @return 
+     */
     public static Map<Graph.Vertex<Integer>, Graph.CostPathPair<Integer>> getShortestPaths(Graph<Integer> graph, Graph.Vertex<Integer> start) {
         final Map<Graph.Vertex<Integer>, List<Graph.Edge<Integer>>> paths = new HashMap<Graph.Vertex<Integer>, List<Graph.Edge<Integer>>>();
         final Map<Graph.Vertex<Integer>, Graph.CostVertexPair<Integer>> costs = new HashMap<Graph.Vertex<Integer>, Graph.CostVertexPair<Integer>>();
@@ -40,6 +48,14 @@ public class Dijkstra {
         return map;
     }
 
+    /**
+     * 
+     *
+     * @param graph 
+     * @param start 
+     * @param end 
+     * @return 
+     */
     public static Graph.CostPathPair<Integer> getShortestPath(Graph<Integer> graph, Graph.Vertex<Integer> start, Graph.Vertex<Integer> end) {
         if (graph == null)
             throw (new NullPointerException("Graph must be non-NULL."));

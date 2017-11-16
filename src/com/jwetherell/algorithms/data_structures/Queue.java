@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.data_structures;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IQueue;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, a queue is a particular kind of abstract data type or collection in which the entities in the collection are kept in order and the principal (or only) operations 
  * on the collection are the addition of entities to the rear terminal position, known as enqueue, and removal of entities from the front terminal position, known as dequeue. 
@@ -247,6 +248,9 @@ public interface Queue<T> extends IQueue<T> {
         private Node<T> tail = null;
         private int size = 0;
 
+        /**
+         * 
+         */
         public LinkedQueue() {
             head = null;
             tail = null;
@@ -466,10 +470,20 @@ public interface Queue<T> extends IQueue<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleArrayQueue<T> extends java.util.AbstractQueue<T> {
 
         private ArrayQueue<T> queue = null;
 
+        /**
+         * 
+         *
+         * @param queue 
+         */
         public JavaCompatibleArrayQueue(ArrayQueue<T> queue) {
             this.queue = queue;
         }
@@ -578,10 +592,20 @@ public interface Queue<T> extends IQueue<T> {
         }
     }
 
+    /**
+     * 
+     *
+     * @param <T> 
+     */
     public static class JavaCompatibleLinkedQueue<T> extends java.util.AbstractQueue<T> {
 
         private LinkedQueue<T> queue = null;
 
+        /**
+         * 
+         *
+         * @param queue 
+         */
         public JavaCompatibleLinkedQueue(LinkedQueue<T> queue) {
             this.queue = queue;
         }

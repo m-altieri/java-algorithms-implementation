@@ -7,8 +7,15 @@ import org.junit.Test;
 import com.jwetherell.algorithms.data_structures.SuffixTree;
 import com.jwetherell.algorithms.data_structures.test.common.SuffixTreeTest;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SuffixTreeTests {
 
+    /**
+     * 
+     */
     @Test
     public void testSuffixTree() {
         String bookkeeper = "bookkeeper";

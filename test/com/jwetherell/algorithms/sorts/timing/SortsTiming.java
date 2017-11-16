@@ -15,6 +15,10 @@ import com.jwetherell.algorithms.sorts.QuickSort;
 import com.jwetherell.algorithms.sorts.RadixSort;
 import com.jwetherell.algorithms.sorts.ShellSort;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class SortsTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.###");
@@ -30,6 +34,11 @@ public class SortsTiming {
     private static Integer[] sorted = null;
     private static Integer[] reverse = null;
 
+    /**
+     * 
+     *
+     * @param args 
+     */
     public static void main(String[] args) {
         System.out.println("Generating random array.");
         Random random = new Random();
@@ -155,12 +164,34 @@ public class SortsTiming {
         return count+1;
     }
 
+    /**
+     * 
+     */
     public static abstract class Testable {
         String input = null;
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public String getInput() {
             return input;
         }
+        
+        /**
+         * 
+         *
+         * @return 
+         */
         public abstract String getName();
+        
+        /**
+         * 
+         *
+         * @param input 
+         * @return 
+         */
         public abstract Integer[] sort(Integer[] input);
     }
 
@@ -340,10 +371,24 @@ public class SortsTiming {
         return true;
     }
 
+    /**
+     * 
+     *
+     * @param array 
+     * @return 
+     */
     public static final String print(Integer[] array) {
         return print(array, 0, array.length);
     }
 
+    /**
+     * 
+     *
+     * @param array 
+     * @param start 
+     * @param length 
+     * @return 
+     */
     public static final String print(Integer[] array, int start, int length) {
         final Integer[] clone = array.clone();
         StringBuilder builder = new StringBuilder();
@@ -354,6 +399,15 @@ public class SortsTiming {
         return builder.toString();
     }
 
+    /**
+     * 
+     *
+     * @param array 
+     * @param pivotIndex 
+     * @param start 
+     * @param length 
+     * @return 
+     */
     public static final String printWithPivot(Integer[] array, int pivotIndex, int start, int length) {
         final Integer[] clone = array.clone();
         StringBuilder builder = new StringBuilder();

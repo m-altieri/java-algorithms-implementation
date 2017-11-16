@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.data_structures.interfaces;
 
+// TODO: Auto-generated Javadoc
 /**
  * A list or sequence is an abstract data type that implements an ordered
  * collection of values, where the same value may occur more than once.

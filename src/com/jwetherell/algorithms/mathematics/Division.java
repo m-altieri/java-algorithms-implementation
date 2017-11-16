@@ -1,12 +1,30 @@
 package com.jwetherell.algorithms.mathematics;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Division {
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long division(int a, int b) {
         long result = ((long) a) / ((long) b);
         return result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long divisionUsingLoop(int a, int b) {
         int absA = Math.abs(a);
         int absB = Math.abs(b);
@@ -21,6 +39,13 @@ public class Division {
         return (a > 0 && b > 0 || a < 0 && b < 0) ? result : -result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long divisionUsingRecursion(int a, int b) {
         int absA = Math.abs(a);
         int absB = Math.abs(b);
@@ -37,6 +62,13 @@ public class Division {
         return (a > 0 && b > 0 || a < 0 && b < 0) ? result : -result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long divisionUsingMultiplication(int a, int b) {
         int absA = Math.abs(a);
         int absB = Math.abs(b);
@@ -54,6 +86,13 @@ public class Division {
         return (a > 0 && b > 0 || a < 0 && b < 0) ? result : -result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long divisionUsingShift(int a, int b) {
         int absA = Math.abs(a);
         int absB = Math.abs(b);
@@ -75,6 +114,13 @@ public class Division {
         return (a > 0 && b > 0 || a < 0 && b < 0) ? result : -result;
     }
 
+    /**
+     * 
+     *
+     * @param a 
+     * @param b 
+     * @return 
+     */
     public static final long divisionUsingLogs(int a, int b) {
         long absA = Math.abs(a);
         long absB = Math.abs(b);

@@ -7,8 +7,15 @@ import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.CompactSuffixTrie;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class CompactSuffixTrieTests {
 
+    /**
+     * 
+     */
     @Test
     public void testCompactSuffixTrie() {
         String bookkeeper = "bookkeeper";

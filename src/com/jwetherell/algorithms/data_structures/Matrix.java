@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Comparator;
 
+// TODO: Auto-generated Javadoc
 /**
  * Matrx. This Matrix implementation is designed to be more efficient
  * in cache. A matrix is a rectangular array of numbers, symbols, or expressions.
@@ -18,40 +19,19 @@ public class Matrix<T extends Number> {
     private int rows = 0;
     private int cols = 0;
     private T[] matrix = null;
-
+    
     private final Comparator<T> comparator = new Comparator<T>() {
         /**
          * {@inheritDoc}
          */
         @Override
         public int compare(T o1, T o2) {
-            /* TODO: What if Java adds new numeric type? */
-            int result = 0;
-            if (o1 instanceof BigDecimal || o2 instanceof BigDecimal) {
-                BigDecimal c1 = (BigDecimal)o1;
-                BigDecimal c2 = (BigDecimal)o2;
-                result = c1.compareTo(c2);
-            } else if (o1 instanceof BigInteger || o2 instanceof BigInteger) {
-                BigInteger c1 = (BigInteger)o1;
-                BigInteger c2 = (BigInteger)o2;
-                result = c1.compareTo(c2);
-            } else if (o1 instanceof Long || o2 instanceof Long) {
-                Long c1 = o1.longValue();
-                Long c2 = o2.longValue();
-                result = c1.compareTo(c2);
-            } else if (o1 instanceof Double || o2 instanceof Double) {
-                Double c1 = o1.doubleValue();
-                Double c2 = o2.doubleValue();
-                result = c1.compareTo(c2);
-            } else if (o1 instanceof Float || o2 instanceof Float) {
-                Float c1 = o1.floatValue();
-                Float c2 = o2.floatValue();
-                result = c1.compareTo(c2);
-            } else {
-                Integer c1 = o1.intValue();
-                Integer c2 = o2.intValue();
-                result = c1.compareTo(c2);
-            }
+
+        	int result = 0;
+
+        	Comparable<T> c1 = (Comparable<T>) o1;
+            result = c1.compareTo(o2);
+        	            
             return result;
         }
     };
@@ -91,10 +71,23 @@ public class Matrix<T extends Number> {
         return ((row * cols) + col);
     }
 
+    /**
+     * 
+     *
+     * @param row 
+     * @param col 
+     * @return 
+     */
     public T get(int row, int col) {
         return matrix[getIndex(row, col)];
     }
 
+    /**
+     * 
+     *
+     * @param row 
+     * @return 
+     */
     public T[] getRow(int row) {
         T[] result = (T[]) new Number[cols];
         for (int c = 0; c < cols; c++) {
@@ -103,6 +96,12 @@ public class Matrix<T extends Number> {
         return result;
     }
 
+    /**
+     * 
+     *
+     * @param col 
+     * @return 
+     */
     public T[] getColumn(int col) {
         T[] result = (T[]) new Number[rows];
         for (int r = 0; r < rows; r++) {
@@ -111,13 +110,27 @@ public class Matrix<T extends Number> {
         return result;
     }
 
+    /**
+     * 
+     *
+     * @param row 
+     * @param col 
+     * @param value 
+     */
     public void set(int row, int col, T value) {
         matrix[getIndex(row, col)] = value;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     * @throws Exception 
+     */
     public Matrix<T> identity() throws Exception{
-        if(this.rows != this.cols)
+        if (this.rows != this.cols) {
             throw new Exception("Matrix should be a square");
+        }
 
         final T element = this.get(0, 0);
         final T zero;
@@ -135,8 +148,8 @@ public class Matrix<T extends Number> {
             zero = (T)new Double(0);
             one = (T)new Double(1);
         } else if(element instanceof Float){
-            zero = (T)new Float(0);
-            one = (T)new Float(1);
+            zero = (T) new Float(0);
+            one = (T) new Float(1);
         } else {
             zero = (T)new Integer(0);
             one = (T)new Integer(1);
@@ -156,6 +169,12 @@ public class Matrix<T extends Number> {
         return identityMatrix;
     }
 
+    /**
+     * 
+     *
+     * @param input 
+     * @return 
+     */
     public Matrix<T> add(Matrix<T> input) {
         Matrix<T> output = new Matrix<T>(this.rows, this.cols);
         if ((this.cols != input.cols) || (this.rows != input.rows))
@@ -194,6 +213,12 @@ public class Matrix<T extends Number> {
         return output;
     }
 
+    /**
+     * 
+     *
+     * @param input 
+     * @return 
+     */
     public Matrix<T> subtract(Matrix<T> input) {
         Matrix<T> output = new Matrix<T>(this.rows, this.cols);
         if ((this.cols != input.cols) || (this.rows != input.rows))
@@ -233,6 +258,12 @@ public class Matrix<T extends Number> {
         return output;
     }
 
+    /**
+     * 
+     *
+     * @param input 
+     * @return 
+     */
     public Matrix<T> multiply(Matrix<T> input) {
         Matrix<T> output = new Matrix<T>(this.rows, input.cols);
         if (this.cols != input.rows)
@@ -311,6 +342,11 @@ public class Matrix<T extends Number> {
         return output;
     }
 
+    /**
+     * 
+     *
+     * @param m 
+     */
     public void copy(Matrix<T> m) {
         for (int r = 0; r < m.rows; r++) {
             for (int c = 0; c < m.cols; c++) {
@@ -372,11 +408,23 @@ public class Matrix<T extends Number> {
         return builder.toString();
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public int getRows() {
         return rows;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public int getCols() {
         return cols;
     }
+
+
 }

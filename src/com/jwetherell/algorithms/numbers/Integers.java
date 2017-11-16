@@ -4,11 +4,21 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Integers {
 
     private static final BigDecimal ZERO = new BigDecimal(0);
     private static final BigDecimal TWO = new BigDecimal(2);
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingDivideAndModulus(int numberToConvert) {
         int integer = numberToConvert;
         if (integer<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+integer);
@@ -22,6 +32,12 @@ public class Integers {
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingShiftsAndModulus(int numberToConvert) {
         int integer = numberToConvert;
         if (integer<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+integer);
@@ -35,6 +51,12 @@ public class Integers {
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingBigDecimal(int numberToConvert) {
         int integer = numberToConvert;
         if (integer<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+integer);
@@ -49,6 +71,12 @@ public class Integers {
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param numberToConvert 
+     * @return 
+     */
     public static final String toBinaryUsingDivideAndDouble(int numberToConvert) {
         int integer = numberToConvert;
         if (integer<0) throw new IllegalArgumentException("Method argument cannot be negative. number="+integer);
@@ -62,6 +90,12 @@ public class Integers {
         return builder.reverse().toString();
     }
 
+    /**
+     * 
+     *
+     * @param numberToCheck 
+     * @return 
+     */
     public static final boolean powerOfTwoUsingLoop(int numberToCheck) {
         int number = numberToCheck;
         if (number == 0)
@@ -74,6 +108,12 @@ public class Integers {
         return true;
     }
 
+    /**
+     * 
+     *
+     * @param numberToCheck 
+     * @return 
+     */
     public static final boolean powerOfTwoUsingRecursion(int numberToCheck) {
         int number = numberToCheck;
         if (number == 1)
@@ -83,6 +123,12 @@ public class Integers {
         return powerOfTwoUsingRecursion(number / 2);
     }
 
+    /**
+     * 
+     *
+     * @param numberToCheck 
+     * @return 
+     */
     public static final boolean powerOfTwoUsingLog(int numberToCheck) {
         int number = numberToCheck;
         double doubleLog = Math.log10(number) / Math.log10(2);
@@ -92,6 +138,12 @@ public class Integers {
         return false;
     }
 
+    /**
+     * 
+     *
+     * @param numberToCheck 
+     * @return 
+     */
     public static final boolean powerOfTwoUsingBits(int numberToCheck) {
         int number = numberToCheck;
         if (number != 0 && ((number & (number - 1)) == 0))
@@ -171,6 +223,12 @@ public class Integers {
         return builder.toString();
     }
 
+    /**
+     * 
+     *
+     * @param number 
+     * @return 
+     */
     public static final String toEnglish(int number) {
         int x = number;
         if (x>Integer.MAX_VALUE || x<=Integer.MIN_VALUE) throw new IllegalArgumentException("Number has to be <= Integer.MAX_VALUE and > Integer.MIN_VALUE. number="+x);

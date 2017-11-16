@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.sequence;
 
+// TODO: Auto-generated Javadoc
 /**
  * Compute the result of adding a sequence of numbers from N (startNumber) to N+X (startNumber+numberOfNumbersToCompute)
  * <p>

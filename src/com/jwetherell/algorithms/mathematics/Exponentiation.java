@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.mathematics;
 
+// TODO: Auto-generated Javadoc
 /**
  * Recursive function of exponentiation is just an implementation of definition.
  * <p>
@@ -22,6 +23,13 @@ package com.jwetherell.algorithms.mathematics;
  */
 public class Exponentiation {
 
+    /**
+     * 
+     *
+     * @param base 
+     * @param exponent 
+     * @return 
+     */
     public static int recursiveExponentiation(int base, int exponent) {
         if (exponent == 0)
             return 1;
@@ -31,6 +39,13 @@ public class Exponentiation {
         return recursiveExponentiation(base, exponent - 1) * base;
     }
 
+    /**
+     * 
+     *
+     * @param base 
+     * @param exponent 
+     * @return 
+     */
     public static int fastRecursiveExponentiation(int base, int exponent) {
         if (exponent == 0)
             return 1;
@@ -45,6 +60,14 @@ public class Exponentiation {
 
     }
 
+    /**
+     * 
+     *
+     * @param base 
+     * @param exponent 
+     * @param mod 
+     * @return 
+     */
     public static int fastRecursiveExponentiationModulo(int base, int exponent, int mod) {
         if (exponent == 0)
             return 1;

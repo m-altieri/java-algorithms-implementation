@@ -11,6 +11,7 @@ import com.jwetherell.algorithms.data_structures.Graph;
 import com.jwetherell.algorithms.data_structures.Graph.Edge;
 import com.jwetherell.algorithms.data_structures.Graph.Vertex;
 
+// TODO: Auto-generated Javadoc
 /**
  * Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 
  * 'search key') and explores the neighbor nodes first, before moving to the next level neighbors.
@@ -21,6 +22,14 @@ import com.jwetherell.algorithms.data_structures.Graph.Vertex;
  */
 public class BreadthFirstTraversal {
 
+    /**
+     * 
+     *
+     * @param <T> 
+     * @param graph 
+     * @param source 
+     * @return 
+     */
     @SuppressWarnings("unchecked")
     public static final <T extends Comparable<T>> Graph.Vertex<T>[] breadthFirstTraversal(Graph<T> graph, Graph.Vertex<T> source) {
         // use for look-up via index
@@ -87,6 +96,14 @@ public class BreadthFirstTraversal {
         return arr;
     }
 
+    /**
+     * 
+     *
+     * @param n 
+     * @param adjacencyMatrix 
+     * @param source 
+     * @return 
+     */
     public static int[] breadthFirstTraversal(int n, byte[][] adjacencyMatrix, int source) {
         final int[] visited = new int[n];
         for (int i = 0; i < visited.length; i++)

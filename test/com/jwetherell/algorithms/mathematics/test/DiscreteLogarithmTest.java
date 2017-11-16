@@ -1,13 +1,20 @@
 package com.jwetherell.algorithms.mathematics.test;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import com.jwetherell.algorithms.mathematics.DiscreteLogarithm;
 
-import static org.junit.Assert.assertTrue;
-
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class DiscreteLogarithmTest {
 
+    /**
+     * 
+     */
     @Test
     public void shouldCountDiscreteLogarithm() {
         final long a = 3;
@@ -19,6 +26,9 @@ public class DiscreteLogarithmTest {
         assertTrue(x == expectedX);
     }
 
+    /**
+     * 
+     */
     @Test
     public void shouldCountDiscreteLogarithm2() {
         final long a = 2;
@@ -30,6 +40,9 @@ public class DiscreteLogarithmTest {
         assertTrue(x == expectedX);
     }
 
+    /**
+     * 
+     */
     @Test
     public void shouldNotCountDiscreteLogarithm() {
         final long a = 4;

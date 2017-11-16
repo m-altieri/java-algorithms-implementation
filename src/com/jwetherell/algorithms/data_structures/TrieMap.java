@@ -3,6 +3,7 @@ package com.jwetherell.algorithms.data_structures;
 import com.jwetherell.algorithms.data_structures.Trie.Node;
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
+// TODO: Auto-generated Javadoc
 /**
  * A trie used to store key->values pairs, this is an implementation of an
  * associative array.
@@ -19,6 +20,9 @@ public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IM
 
     private Trie<K> trie = null;
 
+    /**
+     * 
+     */
     public TrieMap() {
         trie = new Trie<K>(this);
     }

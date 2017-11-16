@@ -11,8 +11,17 @@ import com.jwetherell.algorithms.data_structures.LowestCommonAncestor;
 import com.jwetherell.algorithms.data_structures.LowestCommonAncestor.NodesNotInSameTreeException;
 import com.jwetherell.algorithms.data_structures.LowestCommonAncestor.TreeNode;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class LowestCommonAncestorTest {
 
+    /**
+     * 
+     *
+     * @throws NodesNotInSameTreeException 
+     */
     @Test
     public void largeTreeTest() throws NodesNotInSameTreeException {
 

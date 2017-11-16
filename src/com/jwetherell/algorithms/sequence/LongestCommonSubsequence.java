@@ -3,6 +3,7 @@ package com.jwetherell.algorithms.sequence;
 import java.util.HashSet;
 import java.util.Set;
 
+// TODO: Auto-generated Javadoc
 /**
  * The longest common subsequence (LCS) problem is the problem of finding the longest subsequence common to all sequences in a set of sequences (often just two sequences). It differs from problems 
  * of finding common substrings: unlike substrings, subsequences are not required to occupy consecutive positions within the original sequences. 
@@ -19,6 +20,13 @@ public class LongestCommonSubsequence {
 
     private LongestCommonSubsequence() { }
 
+    /**
+     * 
+     *
+     * @param seq1 
+     * @param seq2 
+     * @return 
+     */
     public static MatrixPair getLCS(char[] seq1, char[] seq2) {
         try {
             populateMatrix(seq1, seq2);
@@ -98,16 +106,30 @@ public class LongestCommonSubsequence {
         }
     }
 
+    /**
+     * 
+     */
     public static class MatrixPair {
 
         private int[][] lenMatrix = null;
         private Set<String>[][] seqMatrix = null;
 
+        /**
+         * 
+         *
+         * @param lengthMatrix 
+         * @param sequenceMatrix 
+         */
         public MatrixPair(int[][] lengthMatrix, Set<String>[][] sequenceMatrix) {
             this.lenMatrix = lengthMatrix;
             this.seqMatrix = sequenceMatrix;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int getLongestSequenceLength() {
             if (lenMatrix == null)
                 return 0;
@@ -117,6 +139,11 @@ public class LongestCommonSubsequence {
             return lenMatrix[length1 - 1][length2 - 1];
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Set<String> getLongestSequences() {
             if (seqMatrix == null)
                 return (new HashSet<String>());
@@ -126,14 +153,29 @@ public class LongestCommonSubsequence {
             return seqMatrix[length1 - 1][length2 - 1];
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public int[][] getLengthMatrix() {
             return lenMatrix;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public Set<String>[][] getSequenceMatrix() {
             return seqMatrix;
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public String getLengthMatrixString() {
             StringBuilder builder = new StringBuilder();
             if (lenMatrix == null) {
@@ -153,6 +195,11 @@ public class LongestCommonSubsequence {
             return builder.toString();
         }
 
+        /**
+         * 
+         *
+         * @return 
+         */
         public String getSequenceMatrixString() {
             StringBuilder builder = new StringBuilder();
             if (seqMatrix == null) {

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.TernarySearchTree;
@@ -16,8 +14,17 @@ import com.jwetherell.algorithms.data_structures.test.common.TreeTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+import junit.framework.Assert;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class TernarySearchTreeTests {
 
+    /**
+     * 
+     */
     @Test
     public void test1() {
         final List<String> tests = new ArrayList<String>();
@@ -61,6 +68,9 @@ public class TernarySearchTreeTests {
         Assert.assertTrue(bst.remove("")==null);
     }
 
+    /**
+     * 
+     */
     @Test
     public void testTernary() {
         TestData data = Utils.generateTestData(1000);

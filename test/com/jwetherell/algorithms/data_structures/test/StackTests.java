@@ -12,8 +12,15 @@ import com.jwetherell.algorithms.data_structures.test.common.StackTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class StackTests {
 
+    /**
+     * 
+     */
     @Test
     public void testArrayStack() {
         TestData data = Utils.generateTestData(1000);
@@ -28,6 +35,9 @@ public class StackTests {
                                                      data.unsorted, data.sorted, data.invalid));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLinkedStack() {
         TestData data = Utils.generateTestData(1000);

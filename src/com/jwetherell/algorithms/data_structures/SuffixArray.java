@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, a suffix array is a sorted array of all suffixes of a string.
  * It is a data structure used, among others, in full text indices, data compression
@@ -27,15 +28,31 @@ public class SuffixArray {
     private ArrayList<Integer> suffixArray;
     private ArrayList<Integer> KMRarray;
 
+    /**
+     * 
+     *
+     * @param sequence 
+     */
     public SuffixArray(CharSequence sequence) {
         this(sequence, DEFAULT_END_SEQ_CHAR);
     }
 
+    /**
+     * 
+     *
+     * @param sequence 
+     * @param endChar 
+     */
     public SuffixArray(CharSequence sequence, char endChar) {
         endSeqChar = endChar;
         string = buildStringWithEndChar(sequence);
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public ArrayList<Integer> getSuffixArray() {
         if (suffixArray == null)
             KMRalgorithm();
@@ -51,6 +68,11 @@ public class SuffixArray {
         return KMRarray;
     }
 
+    /**
+     * 
+     *
+     * @return 
+     */
     public String getString(){
         return string;
     }

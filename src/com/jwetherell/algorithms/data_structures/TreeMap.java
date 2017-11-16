@@ -7,6 +7,7 @@ import com.jwetherell.algorithms.data_structures.BinarySearchTree.INodeCreator;
 import com.jwetherell.algorithms.data_structures.BinarySearchTree.Node;
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
+// TODO: Auto-generated Javadoc
 /**
  * An tree used to store key->values pairs, this is an implementation of an
  * associative array.
@@ -33,6 +34,9 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
 
     private AVLTree<K> tree = null;
 
+    /**
+     * 
+     */
     public TreeMap() {
 
         tree = new AVLTree<K>(creator);

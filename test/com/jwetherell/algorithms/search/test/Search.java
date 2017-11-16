@@ -2,12 +2,22 @@ package com.jwetherell.algorithms.search.test;
 
 import static org.junit.Assert.assertTrue;
 
-import com.jwetherell.algorithms.search.*;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.junit.Test;
+
+import com.jwetherell.algorithms.search.BinarySearch;
+import com.jwetherell.algorithms.search.InterpolationSearch;
+import com.jwetherell.algorithms.search.LinearSearch;
+import com.jwetherell.algorithms.search.LowerBound;
+import com.jwetherell.algorithms.search.QuickSelect;
+import com.jwetherell.algorithms.search.UpperBound;
+
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class Search {
 
     private static final int SIZE = 9999;
@@ -25,6 +35,9 @@ public class Search {
     private static int valueInArray = sorted[valueIndex];
     private static int valueNotInArray = sorted[SIZE - 1] + offset;
 
+    /**
+     * 
+     */
     @Test
     public void testBruteForceSearch() {
         int index = LinearSearch.find(valueInArray, sorted);
@@ -33,6 +46,9 @@ public class Search {
         assertTrue("Brute force error. expected=" + Integer.MAX_VALUE + " got=" + index, (index == Integer.MAX_VALUE));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testBinarySearch() {
         int index = BinarySearch.find(valueInArray, sorted, false);
@@ -41,6 +57,9 @@ public class Search {
         assertTrue("Brute force error. expected=" + Integer.MAX_VALUE + " got=" + index, (index == Integer.MAX_VALUE));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testOptimizedBinarySearch() {
         int index = BinarySearch.find(valueInArray, sorted, true);
@@ -49,6 +68,9 @@ public class Search {
         assertTrue("Brute force error. expected=" + Integer.MAX_VALUE + " got=" + index, (index == Integer.MAX_VALUE));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testInterpolationSearch() {
         int index = InterpolationSearch.find(valueInArray, sorted);
@@ -57,6 +79,9 @@ public class Search {
         assertTrue("Brute force error. expected=" + Integer.MAX_VALUE + " got=" + index, (index == Integer.MAX_VALUE));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testQuickSelect() {
         int index = QuickSelect.find(valueInArray, sorted);
@@ -65,6 +90,9 @@ public class Search {
         assertTrue("Brute force error. expected=" + Integer.MAX_VALUE + " got=" + index, (index == Integer.MAX_VALUE));
     }
 
+    /**
+     * 
+     */
     @Test
     public void testLowerBound() {
         ArrayList<int[]> sequences = new ArrayList<int[]>();
@@ -101,6 +129,9 @@ public class Search {
 
     }
 
+    /**
+     * 
+     */
     @Test
     public void testUpperBound() {
         ArrayList<int[]> sequences = new ArrayList<int[]>();

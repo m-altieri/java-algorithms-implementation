@@ -1,8 +1,9 @@
 package com.jwetherell.algorithms.data_structures;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * Implementation of array holding integer values which allows to count sum of elements in given
  * interval in O(log n) complexity.

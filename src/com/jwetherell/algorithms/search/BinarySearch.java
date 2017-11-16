@@ -1,5 +1,6 @@
 package com.jwetherell.algorithms.search;
 
+// TODO: Auto-generated Javadoc
 /**
  * In computer science, binary search, also known as half-interval search or logarithmic search, is a search algorithm that finds the position of a target value within a sorted array. Binary search 
  * compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is 
@@ -20,6 +21,14 @@ public class BinarySearch {
 
     private static int[] sorted = null;
 
+    /**
+     * 
+     *
+     * @param value 
+     * @param array 
+     * @param optimize 
+     * @return 
+     */
     // Assuming the array is sorted
     public static final int find(int value, int[] array, boolean optimize) {
         BinarySearch.sorted = array;

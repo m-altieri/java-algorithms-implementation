@@ -12,8 +12,15 @@ import com.jwetherell.algorithms.data_structures.test.common.TreeTest;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * 
+ */
 public class PatriciaTreeTests {
 
+    /**
+     * 
+     */
     @Test
     public void testPatriciaTrie() {
         TestData data = Utils.generateTestData(1000);
