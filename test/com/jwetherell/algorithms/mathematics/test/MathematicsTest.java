@@ -33,110 +33,9 @@ public class MathematicsTest {
         // so add 1 to make it inclusive
         return RANDOM.nextInt((max - min) + 1) + min;
     }
-
-    /**
-     * 
-     */
-    @Test
-    public void multiplication() {
-        int a = Math.abs(nextRandomInt(MIN, MAX));
-        int b = Math.abs(nextRandomInt(MIN, MAX));
-        // positive * positive
-        {
-            long result = Multiplication.multiplyUsingLoop(a, b);
-            long check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using a loop. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingRecursion(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using recursion. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingShift(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using shifts. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingLogs(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using logs. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Integer.parseInt(Multiplication.multiplyUsingFFT(Integer.toString(a), Integer.toString(b)));
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using FFT. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Integer.parseInt(Multiplication.multiplyUsingLoopWithStringInput(Integer.toString(a), Integer.toString(b)));
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using loop with string input. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingLoopWithIntegerInput(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using loop with int input. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-        }
-        // negative * positive
-        a *= -1;
-        {
-            long result = Multiplication.multiplyUsingLoop(a, b);
-            long check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using a loop. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingRecursion(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using recursion. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingShift(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using shifts. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingLogs(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using logs. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Integer.parseInt(Multiplication.multiplyUsingFFT(Integer.toString(a), Integer.toString(b)));
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using FFT. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Integer.parseInt(Multiplication.multiplyUsingLoopWithStringInput(Integer.toString(a), Integer.toString(b)));
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using loop with string input. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingLoopWithIntegerInput(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using loop with int input. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-        }
-        // positive * negative
-        a *= -1;
-        b *= -1;
-        {
-            long result = Multiplication.multiplyUsingLoop(a, b);
-            long check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using a loop. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingRecursion(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using recursion. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingShift(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using shifts. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingLogs(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using logs. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Integer.parseInt(Multiplication.multiplyUsingFFT(Integer.toString(a), Integer.toString(b)));
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using FFT. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Integer.parseInt(Multiplication.multiplyUsingLoopWithStringInput(Integer.toString(a), Integer.toString(b)));
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using loop with string input. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-
-            result = Multiplication.multiplyUsingLoopWithIntegerInput(a, b);
-            check = Multiplication.multiplication(a, b);
-            assertTrue("Multiplication using loop with int input. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
-        }
-        // negative * negative
-        a *= -1;
-        {
+    
+    private void multiplication(int a, int b) {
+    	{
             long result = Multiplication.multiplyUsingLoop(a, b);
             long check = Multiplication.multiplication(a, b);
             assertTrue("Multiplication using a loop. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
@@ -167,14 +66,8 @@ public class MathematicsTest {
         }
     }
 
-    /**
-     * 
-     */
-    @Test
-    public void division() {
-        int a = nextRandomInt(MIN, MAX);
-        int b = nextRandomInt(a, MAX);
-        long result = Division.divisionUsingLoop(a, b);
+    private void division(int a, int b) {
+    	long result = Division.divisionUsingLoop(a, b);
         long check = Division.division(a, b);
         assertTrue("Division using a loop. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
 
@@ -193,6 +86,38 @@ public class MathematicsTest {
         result = Division.divisionUsingMultiplication(a, b);
         check = Division.division(a, b);
         assertTrue("Division using multiplication. a=" + a + " b=" + b + " result=" + result + " check=" + check, (result == check));
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void multiplication() {
+        int positive = Math.abs(nextRandomInt(MIN, MAX));
+        int negative = Math.abs(nextRandomInt(MIN, MAX));
+        
+        // Positive * Positive
+        multiplication(positive, positive);
+        
+        // Negative * Positive
+        multiplication(negative, positive);
+        
+        // Positive * Negative
+        multiplication(positive, negative);
+        
+        // Negative * Negative
+        multiplication(negative, negative);
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void division() {
+        int a = nextRandomInt(MIN, MAX);
+        int b = nextRandomInt(a, MAX);
+        
+        division(a, b);
     }
 
     /**

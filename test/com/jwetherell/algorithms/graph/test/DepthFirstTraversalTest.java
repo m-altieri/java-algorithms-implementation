@@ -14,7 +14,7 @@ import junit.framework.Assert;
 /**
  * 
  */
-public class DepthFirstTraversalTest {
+public class DepthFirstTraversalTest extends TraversalTest {
 
     private static final byte[][]                       adjacencyMatrix = new byte[4][4];
     static {

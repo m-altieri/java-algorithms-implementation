@@ -13,16 +13,20 @@ import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 
 import com.jwetherell.algorithms.data_structures.AVLTree;
+import com.jwetherell.algorithms.data_structures.ArrayList;
 import com.jwetherell.algorithms.data_structures.BTree;
 import com.jwetherell.algorithms.data_structures.BinaryHeap;
+import com.jwetherell.algorithms.data_structures.BinaryHeapArray;
+import com.jwetherell.algorithms.data_structures.BinaryHeapTree;
 import com.jwetherell.algorithms.data_structures.BinarySearchTree;
+import com.jwetherell.algorithms.data_structures.DoublyLinkedList;
 import com.jwetherell.algorithms.data_structures.HashArrayMappedTrie;
 import com.jwetherell.algorithms.data_structures.HashMap;
-import com.jwetherell.algorithms.data_structures.List;
 import com.jwetherell.algorithms.data_structures.PatriciaTrie;
 import com.jwetherell.algorithms.data_structures.Queue;
 import com.jwetherell.algorithms.data_structures.RadixTrie;
 import com.jwetherell.algorithms.data_structures.RedBlackTree;
+import com.jwetherell.algorithms.data_structures.SinglyLinkedList;
 import com.jwetherell.algorithms.data_structures.SkipList;
 import com.jwetherell.algorithms.data_structures.SkipListMap;
 import com.jwetherell.algorithms.data_structures.SplayTree;
@@ -383,7 +387,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            BinaryHeap.BinaryHeapArray<Integer> aHeapMin = new BinaryHeap.BinaryHeapArray<Integer>(BinaryHeap.Type.MIN);
+            BinaryHeapArray<Integer> aHeapMin = new BinaryHeapArray<Integer>(BinaryHeap.Type.MIN);
             Collection<Integer> aCollectionMin = aHeapMin.toCollection();
             if (!testJavaCollection(aCollectionMin,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
@@ -400,7 +404,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            BinaryHeap.BinaryHeapTree<Integer> tHeapMin = new BinaryHeap.BinaryHeapTree<Integer>(BinaryHeap.Type.MIN);
+            BinaryHeapTree<Integer> tHeapMin = new BinaryHeapTree<Integer>(BinaryHeap.Type.MIN);
             Collection<Integer> tCollectionMin = tHeapMin.toCollection();
             if (!testJavaCollection(tCollectionMin,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
@@ -417,7 +421,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            BinaryHeap.BinaryHeapArray<Integer> aHeapMax = new BinaryHeap.BinaryHeapArray<Integer>(BinaryHeap.Type.MAX);
+            BinaryHeapArray<Integer> aHeapMax = new BinaryHeapArray<Integer>(BinaryHeap.Type.MAX);
             Collection<Integer> aCollectionMax = aHeapMax.toCollection();
             if (!testJavaCollection(aCollectionMax,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
@@ -434,7 +438,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            BinaryHeap.BinaryHeapTree<Integer> tHeapMax = new BinaryHeap.BinaryHeapTree<Integer>(BinaryHeap.Type.MAX);
+            BinaryHeapTree<Integer> tHeapMax = new BinaryHeapTree<Integer>(BinaryHeap.Type.MAX);
             Collection<Integer> tCollectionMax = tHeapMax.toCollection();
             if (!testJavaCollection(tCollectionMax,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
@@ -698,7 +702,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            List.ArrayList<Integer> arrayList = new List.ArrayList<Integer>();
+            ArrayList<Integer> arrayList = new ArrayList<Integer>();
             Collection<Integer> aCollection = arrayList.toCollection();
             if (!testJavaCollection(aCollection,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
@@ -715,7 +719,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            List.SinglyLinkedList<Integer> linkedList = new List.SinglyLinkedList<Integer>();
+            SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<Integer>();
             Collection<Integer> lCollection = linkedList.toCollection();
             if (!testJavaCollection(lCollection,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
@@ -732,7 +736,7 @@ public class DataStructuresTiming {
 
         public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
             this.input = input;
-            List.DoublyLinkedList<Integer> linkedList = new List.DoublyLinkedList<Integer>();
+            DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<Integer>();
             Collection<Integer> lCollection = linkedList.toCollection();
             if (!testJavaCollection(lCollection,Integer.class,name, unsorted, sorted, input)) return false;
             return true;

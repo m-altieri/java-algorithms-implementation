@@ -18,7 +18,7 @@ import java.util.List;
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
-public abstract class QuadTree<G extends QuadTree.XYPoint> {
+public abstract class QuadTree<G extends XYPoint> {
 
     /**
      * Get the root node.
@@ -63,7 +63,7 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
      * 
      * This implementation is a PR QuadTree which uses "Buckets" to prevent stalky trees.
      */
-    public static class PointRegionQuadTree<P extends QuadTree.XYPoint> extends QuadTree<P> {
+    public static class PointRegionQuadTree<P extends XYPoint> extends QuadTree<P> {
 
         private static final XYPoint XY_POINT = new XYPoint();
         private static final AxisAlignedBoundingBox RANGE = new AxisAlignedBoundingBox();
@@ -161,7 +161,7 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
             return pointsInRange;
         }
 
-        protected static class PointRegionQuadNode<XY extends QuadTree.XYPoint> extends QuadNode<XY> {
+        protected static class PointRegionQuadNode<XY extends XYPoint> extends QuadNode<XY> {
 
             // max number of children before sub-dividing
             protected static int maxCapacity = 0;
@@ -627,7 +627,7 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         }
     }
 
-    protected static abstract class QuadNode<G extends QuadTree.XYPoint> implements Comparable<QuadNode<G>> {
+    protected static abstract class QuadNode<G extends XYPoint> implements Comparable<QuadNode<G>> {
 
         protected final AxisAlignedBoundingBox aabb;
 
@@ -725,113 +725,6 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append(aabb.toString());
-            return builder.toString();
-        }
-    }
-
-    /**
-     * 
-     */
-    public static class XYPoint implements Comparable<Object> {
-
-        protected double x = Float.MIN_VALUE;
-        protected double y = Float.MIN_VALUE;
-
-        /**
-         * 
-         */
-        public XYPoint() { }
-
-        /**
-         * 
-         *
-         * @param x 
-         * @param y 
-         */
-        public XYPoint(double x, double y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        /**
-         * 
-         *
-         * @param x 
-         * @param y 
-         */
-        public void set(double x, double y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        /**
-         * 
-         *
-         * @return 
-         */
-        public double getX() {
-            return x;
-        }
-        
-        /**
-         * 
-         *
-         * @return 
-         */
-        public double getY() {
-            return y;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public int hashCode() {
-            int hash = 1;
-            hash = hash * 13 + (int)x;
-            hash = hash * 19 + (int)y;
-            return hash; 
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public boolean equals(Object obj) {
-            if (obj == null)
-                return false;
-            if (!(obj instanceof XYPoint))
-                return false;
-
-            XYPoint xyzPoint = (XYPoint) obj;
-            return compareTo(xyzPoint) == 0;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public int compareTo(Object o) {
-            if ((o instanceof XYPoint)==false)
-                throw new RuntimeException("Cannot compare object.");
-
-            XYPoint p = (XYPoint) o;
-            int xComp = X_COMPARATOR.compare(this, p);
-            if (xComp != 0) 
-                return xComp;
-            return Y_COMPARATOR.compare(this, p);
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public String toString() {
-            StringBuilder builder = new StringBuilder();
-            builder.append("(");
-            builder.append(x).append(", ");
-            builder.append(y);
-            builder.append(")");
             return builder.toString();
         }
     }
@@ -1017,7 +910,7 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         }
     }
 
-    private static final Comparator<XYPoint> X_COMPARATOR = new Comparator<XYPoint>() {
+    protected static final Comparator<XYPoint> X_COMPARATOR = new Comparator<XYPoint>() {
 
         /**
          * {@inheritDoc}
@@ -1032,7 +925,7 @@ public abstract class QuadTree<G extends QuadTree.XYPoint> {
         }
     };
 
-    private static final Comparator<XYPoint> Y_COMPARATOR = new Comparator<XYPoint>() {
+    protected static final Comparator<XYPoint> Y_COMPARATOR = new Comparator<XYPoint>() {
 
         /**
          * {@inheritDoc}

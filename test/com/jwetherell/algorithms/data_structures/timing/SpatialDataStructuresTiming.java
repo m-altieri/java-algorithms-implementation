@@ -10,6 +10,7 @@ import java.util.Random;
 
 import com.jwetherell.algorithms.data_structures.KdTree;
 import com.jwetherell.algorithms.data_structures.QuadTree;
+import com.jwetherell.algorithms.data_structures.XYPoint;
 
 import junit.framework.Assert;
 
@@ -69,7 +70,7 @@ public class SpatialDataStructuresTiming {
         DataStructuresTiming.putOutTheGarbage();
         System.out.println();
 
-        QuadTree<QuadTree.XYPoint> prTree = new QuadTree.PointRegionQuadTree<QuadTree.XYPoint>(0,0,RANDOM_SIZE,RANDOM_SIZE);
+        QuadTree<XYPoint> prTree = new QuadTree.PointRegionQuadTree<XYPoint>(0,0,RANDOM_SIZE,RANDOM_SIZE);
         testQuadTree("PointRegionQuadTree", round, test++, 100, data, prTree);
         DataStructuresTiming.putOutTheGarbage();
         System.out.println();
@@ -159,7 +160,7 @@ public class SpatialDataStructuresTiming {
         return true;
     }
 
-    private static <Q extends QuadTree.XYPoint>  boolean testQuadTree(String name, int testRound, int testNum, int range, int[][] unsorteds, QuadTree<Q> tree) {
+    private static <Q extends XYPoint>  boolean testQuadTree(String name, int testRound, int testNum, int range, int[][] unsorteds, QuadTree<Q> tree) {
         if (testRound != 0) {
             // Skip first round to avoid JIT
             testNames[testNum] = name;
@@ -169,15 +170,15 @@ public class SpatialDataStructuresTiming {
 
         int test = 0;
 
-        List<QuadTree.XYPoint> points = new ArrayList<QuadTree.XYPoint>(ARRAY_SIZE);
+        List<XYPoint> points = new ArrayList<XYPoint>(ARRAY_SIZE);
         for (int i=0; i<ARRAY_SIZE; i++) {
-            QuadTree.XYPoint p = new QuadTree.XYPoint(unsorteds[i][0],unsorteds[i][1]);
+            XYPoint p = new XYPoint(unsorteds[i][0],unsorteds[i][1]);
             points.add(p);
         }
 
         long beforeMemory = DataStructuresTiming.getMemoryUse();
         long beforeAddTime = System.nanoTime();
-        for (QuadTree.XYPoint p : points)
+        for (XYPoint p : points)
             tree.insert(p.getX(), p.getY());
         long afterAddTime = System.nanoTime();
         long afterMemory = DataStructuresTiming.getMemoryUse();
@@ -193,7 +194,7 @@ public class SpatialDataStructuresTiming {
 
         // contains
         long beforeContainsTime = System.nanoTime();
-        for (QuadTree.XYPoint p : points) {
+        for (XYPoint p : points) {
             Collection<Q> l = tree.queryRange(p.getX(), p.getY(), 1, 1); // looking for a single point
             assertTrue("Point not found.", p, tree, l.size()>0);
         }
@@ -206,7 +207,7 @@ public class SpatialDataStructuresTiming {
 
         // query range
         long beforeQrTime = System.nanoTime();
-        for (QuadTree.XYPoint p : points) {
+        for (XYPoint p : points) {
             Collection<Q> l = tree.queryRange(p.getX(), p.getY(), range, range);
             assertTrue("Range query returned no values.", p, tree, l.size()>0);
         }
@@ -219,7 +220,7 @@ public class SpatialDataStructuresTiming {
 
         // remove
         long beforeRemovesTime = System.nanoTime();
-        for (QuadTree.XYPoint p : points) {
+        for (XYPoint p : points) {
             boolean r = tree.remove(p.getX(), p.getY());
             assertTrue("Point not removed.", p, tree, r==true);
         }
@@ -333,7 +334,7 @@ public class SpatialDataStructuresTiming {
     }
 
     // Assertion which won't call toString on the tree unless the assertion fails
-    private static final <P extends QuadTree.XYPoint, Q extends QuadTree.XYPoint> void assertTrue(String msg, P p, QuadTree<Q> obj, boolean isTrue) {
+    private static final <P extends XYPoint, Q extends XYPoint> void assertTrue(String msg, P p, QuadTree<Q> obj, boolean isTrue) {
         String toString = "";
         if (isTrue==false)
             toString = p.toString()+"\n"+"data=["+stringifiedData+"]\n"+obj.toString();
