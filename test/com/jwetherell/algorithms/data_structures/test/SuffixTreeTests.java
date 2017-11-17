@@ -9,12 +9,12 @@ import com.jwetherell.algorithms.data_structures.test.common.SuffixTreeTest;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SuffixTreeTests.
  */
 public class SuffixTreeTests {
 
     /**
-     * 
+     * Test suffix tree.
      */
     @Test
     public void testSuffixTree() {

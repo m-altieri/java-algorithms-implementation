@@ -10,9 +10,10 @@ import java.util.Random;
  * Best-case performance   О(n)<br>
  * Average performance     O(n)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Quickselect">Quickselect (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class QuickSelect {
 
@@ -22,11 +23,11 @@ public class QuickSelect {
     private static int[] temp = null;
 
     /**
-     * 
+     * Find.
      *
-     * @param value 
-     * @param array 
-     * @return 
+     * @param value the value
+     * @param array the array
+     * @return the int
      */
     public static final int find(int value, int[] array) {
         unsorted = array;

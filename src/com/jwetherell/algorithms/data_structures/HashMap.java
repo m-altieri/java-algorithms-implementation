@@ -11,15 +11,18 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
  * uses a hash function to map identifying values, known as keys, to their
  * associated values.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/Hash_table">Hash Map/Table (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class HashMap<K, V> implements IMap<K,V> {
 
     /**
-     * 
+     * The Enum Type.
      */
     public static enum Type { CHAINING, PROBING }
 

@@ -8,12 +8,12 @@ import com.jwetherell.algorithms.mathematics.DiscreteLogarithm;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DiscreteLogarithmTest.
  */
 public class DiscreteLogarithmTest {
 
     /**
-     * 
+     * Should count discrete logarithm.
      */
     @Test
     public void shouldCountDiscreteLogarithm() {
@@ -27,7 +27,7 @@ public class DiscreteLogarithmTest {
     }
 
     /**
-     * 
+     * Should count discrete logarithm 2.
      */
     @Test
     public void shouldCountDiscreteLogarithm2() {
@@ -41,7 +41,7 @@ public class DiscreteLogarithmTest {
     }
 
     /**
-     * 
+     * Should not count discrete logarithm.
      */
     @Test
     public void shouldNotCountDiscreteLogarithm() {

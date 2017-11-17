@@ -6,16 +6,16 @@ import com.jwetherell.algorithms.mathematics.GreatestCommonDivisor;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class GCDTiming.
  */
 public class GCDTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         // Euclidean

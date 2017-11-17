@@ -3,10 +3,11 @@ package com.jwetherell.algorithms.sequence;
 // TODO: Auto-generated Javadoc
 /**
  * Compute the result of adding a sequence of numbers from N (startNumber) to N+X (startNumber+numberOfNumbersToCompute)
- * <p>
+ * <p>.
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Arithmetic_progression">Arithmetic Progression (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class ArithmeticProgression {
 
@@ -14,6 +15,10 @@ public class ArithmeticProgression {
      * Compute the result of adding X (numberOfNumbersToCompute) together starting at N (startNumber).
      * <p>
      * e.g. result = N + (N+1) + (N+2) + (N+3) + ..... + (N+X)
+     *
+     * @param startNumber the start number
+     * @param numberOfNumbersToCompute the number of numbers to compute
+     * @return the long
      */
     public static final long sequenceTotalUsingLoop(int startNumber, int numberOfNumbersToCompute) {
         int start = startNumber;
@@ -31,6 +36,10 @@ public class ArithmeticProgression {
      * <p>
      * e.g. result = N + (N+1) + (N+2) + (N+3) + ..... + (N+X)<br>
      * <br>
+     *
+     * @param startNumber the start number
+     * @param numberOfNumbersToCompute the number of numbers to compute
+     * @return the long
      * @see <a href="https://en.wikipedia.org/wiki/Triangular_number">Triangular Number (Wikipedia)</a>
      */
     public static final long sequenceTotalUsingTriangularNumbers(int startNumber, int numberOfNumbersToCompute) {

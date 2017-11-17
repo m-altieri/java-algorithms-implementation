@@ -39,7 +39,7 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DataStructuresTiming.
  */
 public class DataStructuresTiming {
 
@@ -62,9 +62,9 @@ public class DataStructuresTiming {
     private static boolean firstTimeThru = true; // We throw away the first set of data to avoid JITing
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         System.out.println("Starting tests.");
@@ -295,34 +295,34 @@ public class DataStructuresTiming {
     }
 
     /**
-     * 
+     * The Class Testable.
      */
     public static abstract class Testable {
         String input = null;
         
         /**
-         * 
+         * Gets the input.
          *
-         * @return 
+         * @return the input
          */
         public String getInput() {
             return input;
         }
         
         /**
-         * 
+         * Gets the name.
          *
-         * @return 
+         * @return the name
          */
         public abstract String getName();
         
         /**
-         * 
+         * Run.
          *
-         * @param unsorted 
-         * @param sorted 
-         * @param input 
-         * @return 
+         * @param unsorted the unsorted
+         * @param sorted the sorted
+         * @param input the input
+         * @return true, if successful
          */
         public abstract boolean run(Integer[] unsorted, Integer[] sorted, String input);
     }

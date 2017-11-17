@@ -10,12 +10,12 @@ import com.jwetherell.algorithms.data_structures.Matrix;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class MatrixTests.
  */
 public class MatrixTests {
 
     /**
-     * 
+     * Test matrix.
      */
     @Test
     public void testMatrix() {
@@ -97,7 +97,7 @@ public class MatrixTests {
     }
     
     /**
-     * 
+     * Test identity method 1.
      */
     @Test
     public void testIdentityMethod1() {

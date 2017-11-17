@@ -13,12 +13,12 @@ import com.jwetherell.algorithms.data_structures.Graph.Vertex;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class GraphTests.
  */
 public class GraphTests {
 
     /**
-     * 
+     * Test vertex.
      */
     @Test
     public void testVertex() {
@@ -40,7 +40,7 @@ public class GraphTests {
     }
 
     /**
-     * 
+     * Test edge.
      */
     @Test
     public void testEdge() {
@@ -69,7 +69,7 @@ public class GraphTests {
     }
 
     /**
-     * 
+     * Test graph.
      */
     @Test
     public void testGraph() {
@@ -102,7 +102,7 @@ public class GraphTests {
     }
 
     /**
-     * 
+     * Test cost vertex pair.
      */
     @Test
     public void testCostVertexPair() {
@@ -121,7 +121,7 @@ public class GraphTests {
     }
 
     /**
-     * 
+     * Test cost path pair.
      */
     @Test
     public void testCostPathPair() {

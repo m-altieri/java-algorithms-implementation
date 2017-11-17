@@ -14,9 +14,11 @@ import java.util.Set;
  * Specifically, it allows one to efficiently find all intervals that overlap
  * with any given interval or point. 
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <O> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Interval_tree">Interval Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class IntervalTree<O extends Object> {
 
@@ -53,10 +55,9 @@ public class IntervalTree<O extends Object> {
     };
 
     /**
-     * Create interval tree from list of IntervalData objects;
-     * 
-     * @param intervals
-     *            is a list of IntervalData objects
+     * Create interval tree from list of IntervalData objects;.
+     *
+     * @param intervals            is a list of IntervalData objects
      */
     public IntervalTree(List<IntervalData<O>> intervals) {
         if (intervals.size() <= 0)
@@ -98,10 +99,9 @@ public class IntervalTree<O extends Object> {
     }
 
     /**
-     * Stabbing query
-     * 
-     * @param index
-     *            to query for.
+     * Stabbing query.
+     *
+     * @param index            to query for.
      * @return data at index.
      */
     public IntervalData<O> query(long index) {
@@ -109,12 +109,10 @@ public class IntervalTree<O extends Object> {
     }
 
     /**
-     * Range query
-     * 
-     * @param start
-     *            of range to query for.
-     * @param end
-     *            of range to query for.
+     * Range query.
+     *
+     * @param start            of range to query for.
+     * @param end            of range to query for.
      * @return data for range.
      */
     public IntervalData<O> query(long start, long end) {
@@ -160,9 +158,9 @@ public class IntervalTree<O extends Object> {
     }
 
     /**
-     * 
+     * The Class Interval.
      *
-     * @param <O> 
+     * @param <O> the generic type
      */
     public static final class Interval<O> {
 
@@ -176,10 +174,9 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Stabbing query
-         * 
-         * @param index
-         *            to query for.
+         * Stabbing query.
+         *
+         * @param index            to query for.
          * @return data at index.
          */
         public IntervalData<O> query(long index) {
@@ -233,12 +230,10 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Range query
-         * 
-         * @param start
-         *            of range to query for.
-         * @param end
-         *            of range to query for.
+         * Range query.
+         *
+         * @param start            of range to query for.
+         * @param end            of range to query for.
          * @return data for range.
          */
         public IntervalData<O> query(long start, long end) {
@@ -286,6 +281,8 @@ public class IntervalTree<O extends Object> {
 
     /**
      * Data structure representing an interval.
+     *
+     * @param <O> the generic type
      */
     public static class IntervalData<O> implements Comparable<IntervalData<O>> {
 
@@ -294,10 +291,10 @@ public class IntervalTree<O extends Object> {
         private Set<O> set = new HashSet<O>();
 
         /**
-         * Interval data using O as it's unique identifier
-         * 
-         * @param object
-         *            Object which defines the interval data
+         * Interval data using O as it's unique identifier.
+         *
+         * @param index the index
+         * @param object            Object which defines the interval data
          */
         public IntervalData(long index, O object) {
             this.start = index;
@@ -306,10 +303,11 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Interval data using O as it's unique identifier
-         * 
-         * @param object
-         *            Object which defines the interval data
+         * Interval data using O as it's unique identifier.
+         *
+         * @param start the start
+         * @param end the end
+         * @param object            Object which defines the interval data
          */
         public IntervalData(long start, long end, O object) {
             this.start = start;
@@ -318,10 +316,11 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Interval data list which should all be unique
-         * 
-         * @param list
-         *            of interval data objects
+         * Interval data list which should all be unique.
+         *
+         * @param start the start
+         * @param end the end
+         * @param set the set
          */
         public IntervalData(long start, long end, Set<O> set) {
             this.start = start;
@@ -330,8 +329,8 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Get the start of this interval
-         * 
+         * Get the start of this interval.
+         *
          * @return Start of interval
          */
         public long getStart() {
@@ -339,8 +338,8 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Get the end of this interval
-         * 
+         * Get the end of this interval.
+         *
          * @return End of interval
          */
         public long getEnd() {
@@ -348,8 +347,8 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Get the data set in this interval
-         * 
+         * Get the data set in this interval.
+         *
          * @return Unmodifiable collection of data objects
          */
         public Collection<O> getData() {
@@ -394,11 +393,8 @@ public class IntervalTree<O extends Object> {
 
         /**
          * Query inside this data object.
-         * 
-         * @param start
-         *            of range to query for.
-         * @param end
-         *            of range to query for.
+         *
+         * @param index the index
          * @return Data queried for or NULL if it doesn't match the query.
          */
         public IntervalData<O> query(long index) {

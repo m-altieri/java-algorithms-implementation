@@ -29,7 +29,7 @@ import com.jwetherell.algorithms.graph.TopologicalSort;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Graphs.
  */
 public class Graphs {
 
@@ -349,7 +349,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test dijstra undirected.
 	 */
 	@Test
 	public void testDijstraUndirected() {
@@ -374,7 +374,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test bellman ford undirected.
 	 */
 	@Test
 	public void testBellmanFordUndirected() {
@@ -397,7 +397,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test prim undirected.
 	 */
 	@Test
 	public void testPrimUndirected() {
@@ -468,7 +468,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test kruskal undirected.
 	 */
 	@Test
 	public void testKruskalUndirected() {
@@ -536,7 +536,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test dijkstra directed.
 	 */
 	@Test
 	public void testDijkstraDirected() {
@@ -560,7 +560,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test bellman ford directed.
 	 */
 	@Test
 	public void testBellmanFordDirected() {
@@ -585,7 +585,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test dijstra directed wiht negative weights.
 	 */
 	@Test
 	public void testDijstraDirectedWihtNegativeWeights() {
@@ -611,7 +611,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test johnonsons all pairs shortest path on directe with neg weights.
 	 */
 	@Test
 	public void testJohnonsonsAllPairsShortestPathOnDirecteWithNegWeights() {
@@ -716,7 +716,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test floyd warshallon directed with neg weights.
 	 */
 	@Test
 	public void testFloydWarshallonDirectedWithNegWeights() {
@@ -799,7 +799,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Cycle check on undirected.
 	 */
 	@Test
 	public void cycleCheckOnUndirected() {
@@ -871,7 +871,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Topological sort on directed graph.
 	 */
 	@Test
 	public void topologicalSortOnDirectedGraph() {
@@ -934,7 +934,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Connected components.
 	 */
 	@Test
 	public void connectedComponents() {
@@ -979,7 +979,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test A star undirected.
 	 */
 	@Test
 	public void testAStarUndirected() {
@@ -995,7 +995,7 @@ public class Graphs {
 	}
 
 	/**
-	 * 
+	 * Test A star directed.
 	 */
 	@Test
 	public void testAStarDirected() {

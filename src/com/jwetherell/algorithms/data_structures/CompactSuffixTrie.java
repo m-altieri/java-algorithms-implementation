@@ -10,9 +10,11 @@ import java.util.TreeSet;
  * important string operations. This implementation is based upon a patricia
  * trie which IS a compact trie.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Suffix_trie">Suffix Trie (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class CompactSuffixTrie<C extends CharSequence> {
@@ -20,10 +22,9 @@ public class CompactSuffixTrie<C extends CharSequence> {
     private PatriciaTrie<C> tree = null;
 
     /**
-     * Create a compact suffix trie from sequence
-     * 
-     * @param sequence
-     *            to create a suffix trie from.
+     * Create a compact suffix trie from sequence.
+     *
+     * @param sequence            to create a suffix trie from.
      */
     public CompactSuffixTrie(C sequence) {
         tree = new PatriciaTrie<C>();

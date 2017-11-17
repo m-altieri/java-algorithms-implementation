@@ -7,16 +7,16 @@ import com.jwetherell.algorithms.numbers.Complex;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Multiplication.
  */
 public class Multiplication {
 
     /**
-     * 
+     * Multiplication.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long multiplication(int a, int b) {
         long result = ((long) a) * ((long) b);
@@ -24,11 +24,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using loop.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long multiplyUsingLoop(int a, int b) {
         int absB = Math.abs(b);
@@ -40,11 +40,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using recursion.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long multiplyUsingRecursion(int a, int b) {
         int absB = Math.abs(b);
@@ -57,11 +57,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using shift.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long multiplyUsingShift(int a, int b) {
         int absA = Math.abs(a);
@@ -79,11 +79,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using logs.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long multiplyUsingLogs(int a, int b) {
         long absA = Math.abs(a);
@@ -93,11 +93,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using FFT.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the string
      */
     public static String multiplyUsingFFT(String a, String b) {
         if (a.equals("0") || b.equals("0")) {
@@ -172,11 +172,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using loop with string input.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the string
      */
     public static String multiplyUsingLoopWithStringInput(String a, String b) {
         int k,i,j,carry=0,rem,flag=0,lim1,lim2,mul;
@@ -245,11 +245,11 @@ public class Multiplication {
     }
 
     /**
-     * 
+     * Multiply using loop with integer input.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the int
      */
     public static int multiplyUsingLoopWithIntegerInput(int a, int b) {
         boolean aIsNegative = a<0;

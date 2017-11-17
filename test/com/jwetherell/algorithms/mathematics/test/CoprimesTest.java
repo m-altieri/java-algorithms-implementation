@@ -11,12 +11,12 @@ import com.jwetherell.algorithms.mathematics.Coprimes;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class CoprimesTest.
  */
 public class CoprimesTest {
 
     /**
-     * 
+     * Totient test.
      */
     @Test
     public void totientTest(){

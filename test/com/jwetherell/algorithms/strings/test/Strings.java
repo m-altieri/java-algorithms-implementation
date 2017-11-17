@@ -11,12 +11,12 @@ import com.jwetherell.algorithms.strings.StringFunctions;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Strings.
  */
 public class Strings {
 
     /**
-     * 
+     * Test reverse chars in string.
      */
     @Test
     public void testReverseCharsInString() {
@@ -40,7 +40,7 @@ public class Strings {
     }
 
     /**
-     * 
+     * Test reverse words in string.
      */
     @Test
     public void testReverseWordsInString() {
@@ -61,7 +61,7 @@ public class Strings {
     }
 
     /**
-     * 
+     * Test is palin drone.
      */
     @Test
     public void testIsPalinDrone() {
@@ -82,7 +82,7 @@ public class Strings {
     }
 
     /**
-     * 
+     * Test generate sub sets.
      */
     @Test
     public void testGenerateSubSets() {
@@ -94,7 +94,7 @@ public class Strings {
     }
 
     /**
-     * 
+     * Test edit distance recursive.
      */
     @Test
     public void testEditDistanceRecursive() {
@@ -107,7 +107,7 @@ public class Strings {
     }
 
     /**
-     * 
+     * Test edit distance DP.
      */
     @Test
     public void testEditDistanceDP() {

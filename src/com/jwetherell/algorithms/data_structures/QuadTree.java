@@ -13,9 +13,11 @@ import java.util.List;
  * are most often used to partition a two dimensional space by recursively subdividing it into four 
  * quadrants or regions. The regions may be square or rectangular, or may have arbitrary shapes.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <G> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Quadtree">QuadTree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public abstract class QuadTree<G extends XYPoint> {
@@ -29,22 +31,30 @@ public abstract class QuadTree<G extends XYPoint> {
 
     /**
      * Range query of the quadtree.
+     *
+     * @param x the x
+     * @param y the y
+     * @param width the width
+     * @param height the height
+     * @return the collection
      */
     public abstract Collection<G> queryRange(double x, double y, double width, double height);
 
     /**
      * Insert point at X,Y into tree.
-     * 
+     *
      * @param x X position of point.
      * @param y Y position of point.
+     * @return true, if successful
      */
     public abstract boolean insert(double x, double y);
 
     /**
      * Remove point at X,Y from tree.
-     * 
+     *
      * @param x X position of point.
      * @param y Y position of point.
+     * @return true, if successful
      */
     public abstract boolean remove(double x, double y);
 
@@ -62,6 +72,8 @@ public abstract class QuadTree<G extends XYPoint> {
      * all internal nodes act as guides towards the keys.
      * 
      * This implementation is a PR QuadTree which uses "Buckets" to prevent stalky trees.
+     *
+     * @param <P> the generic type
      */
     public static class PointRegionQuadTree<P extends XYPoint> extends QuadTree<P> {
 
@@ -356,6 +368,8 @@ public abstract class QuadTree<G extends XYPoint> {
     /**
      * MX-CIF quadtree is a variant of quadtree data structure which supports area-based query. It is designed for storing a
      * set of rectangles (axis-aligned bounded box) in a dynamic environment.
+     *
+     * @param <B> the generic type
      */
     public static class MxCifQuadTree<B extends QuadTree.AxisAlignedBoundingBox> extends QuadTree<B> {
 
@@ -416,11 +430,12 @@ public abstract class QuadTree<G extends XYPoint> {
 
         /**
          * Insert rectangle whose upper-left point is located at X,Y and has a height and width into tree.
-         * 
+         *
          * @param x X position of upper-left hand corner.
          * @param y Y position of upper-left hand corner.
          * @param width Width of the rectangle.
          * @param height Height of the rectangle.
+         * @return true, if successful
          */
         public boolean insert(double x, double y, double width, double height) {
             XYPoint xyPoint = new XYPoint(x,y);
@@ -441,11 +456,12 @@ public abstract class QuadTree<G extends XYPoint> {
 
         /**
          * Remove rectangle whose upper-left point is located at X,Y and has a height and width into tree.
-         * 
+         *
          * @param x X position of upper-left hand corner.
          * @param y Y position of upper-left hand corner.
          * @param width Width of the rectangle.
          * @param height Height of the rectangle.
+         * @return true, if successful
          */
         public boolean remove(double x, double y, double width, double height) {
             XY_POINT.set(x,y);
@@ -730,7 +746,7 @@ public abstract class QuadTree<G extends XYPoint> {
     }
 
     /**
-     * 
+     * The Class AxisAlignedBoundingBox.
      */
     public static class AxisAlignedBoundingBox extends XYPoint {
 
@@ -743,16 +759,16 @@ public abstract class QuadTree<G extends XYPoint> {
         private double maxY = 0;
 
         /**
-         * 
+         * Instantiates a new axis aligned bounding box.
          */
         public AxisAlignedBoundingBox() { }
 
         /**
-         * 
+         * Instantiates a new axis aligned bounding box.
          *
-         * @param upperLeft 
-         * @param width 
-         * @param height 
+         * @param upperLeft the upper left
+         * @param width the width
+         * @param height the height
          */
         public AxisAlignedBoundingBox(XYPoint upperLeft, double width, double height) {
             super(upperLeft.x, upperLeft.y);
@@ -766,11 +782,11 @@ public abstract class QuadTree<G extends XYPoint> {
         }
 
         /**
-         * 
+         * Sets the.
          *
-         * @param upperLeft 
-         * @param width 
-         * @param height 
+         * @param upperLeft the upper left
+         * @param width the width
+         * @param height the height
          */
         public void set(XYPoint upperLeft, double width, double height) {
             set(upperLeft.x, upperLeft.y);
@@ -784,28 +800,28 @@ public abstract class QuadTree<G extends XYPoint> {
         }
 
         /**
-         * 
+         * Gets the height.
          *
-         * @return 
+         * @return the height
          */
         public double getHeight() {
             return height;
         }
         
         /**
-         * 
+         * Gets the width.
          *
-         * @return 
+         * @return the width
          */
         public double getWidth() {
             return width;
         }
 
         /**
-         * 
+         * Contains point.
          *
-         * @param p 
-         * @return 
+         * @param p the p
+         * @return true, if successful
          */
         public boolean containsPoint(XYPoint p) {
             if (p.x>=maxX) return false;

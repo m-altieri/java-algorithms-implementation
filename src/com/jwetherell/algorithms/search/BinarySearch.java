@@ -11,9 +11,10 @@ package com.jwetherell.algorithms.search;
  * Average performance         O(log n)<br>
  * Worst-case space complexity O(1)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Binary Search (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class BinarySearch {
 
@@ -22,12 +23,12 @@ public class BinarySearch {
     private static int[] sorted = null;
 
     /**
-     * 
+     * Find.
      *
-     * @param value 
-     * @param array 
-     * @param optimize 
-     * @return 
+     * @param value the value
+     * @param array the array
+     * @param optimize the optimize
+     * @return the int
      */
     // Assuming the array is sorted
     public static final int find(int value, int[] array, boolean optimize) {

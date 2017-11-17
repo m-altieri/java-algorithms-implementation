@@ -20,21 +20,23 @@ import java.util.List;
  * Worst case = O(n * log^2 n)<br>
  * Best case = O(n)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Shell_sort">Shell Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class ShellSort<T extends Comparable<T>> {
 
     private ShellSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param <T> 
-     * @param shells 
-     * @param unsorted 
-     * @return 
+     * @param <T> the generic type
+     * @param shells the shells
+     * @param unsorted the unsorted
+     * @return the t[]
      */
     public static <T extends Comparable<T>> T[] sort(int[] shells, T[] unsorted) {
         for (int gap : shells) {

@@ -11,12 +11,12 @@ import com.jwetherell.algorithms.mathematics.Exponentiation;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ExponentiationTest.
  */
 public class ExponentiationTest {
 
     /**
-     * 
+     * Recusrive exponentiation test.
      */
     @Test
     public void recusriveExponentiationTest() {
@@ -29,7 +29,7 @@ public class ExponentiationTest {
     }
 
     /**
-     * 
+     * Fast recusrive exponentiation test.
      */
     @Test
     public void fastRecusriveExponentiationTest() {
@@ -42,7 +42,7 @@ public class ExponentiationTest {
     }
 
     /**
-     * 
+     * Fast recusrive exponentiation modulo test.
      */
     @Test
     public void fastRecusriveExponentiationModuloTest() {

@@ -4,19 +4,19 @@ import com.jwetherell.algorithms.data_structures.interfaces.IStack;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class StackTest.
  */
 public class StackTest {
 
     /**
-     * 
+     * Test stack.
      *
-     * @param <T> 
-     * @param stack 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param stack the stack
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testStack(IStack<T> stack, String name,
                                                               T[] data, T _invalid) {

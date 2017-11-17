@@ -11,14 +11,14 @@ import com.jwetherell.algorithms.strings.Manacher;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ManacherTests.
  */
 public class ManacherTests {
 
     /**
-     * 
+     * Test get longest palindromic substring.
      *
-     * @throws Exception 
+     * @throws Exception the exception
      */
     @Test
     public void testGetLongestPalindromicSubstring() throws Exception {

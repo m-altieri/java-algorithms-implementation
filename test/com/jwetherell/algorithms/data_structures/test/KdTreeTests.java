@@ -13,12 +13,12 @@ import com.jwetherell.algorithms.data_structures.KdTree.XYZPoint;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class KdTreeTests.
  */
 public class KdTreeTests {
 
     /**
-     * 
+     * Test kd tree.
      */
     @Test
     public void testKdTree() {
@@ -57,7 +57,7 @@ public class KdTreeTests {
     }
 
     /**
-     * 
+     * Test kd tree as iterable.
      */
     @Test
     public void testKdTree_as_iterable() {

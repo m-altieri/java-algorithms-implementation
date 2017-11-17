@@ -19,7 +19,7 @@ import com.jwetherell.algorithms.mathematics.Primes;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class MathematicsTest.
  */
 public class MathematicsTest {
 
@@ -89,7 +89,7 @@ public class MathematicsTest {
     }
     
     /**
-     * 
+     * Multiplication.
      */
     @Test
     public void multiplication() {
@@ -110,7 +110,7 @@ public class MathematicsTest {
     }
     
     /**
-     * 
+     * Division.
      */
     @Test
     public void division() {
@@ -121,7 +121,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Knapsack.
      */
     @Test
     public void knapsack() {
@@ -138,7 +138,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Chebyshev distance.
      */
     @Test
     public void chebyshevDistance() {
@@ -150,7 +150,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Squared distance.
      */
     @Test
     public void squaredDistance() {
@@ -164,7 +164,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Euclidean distance.
      */
     @Test
     public void euclideanDistance() {
@@ -178,7 +178,9 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Gets the prime factorization.
+     *
+     * @return the prime factorization
      */
     @Test
     public void getPrimeFactorization() {
@@ -198,7 +200,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Checks if is prime.
      */
     @Test
     public void isPrime() {
@@ -212,7 +214,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Sieve of eratosthenes.
      */
     @Test
     public void sieveOfEratosthenes() {
@@ -258,7 +260,7 @@ public class MathematicsTest {
     }
 
     /**
-     * 
+     * Miller rabin.
      */
     @Test
     public void millerRabin() {

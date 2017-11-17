@@ -9,7 +9,7 @@ import junit.framework.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class BreadthFirstTraversalTest.
  */
 public class BreadthFirstTraversalTest extends TraversalTest {
 
@@ -28,7 +28,7 @@ public class BreadthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 0.
      */
     @Test
     public void test0() {
@@ -40,7 +40,7 @@ public class BreadthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 1.
      */
     @Test
     public void test1() {
@@ -52,7 +52,7 @@ public class BreadthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 2.
      */
     @Test
     public void test2() {
@@ -64,7 +64,7 @@ public class BreadthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 3.
      */
     @Test
     public void test3() {

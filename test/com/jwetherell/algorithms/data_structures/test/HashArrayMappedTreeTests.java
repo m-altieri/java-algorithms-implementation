@@ -12,12 +12,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class HashArrayMappedTreeTests.
  */
 public class HashArrayMappedTreeTests {
 
     /**
-     * 
+     * Test HAMT.
      */
     @Test
     public void testHAMT() {

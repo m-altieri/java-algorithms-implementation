@@ -17,7 +17,7 @@ import com.jwetherell.algorithms.sorts.ShellSort;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SortsTiming.
  */
 public class SortsTiming {
 
@@ -27,22 +27,21 @@ public class SortsTiming {
     private static final boolean checkResults = true;
 
     private static int count = 0;
-    private static String[] names = new String[SIZE];
+    private static final String[] names = new String[SIZE];
     private static double[][] results = new double[SIZE][];
 
-    private static Integer[] unsorted = null;
-    private static Integer[] sorted = null;
-    private static Integer[] reverse = null;
+    private static final Integer[] unsorted = new Integer[SIZE];
+    private static final Integer[] sorted = new Integer[SIZE];
+    private static final Integer[] reverse = new Integer[SIZE];
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         System.out.println("Generating random array.");
         Random random = new Random();
-        unsorted = new Integer[SIZE];
         int i = 0;
         while (i < unsorted.length) {
             int j = random.nextInt(unsorted.length * 10);
@@ -51,14 +50,12 @@ public class SortsTiming {
         System.out.println("Generated random array.");
 
         System.out.println("Generating sorted array.");
-        sorted = new Integer[SIZE];
         for (i = 0; i < sorted.length; i++) {
             sorted[i] = i;
         }
         System.out.println("Generated sorted array.");
 
         System.out.println("Generating reverse sorted array.");
-        reverse = new Integer[SIZE];
         for (i = (reverse.length - 1); i >= 0; i--) {
             reverse[i] = (SIZE - 1) - i;
         }
@@ -165,32 +162,32 @@ public class SortsTiming {
     }
 
     /**
-     * 
+     * The Class Testable.
      */
     public static abstract class Testable {
         String input = null;
         
         /**
-         * 
+         * Gets the input.
          *
-         * @return 
+         * @return the input
          */
         public String getInput() {
             return input;
         }
         
         /**
-         * 
+         * Gets the name.
          *
-         * @return 
+         * @return the name
          */
         public abstract String getName();
         
         /**
-         * 
+         * Sort.
          *
-         * @param input 
-         * @return 
+         * @param input the input
+         * @return the integer[]
          */
         public abstract Integer[] sort(Integer[] input);
     }
@@ -372,22 +369,22 @@ public class SortsTiming {
     }
 
     /**
-     * 
+     * Prints the.
      *
-     * @param array 
-     * @return 
+     * @param array the array
+     * @return the string
      */
     public static final String print(Integer[] array) {
         return print(array, 0, array.length);
     }
 
     /**
-     * 
+     * Prints the.
      *
-     * @param array 
-     * @param start 
-     * @param length 
-     * @return 
+     * @param array the array
+     * @param start the start
+     * @param length the length
+     * @return the string
      */
     public static final String print(Integer[] array, int start, int length) {
         final Integer[] clone = array.clone();
@@ -400,13 +397,13 @@ public class SortsTiming {
     }
 
     /**
-     * 
+     * Prints the with pivot.
      *
-     * @param array 
-     * @param pivotIndex 
-     * @param start 
-     * @param length 
-     * @return 
+     * @param array the array
+     * @param pivotIndex the pivot index
+     * @param start the start
+     * @param length the length
+     * @return the string
      */
     public static final String printWithPivot(Integer[] array, int pivotIndex, int start, int length) {
         final Integer[] clone = array.clone();

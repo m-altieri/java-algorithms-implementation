@@ -9,9 +9,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ITree;
  * <br>
  * <a href="https://www.cs.upc.edu/~ps/downloads/tst/tst.html">This implementation is based on Jon Bentley and Bob Sedgewick's paper.</a>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Ternary_search_tree">Ternary Search Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
 
@@ -21,7 +23,7 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
     private int size = 0;
 
     /**
-     * 
+     * Instantiates a new ternary search tree.
      */
     public TernarySearchTree() {
         this.creator = new INodeCreator() {
@@ -37,6 +39,8 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public TernarySearchTree(INodeCreator creator) {
         this.creator = creator;
@@ -330,9 +334,9 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleTree.
      *
-     * @param <C> 
+     * @param <C> the generic type
      */
     @SuppressWarnings("unchecked")
     public static class JavaCompatibleTree<C extends CharSequence> extends java.util.AbstractCollection<C> {
@@ -340,9 +344,9 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
         private TernarySearchTree<C> tree = null;
 
         /**
-         * 
+         * Instantiates a new java compatible tree.
          *
-         * @param tree 
+         * @param tree the tree
          */
         public JavaCompatibleTree(TernarySearchTree<C> tree) {
             this.tree = tree;

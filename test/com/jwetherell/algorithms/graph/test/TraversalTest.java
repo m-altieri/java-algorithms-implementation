@@ -5,6 +5,9 @@ import java.util.List;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
+/**
+ * The Class TraversalTest.
+ */
 public class TraversalTest {
 
     protected static final List<Graph.Vertex<Integer>>    vertices    = new ArrayList<Graph.Vertex<Integer>>();

@@ -10,10 +10,13 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
  * <p>
  * This implementation is a composition of a Skip List as the backing structure.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/Skip_list">Skip List (Wikipedia)</a>
  * @see <a href="https://en.wikipedia.org/wiki/Associative_array">Associative Array (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class SkipListMap<K extends Comparable<K>, V> implements SkipList.INodeCreator<K>, IMap<K,V> {
@@ -21,7 +24,7 @@ public class SkipListMap<K extends Comparable<K>, V> implements SkipList.INodeCr
     private SkipList<K> list = null;
 
     /**
-     * 
+     * Instantiates a new skip list map.
      */
     public SkipListMap() {
         list = new SkipList<K>(this);

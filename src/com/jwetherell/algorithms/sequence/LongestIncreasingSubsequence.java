@@ -9,17 +9,21 @@ import com.jwetherell.algorithms.search.LowerBound;
  * In computer science, the longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in 
  * which the subsequence is as long as possible. This subsequence is not necessarily contiguous, or unique. 
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence">Longest Increasing Subsequence Problem (Wikipedia)</a>
- * <br>
+ *
  * @author Bartlomiej Drozd <mail@bartlomiejdrozd.pl>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence">Longest Increasing Subsequence Problem (Wikipedia)</a>
+ * <br>
  */
 public class LongestIncreasingSubsequence {
 
     private LongestIncreasingSubsequence() { }
 
     /**
-     * Longest increasing subsequence solved using dynamic programming. 
+     * Longest increasing subsequence solved using dynamic programming.
+     *
+     * @param sequence the sequence
+     * @return the longest increasing subsequence
      */
     public static int[] getLongestIncreasingSubsequence(int[] sequence) {
         final int[] resultSequence = new int[sequence.length];

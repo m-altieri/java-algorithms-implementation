@@ -16,9 +16,11 @@ import java.util.List;
  * the Data abstract class to store your custom data. I've included a range sum
  * implementations.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <D> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Fenwick_tree">Fenwick Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class FenwickTree<D extends FenwickTree.Data> {
@@ -26,9 +28,9 @@ public class FenwickTree<D extends FenwickTree.Data> {
     private Object[] array;
 
     /**
-     * 
+     * Instantiates a new fenwick tree.
      *
-     * @param data 
+     * @param data the data
      */
     public FenwickTree(List<D> data) {
         // Find the largest index
@@ -45,10 +47,9 @@ public class FenwickTree<D extends FenwickTree.Data> {
     }
 
     /**
-     * Stabbing query
-     * 
-     * @param index
-     *            index for query
+     * Stabbing query.
+     *
+     * @param index            index for query
      * @return data at index.
      */
     public D query(int index) {
@@ -56,12 +57,10 @@ public class FenwickTree<D extends FenwickTree.Data> {
     }
 
     /**
-     * Range query
-     * 
-     * @param start
-     *            start of range (inclusive)
-     * @param end
-     *            end of range (inclusive)
+     * Range query.
+     *
+     * @param start            start of range (inclusive)
+     * @param end            end of range (inclusive)
      * @return data for range.
      */
     public D query(int start, int end) {
@@ -168,7 +167,7 @@ public class FenwickTree<D extends FenwickTree.Data> {
     }
 
     /**
-     * 
+     * The Class Data.
      */
     public abstract static class Data implements Comparable<Data> {
 
@@ -251,19 +250,21 @@ public class FenwickTree<D extends FenwickTree.Data> {
 
         /**
          * Data structure representing sum of the range.
+         *
+         * @param <N> the number type
          */
         public static final class RangeSumData<N extends Number> extends Data {
 
             /**
-             * 
+             * The sum.
              */
             public N sum = null;
 
             /**
-             * 
+             * Instantiates a new range sum data.
              *
-             * @param index 
-             * @param number 
+             * @param index the index
+             * @param number the number
              */
             public RangeSumData(int index, N number) {
                 super(index);

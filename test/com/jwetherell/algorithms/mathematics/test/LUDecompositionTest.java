@@ -9,7 +9,7 @@ import com.jwetherell.algorithms.mathematics.LUDecomposition;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class LUDecompositionTest.
  */
 public class LUDecompositionTest {
 
@@ -28,9 +28,9 @@ public class LUDecompositionTest {
     }
 
     /**
-     * 
+     * Decomposition test 1.
      *
-     * @throws Exception 
+     * @throws Exception the exception
      */
     @Test
     public void decompositionTest1() throws Exception {
@@ -44,9 +44,9 @@ public class LUDecompositionTest {
     }
 
     /**
-     * 
+     * Decomposition test 2.
      *
-     * @throws Exception 
+     * @throws Exception the exception
      */
     @Test
     public void decompositionTest2() throws Exception {

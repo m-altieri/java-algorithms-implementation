@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class BinaryHeapTree.
  *
- * @param <T> 
+ * @param <T> the generic type
  */
 public class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
 
@@ -580,25 +581,25 @@ public class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
     
 
     /**
-     * 
+     * The Class JavaCompatibleBinaryHeapTree.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleBinaryHeapTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private BinaryHeapTree<T> heap = null;
 
         /**
-         * 
+         * Instantiates a new java compatible binary heap tree.
          */
         public JavaCompatibleBinaryHeapTree() {
             heap = new BinaryHeapTree<T>();
         }
 
         /**
-         * 
+         * Instantiates a new java compatible binary heap tree.
          *
-         * @param heap 
+         * @param heap the heap
          */
         public JavaCompatibleBinaryHeapTree(BinaryHeapTree<T> heap) {
             this.heap = heap;

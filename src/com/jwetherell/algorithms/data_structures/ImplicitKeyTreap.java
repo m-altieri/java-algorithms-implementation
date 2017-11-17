@@ -20,9 +20,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.IList;
  * Note: This implementation is 0-based, meaning that all
  * indices from 0 to size() - 1, inclusive, are accessible.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Treap">Treap (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class ImplicitKeyTreap<T> implements IList<T> {
@@ -61,10 +63,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Insert value at index
-     * 
+     * Insert value at index.
+     *
      * @param index to insert value
      * @param value to insert
+     * @return the t
      */
     public T add(int index, T value) {
         addAtIndexAndUpdate(index, value);
@@ -91,8 +94,8 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Remove value at index
-     * 
+     * Remove value at index.
+     *
      * @param index to remove value
      * @return value or null if not found
      */
@@ -107,9 +110,10 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Set value at index
-     * 
+     * Set value at index.
+     *
      * @param index to remove value
+     * @param value the value
      * @return value or null if not found
      */
     public T set(int index, T value) {
@@ -132,9 +136,10 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Get value at index
-     * 
+     * Get value at index.
+     *
      * @param index to remove value
+     * @return the at index
      */
     public T getAtIndex(int index) {
         final Node<T> n = getNodeByIndex(index);
@@ -205,10 +210,9 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Split the treap at index
-     * 
+     * Split the treap at index.
+     *
      * @param index to split at
-     * 
      * @return Pair which contains root of both trees
      */
     public Pair<T> split(int index) {
@@ -221,10 +225,10 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * 
+     * Adds the at index and update.
      *
-     * @param index 
-     * @param value 
+     * @param index the index
+     * @param value the value
      */
     public void addAtIndexAndUpdate(int index, T value) {
         root = insert(((Node<T>)root), index, value);
@@ -286,11 +290,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Split the treap rooted at node at given index
-     * 
+     * Split the treap rooted at node at given index.
+     *
+     * @param <T> the generic type
      * @param node which represents root
      * @param index in treap to split
-     * 
      * @return Pair which contains root of both trees
      */
     public static <T> Pair<T> split(Node<T> node, int index) {
@@ -321,11 +325,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * Merge treaps from given left and right nodes
-     * 
+     * Merge treaps from given left and right nodes.
+     *
+     * @param <T> the generic type
      * @param left node which represents root of left treap
      * @param right node which represents root of great treap
-     * 
      * @return treap from merged treaps
      */
     public static <T> Node<T> merge(Node<T> left, Node<T> right) {
@@ -441,21 +445,21 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * 
+     * In order.
      *
-     * @return 
+     * @return the t[]
      */
     public T[] inOrder() {
         return inOrder(root,size);
     }
 
     /**
-     * 
+     * In order.
      *
-     * @param <T> 
-     * @param node 
-     * @param size 
-     * @return 
+     * @param <T> the generic type
+     * @param node the node
+     * @param size the size
+     * @return the t[]
      */
     public static <T> T[] inOrder(Node<T> node, int size) {
         T[] data = (T[]) new Object[size];
@@ -485,9 +489,9 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * 
+     * The Class Node.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class Node<T> {
 
@@ -510,9 +514,9 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         }
 
         /**
-         * 
+         * Gets the size.
          *
-         * @return 
+         * @return the size
          */
         public int getSize() {
             return size;
@@ -540,9 +544,9 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * 
+     * The Class Pair.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class Pair<T>  {
 
@@ -555,18 +559,18 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         }
 
         /**
-         * 
+         * Gets the lesser.
          *
-         * @return 
+         * @return the lesser
          */
         public Node<T> getLesser() {
             return left;
         }
 
         /**
-         * 
+         * Gets the greater.
          *
-         * @return 
+         * @return the greater
          */
         public Node<T> getGreater() {
             return right;
@@ -582,18 +586,18 @@ public class ImplicitKeyTreap<T> implements IList<T> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleArrayList.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleArrayList<T> extends java.util.AbstractList<T> implements java.util.RandomAccess {
 
         private ImplicitKeyTreap<T> list = null;
 
         /**
-         * 
+         * Instantiates a new java compatible array list.
          *
-         * @param list 
+         * @param list the list
          */
         public JavaCompatibleArrayList(ImplicitKeyTreap<T> list) {
             this.list = list;

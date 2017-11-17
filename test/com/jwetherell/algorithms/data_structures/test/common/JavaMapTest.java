@@ -2,24 +2,24 @@ package com.jwetherell.algorithms.data_structures.test.common;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class JavaMapTest.
  */
 @SuppressWarnings("unchecked")
 public class JavaMapTest {
 
     /**
-     * 
+     * Test java map.
      *
-     * @param <K> 
-     * @param <V> 
-     * @param <T> 
-     * @param map 
-     * @param type 
-     * @param name 
-     * @param unsorted 
-     * @param sorted 
-     * @param _invalid 
-     * @return 
+     * @param <K> the key type
+     * @param <V> the value type
+     * @param <T> the generic type
+     * @param map the map
+     * @param type the type
+     * @param name the name
+     * @param unsorted the unsorted
+     * @param sorted the sorted
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <K,V, T extends Comparable<T>> boolean testJavaMap(java.util.Map<K,V> map, Class<T> type, String name,
                                                                      Integer[] unsorted, Integer[] sorted, Integer _invalid) {

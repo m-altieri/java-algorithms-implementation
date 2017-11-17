@@ -13,12 +13,12 @@ import com.jwetherell.algorithms.data_structures.IntervalSum;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class IntervalSumTest.
  */
 public class IntervalSumTest {
 
     /**
-     * 
+     * Proper sum all elements test.
      */
     @Test
     public void properSumAllElementsTest() {
@@ -31,7 +31,7 @@ public class IntervalSumTest {
     }
 
     /**
-     * 
+     * Random generated test.
      */
     @Test
     public void randomGeneratedTest() {
@@ -64,7 +64,7 @@ public class IntervalSumTest {
     }
 
     /**
-     * 
+     * Sets the index out of range test.
      */
     @Test
     public void setIndexOutOfRangeTest() {
@@ -79,7 +79,7 @@ public class IntervalSumTest {
     }
 
     /**
-     * 
+     * Sum index out of range test.
      */
     @Test
     public void sumIndexOutOfRangeTest() {
@@ -94,7 +94,7 @@ public class IntervalSumTest {
     }
 
     /**
-     * 
+     * End before start test.
      */
     @Test
     public void endBeforeStartTest() {

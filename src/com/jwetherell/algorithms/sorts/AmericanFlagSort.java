@@ -18,9 +18,10 @@ package com.jwetherell.algorithms.sorts;
  * <p>
  * NOTE: n is the number of digits and k is the average bucket size
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/American_flag_sort">American Flag Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class AmericanFlagSort {
 
@@ -29,10 +30,10 @@ public class AmericanFlagSort {
     private AmericanFlagSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param unsorted 
-     * @return 
+     * @param unsorted the unsorted
+     * @return the integer[]
      */
     public static Integer[] sort(Integer[] unsorted) {
         int numberOfDigits = getMaxNumberOfDigits(unsorted); // Max number of digits
@@ -44,12 +45,12 @@ public class AmericanFlagSort {
     }
 
     /**
-     * 
+     * Sort.
      *
-     * @param unsorted 
-     * @param start 
-     * @param length 
-     * @param divisor 
+     * @param unsorted the unsorted
+     * @param start the start
+     * @param length the length
+     * @param divisor the divisor
      */
     public static void sort(Integer[] unsorted, int start, int length, int divisor) {
         // First pass - find counts

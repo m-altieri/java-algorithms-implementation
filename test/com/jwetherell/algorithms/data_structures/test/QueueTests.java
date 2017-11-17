@@ -14,12 +14,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class QueueTests.
  */
 public class QueueTests {
 
     /**
-     * 
+     * Test array queue.
      */
     @Test
     public void testArrayQueue() {
@@ -36,7 +36,7 @@ public class QueueTests {
     }
 
     /**
-     * 
+     * Test linked queue.
      */
     @Test
     public void testLinkedQueue() {

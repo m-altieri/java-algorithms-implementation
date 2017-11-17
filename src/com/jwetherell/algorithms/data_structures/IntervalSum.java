@@ -17,7 +17,7 @@ public class IntervalSum {
     private List<Integer> prefSums = new ArrayList<Integer>();
 
     /**
-     * Creates empty IntervalSumArray
+     * Creates empty IntervalSumArray.
      */
     public IntervalSum() {
         values.add(0);
@@ -63,6 +63,8 @@ public class IntervalSum {
     }
 
     /**
+     * Size.
+     *
      * @return size of IntervalSumArray
      */
     public int size() {

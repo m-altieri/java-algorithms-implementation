@@ -7,22 +7,22 @@ import com.jwetherell.algorithms.data_structures.interfaces.IHeap;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class HeapTest.
  */
 public class HeapTest {
 
     /**
-     * 
+     * Test heap.
      *
-     * @param <T> 
-     * @param heapType 
-     * @param heap 
-     * @param type 
-     * @param name 
-     * @param unsorted 
-     * @param sorted 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param heapType the heap type
+     * @param heap the heap
+     * @param type the type
+     * @param name the name
+     * @param unsorted the unsorted
+     * @param sorted the sorted
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testHeap(BinaryHeap.Type heapType, IHeap<T> heap, Class<T> type, String name, 
                                                              Integer[] unsorted, Integer[] sorted, Integer _invalid) {

@@ -12,12 +12,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TreeMapTests.
  */
 public class TreeMapTests {
 
     /**
-     * 
+     * Test tree map.
      */
     @Test
     public void testTreeMap() {

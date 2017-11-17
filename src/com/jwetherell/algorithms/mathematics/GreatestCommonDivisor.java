@@ -5,10 +5,11 @@ package com.jwetherell.algorithms.mathematics;
  * In mathematics, the greatest common divisor (gcd) of two or more integers, when at least one of them is not 
  * zero, is the largest positive integer that is a divisor of both numbers. 
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Greatest_common_divisor">Greatest Common Divisor (Wikipedia)</a>
- * <br>
+ *
  * @author Szymon Stankiewicz <mail@stankiewicz.me>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Greatest_common_divisor">Greatest Common Divisor (Wikipedia)</a>
+ * <br>
  */
 public class GreatestCommonDivisor {
 
@@ -31,6 +32,10 @@ public class GreatestCommonDivisor {
      * A much more efficient method is the Euclidean algorithm, which uses a division algorithm such as long division 
      * in combination with the observation that the gcd of two numbers also divides their difference.
      * <p>
+     *
+     * @param x the x
+     * @param y the y
+     * @return the long
      * @see <a href="https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid.27s_algorithm">Euclidean Algorithm (Wikipedia)</a>
      */
     public static final long gcdUsingEuclides(long x, long y) {

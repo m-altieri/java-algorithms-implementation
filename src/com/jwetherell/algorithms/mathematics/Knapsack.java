@@ -9,19 +9,20 @@ import java.util.List;
  * collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. It derives its name from the problem faced by someone who is constrained 
  * by a fixed-size knapsack and must fill it with the most valuable items.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Knapsack_problem">Knapsack Problem (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class Knapsack {
 
     /**
-     * 
+     * Zero one knapsack.
      *
-     * @param values 
-     * @param weights 
-     * @param capacity 
-     * @return 
+     * @param values the values
+     * @param weights the weights
+     * @param capacity the capacity
+     * @return the int[]
      */
     public static final int[] zeroOneKnapsack(int[] values, int[] weights, int capacity) {
         if (weights.length != values.length)

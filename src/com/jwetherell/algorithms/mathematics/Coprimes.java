@@ -6,10 +6,11 @@ package com.jwetherell.algorithms.mathematics;
  * co-prime) if the only positive integer that divides both of them is 1. That is, the only common positive factor 
  * of the two numbers is 1. This is equivalent to their greatest common divisor being 1.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Coprime_integers">Mutually Prime / Co-prime (Wikipedia)</a>
- * <br>
+ *
  * @author Szymon Stankiewicz <mail@stankiewicz.me>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Coprime_integers">Mutually Prime / Co-prime (Wikipedia)</a>
+ * <br>
  */
 public class Coprimes {
 

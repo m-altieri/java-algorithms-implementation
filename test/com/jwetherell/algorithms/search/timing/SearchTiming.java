@@ -9,7 +9,7 @@ import com.jwetherell.algorithms.search.QuickSelect;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SearchTiming.
  */
 public class SearchTiming {
 
@@ -20,9 +20,9 @@ public class SearchTiming {
     private static int[] sorted = null;
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         System.out.println("Generating sorted array.");

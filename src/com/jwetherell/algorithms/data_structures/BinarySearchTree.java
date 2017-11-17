@@ -21,9 +21,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ITree;
  * nodes with keys greater than the node's key. 3) Both the left and right
  * subtrees must also be binary search trees.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
@@ -37,7 +39,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
     protected INodeCreator<T> creator = null;
 
     /**
-     * 
+     * The Enum DepthFirstSearchOrder.
      */
     public enum DepthFirstSearchOrder {
         inOrder, preOrder, postOrder
@@ -60,6 +62,8 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public BinarySearchTree(INodeCreator<T> creator) {
         this.creator = creator;
@@ -473,10 +477,10 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
 
     /**
      * Get an array representation of the tree in breath first search order.
-     * 
+     *
+     * @param <T> the generic type
      * @param start rooted node
      * @param size of tree rooted at start
-     * 
      * @return breath first search sorted array representing the tree.
      */
     public static <T extends Comparable<T>> T[] getBFS(Node<T> start, int size) {
@@ -520,11 +524,11 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
 
     /**
      * Get an array representation of the tree in-order.
-     * 
+     *
+     * @param <T> the generic type
      * @param order of search
      * @param start rooted node
      * @param size of tree rooted at start
-     * 
      * @return order sorted array representing the tree.
      */
     public static <T extends Comparable<T>> T[] getDFS(DepthFirstSearchOrder order, Node<T> start, int size) {

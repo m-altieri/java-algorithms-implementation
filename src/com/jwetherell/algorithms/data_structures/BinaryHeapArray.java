@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * A binary heap using an array to hold the nodes.
- * 
+ *
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  */
 public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 
@@ -380,25 +382,25 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 	}
 
 	/**
-	 * 
+	 * The Class JavaCompatibleBinaryHeapArray.
 	 *
-	 * @param <T> 
+	 * @param <T> the generic type
 	 */
 	public static class JavaCompatibleBinaryHeapArray<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
 		private BinaryHeapArray<T> heap = null;
 
 		/**
-		 * 
+		 * Instantiates a new java compatible binary heap array.
 		 */
 		public JavaCompatibleBinaryHeapArray() {
 			heap = new BinaryHeapArray<T>();
 		}
 
 		/**
-		 * 
+		 * Instantiates a new java compatible binary heap array.
 		 *
-		 * @param heap 
+		 * @param heap the heap
 		 */
 		public JavaCompatibleBinaryHeapArray(BinaryHeapArray<T> heap) {
 			this.heap = heap;

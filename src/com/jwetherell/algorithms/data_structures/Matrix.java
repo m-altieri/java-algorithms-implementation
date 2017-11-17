@@ -9,9 +9,11 @@ import java.util.Comparator;
  * Matrx. This Matrix implementation is designed to be more efficient
  * in cache. A matrix is a rectangular array of numbers, symbols, or expressions.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)">Matrix (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class Matrix<T extends Number> {
@@ -72,21 +74,21 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Gets the.
      *
-     * @param row 
-     * @param col 
-     * @return 
+     * @param row the row
+     * @param col the col
+     * @return the t
      */
     public T get(int row, int col) {
         return matrix[getIndex(row, col)];
     }
 
     /**
-     * 
+     * Gets the row.
      *
-     * @param row 
-     * @return 
+     * @param row the row
+     * @return the row
      */
     public T[] getRow(int row) {
         T[] result = (T[]) new Number[cols];
@@ -97,10 +99,10 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Gets the column.
      *
-     * @param col 
-     * @return 
+     * @param col the col
+     * @return the column
      */
     public T[] getColumn(int col) {
         T[] result = (T[]) new Number[rows];
@@ -111,21 +113,21 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Sets the.
      *
-     * @param row 
-     * @param col 
-     * @param value 
+     * @param row the row
+     * @param col the col
+     * @param value the value
      */
     public void set(int row, int col, T value) {
         matrix[getIndex(row, col)] = value;
     }
 
     /**
-     * 
+     * Identity.
      *
-     * @return 
-     * @throws Exception 
+     * @return the matrix
+     * @throws Exception the exception
      */
     public Matrix<T> identity() throws Exception{
         if (this.rows != this.cols) {
@@ -170,10 +172,10 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Adds the.
      *
-     * @param input 
-     * @return 
+     * @param input the input
+     * @return the matrix
      */
     public Matrix<T> add(Matrix<T> input) {
         Matrix<T> output = new Matrix<T>(this.rows, this.cols);
@@ -214,10 +216,10 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Subtract.
      *
-     * @param input 
-     * @return 
+     * @param input the input
+     * @return the matrix
      */
     public Matrix<T> subtract(Matrix<T> input) {
         Matrix<T> output = new Matrix<T>(this.rows, this.cols);
@@ -259,10 +261,10 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Multiply.
      *
-     * @param input 
-     * @return 
+     * @param input the input
+     * @return the matrix
      */
     public Matrix<T> multiply(Matrix<T> input) {
         Matrix<T> output = new Matrix<T>(this.rows, input.cols);
@@ -343,9 +345,9 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Copy.
      *
-     * @param m 
+     * @param m the m
      */
     public void copy(Matrix<T> m) {
         for (int r = 0; r < m.rows; r++) {
@@ -409,18 +411,18 @@ public class Matrix<T extends Number> {
     }
 
     /**
-     * 
+     * Gets the rows.
      *
-     * @return 
+     * @return the rows
      */
     public int getRows() {
         return rows;
     }
 
     /**
-     * 
+     * Gets the cols.
      *
-     * @return 
+     * @return the cols
      */
     public int getCols() {
         return cols;

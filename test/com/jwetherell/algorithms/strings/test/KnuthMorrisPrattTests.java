@@ -11,14 +11,15 @@ import com.jwetherell.algorithms.strings.KnuthMorrisPratt;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class KnuthMorrisPrattTests.
  */
 public class KnuthMorrisPrattTests {
 
     /**
-     * 
+     * Gets the prefix suffixes.
      *
-     * @throws Exception 
+     * @return the prefix suffixes
+     * @throws Exception the exception
      */
     @Test
     @SuppressWarnings("unchecked")

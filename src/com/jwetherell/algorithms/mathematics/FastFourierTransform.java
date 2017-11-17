@@ -9,24 +9,27 @@ import com.jwetherell.algorithms.numbers.Complex;
  * domain and vice versa. An FFT rapidly computes such transformations by factorizing the DFT matrix into a product of 
  * sparse (mostly zero) factors.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform (Wikipedia)</a>
- * <br>
+ *
  * @author Mateusz Cianciara <e.cianciara@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform (Wikipedia)</a>
+ * <br>
  */
 public class FastFourierTransform {
 
     private FastFourierTransform() { }
 
-    /** 
+    /**
+     *  
      * The Cooley–Tukey algorithm, named after J.W. Cooley and John Tukey, is the most common fast Fourier transform 
      * (FFT) algorithm. It re-expresses the discrete Fourier transform (DFT) of an arbitrary composite size N = N1N2 
      * in terms of N1 smaller DFTs of sizes N2, recursively, to reduce the computation time to O(N log N) for highly 
      * composite N (smooth numbers).
      * <p>
+     *
+     * @param coefficients size must be power of 2
      * @see <a href="https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">Cooley–Tukey Algorithm (Wikipedia)</a>
      * <br>
-     * @param coefficients size must be power of 2
      */
     public static void cooleyTukeyFFT(Complex[] coefficients) {
         final int size = coefficients.length;

@@ -4,19 +4,19 @@ import com.jwetherell.algorithms.data_structures.interfaces.ISet;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SetTest.
  */
 public class SetTest {
 
     /**
-     * 
+     * Test set.
      *
-     * @param <T> 
-     * @param set 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param set the set
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testSet(ISet<T> set, String name,
                                                             T[] data, T _invalid) {

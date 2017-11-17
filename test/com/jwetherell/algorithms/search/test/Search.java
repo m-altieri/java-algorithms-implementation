@@ -16,7 +16,7 @@ import com.jwetherell.algorithms.search.UpperBound;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Search.
  */
 public class Search {
 
@@ -31,12 +31,12 @@ public class Search {
         }
     }
 
-    private static int valueIndex = SIZE - (SIZE / 4);
-    private static int valueInArray = sorted[valueIndex];
-    private static int valueNotInArray = sorted[SIZE - 1] + offset;
+    private static final int valueIndex = SIZE - (SIZE / 4);
+    private static final int valueInArray = sorted[valueIndex];
+    private static final int valueNotInArray = sorted[SIZE - 1] + offset;
 
     /**
-     * 
+     * Test brute force search.
      */
     @Test
     public void testBruteForceSearch() {
@@ -47,7 +47,7 @@ public class Search {
     }
 
     /**
-     * 
+     * Test binary search.
      */
     @Test
     public void testBinarySearch() {
@@ -58,7 +58,7 @@ public class Search {
     }
 
     /**
-     * 
+     * Test optimized binary search.
      */
     @Test
     public void testOptimizedBinarySearch() {
@@ -69,7 +69,7 @@ public class Search {
     }
 
     /**
-     * 
+     * Test interpolation search.
      */
     @Test
     public void testInterpolationSearch() {
@@ -80,7 +80,7 @@ public class Search {
     }
 
     /**
-     * 
+     * Test quick select.
      */
     @Test
     public void testQuickSelect() {
@@ -91,7 +91,7 @@ public class Search {
     }
 
     /**
-     * 
+     * Test lower bound.
      */
     @Test
     public void testLowerBound() {
@@ -130,7 +130,7 @@ public class Search {
     }
 
     /**
-     * 
+     * Test upper bound.
      */
     @Test
     public void testUpperBound() {

@@ -14,12 +14,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TrieTests.
  */
 public class TrieTests {
 
     /**
-     * 
+     * Test trie.
      */
     @Test
     public void testTrie() {

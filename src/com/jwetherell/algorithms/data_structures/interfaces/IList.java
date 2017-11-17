@@ -5,9 +5,11 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * A list or sequence is an abstract data type that implements an ordered
  * collection of values, where the same value may occur more than once.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/List_(computing)">List (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface IList<T> {
 
@@ -55,15 +57,15 @@ public interface IList<T> {
     public boolean validate();
 
     /**
-     * Get this List as a Java compatible List
-     * 
+     * Get this List as a Java compatible List.
+     *
      * @return Java compatible List
      */
     public java.util.List<T> toList();
 
     /**
-     * Get this List as a Java compatible Collection
-     * 
+     * Get this List as a Java compatible Collection.
+     *
      * @return Java compatible Collection
      */
     public java.util.Collection<T> toCollection();

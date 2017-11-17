@@ -16,7 +16,7 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class BinarySearchTreeTests.
  */
 public class BinarySearchTreeTests {
 
@@ -35,7 +35,7 @@ public class BinarySearchTreeTests {
     }
 
     /**
-     * 
+     * Test BST.
      */
     @Test
     public void testBST() {
@@ -52,7 +52,9 @@ public class BinarySearchTreeTests {
                                                  data.unsorted, data.sorted, data.invalid));
     }
 
-    /** 4 2 5 1 3 */
+    /**
+     *  4 2 5 1 3.
+     */
     @Test
     public void testBSF() {
         final Integer[] inOrder = testBST.getBFS();
@@ -62,7 +64,9 @@ public class BinarySearchTreeTests {
         }
     }
 
-    /** 4 2 5 1 3 */
+    /**
+     *  4 2 5 1 3.
+     */
     @Test
     public void testLevelOrder() {
         final Integer[] inOrder = testBST.getBFS();
@@ -72,7 +76,9 @@ public class BinarySearchTreeTests {
         }
     }
 
-    /** BFS and level order are the same */
+    /**
+     *  BFS and level order are the same.
+     */
     @Test
     public void testLargeBFS() {
         TestData data = Utils.generateTestData(1000);
@@ -84,7 +90,9 @@ public class BinarySearchTreeTests {
         bst.getBFS();
     }
 
-    /** 4 2 1 3 5 */
+    /**
+     *  4 2 1 3 5.
+     */
     @Test
     public void testPreOrderDFS() {
         final Integer[] inOrder = testBST.getDFS(DepthFirstSearchOrder.preOrder);
@@ -95,7 +103,7 @@ public class BinarySearchTreeTests {
     }
 
     /**
-     * 
+     * Test large pre order DFS.
      */
     @Test
     public void testLargePreOrderDFS() {
@@ -108,7 +116,9 @@ public class BinarySearchTreeTests {
         bst.getDFS(DepthFirstSearchOrder.preOrder);
     }
 
-    /** 1 2 3 4 5 */
+    /**
+     *  1 2 3 4 5.
+     */
     @Test
     public void testInOrderDFS() {
         final Integer[] inOrder = testBST.getDFS(DepthFirstSearchOrder.inOrder);
@@ -119,7 +129,7 @@ public class BinarySearchTreeTests {
     }
 
     /**
-     * 
+     * Test large in order DFS.
      */
     @Test
     public void testLargeInOrderDFS() {
@@ -132,7 +142,9 @@ public class BinarySearchTreeTests {
         bst.getDFS(DepthFirstSearchOrder.inOrder);
     }
 
-    /** 1 3 2 5 4 */
+    /**
+     *  1 3 2 5 4.
+     */
     @Test
     public void testPostOrderDFS() {
         final Integer[] inOrder = testBST.getDFS(DepthFirstSearchOrder.postOrder);
@@ -143,7 +155,7 @@ public class BinarySearchTreeTests {
     }
 
     /**
-     * 
+     * Test large post order DFS.
      */
     @Test
     public void testLargePostOrderDFS() {

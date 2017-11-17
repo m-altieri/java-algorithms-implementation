@@ -18,36 +18,45 @@ import com.jwetherell.algorithms.sorts.ShellSort;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Sorts.
  */
 public class Sorts {
 
     private static final Random RANDOM = new Random();
     private static final int SIZE = 10000;
-
-    private static Integer[] unsorted = null;
-    private static Integer[] sorted = null;
-    private static Integer[] reverse = null;
-
-    static {
-        unsorted = new Integer[SIZE];
-        int i = 0;
+    
+    private static Integer[] getUnsorted() {
+    	Integer[] unsorted = new Integer[SIZE];
+    	int i = 0;
         while (i < unsorted.length) {
             int j = RANDOM.nextInt(unsorted.length * 10);
             unsorted[i++] = j;
         }
-
-        sorted = new Integer[SIZE];
-        for (i = 0; i < sorted.length; i++)
-            sorted[i] = i;
-
-        reverse = new Integer[SIZE];
-        for (i = (reverse.length - 1); i >= 0; i--)
-            reverse[i] = (SIZE - 1) - i;
+        return unsorted;
     }
+    
+    private static Integer[] getSorted() {
+    	Integer[] sorted = new Integer[SIZE];
+        for (int i = 0; i < sorted.length; i++) {
+            sorted[i] = i;
+        }
+        return sorted;
+    }
+    
+    private static Integer[] getReverse() {
+    	Integer[] reverse = new Integer[SIZE];
+        for (int i = (reverse.length - 1); i >= 0; i--) {
+            reverse[i] = (SIZE - 1) - i;
+        }
+        return reverse;
+    }
+    
+    private static final Integer[] unsorted = getUnsorted();
+    private static final Integer[] sorted = getSorted(); 
+    private static Integer[] reverse = getReverse();
 
     /**
-     * 
+     * Test insertion sorts.
      */
     @Test
     public void testInsertionSorts() {
@@ -61,7 +70,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test bubble sorts.
      */
     @Test
     public void testBubbleSorts() {
@@ -75,7 +84,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test shells sorts.
      */
     @Test
     public void testShellsSorts() {
@@ -90,7 +99,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test merge sorts in place.
      */
     @Test
     public void testMergeSortsInPlace() {
@@ -104,7 +113,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test merge sorts not in place.
      */
     @Test
     public void testMergeSortsNotInPlace() {
@@ -118,7 +127,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test quick sorts.
      */
     @Test
     public void testQuickSorts() {
@@ -144,7 +153,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test heap sorts.
      */
     @Test
     public void testHeapSorts() {
@@ -158,7 +167,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test counting sorts.
      */
     @Test
     public void testCountingSorts() {
@@ -172,7 +181,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test radix sorts.
      */
     @Test
     public void testRadixSorts() {
@@ -186,7 +195,7 @@ public class Sorts {
     }
 
     /**
-     * 
+     * Test american flag sorts.
      */
     @Test
     public void testAmericanFlagSorts() {

@@ -14,10 +14,13 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
  * <p>
  * This implementation is a composition of a AVLTree as the backing structure.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL Tree (Wikipedia)</a>
  * @see <a href="https://en.wikipedia.org/wiki/Associative_array">Associative Array (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
@@ -35,7 +38,7 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
     private AVLTree<K> tree = null;
 
     /**
-     * 
+     * Instantiates a new tree map.
      */
     public TreeMap() {
 
@@ -44,6 +47,8 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public TreeMap(INodeCreator<K> creator) {
         tree = new AVLTree<K>(creator);

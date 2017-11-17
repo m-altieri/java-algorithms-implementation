@@ -15,16 +15,21 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * <p>
  * Worst case: O(|V| |E|)
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman Ford (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class BellmanFord {
 
     private BellmanFord() { }
 
     /**
-     * Get shortest path for all vertices
+     * Get shortest path for all vertices.
+     *
+     * @param graph the graph
+     * @param start the start
+     * @return the shortest paths
      */
     public static Map<Graph.Vertex<Integer>, Graph.CostPathPair<Integer>> getShortestPaths(Graph<Integer> graph, Graph.Vertex<Integer> start) {
         final Map<Graph.Vertex<Integer>, List<Graph.Edge<Integer>>> paths = new HashMap<Graph.Vertex<Integer>, List<Graph.Edge<Integer>>>();
@@ -43,7 +48,12 @@ public class BellmanFord {
     }
 
     /**
-     * Get shortest path to from 'start' to 'end' vertices
+     * Get shortest path to from 'start' to 'end' vertices.
+     *
+     * @param graph the graph
+     * @param start the start
+     * @param end the end
+     * @return the shortest path
      */
     public static Graph.CostPathPair<Integer> getShortestPath(Graph<Integer> graph, Graph.Vertex<Integer> start, Graph.Vertex<Integer> end) {
         if (graph == null)

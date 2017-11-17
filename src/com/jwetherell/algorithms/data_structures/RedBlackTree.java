@@ -16,9 +16,11 @@ import java.util.List;
  * faster than red-black trees for lookup intensive applications. However,
  * red-black trees are faster for insertion and removal.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree">Red-Black Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
@@ -43,6 +45,8 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public RedBlackTree(INodeCreator<T> creator) {
         super(creator);
@@ -563,25 +567,25 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleRedBlackTree.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleRedBlackTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private RedBlackTree<T> tree = null;
 
         /**
-         * 
+         * Instantiates a new java compatible red black tree.
          */
         public JavaCompatibleRedBlackTree() {
             this.tree = new RedBlackTree<T> ();
         }
 
         /**
-         * 
+         * Instantiates a new java compatible red black tree.
          *
-         * @param tree 
+         * @param tree the tree
          */
         public JavaCompatibleRedBlackTree(RedBlackTree<T> tree) {
             this.tree = tree;

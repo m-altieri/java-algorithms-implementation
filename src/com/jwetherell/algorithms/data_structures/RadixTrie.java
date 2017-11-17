@@ -15,10 +15,13 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
  * This implementation is a composition of a PatriciaTrie as the backing
  * structure.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/Radix_tree">Radix Tree / Patricia Trie (Wikipedia)</a>
  * @see <a href="https://en.wikipedia.org/wiki/Associative_array">Associative Array (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class RadixTrie<K extends CharSequence, V> implements PatriciaTrie.INodeCreator, IMap<K,V> {
@@ -26,7 +29,7 @@ public class RadixTrie<K extends CharSequence, V> implements PatriciaTrie.INodeC
     private PatriciaTrie<K> trie = null;
 
     /**
-     * 
+     * Instantiates a new radix trie.
      */
     public RadixTrie() {
         trie = new PatriciaTrie<K>(this);

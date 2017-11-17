@@ -14,12 +14,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SkipListTests.
  */
 public class SkipListTests {
 
     /**
-     * 
+     * Test skip list.
      */
     @Test
     public void testSkipList() {

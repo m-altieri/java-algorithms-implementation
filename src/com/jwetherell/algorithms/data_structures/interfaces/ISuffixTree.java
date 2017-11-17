@@ -8,16 +8,18 @@ import java.util.Set;
  * containing all the suffixes of the given text as their keys and positions in the text as their values. Suffix trees 
  * allow particularly fast implementations of many important string operations.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Suffix_tree">Suffix Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface ISuffixTree<C extends CharSequence> {
 
     /**
      * Does the sub-sequence exist in the suffix tree.
-     * 
-     * @param sub-sequence to locate in the tree.
+     *
+     * @param sub the sub
      * @return True if the sub-sequence exist in the tree.
      */
     public boolean doesSubStringExist(C sub);

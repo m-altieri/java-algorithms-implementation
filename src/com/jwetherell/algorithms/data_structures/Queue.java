@@ -7,17 +7,20 @@ import com.jwetherell.algorithms.data_structures.interfaces.IQueue;
  * In computer science, a queue is a particular kind of abstract data type or collection in which the entities in the collection are kept in order and the principal (or only) operations 
  * on the collection are the addition of entities to the rear terminal position, known as enqueue, and removal of entities from the front terminal position, known as dequeue. 
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public interface Queue<T> extends IQueue<T> {
 
     /**
      * This queue implementation is backed by an array.
-     * 
+     *
      * @author Justin Wetherell <phishman3579@gmail.com>
+     * @param <T> the generic type
      */
     public static class ArrayQueue<T> implements Queue<T> {
 
@@ -239,8 +242,9 @@ public interface Queue<T> extends IQueue<T> {
 
     /**
      * This queue implementation is backed by a linked list.
-     * 
+     *
      * @author Justin Wetherell <phishman3579@gmail.com>
+     * @param <T> the generic type
      */
     public static class LinkedQueue<T> implements Queue<T> {
 
@@ -249,7 +253,7 @@ public interface Queue<T> extends IQueue<T> {
         private int size = 0;
 
         /**
-         * 
+         * Instantiates a new linked queue.
          */
         public LinkedQueue() {
             head = null;
@@ -471,18 +475,18 @@ public interface Queue<T> extends IQueue<T> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleArrayQueue.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleArrayQueue<T> extends java.util.AbstractQueue<T> {
 
         private ArrayQueue<T> queue = null;
 
         /**
-         * 
+         * Instantiates a new java compatible array queue.
          *
-         * @param queue 
+         * @param queue the queue
          */
         public JavaCompatibleArrayQueue(ArrayQueue<T> queue) {
             this.queue = queue;
@@ -593,18 +597,18 @@ public interface Queue<T> extends IQueue<T> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleLinkedQueue.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleLinkedQueue<T> extends java.util.AbstractQueue<T> {
 
         private LinkedQueue<T> queue = null;
 
         /**
-         * 
+         * Instantiates a new java compatible linked queue.
          *
-         * @param queue 
+         * @param queue the queue
          */
         public JavaCompatibleLinkedQueue(LinkedQueue<T> queue) {
             this.queue = queue;

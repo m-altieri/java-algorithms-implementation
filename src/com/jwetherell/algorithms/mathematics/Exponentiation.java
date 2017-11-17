@@ -4,6 +4,9 @@ package com.jwetherell.algorithms.mathematics;
 /**
  * Recursive function of exponentiation is just an implementation of definition.
  * <p>
+ *
+ * @author Bartlomiej Drozd <mail@bartlomiejdrozd.pl>
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Exponentiation">Exponentiation (Wikipedia)</a>
  * <p>
  * Complexity  - O(N) where N is exponent.
@@ -18,17 +21,15 @@ package com.jwetherell.algorithms.mathematics;
  * <p>
  * This implementation is the fast version of this algorithm with a complexity of O(lg N) also
  * <br>
- * @author Bartlomiej Drozd <mail@bartlomiejdrozd.pl>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class Exponentiation {
 
     /**
-     * 
+     * Recursive exponentiation.
      *
-     * @param base 
-     * @param exponent 
-     * @return 
+     * @param base the base
+     * @param exponent the exponent
+     * @return the int
      */
     public static int recursiveExponentiation(int base, int exponent) {
         if (exponent == 0)
@@ -40,11 +41,11 @@ public class Exponentiation {
     }
 
     /**
-     * 
+     * Fast recursive exponentiation.
      *
-     * @param base 
-     * @param exponent 
-     * @return 
+     * @param base the base
+     * @param exponent the exponent
+     * @return the int
      */
     public static int fastRecursiveExponentiation(int base, int exponent) {
         if (exponent == 0)
@@ -61,12 +62,12 @@ public class Exponentiation {
     }
 
     /**
-     * 
+     * Fast recursive exponentiation modulo.
      *
-     * @param base 
-     * @param exponent 
-     * @param mod 
-     * @return 
+     * @param base the base
+     * @param exponent the exponent
+     * @param mod the mod
+     * @return the int
      */
     public static int fastRecursiveExponentiationModulo(int base, int exponent, int mod) {
         if (exponent == 0)

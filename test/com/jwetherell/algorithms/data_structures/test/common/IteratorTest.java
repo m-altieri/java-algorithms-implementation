@@ -4,16 +4,16 @@ import java.util.Iterator;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class IteratorTest.
  */
 public class IteratorTest {
 
     /**
-     * 
+     * Test iterator.
      *
-     * @param <T> 
-     * @param iter 
-     * @return 
+     * @param <T> the generic type
+     * @param iter the iter
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testIterator(Iterator<T> iter) {
         while (iter.hasNext()) {

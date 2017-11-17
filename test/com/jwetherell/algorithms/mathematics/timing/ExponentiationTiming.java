@@ -11,9 +11,9 @@ import com.jwetherell.algorithms.mathematics.Exponentiation;
 public class ExponentiationTiming {
     
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         System.out.println("Calculating a power using a recursive function.");

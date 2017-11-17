@@ -7,16 +7,16 @@ import com.jwetherell.algorithms.numbers.Longs;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class NumbersTiming.
  */
 public class NumbersTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         // Integers

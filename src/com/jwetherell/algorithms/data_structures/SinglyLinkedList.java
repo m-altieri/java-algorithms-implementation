@@ -1,19 +1,27 @@
 package com.jwetherell.algorithms.data_structures;
 
+import com.jwetherell.algorithms.data_structures.interfaces.IList;
+
+// TODO: Auto-generated Javadoc
 /**
  * Linked List (Singly link). A linked list is a data structure consisting
  * of a group of nodes which together represent a sequence.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Linked_list">Linked List (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
-public class SinglyLinkedList<T> extends List<T> {
+public class SinglyLinkedList<T> implements IList<T> {
 
 	private int size = 0;
 	private Node<T> head = null;
 	private Node<T> tail = null;
 
+	/**
+	 * Instantiates a new singly linked list.
+	 */
 	public SinglyLinkedList() {
 		super();
 	}
@@ -204,18 +212,20 @@ public class SinglyLinkedList<T> extends List<T> {
 	 * Linked List (singly link). A linked list is a data structure consisting
 	 * of a group of nodes which together represent a sequence.
 	 * <p>
+	 *
+	 * @author Justin Wetherell <phishman3579@gmail.com>
+	 * @param <T> the generic type
 	 * @see <a href="https://en.wikipedia.org/wiki/Linked_list">Linked List (Wikipedia)</a>
 	 * <br>
-	 * @author Justin Wetherell <phishman3579@gmail.com>
 	 */
 	public static class JavaCompatibleSinglyLinkedList<T> extends java.util.AbstractSequentialList<T> {
 
 		private SinglyLinkedList<T> list = null;
 
 		/**
-		 * 
+		 * Instantiates a new java compatible singly linked list.
 		 *
-		 * @param list 
+		 * @param list the list
 		 */
 		public JavaCompatibleSinglyLinkedList(SinglyLinkedList<T> list) {
 			this.list = list;

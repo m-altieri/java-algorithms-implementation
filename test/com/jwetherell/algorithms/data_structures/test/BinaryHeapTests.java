@@ -16,12 +16,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class BinaryHeapTests.
  */
 public class BinaryHeapTests {
 
     /**
-     * 
+     * Test min heap.
      */
     @Test
     public void testMinHeap() {
@@ -45,7 +45,7 @@ public class BinaryHeapTests {
     }
 
     /**
-     * 
+     * Test max heap.
      */
     @Test
     public void testMaxHeap() {

@@ -16,7 +16,7 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ListTests.
  */
 public class ListTests {
 
@@ -62,7 +62,7 @@ public class ListTests {
 	}
 	
     /**
-     * 
+     * Test array list.
      */
     @Test
     public void testArrayList() {
@@ -87,7 +87,7 @@ public class ListTests {
     }
 
     /**
-     * 
+     * Test singly linked list.
      */
     @Test
     public void testSinglyLinkedList() {
@@ -104,7 +104,7 @@ public class ListTests {
     }
 
     /**
-     * 
+     * Test doubly linked list.
      */
     @Test
     public void testDoublyLinkedList() {

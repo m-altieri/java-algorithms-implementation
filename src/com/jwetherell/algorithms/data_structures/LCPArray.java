@@ -8,10 +8,12 @@ import java.util.ArrayList;
  * data structure to the suffix array. It stores the lengths of the longest common
  * prefixes (LCPs) between all pairs of consecutive suffixes in a sorted suffix array.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/LCP_array">LCP Array (Wikipedia)</a>
- * <br>
+ *
  * @author Jakub Szarawarski <kubaszarawarski@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
+ * @see <a href="https://en.wikipedia.org/wiki/LCP_array">LCP Array (Wikipedia)</a>
+ * <br>
  */
 public class LCPArray<C extends CharSequence> {
 
@@ -23,19 +25,19 @@ public class LCPArray<C extends CharSequence> {
     private ArrayList<Integer> lcp;
 
     /**
-     * 
+     * Instantiates a new LCP array.
      *
-     * @param sequence 
+     * @param sequence the sequence
      */
     public LCPArray(C sequence){
         this(sequence, DEFAULT_END_SEQ_CHAR);
     }
 
     /**
-     * 
+     * Instantiates a new LCP array.
      *
-     * @param sequence 
-     * @param endChar 
+     * @param sequence the sequence
+     * @param endChar the end char
      */
     public LCPArray(C sequence, char endChar) {
         endSeqChar = endChar;
@@ -43,9 +45,9 @@ public class LCPArray<C extends CharSequence> {
     }
 
     /**
-     * 
+     * Gets the LCP array.
      *
-     * @return 
+     * @return the LCP array
      */
     public ArrayList<Integer> getLCPArray() {
         if (lcp == null)

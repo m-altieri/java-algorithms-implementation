@@ -7,6 +7,8 @@ import java.util.Map;
 
 // TODO: Auto-generated Javadoc
 /**
+ * The Class Primes.
+ *
  * @author Justin Wetherell <phishman3579@gmail.com>
  * @author Bartlomiej Drozd <mail@bartlomiejdrozd.pl>
  */
@@ -18,6 +20,9 @@ public class Primes {
      * of determining these factors is called integer factorization. The fundamental theorem of arithmetic says that every positive 
      * integer has a single unique prime factorization.
      * <p>
+     *
+     * @param number the number
+     * @return the prime factorization
      * @see <a href="https://en.wikipedia.org/wiki/Prime_factor">Prime Factor (Wikipedia)</a>
      * <br>
      */
@@ -57,7 +62,10 @@ public class Primes {
      * prime factor greater than n . The consequence for primality testing of a
      * number n is: if we cannot find a number f less than or equal n that
      * divides n then n is prime: the only prime factor of n is n itself
-     **/
+     *
+     * @param number the number
+     * @return true, if is prime
+     */
     public static final boolean isPrime(long number) {
         if (number == 1)
             return false;
@@ -95,6 +103,9 @@ public class Primes {
      * number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, with constant 
      * difference between them that is equal to that prime.
      * <p>
+     *
+     * @param number the number
+     * @return true, if successful
      * @see <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes (Wikipedia)</a>
      * <br>
      */
@@ -129,6 +140,9 @@ public class Primes {
      * algorithm, witnesses are not randomized. Used set of witnesses guarantees that result
      * will be correct for sure (not probably) for any number lower than 10^18.
      * <p>
+     *
+     * @param number the number
+     * @return true, if successful
      * @see <a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">Miller-Rabin Primality Test (Wikipedia)</a>
      * <br>
      */

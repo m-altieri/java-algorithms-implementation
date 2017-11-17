@@ -14,20 +14,21 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * subset of the edges that forms a tree that includes every vertex, where the
  * total weight of all the edges in the tree is minimized.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's Algorithm (Wikipedia)</a>
- * <br>
+ *
  * @author Bartlomiej Drozd <mail@bartlomiejdrozd.pl>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's Algorithm (Wikipedia)</a>
+ * <br>
  */
 public class Kruskal {
 
     private Kruskal() { }
 
     /**
-     * 
+     * Gets the minimum spanning tree.
      *
-     * @param graph 
-     * @return 
+     * @param graph the graph
+     * @return the minimum spanning tree
      */
     public static Graph.CostPathPair<Integer> getMinimumSpanningTree(Graph<Integer> graph) {
         if (graph == null)

@@ -14,7 +14,7 @@ import com.jwetherell.algorithms.graph.EdmondsKarp;
 public class EdmondsKarpTest {
 
     /**
-     * 
+     * Test 1.
      */
     @Test
     public void Test1() {
@@ -35,7 +35,7 @@ public class EdmondsKarpTest {
     }
 
     /**
-     * 
+     * Test 2.
      */
     @Test
     public void Test2() {
@@ -46,7 +46,7 @@ public class EdmondsKarpTest {
     }
 
     /**
-     * 
+     * Test 3.
      */
     @Test
     public void Test3() {
@@ -60,7 +60,7 @@ public class EdmondsKarpTest {
     }
 
     /**
-     * 
+     * Test 4.
      */
     @Test
     public void Test4() {

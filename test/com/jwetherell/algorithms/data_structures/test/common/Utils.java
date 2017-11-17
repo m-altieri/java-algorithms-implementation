@@ -5,17 +5,17 @@ import java.util.Random;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Utils.
  */
 public class Utils {
 
     /**
-     * 
+     * Parses the T.
      *
-     * @param <T> 
-     * @param value 
-     * @param type 
-     * @return 
+     * @param <T> the generic type
+     * @param value the value
+     * @param type the type
+     * @return the t
      */
     public static final <T> T parseT(final Integer value, final Class<T> type) {
         T returnValue = null;
@@ -33,9 +33,9 @@ public class Utils {
     }
 
     /**
-     * 
+     * Handle error.
      *
-     * @param obj 
+     * @param obj the obj
      */
     public static void handleError(Object obj) {
         System.err.println("Object={\n"+obj.toString()+"\n}");
@@ -43,10 +43,10 @@ public class Utils {
     }
 
     /**
-     * 
+     * Handle error.
      *
-     * @param data 
-     * @param obj 
+     * @param data the data
+     * @param obj the obj
      */
     public static void handleError(Object data, Object obj) {
         System.err.println("Data={"+data+"}");
@@ -55,10 +55,10 @@ public class Utils {
     }
 
     /**
-     * 
+     * Handle error.
      *
-     * @param data 
-     * @param obj 
+     * @param data the data
+     * @param obj the obj
      */
     public static void handleError(Object[] data, Object obj) {
         System.err.println("Data={");
@@ -72,10 +72,10 @@ public class Utils {
     private static final Random RANDOM = new Random();
 
     /**
-     * 
+     * Test data.
      *
-     * @param integers 
-     * @return 
+     * @param integers the integers
+     * @return the test data
      */
     public static TestData testData(int... integers) {
         TestData data = new TestData(integers.length);
@@ -102,10 +102,10 @@ public class Utils {
     }
 
     /**
-     * 
+     * Generate test data.
      *
-     * @param data_size 
-     * @return 
+     * @param data_size the data size
+     * @return the test data
      */
     public static TestData generateTestData(int data_size) {
         TestData data = new TestData(data_size);
@@ -143,39 +143,39 @@ public class Utils {
     }
 
     /**
-     * 
+     * The Class TestData.
      */
     public static class TestData {
 
         /**
-         * 
+         * The random size.
          */
         public int random_size = 0;
         
         /**
-         * 
+         * The invalid.
          */
         public Integer invalid = 0;
         
         /**
-         * 
+         * The unsorted.
          */
         public Integer[] unsorted = null;
         
         /**
-         * 
+         * The sorted.
          */
         public Integer[] sorted = null;
         
         /**
-         * 
+         * The string.
          */
         public String string = null;
 
         /**
-         * 
+         * Instantiates a new test data.
          *
-         * @param size 
+         * @param size the size
          */
         public TestData(int size) {
             this.random_size = 1000 * size;
@@ -183,9 +183,9 @@ public class Utils {
         }
 
         /**
-         * 
+         * Instantiates a new test data.
          *
-         * @param _unsorted 
+         * @param _unsorted the unsorted
          */
         public TestData(Integer[] _unsorted) {
             this(_unsorted.length);

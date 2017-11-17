@@ -10,12 +10,12 @@ import com.jwetherell.algorithms.mathematics.RamerDouglasPeucker;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class RamerDouglasPeuckerTest.
  */
 public class RamerDouglasPeuckerTest {
 
     /**
-     * 
+     * Test 1.
      */
     @Test
     public void test1() {
@@ -32,7 +32,7 @@ public class RamerDouglasPeuckerTest {
     }
 
     /**
-     * 
+     * Test 2.
      */
     @Test
     public void test2() {
@@ -50,7 +50,7 @@ public class RamerDouglasPeuckerTest {
     }
 
     /**
-     * 
+     * Test 3.
      */
     @Test
     public void test3() {

@@ -14,12 +14,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class BTreeTests.
  */
 public class BTreeTests {
 
     /**
-     * 
+     * Test B tree.
      */
     @Test
     public void testBTree() {

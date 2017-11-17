@@ -17,12 +17,12 @@ import com.jwetherell.algorithms.data_structures.SegmentTree.FlatSegmentTree;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SegmentTreeTests.
  */
 public class SegmentTreeTests {
 
     /**
-     * 
+     * Test quadrant segment tree.
      */
     @Test
     public void testQuadrantSegmentTree() {
@@ -64,7 +64,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test range max segment tree.
      */
     @Test
     public void testRangeMaxSegmentTree() {
@@ -126,7 +126,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test range min segment tree.
      */
     @Test
     public void testRangeMinSegmentTree() {
@@ -187,7 +187,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test range sum segment tree.
      */
     @Test
     public void testRangeSumSegmentTree() {
@@ -249,7 +249,7 @@ public class SegmentTreeTests {
     final String schuetz    = "Schuetz";
 
     /**
-     * 
+     * Test lifespan segment tree.
      */
     @Test
     public void testLifespanSegmentTree() {
@@ -307,7 +307,7 @@ public class SegmentTreeTests {
     final String BLACK      = "BLACK";
 
     /**
-     * 
+     * Test interval segment tree.
      */
     @Test
     public void testIntervalSegmentTree() { 
@@ -361,7 +361,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test interval segment tree 2.
      */
     @Test
     public void testIntervalSegmentTree2() {
@@ -391,7 +391,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test interval segment tree 3.
      */
     @Test
     public void testIntervalSegmentTree3() {
@@ -410,7 +410,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test interval segment tree 4.
      */
     @Test
     public void testIntervalSegmentTree4() {
@@ -426,7 +426,7 @@ public class SegmentTreeTests {
     }
 
     /**
-     * 
+     * Test interval segment tree 5.
      */
     @Test
     public void testIntervalSegmentTree5() {

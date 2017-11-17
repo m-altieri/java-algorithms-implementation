@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class AllTests.
  */
 @RunWith(Suite.class)
 @SuiteClasses( {
@@ -48,7 +48,9 @@ import org.junit.runners.Suite.SuiteClasses;
 public class AllTests {
 
     /**
-     * @param args
+     * The main method.
+     *
+     * @param args the arguments
      */
     public static void main(String[] args) {   
         JUnitCore core = new JUnitCore(); 

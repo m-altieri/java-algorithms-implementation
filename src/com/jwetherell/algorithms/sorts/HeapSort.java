@@ -15,20 +15,22 @@ package com.jwetherell.algorithms.sorts;
  * Worst case = O(n*log n)<br>
  * Best case = O(n*log n)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Heap_sort">Heap Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class HeapSort<T extends Comparable<T>> {
 
     private HeapSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param <T> 
-     * @param unsorted 
-     * @return 
+     * @param <T> the generic type
+     * @param unsorted the unsorted
+     * @return the t[]
      */
     public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
         createHeap(unsorted);

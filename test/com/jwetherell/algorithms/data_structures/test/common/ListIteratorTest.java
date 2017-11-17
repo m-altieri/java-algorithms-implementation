@@ -5,19 +5,19 @@ import java.util.NoSuchElementException;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ListIteratorTest.
  */
 public class ListIteratorTest {
 
     /**
-     * 
+     * Test list iterator.
      *
-     * @param <T> 
-     * @param iter 
-     * @param type 
-     * @param data 
-     * @param size 
-     * @return 
+     * @param <T> the generic type
+     * @param iter the iter
+     * @param type the type
+     * @param data the data
+     * @param size the size
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testListIterator(ListIterator<T> iter, Class<T> type, 
                                                                      Integer[] data, int size) {

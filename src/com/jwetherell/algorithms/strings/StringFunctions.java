@@ -14,10 +14,10 @@ public class StringFunctions {
     private static final char SPACE = ' ';
 
     /**
-     * 
+     * Reverse with string concat.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWithStringConcat(String string) {
         String output = new String();
@@ -28,10 +28,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse with string builder.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWithStringBuilder(String string) {
         final StringBuilder builder = new StringBuilder();
@@ -42,10 +42,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse with string builder builtin method.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWithStringBuilderBuiltinMethod(String string) {
         final StringBuilder builder = new StringBuilder(string);
@@ -53,10 +53,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse with swaps.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWithSwaps(String string) {
         final char[] array = string.toCharArray();
@@ -73,10 +73,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse with XOR.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWithXOR(String string) {
         final char[] array = string.toCharArray();
@@ -92,10 +92,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse words by char with additional storage.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWordsByCharWithAdditionalStorage(String string) {
         final StringBuilder builder = new StringBuilder();
@@ -122,10 +122,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse words using string tokenizer with additional storage.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWordsUsingStringTokenizerWithAdditionalStorage(String string) {
         final StringTokenizer st = new StringTokenizer(string);
@@ -138,10 +138,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse words using split with additional storage.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWordsUsingSplitWithAdditionalStorage(String string) {
         final StringBuilder builder = new StringBuilder();
@@ -154,10 +154,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Reverse words in place.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return the string
      */
     public static final String reverseWordsInPlace(String string) {
         char[] chars = string.toCharArray();
@@ -245,10 +245,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Checks if is palindrome with additional storage.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return true, if is palindrome with additional storage
      */
     public static final boolean isPalindromeWithAdditionalStorage(String string) {
         final String reversed = new StringBuilder(string).reverse().toString();
@@ -256,10 +256,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Checks if is palindrome in place.
      *
-     * @param string 
-     * @return 
+     * @param string the string
+     * @return true, if is palindrome in place
      */
     public static final boolean isPalindromeInPlace(String string) {
         final char[] array = string.toCharArray();
@@ -276,10 +276,10 @@ public class StringFunctions {
     }
 
     /**
-     * 
+     * Generate subsets.
      *
-     * @param inputString 
-     * @return 
+     * @param inputString the input string
+     * @return the string[]
      */
     public static final String[] generateSubsets(String inputString) {
         final int length = inputString.length();
@@ -315,7 +315,13 @@ public class StringFunctions {
         return output;
     }
 
-    /** recursive **/
+    /**
+     *  recursive *.
+     *
+     * @param s the s
+     * @param t the t
+     * @return the int
+     */
     public static final int levenshteinDistanceRecursive(String s, String t) {
         final int sLength = s.length();
         final int tLength = t.length();
@@ -340,7 +346,13 @@ public class StringFunctions {
         }
     }
 
-    /** iterative - dynamic programming **/
+    /**
+     *  iterative - dynamic programming *.
+     *
+     * @param string1 the string 1
+     * @param string2 the string 2
+     * @return the int
+     */
     public static final int levenshteinDistanceIterative(String string1, String string2) {
         final char[] s = string1.toCharArray();
         final char[] t = string2.toCharArray();

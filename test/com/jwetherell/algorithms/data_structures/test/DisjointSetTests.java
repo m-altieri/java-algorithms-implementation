@@ -7,7 +7,7 @@ import com.jwetherell.algorithms.data_structures.DisjointSet;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DisjointSetTests.
  */
 @SuppressWarnings("unchecked")
 public class DisjointSetTests {
@@ -15,7 +15,7 @@ public class DisjointSetTests {
     private static boolean DEBUG = false;
 
     /**
-     * 
+     * Test disjoint set 1.
      */
     @Test
     public void testDisjointSet1() {
@@ -83,7 +83,7 @@ public class DisjointSetTests {
     }
 
     /**
-     * 
+     * Test disjoint set 2.
      */
     @Test
     public void testDisjointSet2() {

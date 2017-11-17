@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Longs.
  */
 public class Longs {
 
     /**
-     * 
+     * To binary using divide and modulus.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingDivideAndModulus(long numberToConvert) {
         long longNumber = numberToConvert;
@@ -28,10 +28,10 @@ public class Longs {
     }
 
     /**
-     * 
+     * To binary using shifts and modulus.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingShiftsAndModulus(long numberToConvert) {
         long longNumber = numberToConvert;
@@ -47,10 +47,10 @@ public class Longs {
     }
 
     /**
-     * 
+     * To binary using big decimal.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingBigDecimal(long numberToConvert) {
         long longNumber = numberToConvert;

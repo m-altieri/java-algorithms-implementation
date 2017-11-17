@@ -16,9 +16,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ITree;
  * optimized for systems that read and write large blocks of data. It is
  * commonly used in databases and file-systems.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class BTree<T extends Comparable<T>> implements ITree<T> {
@@ -778,18 +780,18 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleBTree.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleBTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private BTree<T> tree = null;
 
         /**
-         * 
+         * Instantiates a new java compatible B tree.
          *
-         * @param tree 
+         * @param tree the tree
          */
         public JavaCompatibleBTree(BTree<T> tree) {
             this.tree = tree;

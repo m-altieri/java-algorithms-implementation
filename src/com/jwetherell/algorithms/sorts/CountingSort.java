@@ -18,19 +18,20 @@ package com.jwetherell.algorithms.sorts;
  * <p> 
  * NOTE: r is the range of numbers (0 to r) to be sorted.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Counting_sort">Counting Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class CountingSort {
 
     private CountingSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param unsorted 
-     * @return 
+     * @param unsorted the unsorted
+     * @return the integer[]
      */
     public static Integer[] sort(Integer[] unsorted) {
         int maxValue = findMax(unsorted);

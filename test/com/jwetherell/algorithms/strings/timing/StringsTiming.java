@@ -6,16 +6,16 @@ import com.jwetherell.algorithms.strings.StringFunctions;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class StringsTiming.
  */
 public class StringsTiming {
 
     private static final DecimalFormat FORMAT = new DecimalFormat("#.######");
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         // REVERSE CHARS IN A STRING

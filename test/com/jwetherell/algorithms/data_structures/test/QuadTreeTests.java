@@ -11,7 +11,7 @@ import com.jwetherell.algorithms.data_structures.XYPoint;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class QuadTreeTests.
  */
 public class QuadTreeTests {
 
@@ -37,7 +37,7 @@ public class QuadTreeTests {
 	}
 
 	/**
-	 * 
+	 * Test point based quad tree.
 	 */
 	 @Test
 	 public void testPointBasedQuadTree() {
@@ -80,8 +80,8 @@ public class QuadTreeTests {
 	 }
 
 	 /**
-	  * 
-	  */
+ 	 * Test rectangle based quad tree.
+ 	 */
 	 @Test
 	 public void testRectangleBasedQuadTree() {
 		 QuadTree<QuadTree.AxisAlignedBoundingBox> tree = new QuadTree.MxCifQuadTree<QuadTree.AxisAlignedBoundingBox>(0,0,SIZE,SIZE,10,10);

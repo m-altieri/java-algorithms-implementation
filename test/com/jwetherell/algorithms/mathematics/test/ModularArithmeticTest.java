@@ -9,12 +9,12 @@ import com.jwetherell.algorithms.mathematics.Modular;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ModularArithmeticTest.
  */
 public class ModularArithmeticTest {
 
     /**
-     * 
+     * Sum test.
      */
     @Test
     public void sumTest() {
@@ -39,7 +39,7 @@ public class ModularArithmeticTest {
     }
 
     /**
-     * 
+     * Subtract test.
      */
     @Test
     public void subtractTest() {
@@ -62,7 +62,7 @@ public class ModularArithmeticTest {
     }
 
     /**
-     * 
+     * Multiply test.
      */
     @Test
     public void multiplyTest() {
@@ -81,7 +81,7 @@ public class ModularArithmeticTest {
     }
 
     /**
-     * 
+     * Power test.
      */
     @Test
     public void powerTest() {
@@ -122,7 +122,7 @@ public class ModularArithmeticTest {
     }
 
     /**
-     * 
+     * Divide test.
      */
     @Test
     public void divideTest() {

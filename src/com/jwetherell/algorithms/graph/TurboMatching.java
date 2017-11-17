@@ -14,18 +14,19 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * may incident with some edge of the matching, but this is not required and can only occur
  * if the number of vertices is even.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Matching_(graph_theory)">Matching (Wikipedia)</a>
- * <br>
+ *
  * @author Jakub Szarawarski <kubaszarwarski@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Matching_(graph_theory)">Matching (Wikipedia)</a>
+ * <br>
  */
 public class TurboMatching {
 
     /**
      * Computes maximum matching, using turbomatching algorithm based on augmenting paths with O(EV) complexity.
      *
-     * @param graph             bipartite graph
      * @param <T>               parameter of graph on which network is based
+     * @param graph             bipartite graph
      * @return a MatchingResult class instance containg a map of mates for each paired vertex and number of pairs
      */
     public static <T extends Comparable<T>> MatchingResult<T> getMaximumMatching(Graph<T> graph){
@@ -85,9 +86,9 @@ public class TurboMatching {
 
 
     /**
-     * 
+     * The Class MatchingResult.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class MatchingResult<T extends Comparable<T>>{
 
@@ -100,6 +101,8 @@ public class TurboMatching {
         }
 
         /**
+         * Gets the size.
+         *
          * @return the number of edges in independent edge set
          */
         public int getSize(){
@@ -107,6 +110,8 @@ public class TurboMatching {
         }
 
         /**
+         * Gets the mate.
+         *
          * @return a symetric map that contains a mate for each matched vertex
          */
         public Map<Graph.Vertex<T>, Graph.Vertex<T>> getMate(){

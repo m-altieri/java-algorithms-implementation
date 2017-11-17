@@ -15,20 +15,22 @@ package com.jwetherell.algorithms.sorts;
  * Worst case = O(n^2)<br>
  * Best case = O(n)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubble Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class BubbleSort<T extends Comparable<T>> {
 
     private BubbleSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param <T> 
-     * @param unsorted 
-     * @return 
+     * @param <T> the generic type
+     * @param unsorted the unsorted
+     * @return the t[]
      */
     public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
         boolean swapped = true;

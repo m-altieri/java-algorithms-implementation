@@ -14,9 +14,11 @@ import java.util.List;
  * of the number of values, so that each search, insertion, or deletion
  * operation takes logarithmic time to perform.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Treap">Treap (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
 
@@ -50,6 +52,8 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public Treap(INodeCreator<T> creator) {
         super(creator);
@@ -57,6 +61,9 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
+     * @param randomSeed the random seed
      */
     public Treap(INodeCreator<T> creator, int randomSeed) {
         this(randomSeed);

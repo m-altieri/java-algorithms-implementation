@@ -20,12 +20,12 @@ public class LowerBound {
     private LowerBound() { }
 
     /**
-     * 
+     * Lower bound.
      *
-     * @param array 
-     * @param length 
-     * @param value 
-     * @return 
+     * @param array the array
+     * @param length the length
+     * @param value the value
+     * @return the int
      */
     public static int lowerBound(int[] array, int length, int value) {
         int low = 0;

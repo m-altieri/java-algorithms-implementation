@@ -7,10 +7,11 @@ import java.util.List;
 /**
  * Structure for storing rooted tree which allows to find lowest common ancestor.
  * <p>
- * @param <T> type of value stored in nodes.
- * <br>
+ *
  * @author Szymon Stankiewicz <dakurels@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> type of value stored in nodes.
+ * <br>
  */
 public class LowestCommonAncestor<T> {
 
@@ -25,9 +26,10 @@ public class LowestCommonAncestor<T> {
 
     /**
      * Finds lower common ancestor of two nodes.
-     *
+     * 
      * Complexity O(log n) where n is the height of the tree.
      *
+     * @param <S> the generic type
      * @param node1 first node
      * @param node2 second node
      * @return lower common ancestor
@@ -69,9 +71,9 @@ public class LowestCommonAncestor<T> {
     }
 
     /**
-     * 
+     * The Class TreeNode.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static final class TreeNode<T> {
 
@@ -112,10 +114,10 @@ public class LowestCommonAncestor<T> {
         }
 
         /**
-         * 
+         * Sets the value.
          *
-         * @param value 
-         * @return 
+         * @param value the value
+         * @return the tree node
          */
         public TreeNode<T> setValue(T value) {
             this.value = value;
@@ -175,7 +177,7 @@ public class LowestCommonAncestor<T> {
         }
 
         /**
-         * Returns true if tree contains a node with given value
+         * Returns true if tree contains a node with given value.
          *
          * @param value to be checked
          * @return true if tree contains node with given value, false otherwise

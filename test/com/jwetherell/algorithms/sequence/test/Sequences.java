@@ -19,12 +19,12 @@ import com.jwetherell.algorithms.sequence.SubsequenceCounter;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Sequences.
  */
 public class Sequences {
 
     /**
-     * 
+     * Test arithmetic progression.
      */
     @Test
     public void testArithmeticProgression() {
@@ -40,7 +40,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test fibonacci.
      */
     @Test
     public void testFibonacci() {
@@ -61,7 +61,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test fibonacci loop exceptions.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciLoopExceptions() {
@@ -71,7 +71,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test fibonacci recursion exceptions.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciRecursionExceptions() {
@@ -81,7 +81,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test fibonacci matrix exceptions.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciMatrixExceptions() {
@@ -91,7 +91,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test fibonacci binets exceptions.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testFibonacciBinetsExceptions() {
@@ -101,7 +101,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test longest common sub sequences.
      */
     @Test
     public void testLongestCommonSubSequences() {
@@ -139,7 +139,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test longest increasing subsequence.
      */
     @Test
     public void testLongestIncreasingSubsequence() {
@@ -179,7 +179,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test subsequence count.
      */
     @Test
     public void testSubsequenceCount() {
@@ -190,7 +190,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test largest sum contiguous subarray.
      */
     @Test
     public void testLargestSumContiguousSubarray() {
@@ -201,7 +201,7 @@ public class Sequences {
     }
 
     /**
-     * 
+     * Test longest palindromic subsequence.
      */
     @Test
     public void testLongestPalindromicSubsequence() {

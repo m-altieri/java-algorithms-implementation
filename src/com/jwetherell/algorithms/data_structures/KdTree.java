@@ -23,9 +23,11 @@ import java.util.TreeSet;
  * multidimensional search key (e.g. range searches and nearest neighbor
  * searches). k-d trees are a special case of binary space partitioning trees.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/K-d_tree">K-D Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
 
@@ -530,7 +532,7 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
     }
 
     /**
-     * 
+     * The Class KdNode.
      */
     public static class KdNode implements Comparable<KdNode> {
 
@@ -543,9 +545,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         private KdNode greater = null;
 
         /**
-         * 
+         * Instantiates a new kd node.
          *
-         * @param id 
+         * @param id the id
          */
         public KdNode(XYZPoint id) {
             this.id = id;
@@ -554,11 +556,11 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         }
 
         /**
-         * 
+         * Instantiates a new kd node.
          *
-         * @param id 
-         * @param k 
-         * @param depth 
+         * @param id the id
+         * @param k the k
+         * @param depth the depth
          */
         public KdNode(XYZPoint id, int k, int depth) {
             this.id = id;
@@ -567,13 +569,13 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         }
 
         /**
-         * 
+         * Compare to.
          *
-         * @param depth 
-         * @param k 
-         * @param o1 
-         * @param o2 
-         * @return 
+         * @param depth the depth
+         * @param k the k
+         * @param o1 the o 1
+         * @param o2 the o 2
+         * @return the int
          */
         public static int compareTo(int depth, int k, XYZPoint o1, XYZPoint o2) {
             int axis = depth % k;
@@ -630,7 +632,7 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
     }
 
     /**
-     * 
+     * The Class XYZPoint.
      */
     public static class XYZPoint implements Comparable<XYZPoint> {
 
@@ -641,8 +643,8 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         /**
          * z is defaulted to zero.
          *
-         * @param x
-         * @param y
+         * @param x the x
+         * @param y the y
          */
         public XYZPoint(double x, double y) {
             this.x = x;
@@ -651,11 +653,11 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         }
 
         /**
-         * Default constructor
+         * Default constructor.
          *
-         * @param x
-         * @param y
-         * @param z
+         * @param x the x
+         * @param y the y
+         * @param z the z
          */
         public XYZPoint(double x, double y, double z) {
             this.x = x;
@@ -665,8 +667,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
 
         /**
          * Does not use R to calculate x, y, and z. Where R is the approximate radius of earth (e.g. 6371KM).
-         * @param latitude
-         * @param longitude
+         *
+         * @param latitude the latitude
+         * @param longitude the longitude
          */
         public XYZPoint(Double latitude, Double longitude) {
             x = cos(Math.toRadians(latitude)) * cos(Math.toRadians(longitude));
@@ -675,27 +678,27 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         }
 
         /**
-         * 
+         * Gets the x.
          *
-         * @return 
+         * @return the x
          */
         public double getX() {
             return x;
         }
         
         /**
-         * 
+         * Gets the y.
          *
-         * @return 
+         * @return the y
          */
         public double getY() {
             return y;
         }
         
         /**
-         * 
+         * Gets the z.
          *
-         * @return 
+         * @return the z
          */
         public double getZ() {
             return z;

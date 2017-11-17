@@ -10,12 +10,13 @@ import java.util.Comparator;
  * It is a data structure used, among others, in full text indices, data compression
  * algorithms and within the field of bibliometrics.
  * <p>
+ *
+ * @author Jakub Szarawarski <kubaszarawarski@gmail.com>
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Suffix_array">Suffix Array (Wikipedia)</a>
  * <p>
  * NOTE: This implementation returns starting indexes instead of full suffixes
  * <br>
- * @author Jakub Szarawarski <kubaszarawarski@gmail.com>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class SuffixArray {
 
@@ -29,19 +30,19 @@ public class SuffixArray {
     private ArrayList<Integer> KMRarray;
 
     /**
-     * 
+     * Instantiates a new suffix array.
      *
-     * @param sequence 
+     * @param sequence the sequence
      */
     public SuffixArray(CharSequence sequence) {
         this(sequence, DEFAULT_END_SEQ_CHAR);
     }
 
     /**
-     * 
+     * Instantiates a new suffix array.
      *
-     * @param sequence 
-     * @param endChar 
+     * @param sequence the sequence
+     * @param endChar the end char
      */
     public SuffixArray(CharSequence sequence, char endChar) {
         endSeqChar = endChar;
@@ -49,9 +50,9 @@ public class SuffixArray {
     }
 
     /**
-     * 
+     * Gets the suffix array.
      *
-     * @return 
+     * @return the suffix array
      */
     public ArrayList<Integer> getSuffixArray() {
         if (suffixArray == null)
@@ -60,6 +61,8 @@ public class SuffixArray {
     }
 
     /**
+     * Gets the KM rarray.
+     *
      * @return inverted suffix array
      */
     public ArrayList<Integer> getKMRarray() {
@@ -69,9 +72,9 @@ public class SuffixArray {
     }
 
     /**
-     * 
+     * Gets the string.
      *
-     * @return 
+     * @return the string
      */
     public String getString(){
         return string;

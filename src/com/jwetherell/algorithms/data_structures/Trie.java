@@ -11,9 +11,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ITree;
  * <p>
  * NOTE: This is NOT a compact Trie
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Trie">Trie (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class Trie<C extends CharSequence> implements ITree<C> {
@@ -24,7 +26,7 @@ public class Trie<C extends CharSequence> implements ITree<C> {
     private int size = 0;
 
     /**
-     * 
+     * Instantiates a new trie.
      */
     public Trie() {
         this.creator = new INodeCreator() {
@@ -40,6 +42,8 @@ public class Trie<C extends CharSequence> implements ITree<C> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public Trie(INodeCreator creator) {
         this.creator = creator;
@@ -387,18 +391,18 @@ public class Trie<C extends CharSequence> implements ITree<C> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleTrie.
      *
-     * @param <C> 
+     * @param <C> the generic type
      */
     public static class JavaCompatibleTrie<C extends CharSequence> extends java.util.AbstractCollection<C> {
 
         private Trie<C> trie = null;
 
         /**
-         * 
+         * Instantiates a new java compatible trie.
          *
-         * @param trie 
+         * @param trie the trie
          */
         public JavaCompatibleTrie(Trie<C> trie) {
             this.trie = trie;

@@ -10,9 +10,11 @@ package com.jwetherell.algorithms.data_structures;
  *           result of two Find operations, one can determine whether two elements are in the same subset.<br>
  *     Union: Join two subsets into a single subset.<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">Disjoint Set (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class DisjointSet<T extends Object> {
@@ -21,7 +23,8 @@ public class DisjointSet<T extends Object> {
 
     /**
      * Creates a set of one element.
-     * 
+     *
+     * @param <T> the generic type
      * @param v Value to use when creating the set
      * @return Item representing the value
      */
@@ -35,7 +38,8 @@ public class DisjointSet<T extends Object> {
      * Determine which subset a particular element is in. Find returns an item from this set that serves as its "representative"; by comparing the result 
      * of two Find operations, one can determine whether two elements are in the same subset. This method uses path compression which is a way of flattening 
      * the structure of the tree whenever Find is used on it.
-     * 
+     *
+     * @param <T> the generic type
      * @param x Find the "representative" of this Item
      * @return "Representative" of this Item
      */
@@ -50,10 +54,11 @@ public class DisjointSet<T extends Object> {
 
     /**
      * Join two subsets into a single subset. This method uses 'union by rank' which always attaches the smaller tree to the root of the larger tree. 
-     * 
+     *
+     * @param <T> the generic type
      * @param x Subset 1 to join
      * @param y Subset 2 to join
-     * @return Resulting Set of joining Subset 1 and Subset 2 
+     * @return Resulting Set of joining Subset 1 and Subset 2
      */
     public static final <T extends Object> Item<T> union(Item<T> x, Item<T> y) {
         final Item<T> xRoot = find(x);
@@ -91,9 +96,9 @@ public class DisjointSet<T extends Object> {
     }
 
     /**
-     * 
+     * The Class Item.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static final class Item<T> {
 
@@ -103,10 +108,10 @@ public class DisjointSet<T extends Object> {
         private long rank;
 
         /**
-         * 
+         * Instantiates a new item.
          *
-         * @param parent 
-         * @param value 
+         * @param parent the parent
+         * @param value the value
          */
         public Item(Item<T> parent, T value) {
             this.parent = parent;
@@ -115,18 +120,18 @@ public class DisjointSet<T extends Object> {
         }
 
         /**
-         * 
+         * Gets the value.
          *
-         * @return 
+         * @return the value
          */
         public T getValue() {
             return value;
         }
         
         /**
-         * 
+         * Gets the rank.
          *
-         * @return 
+         * @return the rank
          */
         public long getRank() {
             return rank;

@@ -12,12 +12,12 @@ import com.jwetherell.algorithms.data_structures.SuffixTree;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SuffixArrayTest.
  */
 public class SuffixArrayTest {
 
     /**
-     * 
+     * Test suffix array.
      */
     @Test
     public void testSuffixArray(){
@@ -37,7 +37,7 @@ public class SuffixArrayTest {
     }
 
     /**
-     * 
+     * Test KM rarray.
      */
     @Test
     public void testKMRarray(){

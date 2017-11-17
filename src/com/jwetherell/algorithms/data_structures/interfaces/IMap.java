@@ -6,9 +6,12 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * data type composed of a collection of (key, value) pairs, such that each possible 
  * key appears at most once in the collection.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/Associative_array">Associative Array (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface IMap<K,V> {
 
@@ -65,8 +68,8 @@ public interface IMap<K,V> {
     public boolean validate();
 
     /**
-     *  Wraps this map in a Java compatible Map
-     * 
+     *  Wraps this map in a Java compatible Map.
+     *
      * @return Java compatible Map
      */
     public java.util.Map<K,V> toMap();

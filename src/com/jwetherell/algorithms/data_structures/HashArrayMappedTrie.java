@@ -15,9 +15,12 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
  * This implementation is 32-bit and steps in 5-bit intervals, maximum tree
  * height of 7.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/Hash_array_mapped_trie">Hash Array Mapped Trie (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class HashArrayMappedTrie<K, V> implements IMap<K,V> {

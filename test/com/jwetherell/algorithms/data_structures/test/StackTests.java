@@ -14,12 +14,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class StackTests.
  */
 public class StackTests {
 
     /**
-     * 
+     * Test array stack.
      */
     @Test
     public void testArrayStack() {
@@ -36,7 +36,7 @@ public class StackTests {
     }
 
     /**
-     * 
+     * Test linked stack.
      */
     @Test
     public void testLinkedStack() {

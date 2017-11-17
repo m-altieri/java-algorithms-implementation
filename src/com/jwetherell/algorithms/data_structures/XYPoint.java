@@ -1,7 +1,8 @@
 package com.jwetherell.algorithms.data_structures;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class XYPoint.
  */
 public class XYPoint implements Comparable<Object> {
 
@@ -9,15 +10,15 @@ public class XYPoint implements Comparable<Object> {
     protected double y = Float.MIN_VALUE;
 
     /**
-     * 
+     * Instantiates a new XY point.
      */
     public XYPoint() { }
 
     /**
-     * 
+     * Instantiates a new XY point.
      *
-     * @param x 
-     * @param y 
+     * @param x the x
+     * @param y the y
      */
     public XYPoint(double x, double y) {
         this.x = x;
@@ -25,10 +26,10 @@ public class XYPoint implements Comparable<Object> {
     }
 
     /**
-     * 
+     * Sets the.
      *
-     * @param x 
-     * @param y 
+     * @param x the x
+     * @param y the y
      */
     public void set(double x, double y) {
         this.x = x;
@@ -36,18 +37,18 @@ public class XYPoint implements Comparable<Object> {
     }
 
     /**
-     * 
+     * Gets the x.
      *
-     * @return 
+     * @return the x
      */
     public double getX() {
         return x;
     }
     
     /**
-     * 
+     * Gets the y.
      *
-     * @return 
+     * @return the y
      */
     public double getY() {
         return y;

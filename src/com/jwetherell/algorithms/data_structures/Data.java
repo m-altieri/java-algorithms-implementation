@@ -7,8 +7,9 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Data.
  */
 public abstract class Data implements Comparable<Data> {
 
@@ -16,10 +17,9 @@ public abstract class Data implements Comparable<Data> {
 	protected long end = Long.MAX_VALUE;
 
 	/**
-	 * Constructor for data at index
-	 * 
-	 * @param index
-	 *            of data.
+	 * Constructor for data at index.
+	 *
+	 * @param index            of data.
 	 */
 	public Data(long index) {
 		this.start = index;
@@ -27,12 +27,10 @@ public abstract class Data implements Comparable<Data> {
 	}
 
 	/**
-	 * Constructor for data at range (inclusive)
-	 * 
-	 * @param start
-	 *            start of range for data.
-	 * @param end
-	 *            end of range for data.
+	 * Constructor for data at range (inclusive).
+	 *
+	 * @param start            start of range for data.
+	 * @param end            end of range for data.
 	 */
 	public Data(long start, long end) {
 		this.start = start;
@@ -40,7 +38,7 @@ public abstract class Data implements Comparable<Data> {
 	}
 
 	/**
-	 * Clear the indices
+	 * Clear the indices.
 	 */
 	public void clear() {
 		start = Long.MIN_VALUE;
@@ -48,10 +46,9 @@ public abstract class Data implements Comparable<Data> {
 	}
 
 	/**
-	 * Combined this data with the Data parameter
-	 * 
-	 * @param data
-	 *            Data to combined
+	 * Combined this data with the Data parameter.
+	 *
+	 * @param data            Data to combined
 	 * @return Data which represents the combination.
 	 */
 	public abstract Data combined(Data data);
@@ -103,43 +100,43 @@ public abstract class Data implements Comparable<Data> {
 	public static final class QuadrantData extends Data {
 
 		/**
-		 * 
+		 * The quad 0.
 		 */
 		public long quad0 = 0;
 
 		/**
-		 * 
+		 * The quad 1.
 		 */
 		public long quad1 = 0;
 
 		/**
-		 * 
+		 * The quad 2.
 		 */
 		public long quad2 = 0;
 
 		/**
-		 * 
+		 * The quad 3.
 		 */
 		public long quad3 = 0;
 
 		/**
-		 * 
+		 * Instantiates a new quadrant data.
 		 *
-		 * @param start 
-		 * @param end 
+		 * @param start the start
+		 * @param end the end
 		 */
 		public QuadrantData(long start, long end) {
 			super(start, end);
 		}
 
 		/**
-		 * 
+		 * Instantiates a new quadrant data.
 		 *
-		 * @param index 
-		 * @param quad1 
-		 * @param quad2 
-		 * @param quad3 
-		 * @param quad4 
+		 * @param index the index
+		 * @param quad1 the quad 1
+		 * @param quad2 the quad 2
+		 * @param quad3 the quad 3
+		 * @param quad4 the quad 4
 		 */
 		public QuadrantData(long index, long quad1, long quad2, long quad3, long quad4) {
 			super(index);
@@ -247,29 +244,31 @@ public abstract class Data implements Comparable<Data> {
 
 	/**
 	 * Data structure representing maximum in the range.
+	 *
+	 * @param <N> the number type
 	 */
 	public static final class RangeMaximumData<N extends Number> extends Data {
 
 		/**
-		 * 
+		 * The maximum.
 		 */
 		public N maximum = null;
 
 		/**
-		 * 
+		 * Instantiates a new range maximum data.
 		 *
-		 * @param start 
-		 * @param end 
+		 * @param start the start
+		 * @param end the end
 		 */
 		public RangeMaximumData(long start, long end) {
 			super(start, end);
 		}
 
 		/**
-		 * 
+		 * Instantiates a new range maximum data.
 		 *
-		 * @param index 
-		 * @param number 
+		 * @param index the index
+		 * @param number the number
 		 */
 		public RangeMaximumData(long index, N number) {
 			super(index);
@@ -278,11 +277,11 @@ public abstract class Data implements Comparable<Data> {
 		}
 
 		/**
-		 * 
+		 * Instantiates a new range maximum data.
 		 *
-		 * @param start 
-		 * @param end 
-		 * @param number 
+		 * @param start the start
+		 * @param end the end
+		 * @param number the number
 		 */
 		public RangeMaximumData(long start, long end, N number) {
 			super(start, end);
@@ -400,29 +399,31 @@ public abstract class Data implements Comparable<Data> {
 
 	/**
 	 * Data structure representing minimum in the range.
+	 *
+	 * @param <N> the number type
 	 */
 	public static final class RangeMinimumData<N extends Number> extends Data {
 
 		/**
-		 * 
+		 * The minimum.
 		 */
 		public N minimum = null;
 
 		/**
-		 * 
+		 * Instantiates a new range minimum data.
 		 *
-		 * @param start 
-		 * @param end 
+		 * @param start the start
+		 * @param end the end
 		 */
 		public RangeMinimumData(long start, long end) {
 			super(start, end);
 		}
 
 		/**
-		 * 
+		 * Instantiates a new range minimum data.
 		 *
-		 * @param index 
-		 * @param number 
+		 * @param index the index
+		 * @param number the number
 		 */
 		public RangeMinimumData(long index, N number) {
 			super(index);
@@ -431,11 +432,11 @@ public abstract class Data implements Comparable<Data> {
 		}
 
 		/**
-		 * 
+		 * Instantiates a new range minimum data.
 		 *
-		 * @param start 
-		 * @param end 
-		 * @param number 
+		 * @param start the start
+		 * @param end the end
+		 * @param number the number
 		 */
 		public RangeMinimumData(long start, long end, N number) {
 			super(start, end);
@@ -554,29 +555,31 @@ public abstract class Data implements Comparable<Data> {
 
 	/**
 	 * Data structure representing sum of the range.
+	 *
+	 * @param <N> the number type
 	 */
 	public static final class RangeSumData<N extends Number> extends Data {
 
 		/**
-		 * 
+		 * The sum.
 		 */
 		public N sum = null;
 
 		/**
-		 * 
+		 * Instantiates a new range sum data.
 		 *
-		 * @param start 
-		 * @param end 
+		 * @param start the start
+		 * @param end the end
 		 */
 		public RangeSumData(long start, long end) {
 			super(start, end);
 		}
 
 		/**
-		 * 
+		 * Instantiates a new range sum data.
 		 *
-		 * @param index 
-		 * @param number 
+		 * @param index the index
+		 * @param number the number
 		 */
 		public RangeSumData(long index, N number) {
 			super(index);
@@ -585,11 +588,11 @@ public abstract class Data implements Comparable<Data> {
 		}
 
 		/**
-		 * 
+		 * Instantiates a new range sum data.
 		 *
-		 * @param start 
-		 * @param end 
-		 * @param number 
+		 * @param start the start
+		 * @param end the end
+		 * @param number the number
 		 */
 		public RangeSumData(long start, long end, N number) {
 			super(start, end);
@@ -708,16 +711,18 @@ public abstract class Data implements Comparable<Data> {
 
 	/**
 	 * Data structure representing an interval.
+	 *
+	 * @param <O> the generic type
 	 */
 	public static final class IntervalData<O extends Object> extends Data {
 
 		private Set<O> set = new TreeSet<O>(); // Sorted
 
 		/**
-		 * Interval data using O as it's unique identifier
-		 * 
-		 * @param object
-		 *            Object which defines the interval data
+		 * Interval data using O as it's unique identifier.
+		 *
+		 * @param index the index
+		 * @param object            Object which defines the interval data
 		 */
 		public IntervalData(long index, O object) {
 			super(index);
@@ -726,10 +731,11 @@ public abstract class Data implements Comparable<Data> {
 		}
 
 		/**
-		 * Interval data using O as it's unique identifier
-		 * 
-		 * @param object
-		 *            Object which defines the interval data
+		 * Interval data using O as it's unique identifier.
+		 *
+		 * @param start the start
+		 * @param end the end
+		 * @param object            Object which defines the interval data
 		 */
 		public IntervalData(long start, long end, O object) {
 			super(start, end);
@@ -738,10 +744,11 @@ public abstract class Data implements Comparable<Data> {
 		}
 
 		/**
-		 * Interval data list which should all be unique
-		 * 
-		 * @param list
-		 *            of interval data objects
+		 * Interval data list which should all be unique.
+		 *
+		 * @param start the start
+		 * @param end the end
+		 * @param set the set
 		 */
 		public IntervalData(long start, long end, Set<O> set) {
 			super(start, end);
@@ -750,8 +757,8 @@ public abstract class Data implements Comparable<Data> {
 		}
 
 		/**
-		 * Get the data set in this interval
-		 * 
+		 * Get the data set in this interval.
+		 *
 		 * @return Unmodifiable collection of data objects
 		 */
 		public Collection<O> getData() {

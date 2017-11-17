@@ -15,12 +15,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SplayTreeTests.
  */
 public class SplayTreeTests {
 
     /**
-     * 
+     * Test splay tree.
      */
     @Test
     public void testSplayTree() {

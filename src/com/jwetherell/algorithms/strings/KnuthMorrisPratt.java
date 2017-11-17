@@ -10,10 +10,11 @@ import java.util.List;
  * <p>
  * Time complexity: O(n) <br>
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth Morris Pratt (Wikipedia)</a>
- * <br>
+ *
  * @author Szymon Stankiewicz <mail@stankiewicz.me>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth Morris Pratt (Wikipedia)</a>
+ * <br>
  */
 public class KnuthMorrisPratt {
 

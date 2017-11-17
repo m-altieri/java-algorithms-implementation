@@ -14,7 +14,7 @@ import com.jwetherell.algorithms.graph.TurboMatching;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TurboMatchingTest.
  */
 public class TurboMatchingTest {
 
@@ -37,7 +37,7 @@ public class TurboMatchingTest {
     }
     
     /**
-     * 
+     * Test full bipartite graph.
      */
     @Test
     public void testFullBipartiteGraph(){
@@ -64,7 +64,7 @@ public class TurboMatchingTest {
     }
 
     /**
-     * 
+     * Test single edge for vertex.
      */
     @Test
     public void testSingleEdgeForVertex(){
@@ -89,7 +89,7 @@ public class TurboMatchingTest {
     }
 
     /**
-     * 
+     * Test empty graph.
      */
     @Test
     public void testEmptyGraph(){
@@ -106,7 +106,7 @@ public class TurboMatchingTest {
     }
 
     /**
-     * 
+     * Test two matched.
      */
     @Test
     public void testTwoMatched(){
@@ -129,7 +129,7 @@ public class TurboMatchingTest {
     }
 
     /**
-     * 
+     * Test one matched.
      */
     @Test
     public void testOneMatched(){

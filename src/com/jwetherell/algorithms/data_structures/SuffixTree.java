@@ -17,9 +17,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ISuffixTree;
  * important string operations. This implementation is based on the Ukkonen's
  * algorithm.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Suffix_tree">Suffix Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
 
@@ -143,8 +145,8 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
     }
 
     /**
-     * Get all edges in the table
-     * 
+     * Get all edges in the table.
+     *
      * @return debug string.
      */
     public String getEdgesTable() {

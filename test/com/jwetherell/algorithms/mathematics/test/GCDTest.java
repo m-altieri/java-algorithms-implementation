@@ -10,12 +10,12 @@ import com.jwetherell.algorithms.mathematics.GreatestCommonDivisor;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class GCDTest.
  */
 public class GCDTest {
 
     /**
-     * 
+     * Test recursive GCD.
      */
     @Test
     public void testRecursiveGCD() {
@@ -25,7 +25,7 @@ public class GCDTest {
     }
 
     /**
-     * 
+     * Test euclidean GCD.
      */
     @Test
     public void testEuclideanGCD() {

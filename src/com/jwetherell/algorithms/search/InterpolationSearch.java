@@ -8,20 +8,21 @@ package com.jwetherell.algorithms.search;
  * Worst-case performance      O(n)<br>
  * Average performance         O(log(log(n)))<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Interpolation_search">Interpolation Search (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class InterpolationSearch {
 
     private static int[] sorted = null;
 
     /**
-     * 
+     * Find.
      *
-     * @param value 
-     * @param array 
-     * @return 
+     * @param value the value
+     * @param array the array
+     * @return the int
      */
     // Assuming the array is sorted
     public static final int find(int value, int[] array) {

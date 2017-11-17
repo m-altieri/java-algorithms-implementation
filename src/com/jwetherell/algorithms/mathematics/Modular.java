@@ -6,10 +6,11 @@ package com.jwetherell.algorithms.mathematics;
  * upon reaching a certain value—the modulus (plural moduli). The modern approach to modular arithmetic was 
  * developed by Carl Friedrich Gauss in his book Disquisitiones Arithmeticae, published in 1801.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Modular_arithmetic">Modular Arithmetic (Wikipedia)</a>
- * <br>
+ *
  * @author Szymon Stankiewicz <mail@stankiewicz.me>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Modular_arithmetic">Modular Arithmetic (Wikipedia)</a>
+ * <br>
  */
 public class Modular {
 
@@ -25,8 +26,8 @@ public class Modular {
      * Adds two numbers in modulo arithmetic.
      * This function is safe for large numbers and won't overflow long.
      *
-     * @param a
-     * @param b
+     * @param a the a
+     * @param b the b
      * @param mod grater than 0
      * @return (a+b)%mod
      */
@@ -45,8 +46,8 @@ public class Modular {
      * Subtract two numbers in modulo arithmetic.
      * This function is safe for large numbers and won't overflow or underflow long.
      *
-     * @param a
-     * @param b
+     * @param a the a
+     * @param b the b
      * @param mod grater than 0
      * @return (a-b)%mod
      */
@@ -59,11 +60,11 @@ public class Modular {
     /**
      * Multiply two numbers in modulo arithmetic.
      * This function is safe for large numbers and won't overflow or underflow long.
-     *
+     * 
      * Complexity O(log b)
      *
-     * @param a
-     * @param b
+     * @param a the a
+     * @param b the b
      * @param mod grater than 0
      * @return (a*b)%mod
      */
@@ -80,10 +81,10 @@ public class Modular {
     /**
      * Calculate power in modulo arithmetic.
      * This function is safe for large numbers and won't overflow or underflow long.
-     *
+     * 
      * Complexity O(log a * log b)
      *
-     * @param a
+     * @param a the a
      * @param b integer grater or equal to zero
      * @param mod grater than 0
      * @return (a^b)%mod
@@ -111,10 +112,10 @@ public class Modular {
      * Divide two numbers in modulo arithmetic.
      * This function is safe for large numbers and won't overflow or underflow long.
      * b and mod have to be coprime.
-     *
+     * 
      * Complexity O(sqrt(mod))
      *
-     * @param a
+     * @param a the a
      * @param b non zero
      * @param mod grater than 0
      * @return (a/b)%mod

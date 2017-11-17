@@ -5,10 +5,11 @@ package com.jwetherell.algorithms.strings;
  * Rotation of the string is some cyclic transformation of that string.
  * More formally a string s = uv is said to be a rotation of t if t = vu.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/String_(computer_science)#Rotations">String Rotation (Wikipedia)</a>
  * <br>
  * @Author Szymon Stankiewicz <mail@stankiewicz.me>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class Rotation {
 
@@ -58,6 +59,9 @@ public class Rotation {
      * lowest lexicographical order of all such rotations.
      * Finding the lexicographically minimal rotation is useful as a way of normalizing strings.
      * <p>
+     *
+     * @param text the text
+     * @return lexicographicall minimal rotation of text
      * @see <a href="https://https://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation">Lexicographically Minimal String Rotation (Wikipedia)</a>
      * <p>
      * This function implements Duval's algorithm.
@@ -66,8 +70,6 @@ public class Rotation {
      * <p>
      * Complexity: O(n)
      * <br>
-     * @param text
-     * @return lexicographicall minimal rotation of text
      */
     public static String getLexicographicallyMinimalRotation(String text) {
         return bestRotation(text, false);
@@ -79,6 +81,9 @@ public class Rotation {
      * highest lexicographical order of all such rotations.
      * Finding the lexicographically maximal rotation is useful as a way of normalizing strings.
      * <p>
+     *
+     * @param text the text
+     * @return lexicographicall minimal rotation of text
      * @see <a href="https://https://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation">Lexicographically Minimal String Rotation (Wikipedia)</a>
      * <p>
      * This function implements Duval's algorithm.
@@ -86,8 +91,6 @@ public class Rotation {
      * <p>
      * Complexity: O(n)
      * <br>
-     * @param text
-     * @return lexicographicall minimal rotation of text
      */
     public static String getLexicographicallyMaximalRotation(String text) {
         return bestRotation(text, true);

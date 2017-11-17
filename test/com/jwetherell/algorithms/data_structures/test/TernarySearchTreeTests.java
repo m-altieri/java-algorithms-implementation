@@ -18,12 +18,12 @@ import junit.framework.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TernarySearchTreeTests.
  */
 public class TernarySearchTreeTests {
 
     /**
-     * 
+     * Test 1.
      */
     @Test
     public void test1() {
@@ -69,7 +69,7 @@ public class TernarySearchTreeTests {
     }
 
     /**
-     * 
+     * Test ternary.
      */
     @Test
     public void testTernary() {

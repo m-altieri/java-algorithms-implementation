@@ -11,9 +11,10 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * toposort) or topological ordering of a directed graph is a linear ordering of
  * its vertices such that, for every edge uv, u comes before v in the ordering.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Topological_sorting">Topological Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class TopologicalSort {
 
@@ -23,8 +24,8 @@ public class TopologicalSort {
      * Performs a topological sort on a directed graph. Returns NULL if a cycle is detected.
      * 
      * Note: This should NOT change the state of the graph parameter.
-     * 
-     * @param graph
+     *
+     * @param graph the graph
      * @return Sorted List of Vertices or NULL if graph has a cycle
      */
     public static final List<Graph.Vertex<Integer>> sort(Graph<Integer> graph) {

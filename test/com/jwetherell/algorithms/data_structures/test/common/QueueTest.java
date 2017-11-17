@@ -4,19 +4,19 @@ import com.jwetherell.algorithms.data_structures.interfaces.IQueue;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class QueueTest.
  */
 public class QueueTest {
 
     /**
-     * 
+     * Test queue.
      *
-     * @param <T> 
-     * @param queue 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param queue the queue
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testQueue(IQueue<T> queue, String name,
                                                               T[] data, T _invalid) {

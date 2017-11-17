@@ -14,9 +14,11 @@ import java.util.List;
  * lookup intensive applications. However, red-black trees are faster for
  * insertion and removal.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
 
@@ -41,6 +43,8 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public AVLTree(INodeCreator<T> creator) {
         super(creator);

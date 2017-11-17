@@ -14,12 +14,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class RedBlackTreeTests.
  */
 public class RedBlackTreeTests {
 
     /**
-     * 
+     * Test red black tree.
      */
     @Test
     public void testRedBlackTree() {

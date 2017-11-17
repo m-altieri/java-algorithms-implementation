@@ -10,18 +10,19 @@ package com.jwetherell.algorithms.search;
  * Average performance         O(n)<br>
  * Worst-case space complexity O(1)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Linear_search">Linear Search (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class LinearSearch {
 
     /**
-     * 
+     * Find.
      *
-     * @param value 
-     * @param array 
-     * @return 
+     * @param value the value
+     * @param array the array
+     * @return the int
      */
     public static final int find(int value, int[] array) {
         for (int i = 0; i < array.length; i++) {

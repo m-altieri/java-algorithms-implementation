@@ -8,10 +8,11 @@ package com.jwetherell.algorithms.sequence;
  * <p>
  * Given a string, find the length of the longest palin­dromic sub­se­quence in it.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring">Longest Palin­dromic Sub­se­quence (Wikipedia)</a>
- * <br>
+ *
  * @author Miguel Stephane KAKANAKOU <Skakanakou@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring">Longest Palin­dromic Sub­se­quence (Wikipedia)</a>
+ * <br>
  */
 public class LongestPalindromicSubsequence {
 
@@ -20,6 +21,9 @@ public class LongestPalindromicSubsequence {
     /**
      * Find the length of the longest palin­dromic sub­se­quence in the given
      * string s using the dynamic programming approach.
+     *
+     * @param s the s
+     * @return the longest palindrome subsequence
      */
     public static int getLongestPalindromeSubsequence(String s) {
         if (s == null)

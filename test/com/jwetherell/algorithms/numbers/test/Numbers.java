@@ -12,14 +12,14 @@ import com.jwetherell.algorithms.numbers.Longs;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Numbers.
  */
 public class Numbers {
 
     private static final Random RANDOM = new Random();
 
     /**
-     * 
+     * Test power of 2.
      */
     @Test
     public void testPowerOf2() {
@@ -48,7 +48,7 @@ public class Numbers {
     }
 
     /**
-     * 
+     * Test integer to binary string.
      */
     @Test
     public void testIntegerToBinaryString() {
@@ -69,7 +69,7 @@ public class Numbers {
     }
 
     /**
-     * 
+     * Test long to binary string.
      */
     @Test
     public void testLongToBinaryString() {
@@ -87,7 +87,7 @@ public class Numbers {
     }
 
     /**
-     * 
+     * Test to english.
      */
     @Test
     public void testToEnglish() {

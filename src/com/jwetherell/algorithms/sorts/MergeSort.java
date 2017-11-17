@@ -14,27 +14,29 @@ package com.jwetherell.algorithms.sorts;
  * Worst case = O(n*log n)<br>
  * Best case = O(n*log n)<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Merge_sort">Merge Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class MergeSort<T extends Comparable<T>> {
 
     /**
-     * 
+     * The Enum SPACE_TYPE.
      */
     public static enum SPACE_TYPE { IN_PLACE, NOT_IN_PLACE }
 
     private MergeSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param <T> 
-     * @param type 
-     * @param unsorted 
-     * @return 
+     * @param <T> the generic type
+     * @param type the type
+     * @param unsorted the unsorted
+     * @return the t[]
      */
     public static <T extends Comparable<T>> T[] sort(SPACE_TYPE type, T[] unsorted) {
         sort(type, 0, unsorted.length, unsorted);

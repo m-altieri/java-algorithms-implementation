@@ -7,9 +7,11 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * concept of a finite set. Unlike most other collection types, rather than retrieving a specific 
  * element from a set, one typically tests a value for membership in a set.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Set_(abstract_data_type)">Set (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface ISet<T> {
 
@@ -57,15 +59,15 @@ public interface ISet<T> {
     public boolean validate();
 
     /**
-     * Get this Set as a Java compatible Set
-     * 
+     * Get this Set as a Java compatible Set.
+     *
      * @return Java compatible Set
      */
     public java.util.Set<T> toSet();
 
     /**
-     * Get this Set as a Java compatible Collection
-     * 
+     * Get this Set as a Java compatible Collection.
+     *
      * @return Java compatible Collection
      */
     public java.util.Collection<T> toCollection();

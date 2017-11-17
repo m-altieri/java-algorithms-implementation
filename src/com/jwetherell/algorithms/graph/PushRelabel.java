@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
-
 import com.jwetherell.algorithms.data_structures.Graph;
 
 // TODO: Auto-generated Javadoc
@@ -19,10 +18,11 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * flow locally between neighboring nodes using push operations under the guidance of an 
  * admissible network maintained by relabel operations.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm">Push-Relabel Algorithm (Wikipedia)</a>
- * <br>
+ *
  * @author Miron Ficak <miron.ficak@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm">Push-Relabel Algorithm (Wikipedia)</a>
+ * <br>
  */
 public class PushRelabel {
 
@@ -37,10 +37,10 @@ public class PushRelabel {
     /**
      * Computes maximum flow in flow network, using push-relabel algorithm with O(V^3) complexity.
      *
+     * @param <T>               parameter of graph on which network is based
      * @param edgesToCapacities represents edges of network with capacities
      * @param source            source of network
      * @param sink              sink of network
-     * @param <T>               parameter of graph on which network is based
      * @return the maximum flow
      */
     public static <T extends Comparable<T>> Long getMaximumFlow(Map<Graph.Edge<T>, Long> edgesToCapacities, Graph.Vertex<T> source, Graph.Vertex<T> sink) {

@@ -10,10 +10,13 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
  * <p>
  * This implementation is a composition using a Trie as the backing structure.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <K> the key type
+ * @param <V> the value type
  * @see <a href="https://en.wikipedia.org/wiki/Trie">Trie (Wikipedia)</a>
  * @see <a href="https://en.wikipedia.org/wiki/Associative_array">Associative Array (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IMap<K,V> {
@@ -21,7 +24,7 @@ public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IM
     private Trie<K> trie = null;
 
     /**
-     * 
+     * Instantiates a new trie map.
      */
     public TrieMap() {
         trie = new Trie<K>(this);

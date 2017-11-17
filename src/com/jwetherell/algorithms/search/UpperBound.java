@@ -19,12 +19,12 @@ public class UpperBound {
     private UpperBound() { }
 
     /**
-     * 
+     * Upper bound.
      *
-     * @param array 
-     * @param length 
-     * @param value 
-     * @return 
+     * @param array the array
+     * @param length the length
+     * @param value the value
+     * @return the int
      */
     public static int upperBound(int[] array, int length, int value) {
         int low = 0;

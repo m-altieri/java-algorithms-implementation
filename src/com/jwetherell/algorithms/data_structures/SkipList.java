@@ -11,9 +11,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ISet;
  * subsequences of the items. These auxiliary lists allow item lookup with
  * efficiency comparable to balanced binary search trees.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Skip_list">Skip List (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class SkipList<T extends Comparable<T>> implements ISet<T> {
@@ -30,16 +32,16 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
     protected Node<T> head = null;
 
     /**
-     * 
+     * Instantiates a new skip list.
      */
     public SkipList() {
         randomSeed = seedGenerator.nextInt() | 0x0100;
     }
 
     /**
-     * 
+     * Instantiates a new skip list.
      *
-     * @param creator 
+     * @param creator the creator
      */
     public SkipList(INodeCreator<T> creator) {
         this();
@@ -318,11 +320,11 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
 
     // Output a String version of the skip list. If a value and level is passed
     /**
-     * 
+     * Gets the string.
      *
-     * @param value 
-     * @param level 
-     * @return 
+     * @param value the value
+     * @param level the level
+     * @return the string
      */
     // then output with that node highlighted.
     public String getString(T value, int level) {
@@ -434,18 +436,18 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
     }
 
     /**
-     * 
+     * The Class JavaCompatibleSkipList.
      *
-     * @param <T> 
+     * @param <T> the generic type
      */
     public static class JavaCompatibleSkipList<T extends Comparable<T>> extends java.util.AbstractSet<T> {
 
         private SkipList<T> list = null;
 
         /**
-         * 
+         * Instantiates a new java compatible skip list.
          *
-         * @param list 
+         * @param list the list
          */
         public JavaCompatibleSkipList(SkipList<T> list) {
             this.list = list;

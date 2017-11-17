@@ -14,12 +14,12 @@ import junit.framework.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class RadixTrieTests.
  */
 public class RadixTrieTests {
 
     /**
-     * 
+     * Test radix trie.
      */
     @Test
     public void testRadixTrie() {
@@ -27,7 +27,9 @@ public class RadixTrieTests {
         runTests(data);
     }
  
-    /** This was an error condition previously in converting a black node with children into a white terminating node **/
+    /**
+     *  This was an error condition previously in converting a black node with children into a white terminating node *.
+     */
     @Test
     public void cornerCase() {
         RadixTrie<String,Integer> map = new RadixTrie<String,Integer>();

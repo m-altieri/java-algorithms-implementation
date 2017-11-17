@@ -16,7 +16,7 @@ import junit.framework.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SpatialDataStructuresTiming.
  */
 public class SpatialDataStructuresTiming {
 
@@ -34,9 +34,9 @@ public class SpatialDataStructuresTiming {
     private static String stringifiedData = null;
 
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         System.out.println("Starting tests.");

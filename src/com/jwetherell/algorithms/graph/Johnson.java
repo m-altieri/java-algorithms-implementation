@@ -14,19 +14,20 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * <p>
  * Worst case: O(V^2 log V + VE)
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Johnson%27s_algorithm">Johnson's Algorithm (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class Johnson {
 
     private Johnson() { }
 
     /**
-     * 
+     * Gets the all pairs shortest paths.
      *
-     * @param g 
-     * @return 
+     * @param g the g
+     * @return the all pairs shortest paths
      */
     public static Map<Graph.Vertex<Integer>, Map<Graph.Vertex<Integer>, List<Graph.Edge<Integer>>>> getAllPairsShortestPaths(Graph<Integer> g) {
         if (g == null)

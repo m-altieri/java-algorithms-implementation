@@ -4,22 +4,22 @@ import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class MapTest.
  */
 public class MapTest {
 
     /**
-     * 
+     * Test map.
      *
-     * @param <K> 
-     * @param <V> 
-     * @param <T> 
-     * @param map 
-     * @param type 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <K> the key type
+     * @param <V> the value type
+     * @param <T> the generic type
+     * @param map the map
+     * @param type the type
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     @SuppressWarnings("unchecked")
     public static <K,V, T extends Comparable<T>> boolean testMap(IMap<K,V> map, Class<T> type, String name,

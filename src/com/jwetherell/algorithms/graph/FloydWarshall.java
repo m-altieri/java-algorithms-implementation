@@ -13,19 +13,20 @@ import com.jwetherell.algorithms.data_structures.Graph;
  * <p>
  * Worst case: O(V^3)
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd-Warshall Algorithm (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class FloydWarshall {
 
     private FloydWarshall() { }
 
     /**
-     * 
+     * Gets the all pairs shortest paths.
      *
-     * @param graph 
-     * @return 
+     * @param graph the graph
+     * @return the all pairs shortest paths
      */
     public static Map<Graph.Vertex<Integer>, Map<Graph.Vertex<Integer>, Integer>> getAllPairsShortestPaths(Graph<Integer> graph) {
         if (graph == null)

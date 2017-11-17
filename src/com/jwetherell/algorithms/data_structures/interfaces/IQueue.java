@@ -10,9 +10,11 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * data structure, the first element added to the queue will be the first one to
  * be removed.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface IQueue<T> {
 
@@ -74,15 +76,15 @@ public interface IQueue<T> {
     public boolean validate();
 
     /**
-     * Get this Queue as a Java compatible Queue
-     * 
+     * Get this Queue as a Java compatible Queue.
+     *
      * @return Java compatible Queue
      */
     public java.util.Queue<T> toQueue();
 
     /**
-     * Get this Queue as a Java compatible Collection
-     * 
+     * Get this Queue as a Java compatible Collection.
+     *
      * @return Java compatible Collection
      */
     public java.util.Collection<T> toCollection();

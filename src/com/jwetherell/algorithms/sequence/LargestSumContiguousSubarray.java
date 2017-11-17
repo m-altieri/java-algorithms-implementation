@@ -5,10 +5,11 @@ package com.jwetherell.algorithms.sequence;
  * Given an array of integers, we want to find the largest sum of contiguous
  * subarray.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">Maximum Subarray Problem (Wikipedia)</a>
- * <br>
+ *
  * @author Miguel Stephane KAKANAKOU <Skakanakou@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">Maximum Subarray Problem (Wikipedia)</a>
+ * <br>
  */
 public class LargestSumContiguousSubarray {
 
@@ -16,10 +17,9 @@ public class LargestSumContiguousSubarray {
 
     /**
      * Largest sum of contiguous subarray using Kadane's algorithm.
-     * 
-     * @param A
-     *            the given Array of integer
-     * @return
+     *
+     * @param A            the given Array of integer
+     * @return the largest sum contiguous subarray
      */
     public static int getLargestSumContiguousSubarray(int[] A) {
         if (A == null)

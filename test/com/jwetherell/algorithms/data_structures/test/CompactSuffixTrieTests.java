@@ -9,12 +9,12 @@ import com.jwetherell.algorithms.data_structures.CompactSuffixTrie;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class CompactSuffixTrieTests.
  */
 public class CompactSuffixTrieTests {
 
     /**
-     * 
+     * Test compact suffix trie.
      */
     @Test
     public void testCompactSuffixTrie() {

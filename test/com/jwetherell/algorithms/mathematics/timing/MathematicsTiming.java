@@ -7,7 +7,7 @@ import com.jwetherell.algorithms.mathematics.Multiplication;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class MathematicsTiming.
  */
 public class MathematicsTiming {
 
@@ -140,9 +140,9 @@ public class MathematicsTiming {
     }
     
     /**
-     * 
+     * The main method.
      *
-     * @param args 
+     * @param args the arguments
      */
     public static void main(String[] args) {
         

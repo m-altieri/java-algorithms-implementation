@@ -14,9 +14,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ISuffixTree;
  * <p>
  * This implementation is based upon a Trie which is NOT a compact trie.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Suffix_trie">Suffix Trie (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class SuffixTrie<C extends CharSequence> implements ISuffixTree<C> {
@@ -24,10 +26,9 @@ public class SuffixTrie<C extends CharSequence> implements ISuffixTree<C> {
     private Trie<C> tree;
 
     /**
-     * Create a suffix trie from sequence
-     * 
-     * @param sequence
-     *            to create a suffix trie from.
+     * Create a suffix trie from sequence.
+     *
+     * @param sequence            to create a suffix trie from.
      */
     public SuffixTrie(C sequence) {
         tree = new Trie<C>();

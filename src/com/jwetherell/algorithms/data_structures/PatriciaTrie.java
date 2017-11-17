@@ -11,9 +11,11 @@ import com.jwetherell.algorithms.data_structures.interfaces.ITree;
  * The result is that every internal non-terminating (black) node has at least
  * two children. Each terminating node (white) represents the end of a string.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <C> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Radix_tree">Radix Tree / Patricia Trie (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
@@ -26,7 +28,7 @@ public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
     protected static final boolean WHITE = true; // terminating
 
     /**
-     * 
+     * Instantiates a new patricia trie.
      */
     public PatriciaTrie() { 
         this.creator = new INodeCreator() {
@@ -42,6 +44,8 @@ public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
 
     /**
      * Constructor with external Node creator.
+     *
+     * @param creator the creator
      */
     public PatriciaTrie(INodeCreator creator) {
         this.creator = creator;
@@ -559,18 +563,18 @@ public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
     }
 
     /**
-     * 
+     * The Class JavaCompatiblePatriciaTrie.
      *
-     * @param <C> 
+     * @param <C> the generic type
      */
     public static class JavaCompatiblePatriciaTrie<C extends CharSequence> extends java.util.AbstractCollection<C> {
 
         private PatriciaTrie<C> trie = null;
 
         /**
-         * 
+         * Instantiates a new java compatible patricia trie.
          *
-         * @param list 
+         * @param list the list
          */
         public JavaCompatiblePatriciaTrie(PatriciaTrie<C> list) {
             this.trie = list;

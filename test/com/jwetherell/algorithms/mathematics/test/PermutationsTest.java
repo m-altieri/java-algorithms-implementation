@@ -13,12 +13,12 @@ import com.jwetherell.algorithms.mathematics.Permutations;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class PermutationsTest.
  */
 public class PermutationsTest {
 
 	/**
-	 * 
+	 * Test 1 number of permutations.
 	 */
 	@Test
 	public void test1NumberOfPermutations() {
@@ -28,7 +28,7 @@ public class PermutationsTest {
 	}
 	
 	/**
-	 * 
+	 * Test 2 number of permutations.
 	 */
 	@Test
 	public void test2NumberOfPermutations() {
@@ -38,7 +38,7 @@ public class PermutationsTest {
 	}
 	
 	/**
-	 * 
+	 * Test 3 number of permutations.
 	 */
 	@Test
 	public void test3NumberOfPermutations() {
@@ -48,7 +48,7 @@ public class PermutationsTest {
 	}
 	
 	/**
-	 * 
+	 * Test compare permutations.
 	 */
 	@Test
 	public void testComparePermutations() {
@@ -71,7 +71,7 @@ public class PermutationsTest {
 	}
 
     /**
-     * 
+     * Test permutation 1.
      */
     @Test
     public void testPermutation1() {
@@ -82,7 +82,7 @@ public class PermutationsTest {
     }
 
     /**
-     * 
+     * Test permutation 2.
      */
     @Test
     public void testPermutation2() {

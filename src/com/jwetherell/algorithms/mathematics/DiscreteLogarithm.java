@@ -11,15 +11,16 @@ import java.util.HashMap;
  * solve the same equation for real numbers b and g, where b is the base of the logarithm and g is the value whose 
  * logarithm is being taken.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Discrete_logarithm">Discrete Logarithm (Wikipedia)</a>
- * <br>
+ *
  * @author Lucjan Rosłanowski <lucjanroslanowski@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Discrete_logarithm">Discrete Logarithm (Wikipedia)</a>
+ * <br>
  */
 public class DiscreteLogarithm {
 
     /**
-     * 
+     * The Constant NO_SOLUTION.
      */
     public static final long NO_SOLUTION = -1;
 
@@ -63,6 +64,11 @@ public class DiscreteLogarithm {
 
     /**
      * Returns DiscreteLogarithm.NO_SOLUTION when a solution cannot be found
+     *
+     * @param a the a
+     * @param b the b
+     * @param p the p
+     * @return the long
      */
     public static final long countDiscreteLogarithm(final long a, final long b, final long p) {
         final long s = (long) sqrt(p) + 1;

@@ -7,9 +7,11 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * with the constraints that no node is duplicated. A tree can be defined abstractly as a whole (globally) 
  * as an ordered tree, with a value assigned to each node.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface ITree<T> {
 
@@ -57,8 +59,8 @@ public interface ITree<T> {
     public boolean validate();
 
     /**
-     * Get Tree as a Java compatible Collection
-     * 
+     * Get Tree as a Java compatible Collection.
+     *
      * @return Java compatible Collection
      */
     public java.util.Collection<T> toCollection();

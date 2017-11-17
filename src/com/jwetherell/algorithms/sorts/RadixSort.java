@@ -21,9 +21,10 @@ import java.util.Arrays;
  * <p> 
  * NOTE: n is the number of digits and k is the average bucket size
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Radix_sort">Radix Sort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class RadixSort {
 
@@ -32,10 +33,10 @@ public class RadixSort {
     private RadixSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param unsorted 
-     * @return 
+     * @param unsorted the unsorted
+     * @return the integer[]
      */
     public static Integer[] sort(Integer[] unsorted) {
         int[][] buckets = new int[NUMBER_OF_BUCKETS][10];

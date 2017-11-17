@@ -4,19 +4,19 @@ import com.jwetherell.algorithms.data_structures.interfaces.IList;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ListTest.
  */
 public class ListTest {
 
     /**
-     * 
+     * Test list.
      *
-     * @param <T> 
-     * @param list 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param list the list
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testList(IList<T> list, String name,
                                                              T[] data, T _invalid) {

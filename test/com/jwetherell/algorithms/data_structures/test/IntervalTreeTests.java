@@ -14,7 +14,7 @@ import com.jwetherell.algorithms.data_structures.IntervalTree;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class IntervalTreeTests.
  */
 public class IntervalTreeTests {
 	
@@ -39,7 +39,7 @@ public class IntervalTreeTests {
     final String schuetz    = "Schuetz";
 
     /**
-     * 
+     * Test lifespan interval tree.
      */
     @Test
     public void testLifespanIntervalTree() {
@@ -70,9 +70,9 @@ public class IntervalTreeTests {
     }
 
     /**
-     * 
+     * Test lifespan interval tree.
      *
-     * @param intervals 
+     * @param intervals the intervals
      */
     public void testLifespanIntervalTree(java.util.List<IntervalTree.IntervalData<String>> intervals) {   // Lifespan Interval tree
         IntervalTree<String> tree = new IntervalTree<String>(intervals);
@@ -99,7 +99,7 @@ public class IntervalTreeTests {
     final String BLACK      = "BLACK";
 
     /**
-     * 
+     * Test interval tree.
      */
     @Test
     public void testIntervalTree() {
@@ -153,7 +153,7 @@ public class IntervalTreeTests {
     }
 
     /**
-     * 
+     * Test interval tree 2.
      */
     @Test
     public void testIntervalTree2() {
@@ -183,7 +183,7 @@ public class IntervalTreeTests {
     }
 
     /**
-     * 
+     * Test interval tree 3.
      */
     @Test
     public void testIntervalTree3() {
@@ -202,7 +202,7 @@ public class IntervalTreeTests {
     }
 
     /**
-     * 
+     * Test interval tree 4.
      */
     @Test
     public void testIntervalTree4() {
@@ -218,7 +218,7 @@ public class IntervalTreeTests {
     }
 
     /**
-     * 
+     * Test interval tree 5.
      */
     @Test
     public void testIntervalTree5() {

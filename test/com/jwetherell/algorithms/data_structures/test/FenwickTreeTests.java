@@ -13,12 +13,12 @@ import com.jwetherell.algorithms.data_structures.FenwickTree.Data;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class FenwickTreeTests.
  */
 public class FenwickTreeTests {
 
     /**
-     * 
+     * Test range sum fenwick tree.
      */
     @Test
     public void testRangeSumFenwickTree() {
@@ -73,7 +73,7 @@ public class FenwickTreeTests {
     }
 
     /**
-     * 
+     * Test range sum fenwick tree 2.
      */
     @Test
     public void testRangeSumFenwickTree2() {

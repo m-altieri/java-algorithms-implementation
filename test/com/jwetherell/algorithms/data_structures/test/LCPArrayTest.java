@@ -11,12 +11,12 @@ import com.jwetherell.algorithms.data_structures.LCPArray;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class LCPArrayTest.
  */
 public class LCPArrayTest {
 
     /**
-     * 
+     * Small test.
      */
     @Test
     public void smallTest(){
@@ -31,7 +31,7 @@ public class LCPArrayTest {
     }
 
     /**
-     * 
+     * Long test.
      */
     @Test
     public void longTest(){
@@ -47,7 +47,7 @@ public class LCPArrayTest {
     }
 
     /**
-     * 
+     * Single letter test.
      */
     @Test
     public void singleLetterTest(){

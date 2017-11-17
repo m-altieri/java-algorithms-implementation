@@ -12,7 +12,7 @@ import junit.framework.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DepthFirstTraversalTest.
  */
 public class DepthFirstTraversalTest extends TraversalTest {
 
@@ -31,7 +31,7 @@ public class DepthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 0.
      */
     @Test
     public void test0() {
@@ -43,7 +43,7 @@ public class DepthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 1.
      */
     @Test
     public void test1() {
@@ -79,7 +79,7 @@ public class DepthFirstTraversalTest extends TraversalTest {
     private static final Graph<Integer>                 graph       = new Graph<Integer>(Graph.TYPE.DIRECTED, vertices, edges);
 
     /**
-     * 
+     * Test 2.
      */
     @Test
     public void test2() {
@@ -91,7 +91,7 @@ public class DepthFirstTraversalTest extends TraversalTest {
     }
 
     /**
-     * 
+     * Test 3.
      */
     @Test
     public void test3() {

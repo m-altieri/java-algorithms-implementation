@@ -8,7 +8,7 @@ import com.jwetherell.algorithms.strings.Rotation;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class StringRotation.
  */
 public class StringRotation {
 
@@ -17,7 +17,7 @@ public class StringRotation {
     }
 
     /**
-     * 
+     * Minimal rotation test.
      */
     @Test
     public void minimalRotationTest() {
@@ -54,7 +54,7 @@ public class StringRotation {
     }
 
     /**
-     * 
+     * Maximal rotation test.
      */
     @Test
     public void maximalRotationTest() {

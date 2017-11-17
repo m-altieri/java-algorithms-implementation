@@ -12,12 +12,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SkipListMapTests.
  */
 public class SkipListMapTests {
 
     /**
-     * 
+     * Test skip list map.
      */
     @Test
     public void testSkipListMap() {

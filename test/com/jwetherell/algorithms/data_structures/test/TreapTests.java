@@ -15,12 +15,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TreapTests.
  */
 public class TreapTests {
 
     /**
-     * 
+     * Test treap.
      */
     @Test
     public void testTreap() {

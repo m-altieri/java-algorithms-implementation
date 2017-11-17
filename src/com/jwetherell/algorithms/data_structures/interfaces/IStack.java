@@ -10,16 +10,19 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * accept the given item, the stack is then considered to be in an overflow
  * state. The pop operation removes an item from the top of the stack.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface IStack<T> {
 
     /**
-     * Push value on top of stack
-     * 
+     * Push value on top of stack.
+     *
      * @param value to push on the stack.
+     * @return true, if successful
      */
     public boolean push(T value);
 
@@ -73,15 +76,15 @@ public interface IStack<T> {
     public boolean validate();
 
     /**
-     * Get this Stack as a Java compatible Queue
-     * 
+     * Get this Stack as a Java compatible Queue.
+     *
      * @return Java compatible Queue
      */
     public java.util.Queue<T> toLifoQueue();
 
     /**
-     * Get this Stack as a Java compatible Collection
-     * 
+     * Get this Stack as a Java compatible Collection.
+     *
      * @return Java compatible Collection
      */
     public java.util.Collection<T> toCollection();

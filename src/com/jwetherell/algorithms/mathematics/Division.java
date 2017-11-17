@@ -2,16 +2,16 @@ package com.jwetherell.algorithms.mathematics;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Division.
  */
 public class Division {
 
     /**
-     * 
+     * Division.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long division(int a, int b) {
         long result = ((long) a) / ((long) b);
@@ -19,11 +19,11 @@ public class Division {
     }
 
     /**
-     * 
+     * Division using loop.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long divisionUsingLoop(int a, int b) {
         int absA = Math.abs(a);
@@ -40,11 +40,11 @@ public class Division {
     }
 
     /**
-     * 
+     * Division using recursion.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long divisionUsingRecursion(int a, int b) {
         int absA = Math.abs(a);
@@ -63,11 +63,11 @@ public class Division {
     }
 
     /**
-     * 
+     * Division using multiplication.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long divisionUsingMultiplication(int a, int b) {
         int absA = Math.abs(a);
@@ -87,11 +87,11 @@ public class Division {
     }
 
     /**
-     * 
+     * Division using shift.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long divisionUsingShift(int a, int b) {
         int absA = Math.abs(a);
@@ -115,11 +115,11 @@ public class Division {
     }
 
     /**
-     * 
+     * Division using logs.
      *
-     * @param a 
-     * @param b 
-     * @return 
+     * @param a the a
+     * @param b the b
+     * @return the long
      */
     public static final long divisionUsingLogs(int a, int b) {
         long absA = Math.abs(a);

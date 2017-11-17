@@ -12,7 +12,7 @@ import com.jwetherell.algorithms.graph.PushRelabel;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class PushRelabelTest.
  */
 public class PushRelabelTest {
 
@@ -45,7 +45,7 @@ public class PushRelabelTest {
     }
 
     /**
-     * 
+     * Test push relabel 1.
      */
     @Test
     public void testPushRelabel1() {
@@ -92,7 +92,7 @@ public class PushRelabelTest {
     }
 
     /**
-     * 
+     * Test push relabel 2.
      */
     @Test
     public void testPushRelabel2() {

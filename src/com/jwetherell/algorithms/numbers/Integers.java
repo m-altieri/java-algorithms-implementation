@@ -6,7 +6,7 @@ import java.util.Map;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Integers.
  */
 public class Integers {
 
@@ -14,10 +14,10 @@ public class Integers {
     private static final BigDecimal TWO = new BigDecimal(2);
 
     /**
-     * 
+     * To binary using divide and modulus.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingDivideAndModulus(int numberToConvert) {
         int integer = numberToConvert;
@@ -33,10 +33,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * To binary using shifts and modulus.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingShiftsAndModulus(int numberToConvert) {
         int integer = numberToConvert;
@@ -52,10 +52,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * To binary using big decimal.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingBigDecimal(int numberToConvert) {
         int integer = numberToConvert;
@@ -72,10 +72,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * To binary using divide and double.
      *
-     * @param numberToConvert 
-     * @return 
+     * @param numberToConvert the number to convert
+     * @return the string
      */
     public static final String toBinaryUsingDivideAndDouble(int numberToConvert) {
         int integer = numberToConvert;
@@ -91,10 +91,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * Power of two using loop.
      *
-     * @param numberToCheck 
-     * @return 
+     * @param numberToCheck the number to check
+     * @return true, if successful
      */
     public static final boolean powerOfTwoUsingLoop(int numberToCheck) {
         int number = numberToCheck;
@@ -109,10 +109,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * Power of two using recursion.
      *
-     * @param numberToCheck 
-     * @return 
+     * @param numberToCheck the number to check
+     * @return true, if successful
      */
     public static final boolean powerOfTwoUsingRecursion(int numberToCheck) {
         int number = numberToCheck;
@@ -124,10 +124,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * Power of two using log.
      *
-     * @param numberToCheck 
-     * @return 
+     * @param numberToCheck the number to check
+     * @return true, if successful
      */
     public static final boolean powerOfTwoUsingLog(int numberToCheck) {
         int number = numberToCheck;
@@ -139,10 +139,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * Power of two using bits.
      *
-     * @param numberToCheck 
-     * @return 
+     * @param numberToCheck the number to check
+     * @return true, if successful
      */
     public static final boolean powerOfTwoUsingBits(int numberToCheck) {
         int number = numberToCheck;
@@ -224,10 +224,10 @@ public class Integers {
     }
 
     /**
-     * 
+     * To english.
      *
-     * @param number 
-     * @return 
+     * @param number the number
+     * @return the string
      */
     public static final String toEnglish(int number) {
         int x = number;

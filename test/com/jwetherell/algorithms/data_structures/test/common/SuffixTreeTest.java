@@ -4,7 +4,7 @@ import com.jwetherell.algorithms.data_structures.interfaces.ISuffixTree;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class SuffixTreeTest.
  */
 public class SuffixTreeTest {
 

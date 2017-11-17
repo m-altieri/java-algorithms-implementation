@@ -2,6 +2,9 @@ package com.jwetherell.algorithms.data_structures;
 
 import java.util.Arrays;
 
+import com.jwetherell.algorithms.data_structures.interfaces.IList;
+
+// TODO: Auto-generated Javadoc
 /**
  * A dynamic array, growable array, resizable array, dynamic table, or array
  * list is a random access, variable-size list data structure that allows
@@ -13,7 +16,7 @@ import java.util.Arrays;
  * @see <a href="https://en.wikipedia.org/wiki/Dynamic_array">Dynamic Array (Wikipedia)</a>
  * <br>
  */
-public class ArrayList<T> extends List<T> {
+public class ArrayList<T> implements IList<T> {
 
 	private static final int MINIMUM_SIZE = 1024;
 
@@ -289,6 +292,9 @@ public class ArrayList<T> extends List<T> {
 		}
 	}
 
+	/**
+	 * Instantiates a new array list.
+	 */
 	public ArrayList() {
 		super();
 	}

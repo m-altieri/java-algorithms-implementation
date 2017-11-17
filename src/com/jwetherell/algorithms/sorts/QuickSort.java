@@ -16,35 +16,37 @@ import java.util.Random;
  * Worst case = O(n^2)<br>
  * Best case = O(n) [three-way partition and equal keys]<br>
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Quick_sort">Quicksort (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class QuickSort<T extends Comparable<T>> {
 
     private static final Random RAND = new Random();
 
     /**
-     * 
+     * The Enum PIVOT_TYPE.
      */
     public static enum PIVOT_TYPE {
         FIRST, MIDDLE, RANDOM
     }
 
     /**
-     * 
+     * The type.
      */
     public static PIVOT_TYPE type = PIVOT_TYPE.RANDOM;
 
     private QuickSort() { }
 
     /**
-     * 
+     * Sort.
      *
-     * @param <T> 
-     * @param pivotType 
-     * @param unsorted 
-     * @return 
+     * @param <T> the generic type
+     * @param pivotType the pivot type
+     * @param unsorted the unsorted
+     * @return the t[]
      */
     public static <T extends Comparable<T>> T[] sort(PIVOT_TYPE pivotType, T[] unsorted) {
         int pivot = 0;

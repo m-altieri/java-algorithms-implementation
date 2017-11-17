@@ -10,11 +10,12 @@ import com.jwetherell.algorithms.data_structures.Matrix;
 /**
  * LU decomposition of matrix M produces 2 matrices L and U such that M = L*U
  * where L is lower triangular matrix and U is upper triangular matrix
- * <p>
- * @see <a href="https://en.wikipedia.org/wiki/LU_decomposition">LU Decomposition (Wikipedia)</a>
- * <br>
+ * <p>.
+ *
  * @author Mateusz Cianciara <e.cianciara@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/LU_decomposition">LU Decomposition (Wikipedia)</a>
+ * <br>
  */
 public class LUDecomposition {
 
@@ -24,36 +25,36 @@ public class LUDecomposition {
     private Integer[] permutation = null;
 
     /**
-     * 
+     * Gets the l.
      *
-     * @return 
+     * @return the l
      */
     public Matrix<Double> getL() {
         return new Matrix<Double>(n, n, L);
     }
 
     /**
-     * 
+     * Gets the u.
      *
-     * @return 
+     * @return the u
      */
     public Matrix<Double> getU() {
         return new Matrix<Double>(n, n, A);
     }
 
     /**
-     * 
+     * Gets the permutation.
      *
-     * @return 
+     * @return the permutation
      */
     public List<Integer> getPermutation() {
         return new ArrayList<Integer>(Arrays.asList(permutation));
     }
 
     /**
-     * 
+     * Instantiates a new LU decomposition.
      *
-     * @param input 
+     * @param input the input
      */
     public LUDecomposition(Matrix<Double> input) {
         if (input.getCols() != input.getRows())

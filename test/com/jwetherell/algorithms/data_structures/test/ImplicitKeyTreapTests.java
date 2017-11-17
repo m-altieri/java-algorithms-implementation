@@ -18,12 +18,12 @@ import junit.framework.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class ImplicitKeyTreapTests.
  */
 public class ImplicitKeyTreapTests {
 
     /**
-     * 
+     * Test collection.
      */
     @Test
     public void testCollection() {
@@ -39,7 +39,7 @@ public class ImplicitKeyTreapTests {
     }
 
     /**
-     * 
+     * Implicit key insert tests.
      */
     @Test
     public void implicitKeyInsertTests() {
@@ -54,7 +54,7 @@ public class ImplicitKeyTreapTests {
     }
 
     /**
-     * 
+     * Implicit key remove tests.
      */
     @Test
     public void implicitKeyRemoveTests() {
@@ -107,7 +107,7 @@ public class ImplicitKeyTreapTests {
     }
 
     /**
-     * 
+     * Implicit key split merge tests.
      */
     @Test
     public void implicitKeySplitMergeTests() {
@@ -142,7 +142,7 @@ public class ImplicitKeyTreapTests {
     }
 
     /**
-     * 
+     * Implicit key tests.
      */
     @Test
     public void implicitKeyTests() {

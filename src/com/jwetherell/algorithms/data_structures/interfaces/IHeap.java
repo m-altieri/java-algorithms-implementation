@@ -9,9 +9,11 @@ package com.jwetherell.algorithms.data_structures.interfaces;
  * and the highest key is in the root node (this kind of heap is called max heap) or 
  * the keys of parent nodes are less than or equal to those of the children (min heap).
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <T> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Heap">Heap (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public interface IHeap<T> {
 
@@ -73,8 +75,8 @@ public interface IHeap<T> {
     public boolean validate();
 
     /**
-     * Get this Heap as a Java compatible Collection
-     * 
+     * Get this Heap as a Java compatible Collection.
+     *
      * @return Java compatible Collection
      */
     public java.util.Collection<T> toCollection();

@@ -4,21 +4,21 @@ import java.util.Collection;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class JavaCollectionTest.
  */
 public class JavaCollectionTest {
 
     /**
-     * 
+     * Test collection.
      *
-     * @param <T> 
-     * @param collection 
-     * @param type 
-     * @param name 
-     * @param unsorted 
-     * @param sorted 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param collection the collection
+     * @param type the type
+     * @param name the name
+     * @param unsorted the unsorted
+     * @param sorted the sorted
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static  <T extends Comparable<T>> boolean testCollection(Collection<T> collection, Class<T> type, String name,
                                                                     Integer[] unsorted, Integer[] sorted, Integer _invalid) {
@@ -196,15 +196,15 @@ public class JavaCollectionTest {
     }
 
     /**
-     * 
+     * Adds the in order remove in reverse order.
      *
-     * @param <T> 
-     * @param collection 
-     * @param type 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param collection the collection
+     * @param type the type
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean addInOrderRemoveInReverseOrder(Collection<T> collection, Class<T> type, String name,
                                                                                    Integer[] data, Integer _invalid) {

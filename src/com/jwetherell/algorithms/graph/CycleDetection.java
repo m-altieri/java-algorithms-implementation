@@ -10,9 +10,10 @@ import com.jwetherell.algorithms.data_structures.Graph;
 /**
  * In computer science, cycle detection or cycle finding is the algorithmic problem of finding a cycle in a sequence of iterated function values.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Cycle_detection">Cycle Detection (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class CycleDetection {
 
@@ -20,7 +21,8 @@ public class CycleDetection {
 
     /**
      * Cycle detection on a unidrected graph.
-     * 
+     *
+     * @param <T> the generic type
      * @param graph Graph
      * @return true if a cycle exists
      */

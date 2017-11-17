@@ -10,10 +10,11 @@ package com.jwetherell.algorithms.strings;
  * <p>
  * Manacher's algorithm finds the longest palindromic substring in linear time O(n); where n = length(input)
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher.27s_algorithm">Manacher's Algorithm (Wikipedia)</a>
- * <br>
+ *
  * @author Piotr Kruk <pka.kruk@gmail.com>
  * @author Justin Wetherell <phishman3579@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher.27s_algorithm">Manacher's Algorithm (Wikipedia)</a>
+ * <br>
  */
 public class Manacher {
 
@@ -22,9 +23,9 @@ public class Manacher {
     /**
      * This function implements Manacher's algorithm that finds
      * the longest palindromic substring in a linear time
-     * If there is no unique longest palindromic substring it returns the first one to occur
-     * 
-     * @param input
+     * If there is no unique longest palindromic substring it returns the first one to occur.
+     *
+     * @param input the input
      * @return the longest palindromic substring in input
      */
     public static String getLongestPalindromicSubstring(String input) {

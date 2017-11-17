@@ -4,20 +4,20 @@ import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TreeTest.
  */
 public class TreeTest {
 
     /**
-     * 
+     * Test tree.
      *
-     * @param <T> 
-     * @param tree 
-     * @param type 
-     * @param name 
-     * @param data 
-     * @param _invalid 
-     * @return 
+     * @param <T> the generic type
+     * @param tree the tree
+     * @param type the type
+     * @param name the name
+     * @param data the data
+     * @param _invalid the invalid
+     * @return true, if successful
      */
     public static <T extends Comparable<T>> boolean testTree(ITree<T> tree, Class<T> type, String name, 
                                                              Integer[] data, Integer _invalid) {

@@ -5,9 +5,10 @@ package com.jwetherell.algorithms.sequence;
  * In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the 
  * sum of the two preceding ones: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
  * @see <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci Sequence (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class FibonacciSequence {
 
@@ -17,10 +18,10 @@ public class FibonacciSequence {
     private FibonacciSequence() {} 
 
     /**
-     * 
+     * Fibonacci sequence using loop.
      *
-     * @param n 
-     * @return 
+     * @param n the n
+     * @return the long
      */
     public static final long fibonacciSequenceUsingLoop(int n) {
         final long[] array = new long[n + 1];
@@ -43,7 +44,10 @@ public class FibonacciSequence {
     }
 
     /**
-     * Recursion with memoization
+     * Recursion with memoization.
+     *
+     * @param n the n
+     * @return the long
      */
     public static final long fibonacciSequenceUsingRecursion(int n) {
         // Using the array to store values already computed
@@ -84,10 +88,10 @@ public class FibonacciSequence {
     }
 
     /**
-     * 
+     * Fibonacci sequence using matrix multiplication.
      *
-     * @param n 
-     * @return 
+     * @param n the n
+     * @return the long
      */
     public static final long fibonacciSequenceUsingMatrixMultiplication(int n) {
         // m = [ 1 , 1 ]
@@ -138,10 +142,10 @@ public class FibonacciSequence {
     }
 
     /**
-     * 
+     * Fibonacci sequence using binets formula.
      *
-     * @param n 
-     * @return 
+     * @param n the n
+     * @return the long
      */
     public static final long fibonacciSequenceUsingBinetsFormula(int n) {
         final long r = (long) Math.floor(Math.pow(PHI, n) * INVERSE_SQUARE_ROOT_OF_5 + 0.5);

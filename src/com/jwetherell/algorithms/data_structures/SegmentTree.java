@@ -21,9 +21,11 @@ import java.util.TreeSet;
  * the Data abstract class to store your custom data. I've also included a range
  * minimum, range maximum, range sum, and interval stabbing implementations.
  * <p>
+ *
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ * @param <D> the generic type
  * @see <a href="https://en.wikipedia.org/wiki/Segment_tree">Segment Tree (Wikipedia)</a>
  * <br>
- * @author Justin Wetherell <phishman3579@gmail.com>
  */
 @SuppressWarnings("unchecked")
 public abstract class SegmentTree<D extends Data> {
@@ -31,21 +33,18 @@ public abstract class SegmentTree<D extends Data> {
     protected Segment<D> root = null;
 
     /**
-     * Stabbing query
-     * 
-     * @param index
-     *            index to query
+     * Stabbing query.
+     *
+     * @param index            index to query
      * @return data at index.
      */
     public abstract D query(long index);
 
     /**
-     * Range query
-     * 
-     * @param start
-     *            start of range (inclusive)
-     * @param end
-     *            end of range to (inclusive)
+     * Range query.
+     *
+     * @param start            start of range (inclusive)
+     * @param end            end of range to (inclusive)
      * @return data for range.
      */
     public abstract D query(long start, long end);
@@ -162,23 +161,25 @@ public abstract class SegmentTree<D extends Data> {
      * never overlap with each other. The end points of stored segments are
      * inclusive, that is, when a segment spans from 2 to 6, an arbitrary point
      * x within that segment can take a value of 2 <= x <= 6.
+     *
+     * @param <D> the generic type
      */
     public static final class FlatSegmentTree<D extends Data> extends SegmentTree<D> {
 
         /**
-         * 
+         * Instantiates a new flat segment tree.
          *
-         * @param data 
+         * @param data the data
          */
         public FlatSegmentTree(List<D> data) {
             this(data, 1);
         }
 
         /**
-         * 
+         * Instantiates a new flat segment tree.
          *
-         * @param data 
-         * @param minLength 
+         * @param data the data
+         * @param minLength the min length
          */
         public FlatSegmentTree(List<D> data, int minLength) {
             if (data.size() <= 0)
@@ -401,6 +402,8 @@ public abstract class SegmentTree<D extends Data> {
      * segments may overlap with each other. The end points of stored segments
      * are inclusive, that is, when an interval spans from 2 to 6, an arbitrary
      * point x within that interval can take a value of 2 <= x <=6.
+     *
+     * @param <D> the generic type
      */
     public static final class DynamicSegmentTree<D extends Data> extends SegmentTree<D> {
 
@@ -433,19 +436,19 @@ public abstract class SegmentTree<D extends Data> {
         };
 
         /**
-         * 
+         * Instantiates a new dynamic segment tree.
          *
-         * @param data 
+         * @param data the data
          */
         public DynamicSegmentTree(List<D> data) {
             this(data, 1);
         }
 
         /**
-         * 
+         * Instantiates a new dynamic segment tree.
          *
-         * @param data 
-         * @param minLength 
+         * @param data the data
+         * @param minLength the min length
          */
         public DynamicSegmentTree(List<D> data, int minLength) {
             if (data.size() <= 0)

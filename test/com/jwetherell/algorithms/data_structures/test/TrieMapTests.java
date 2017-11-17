@@ -12,12 +12,12 @@ import com.jwetherell.algorithms.data_structures.test.common.Utils.TestData;
 
 // TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class TrieMapTests.
  */
 public class TrieMapTests {
 
     /**
-     * 
+     * Test trie map.
      */
     @Test
     public void testTrieMap() {

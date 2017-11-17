@@ -8,17 +8,22 @@ import java.util.List;
  * In mathematics, the notion of permutation relates to the act of arranging all the members of a set into some sequence 
  * or order, or if the set is already ordered, rearranging (reordering) its elements, a process called permuting.
  * <p>
- * @see <a href="https://en.wikipedia.org/wiki/Permutation">Permutation (Wikipedia)</a>
- * <br>
+ *
  * @author Justin Wetherell <phishman3579@gmail.com>
  * @author Lucjan Roslanowski <lucjanroslanowski@gmail.com>
+ * @see <a href="https://en.wikipedia.org/wiki/Permutation">Permutation (Wikipedia)</a>
+ * <br>
  */
 public class Permutations {	
 
     private Permutations() { }
 
-    /** 
-     * N! permutation of the characters in the string (in order)
+    /**
+     *  
+     * N! permutation of the characters in the string (in order).
+     *
+     * @param stringToGeneratePermutationsFrom the string to generate permutations from
+     * @return the string[]
      */
     public static String[] permutations(String stringToGeneratePermutationsFrom) {
         final int size = numberOfPermutations(stringToGeneratePermutationsFrom.length());
@@ -62,7 +67,11 @@ public class Permutations {
      * Permutations of numbers in an array using recursion
      * <br>
      * int numbers[] = {7,5,3};
-     * LinkedList<LinkedList<Integer>> result = getAllPermutations(numbers);
+     * LinkedList<LinkedList<Integer>> result = getAllPermutations(numbers);.
+     *
+     * @param <N> the number type
+     * @param numbers the numbers
+     * @return the all permutations
      */
     public static final <N extends Number> List<List<N>> getAllPermutations(final N[] numbers){
         final List<List<N>> result = new LinkedList<List<N>>();
