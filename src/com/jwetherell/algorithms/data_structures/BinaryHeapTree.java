@@ -139,15 +139,11 @@ public class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
         return lastNode;
     }
 
-    /**
-     * Replace the node with the last node and heap down.
-     * 
-     * @param node to replace.
-     */
-    private void replaceNode(Node<T> node) {
+    private void supportReplaceNode(Node<T> node) {
+    	
         Node<T> lastNode = getLastNode();
 
-        // Remove lastNode from tree
+    	// Remove lastNode from tree
         Node<T> lastNodeParent = lastNode.parent;
         if (lastNodeParent!=null) {
             if (lastNodeParent.right != null) {
@@ -165,6 +161,18 @@ public class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
                 node.parent.right = lastNode;
             }
         }
+    }
+    
+    /**
+     * Replace the node with the last node and heap down.
+     * 
+     * @param node to replace.
+     */
+    private void replaceNode(Node<T> node) {
+        Node<T> lastNode = getLastNode();
+        
+        supportReplaceNode(node);
+        
         lastNode.parent = node.parent;
 
         lastNode.left = node.left;
@@ -181,7 +189,9 @@ public class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
         size--;
 
         // Last node is the node to remove
-        if (lastNode.equals(node)) return;
+        if (lastNode.equals(node)) {
+        	return;
+        }
 
         if (lastNode.equals(root)) {
             heapDown(lastNode);
@@ -202,23 +212,24 @@ public class BinaryHeapTree<T extends Comparable<T>> implements BinaryHeap<T> {
      */
     private Node<T> getNode(Node<T> startingNode, T value) {
         Node<T> result = null;
-        if (startingNode != null && startingNode.value.equals(value)) {
+        if (startingNode.value.equals(value)) {
             result = startingNode;
-        } else if (startingNode != null && !startingNode.value.equals(value)) {
+        } else {
             Node<T> left = startingNode.left;
             Node<T> right = startingNode.right;
+//            supportGetNode(left, right, result, value);
             if (left != null 
-                && ((type==Type.MIN && left.value.compareTo(value)<=0)||(type==Type.MAX && left.value.compareTo(value)>=0))
-            ) {
-                result = getNode(left, value);
-                if (result != null) return result;
-            }
-            if (right != null 
-                && ((type==Type.MIN && right.value.compareTo(value)<=0)||(type==Type.MAX && right.value.compareTo(value)>=0))
-            ) {
-                result = getNode(right, value);
-                if (result != null) return result;
-            }
+                    && ((type==Type.MIN && left.value.compareTo((T) value)<=0)||(type==Type.MAX && left.value.compareTo((T) value)>=0))
+                ) {
+                    result = getNode(left, (T) value);
+                    if (result != null) return result;
+                }
+                if (right != null 
+                    && ((type==Type.MIN && right.value.compareTo((T) value)<=0)||(type==Type.MAX && right.value.compareTo((T) value)>=0))
+                ) {
+                    result = getNode(right, (T) value);
+                    if (result != null) return result;
+                }
         }
         return result;
     }

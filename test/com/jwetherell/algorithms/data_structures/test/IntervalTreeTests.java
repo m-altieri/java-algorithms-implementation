@@ -25,8 +25,8 @@ public class IntervalTreeTests {
 
     private static final Comparator<IntervalTree.IntervalData<String>> REVERSE = new Comparator<IntervalTree.IntervalData<String>>() {
         @Override
-        public int compare(IntervalTree.IntervalData<String> arg0, IntervalTree.IntervalData<String> arg1) {
-            int r = arg0.compareTo(arg1);
+        public int compare(IntervalTree.IntervalData<String> theArg0, IntervalTree.IntervalData<String> theArg1) {
+            int r = theArg0.compareTo(theArg1);
             return r*-1;
         }       
     };

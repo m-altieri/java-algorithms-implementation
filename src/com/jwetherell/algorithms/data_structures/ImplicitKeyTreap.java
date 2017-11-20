@@ -354,13 +354,13 @@ public class ImplicitKeyTreap<T> implements IList<T> {
         return right;
     }
 
-    private static <T> Node<T> insert(Node<T> root, int index, T value) {
-        final Pair<T> p = split(root, index);
+    private static <T> Node<T> insert(Node<T> theRoot, int index, T value) {
+        final Pair<T> p = split(theRoot, index);
         return merge(merge((Node<T>)p.left, new Node<T>(value)), (Node<T>)p.right);
     }
 
-    private static <T> Node<T> remove(Node<T> root, int index) {
-        final Pair<T> p = split(root, index);
+    private static <T> Node<T> remove(Node<T> theRoot, int index) {
+        final Pair<T> p = split(theRoot, index);
         final int leftSize = (p.left!=null?
                                       ((Node<T>)p.left).size
                                   :
@@ -458,11 +458,11 @@ public class ImplicitKeyTreap<T> implements IList<T> {
      *
      * @param <T> the generic type
      * @param node the node
-     * @param size the size
+     * @param theSize the the size
      * @return the t[]
      */
-    public static <T> T[] inOrder(Node<T> node, int size) {
-        T[] data = (T[]) new Object[size];
+    public static <T> T[] inOrder(Node<T> node, int theSize) {
+        T[] data = (T[]) new Object[theSize];
         if (node == null)
             return data;
 

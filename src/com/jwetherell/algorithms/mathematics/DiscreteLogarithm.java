@@ -42,23 +42,23 @@ public class DiscreteLogarithm {
         return (temp * temp) % p;
     }
 
-    private static final long getDiscreteLogarithm(HashMap<Long, Long> set, long s, long a, long p) {
+    private static final long getDiscreteLogarithm(HashMap<Long, Long> theSet, long s, long a, long p) {
         for (long i = 0; i < s; ++i) {
             long el = pow(a, (i * s) % p, p);
             el = pow(el, p - 2, p);
 
-            if (set.containsKey(el))
-                return i * s + set.get(el);
+            if (theSet.containsKey(el))
+                return i * s + theSet.get(el);
         }
         return NO_SOLUTION;
     }
 
-    private static final void generateSet(long a, long b_1, long p, long s, HashMap<Long, Long> set) {
-        set.clear();
+    private static final void generateSet(long a, long b_1, long p, long s, HashMap<Long, Long> theSet) {
+        theSet.clear();
         for (long i = 0; i < s; ++i) {
             final long first = (pow(a, i, p) * b_1) % p;
-            if (!set.containsKey(first))
-                set.put(first, i);
+            if (!theSet.containsKey(first))
+                theSet.put(first, i);
         }
     }
 

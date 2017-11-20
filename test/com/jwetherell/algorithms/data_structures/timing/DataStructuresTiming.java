@@ -46,7 +46,7 @@ public class DataStructuresTiming {
     private static final Random RANDOM = new Random();
     private static final DecimalFormat FORMAT = new DecimalFormat("0.##");
     private static final int NUMBER_OF_TESTS = 3; // There will always be NUMBER_OF_TESTS+1 runs since the first round is thrown away (JITing)
-    private static final int ARRAY_SIZE = 1024*10; // Number of items to add/remove/look-up from each data structure
+    static final int ARRAY_SIZE = 1024*10; // Number of items to add/remove/look-up from each data structure
     private static final int RANDOM_SIZE = 1000 * ARRAY_SIZE;
     private static final Integer INVALID = RANDOM_SIZE + 10;
 
@@ -238,7 +238,7 @@ public class DataStructuresTiming {
         if (!runTests(new TestHashMapProbing(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
-        if (!runTests(new TestHashMapChaining(), tests, unsorteds, sorteds, strings)) return false;
+        if (!runTests(new MapsTiming.TestHashMapChaining(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
         if (!runTests(new TestJavaTreeMap(), tests, unsorteds, sorteds, strings)) return false;
@@ -321,10 +321,10 @@ public class DataStructuresTiming {
          *
          * @param unsorted the unsorted
          * @param sorted the sorted
-         * @param input the input
+         * @param theInput the the input
          * @return true, if successful
          */
-        public abstract boolean run(Integer[] unsorted, Integer[] sorted, String input);
+        public abstract boolean run(Integer[] unsorted, Integer[] sorted, String theInput);
     }
 
     private static class TestAVLTree extends Testable {
@@ -463,23 +463,6 @@ public class DataStructuresTiming {
 
     }
 
-    private static class TestHashMapChaining extends Testable {
-        String name = "Chaining HashMap <Integer>";
-
-        public String getName() {
-            return name;
-        }
-
-        public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
-            this.input = input;
-            HashMap<Integer,String> cHashMap = new HashMap<Integer,String>(HashMap.Type.CHAINING, ARRAY_SIZE/2);
-            java.util.Map<Integer,String> jMap = cHashMap.toMap();
-            if (!testJavaMap(jMap,Integer.class,String.class,name, unsorted, sorted, input)) return false;
-            return true;
-        }
-
-    }
-
     private static class TestHAMT extends Testable {
         String name = "HAMT <Integer>";
 
@@ -516,10 +499,10 @@ public class DataStructuresTiming {
     private static class TestJavaMinHeap extends Testable {
         Comparator<Integer> comparator =  new Comparator<Integer>() {
             @Override
-            public int compare(Integer arg0, Integer arg1) {
-                if (arg0.compareTo(arg1) > 0)
+            public int compare(Integer theArg0, Integer theArg1) {
+                if (theArg0.compareTo(theArg1) > 0)
                     return 1;
-                else if (arg1.compareTo(arg0) > 0)
+                else if (theArg1.compareTo(theArg0) > 0)
                     return -1;
                 return 0;
             }
@@ -542,10 +525,10 @@ public class DataStructuresTiming {
     private static class TestJavaMaxHeap extends Testable {
         Comparator<Integer> comparator =  new Comparator<Integer>() {
             @Override
-            public int compare(Integer arg0, Integer arg1) {
-                if (arg0.compareTo(arg1) > 0)
+            public int compare(Integer theArg0, Integer theArg1) {
+                if (theArg0.compareTo(theArg1) > 0)
                     return -1;
-                else if (arg1.compareTo(arg0) > 0)
+                else if (theArg1.compareTo(theArg0) > 0)
                     return 1;
                 return 0;
             }
@@ -1402,7 +1385,7 @@ public class DataStructuresTiming {
     }
 
     @SuppressWarnings("unchecked")
-    private static <K extends Comparable<K>,V> boolean testJavaMap(java.util.Map<K,V> map, Class<K> keyType, Class<V> valueType, String name, Integer[] _unsorted, Integer[] _sorted, String input) {
+    static <K extends Comparable<K>,V> boolean testJavaMap(java.util.Map<K,V> map, Class<K> keyType, Class<V> valueType, String name, Integer[] _unsorted, Integer[] _sorted, String input) {
         // Make sure the map is empty
         if (!map.isEmpty()) {
             System.err.println(name+" initial isEmpty() failed.");

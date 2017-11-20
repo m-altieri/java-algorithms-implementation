@@ -412,10 +412,10 @@ public abstract class SegmentTree<D extends Data> {
              * {@inheritDoc}
              */
             @Override
-            public int compare(OverlappingSegment<?> arg0, OverlappingSegment<?> arg1) {
-                if (arg0.start < arg1.start)
+            public int compare(OverlappingSegment<?> theArg0, OverlappingSegment<?> theArg1) {
+                if (theArg0.start < theArg1.start)
                     return -1;
-                if (arg1.start < arg0.start)
+                if (theArg1.start < theArg0.start)
                     return 1;
                 return 0;
             }
@@ -426,10 +426,10 @@ public abstract class SegmentTree<D extends Data> {
              * {@inheritDoc}
              */
             @Override
-            public int compare(OverlappingSegment<?> arg0, OverlappingSegment<?> arg1) {
-                if (arg0.end < arg1.end)
+            public int compare(OverlappingSegment<?> theArg0, OverlappingSegment<?> theArg1) {
+                if (theArg0.end < theArg1.end)
                     return -1;
-                if (arg1.end < arg0.end)
+                if (theArg1.end < theArg0.end)
                     return 1;
                 return 0;
             }

@@ -406,9 +406,9 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
             }
         }
 
-        private static <C extends CharSequence> Edge<C> find(SuffixTree<C> tree, int node, char c) {
+        private static <C extends CharSequence> Edge<C> find(SuffixTree<C> theTree, int node, char c) {
             int key = key(node, c);
-            return tree.edgeMap.get(key);
+            return theTree.edgeMap.get(key);
         }
 
         private int split(int originNode, int firstIndex, int lastIndex) {

@@ -116,11 +116,11 @@ public class LowestCommonAncestor<T> {
         /**
          * Sets the value.
          *
-         * @param value the value
+         * @param theValue the the value
          * @return the tree node
          */
-        public TreeNode<T> setValue(T value) {
-            this.value = value;
+        public TreeNode<T> setValue(T theValue) {
+            this.value = theValue;
             return this;
         }
 
@@ -137,14 +137,14 @@ public class LowestCommonAncestor<T> {
 
         /**
          * Creates new child (storing value) for this node and returns it.
-         *
+         * 
          * Complexity O(log depth)
          *
-         * @param value value to be stored in new child
+         * @param theValue the the value
          * @return added child
          */
-        public TreeNode<T> addChild(T value) {
-            return addChild().setValue(value);
+        public TreeNode<T> addChild(T theValue) {
+            return addChild().setValue(theValue);
         }
 
         /**
@@ -159,17 +159,17 @@ public class LowestCommonAncestor<T> {
         /**
          * Finds subtree with given value in the root.
          *
-         * @param value value to be find
+         * @param theValue the the value
          * @return subtree with given value in the root
          */
-        public TreeNode<T> find(T value) {
+        public TreeNode<T> find(T theValue) {
             if (this.value == null) {
-                if (value == null)
+                if (theValue == null)
                     return this;
-            } else if (this.value.equals(value))
+            } else if (this.value.equals(theValue))
                 return this;
             for (TreeNode<T> child: children) {
-                final TreeNode<T> res = child.find(value);
+                final TreeNode<T> res = child.find(theValue);
                 if (res != null)
                     return res;
             }
@@ -179,11 +179,11 @@ public class LowestCommonAncestor<T> {
         /**
          * Returns true if tree contains a node with given value.
          *
-         * @param value to be checked
+         * @param theValue the the value
          * @return true if tree contains node with given value, false otherwise
          */
-        public boolean contains(T value) {
-            return find(value) != null;
+        public boolean contains(T theValue) {
+            return find(theValue) != null;
         }
     }
 }

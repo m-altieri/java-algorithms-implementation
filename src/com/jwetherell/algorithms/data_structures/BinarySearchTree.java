@@ -480,12 +480,12 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
      *
      * @param <T> the generic type
      * @param start rooted node
-     * @param size of tree rooted at start
+     * @param theSize the the size
      * @return breath first search sorted array representing the tree.
      */
-    public static <T extends Comparable<T>> T[] getBFS(Node<T> start, int size) {
+    public static <T extends Comparable<T>> T[] getBFS(Node<T> start, int theSize) {
         final Queue<Node<T>> queue = new ArrayDeque<Node<T>>();
-        final T[] values = (T[])Array.newInstance(start.id.getClass(), size);
+        final T[] values = (T[])Array.newInstance(start.id.getClass(), theSize);
         int count = 0;
         Node<T> node = start;
         while (node != null) {
@@ -528,15 +528,15 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
      * @param <T> the generic type
      * @param order of search
      * @param start rooted node
-     * @param size of tree rooted at start
+     * @param theSize the the size
      * @return order sorted array representing the tree.
      */
-    public static <T extends Comparable<T>> T[] getDFS(DepthFirstSearchOrder order, Node<T> start, int size) {
+    public static <T extends Comparable<T>> T[] getDFS(DepthFirstSearchOrder order, Node<T> start, int theSize) {
         final Set<Node<T>> added = new HashSet<Node<T>>(2);
-        final T[] nodes = (T[])Array.newInstance(start.id.getClass(), size);
+        final T[] nodes = (T[])Array.newInstance(start.id.getClass(), theSize);
         int index = 0;
         Node<T> node = start;
-        while (index < size && node != null) {
+        while (index < theSize && node != null) {
             Node<T> parent = node.parent;
             Node<T> lesser = (node.lesser != null && !added.contains(node.lesser)) ? node.lesser : null;
             Node<T> greater = (node.greater != null && !added.contains(node.greater)) ? node.greater : null;

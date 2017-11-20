@@ -605,8 +605,8 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         private int childrenSize = 0;
         private Comparator<Node<T>> comparator = new Comparator<Node<T>>() {
             @Override
-            public int compare(Node<T> arg0, Node<T> arg1) {
-                return arg0.getKey(0).compareTo(arg1.getKey(0));
+            public int compare(Node<T> theArg0, Node<T> theArg1) {
+                return theArg0.getKey(0).compareTo(theArg1.getKey(0));
             }
         };
 

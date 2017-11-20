@@ -133,8 +133,8 @@ public class FenwickTreeTests {
 
     private static final Comparator<FenwickTree.Data> REVERSE = new Comparator<FenwickTree.Data>() {
         @Override
-        public int compare(Data arg0, Data arg1) {
-            int r = arg0.compareTo(arg1);
+        public int compare(Data theArg0, Data theArg1) {
+            int r = theArg0.compareTo(theArg1);
             return r*-1;
         }       
     };

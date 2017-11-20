@@ -27,12 +27,12 @@ public class Matrix<T extends Number> {
          * {@inheritDoc}
          */
         @Override
-        public int compare(T o1, T o2) {
+        public int compare(T p1, T p2) {
 
         	int result = 0;
 
-        	Comparable<T> c1 = (Comparable<T>) o1;
-            result = c1.compareTo(o2);
+        	Comparable<T> c1 = (Comparable<T>) p1;
+            result = c1.compareTo(p2);
         	            
             return result;
         }

@@ -30,8 +30,8 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
          * {@inheritDoc}
          */
         @Override
-        public BinarySearchTree.Node<K> createNewNode(BinarySearchTree.Node<K> parent, K id) {
-            return (new TreeMapNode<K, V>(parent, id, null));
+        public BinarySearchTree.Node<K> createNewNode(BinarySearchTree.Node<K> theParent, K theId) {
+            return (new TreeMapNode<K, V>(theParent, theId, null));
         }
     };
 

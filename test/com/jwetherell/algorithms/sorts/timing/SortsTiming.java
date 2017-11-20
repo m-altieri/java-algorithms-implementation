@@ -116,49 +116,49 @@ public class SortsTiming {
         showComparison();
     }
 
-    private static final int runTest(Testable testable, Integer[] unsorted, Integer[] sorted, String[] names, double[] results, int count) {
-        names[count] = testable.getName();
+    private static final int runTest(Testable testable, Integer[] unsortedArray, Integer[] sortedArray, String[] namesArray, double[] resultsArray, int theCount) {
+        namesArray[theCount] = testable.getName();
 
         long bInsertion = System.nanoTime();
-        Integer[] result = testable.sort(unsorted.clone());
+        Integer[] result = testable.sort(unsortedArray.clone());
         if (checkResults && !check(result))
             System.err.println(testable.getName()+" failed.");
         long aInsertion = System.nanoTime();
         double diff = (aInsertion - bInsertion) / 1000000d / 1000d;
-        System.out.println("Random: "+testable.getName()+"=" + FORMAT.format(diff) + " secs");
+        System.out.println("Random: " + testable.getName() + "=" + FORMAT.format(diff) + " secs");
         if (showResultingArray)
-            showResultingArray(unsorted, result);
-        results[0] = diff;
+            showResultingArray(unsortedArray, result);
+        resultsArray[0] = diff;
         putOutTheGarbage();
 
         bInsertion = System.nanoTime();
-        result = testable.sort(sorted.clone());
+        result = testable.sort(sortedArray.clone());
         if (checkResults && !check(result))
-            System.err.println(testable.getName()+" failed.");
+            System.err.println(testable.getName() + " failed.");
         aInsertion = System.nanoTime();
         diff = (aInsertion - bInsertion) / 1000000d / 1000d;
-        System.out.println("Sorted: "+testable.getName()+"=" + FORMAT.format(diff) + " secs");
+        System.out.println("Sorted: " + testable.getName() + "=" + FORMAT.format(diff) + " secs");
         if (showResultingArray)
             showResultingArray(sorted, result);
-        results[1] = diff;
+        resultsArray[1] = diff;
         putOutTheGarbage();
 
         bInsertion = System.nanoTime();
         result = testable.sort(reverse.clone());
         if (checkResults && !check(result))
-            System.err.println(testable.getName()+" failed.");
+            System.err.println(testable.getName() + " failed.");
         aInsertion = System.nanoTime();
         diff = (aInsertion - bInsertion) / 1000000d / 1000d;
-        System.out.println("Reverse sorted: "+testable.getName()+"=" + FORMAT.format(diff) + " secs");
+        System.out.println("Reverse sorted: " + testable.getName() + "=" + FORMAT.format(diff) + " secs");
         if (showResultingArray)
             showResultingArray(reverse, result);
-        results[2] = diff;
+        resultsArray[2] = diff;
         putOutTheGarbage();
 
         System.out.println();
         System.out.flush();
 
-        return count+1;
+        return theCount + 1;
     }
 
     /**
@@ -186,10 +186,10 @@ public class SortsTiming {
         /**
          * Sort.
          *
-         * @param input the input
+         * @param theInput the the input
          * @return the integer[]
          */
-        public abstract Integer[] sort(Integer[] input);
+        public abstract Integer[] sort(Integer[] theInput);
     }
 
     private static class AmericanFlag extends Testable {

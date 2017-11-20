@@ -39,11 +39,11 @@ public class PushRelabel {
      *
      * @param <T>               parameter of graph on which network is based
      * @param edgesToCapacities represents edges of network with capacities
-     * @param source            source of network
-     * @param sink              sink of network
+     * @param theSource the the source
+     * @param theSink the the sink
      * @return the maximum flow
      */
-    public static <T extends Comparable<T>> Long getMaximumFlow(Map<Graph.Edge<T>, Long> edgesToCapacities, Graph.Vertex<T> source, Graph.Vertex<T> sink) {
+    public static <T extends Comparable<T>> Long getMaximumFlow(Map<Graph.Edge<T>, Long> edgesToCapacities, Graph.Vertex<T> theSource, Graph.Vertex<T> theSink) {
         if (edgesToCapacities == null)
             throw new IllegalArgumentException("Graph is NULL.");
 
@@ -54,10 +54,10 @@ public class PushRelabel {
         }
 
         final Vertex s = new Vertex(); // source
-        vertexMap.put(source, s);
+        vertexMap.put(theSource, s);
 
         final Vertex t = new Vertex(); // sink
-        vertexMap.put(sink, t);
+        vertexMap.put(theSink, t);
 
         final PushRelabel pushRelabel = new PushRelabel(vertexMap.values(), s, t);
         for (Map.Entry<Graph.Edge<T>, Long> edgeWithCapacity : edgesToCapacities.entrySet()) {

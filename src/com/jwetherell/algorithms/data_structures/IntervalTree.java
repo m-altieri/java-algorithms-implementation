@@ -29,11 +29,11 @@ public class IntervalTree<O extends Object> {
          * {@inheritDoc}
          */
         @Override
-        public int compare(IntervalData<?> arg0, IntervalData<?> arg1) {
+        public int compare(IntervalData<?> theArg0, IntervalData<?> theArg1) {
         	// Compare start first
-            if (arg0.start < arg1.start)
+            if (theArg0.start < theArg1.start)
                 return -1;
-            if (arg1.start < arg0.start)
+            if (theArg1.start < theArg0.start)
                 return 1;
             return 0;
         }
@@ -44,11 +44,11 @@ public class IntervalTree<O extends Object> {
          * {@inheritDoc}
          */
         @Override
-        public int compare(IntervalData<?> arg0, IntervalData<?> arg1) {
+        public int compare(IntervalData<?> theArg0, IntervalData<?> theArg1) {
         	// Compare end first
-            if (arg0.end > arg1.end)
+            if (theArg0.end > theArg1.end)
                 return -1;
-            if (arg1.end > arg0.end)
+            if (theArg1.end > theArg0.end)
             	return 1;
             return 0;
         }

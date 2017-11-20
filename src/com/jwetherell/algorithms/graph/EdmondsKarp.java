@@ -44,11 +44,11 @@ public class EdmondsKarp {
      *
      * @param from the from
      * @param to the to
-     * @param capacity the capacity
+     * @param theCapacity the the capacity
      */
-    public void addEdge(int from, int to, long capacity) {
-        assert capacity >= 0;
-        this.capacity[from][to] += capacity;
+    public void addEdge(int from, int to, long theCapacity) {
+        assert theCapacity >= 0;
+        this.capacity[from][to] += theCapacity;
     }
 
     /**

@@ -28,12 +28,12 @@ public class XYPoint implements Comparable<Object> {
     /**
      * Sets the.
      *
-     * @param x the x
-     * @param y the y
+     * @param theX the the X
+     * @param theY the the Y
      */
-    public void set(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public void set(double theX, double theY) {
+        this.x = theX;
+        this.y = theY;
     }
 
     /**

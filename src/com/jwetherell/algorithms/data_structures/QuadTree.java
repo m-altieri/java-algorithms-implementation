@@ -785,18 +785,18 @@ public abstract class QuadTree<G extends XYPoint> {
          * Sets the.
          *
          * @param upperLeft the upper left
-         * @param width the width
-         * @param height the height
+         * @param theWidth the the width
+         * @param theHeight the the height
          */
-        public void set(XYPoint upperLeft, double width, double height) {
+        public void set(XYPoint upperLeft, double theWidth, double theHeight) {
             set(upperLeft.x, upperLeft.y);
-            this.width = width;
-            this.height = height;
+            this.width = theWidth;
+            this.height = theHeight;
 
             minX = upperLeft.x;
             minY = upperLeft.y;
-            maxX = upperLeft.x+width;
-            maxY = upperLeft.y+height;
+            maxX = upperLeft.x + theWidth;
+            maxY = upperLeft.y + theHeight;
         }
 
         /**
@@ -932,10 +932,10 @@ public abstract class QuadTree<G extends XYPoint> {
          * {@inheritDoc}
          */
         @Override
-        public int compare(XYPoint o1, XYPoint o2) {
-            if (o1.x < o2.x)
+        public int compare(XYPoint p1, XYPoint p2) {
+            if (p1.x < p2.x)
                 return -1;
-            if (o1.x > o2.x)
+            if (p1.x > p2.x)
                 return 1;
             return 0;
         }
@@ -947,10 +947,10 @@ public abstract class QuadTree<G extends XYPoint> {
          * {@inheritDoc}
          */
         @Override
-        public int compare(XYPoint o1, XYPoint o2) {
-            if (o1.y < o2.y)
+        public int compare(XYPoint p1, XYPoint p2) {
+            if (p1.y < p2.y)
                 return -1;
-            if (o1.y > o2.y)
+            if (p1.y > p2.y)
                 return 1;
             return 0;
         }
