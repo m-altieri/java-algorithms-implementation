@@ -813,7 +813,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
      *
      * @param <T> the generic type
      */
-    public static class JavaCompatibleBTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
+    protected static class JavaCompatibleBTree<T extends Comparable<T>> extends java.util.AbstractCollection<T> {
 
         private BTree<T> tree = null;
 

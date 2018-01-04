@@ -11,6 +11,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.jwetherell.algorithms.data_structures.Data;
+import com.jwetherell.algorithms.data_structures.IntervalData;
+import com.jwetherell.algorithms.data_structures.QuadrantData;
+import com.jwetherell.algorithms.data_structures.RangeMaximumData;
+import com.jwetherell.algorithms.data_structures.RangeMinimumData;
+import com.jwetherell.algorithms.data_structures.RangeSumData;
 import com.jwetherell.algorithms.data_structures.SegmentTree;
 import com.jwetherell.algorithms.data_structures.SegmentTree.DynamicSegmentTree;
 import com.jwetherell.algorithms.data_structures.SegmentTree.FlatSegmentTree;
@@ -26,11 +31,11 @@ public class SegmentTreeTests {
      */
     @Test
     public void testQuadrantSegmentTree() {
-        java.util.List<Data.QuadrantData> segments = new ArrayList<Data.QuadrantData>();
-        segments.add(new Data.QuadrantData(0, 1, 0, 0, 0)); // first point in the 0th quadrant
-        segments.add(new Data.QuadrantData(1, 0, 1, 0, 0)); // second point in the 1st quadrant
-        segments.add(new Data.QuadrantData(2, 0, 0, 1, 0)); // third point in the 2nd quadrant
-        segments.add(new Data.QuadrantData(3, 0, 0, 0, 1)); // fourth point in the 3rd quadrant
+        java.util.List<QuadrantData> segments = new ArrayList<QuadrantData>();
+        segments.add(new QuadrantData(0, 1, 0, 0, 0)); // first point in the 0th quadrant
+        segments.add(new QuadrantData(1, 0, 1, 0, 0)); // second point in the 1st quadrant
+        segments.add(new QuadrantData(2, 0, 0, 1, 0)); // third point in the 2nd quadrant
+        segments.add(new QuadrantData(3, 0, 0, 0, 1)); // fourth point in the 3rd quadrant
 
         // No matter which order the data is given, all tests should pass
 
@@ -50,10 +55,10 @@ public class SegmentTreeTests {
         testQuadrantSegmentTree(segments);
     }
 
-    private void testQuadrantSegmentTree(java.util.List<Data.QuadrantData> segments) {   // Quadrant Segment tree
-        FlatSegmentTree<Data.QuadrantData> tree = new FlatSegmentTree<Data.QuadrantData>(segments);
+    private void testQuadrantSegmentTree(java.util.List<QuadrantData> segments) {   // Quadrant Segment tree
+        FlatSegmentTree<QuadrantData> tree = new FlatSegmentTree<QuadrantData>(segments);
 
-        Data.QuadrantData query = tree.query(0, 3);
+        QuadrantData query = tree.query(0, 3);
         assertTrue("Quad tree query error. query=0->3 result="+query, tree, (query.quad0==1 && query.quad1==1 && query.quad2==1 && query.quad3==1));
 
         query = tree.query(2, 3);
@@ -68,16 +73,16 @@ public class SegmentTreeTests {
      */
     @Test
     public void testRangeMaxSegmentTree() {
-        java.util.List<Data.RangeMaximumData<Integer>> segments = new ArrayList<Data.RangeMaximumData<Integer>>();
-        segments.add(new Data.RangeMaximumData<Integer>(0,     (Integer) 4));
-        segments.add(new Data.RangeMaximumData<Integer>(1,     (Integer) 2));
-        segments.add(new Data.RangeMaximumData<Integer>(2,     (Integer) 6));
-        segments.add(new Data.RangeMaximumData<Integer>(3,     (Integer) 3));
-        segments.add(new Data.RangeMaximumData<Integer>(4,     (Integer) 1));
-        segments.add(new Data.RangeMaximumData<Integer>(5,     (Integer) 5));
-        segments.add(new Data.RangeMaximumData<Integer>(6,     (Integer) 0));
-        segments.add(new Data.RangeMaximumData<Integer>(7, 17, (Integer) 7));
-        segments.add(new Data.RangeMaximumData<Integer>(21,    (Integer) 10));
+        java.util.List<RangeMaximumData<Integer>> segments = new ArrayList<RangeMaximumData<Integer>>();
+        segments.add(new RangeMaximumData<Integer>(0,     (Integer) 4));
+        segments.add(new RangeMaximumData<Integer>(1,     (Integer) 2));
+        segments.add(new RangeMaximumData<Integer>(2,     (Integer) 6));
+        segments.add(new RangeMaximumData<Integer>(3,     (Integer) 3));
+        segments.add(new RangeMaximumData<Integer>(4,     (Integer) 1));
+        segments.add(new RangeMaximumData<Integer>(5,     (Integer) 5));
+        segments.add(new RangeMaximumData<Integer>(6,     (Integer) 0));
+        segments.add(new RangeMaximumData<Integer>(7, 17, (Integer) 7));
+        segments.add(new RangeMaximumData<Integer>(21,    (Integer) 10));
 
         // No matter which order the data is given, all tests should pass
 
@@ -97,10 +102,10 @@ public class SegmentTreeTests {
         testRangeMaxSegmentTree(segments);
     }
 
-    private void testRangeMaxSegmentTree(java.util.List<Data.RangeMaximumData<Integer>> segments) {   // Range Maximum Segment tree
-        FlatSegmentTree<Data.RangeMaximumData<Integer>> tree = new FlatSegmentTree<Data.RangeMaximumData<Integer>>(segments, 3);
+    private void testRangeMaxSegmentTree(java.util.List<RangeMaximumData<Integer>> segments) {   // Range Maximum Segment tree
+        FlatSegmentTree<RangeMaximumData<Integer>> tree = new FlatSegmentTree<RangeMaximumData<Integer>>(segments, 3);
 
-        Data.RangeMaximumData<Integer> query = tree.query(0, 7);
+        RangeMaximumData<Integer> query = tree.query(0, 7);
         assertTrue("Segment tree query error. query=0->7 result="+query, tree, query.maximum==7);
 
         query = tree.query(0, 21);
@@ -130,15 +135,15 @@ public class SegmentTreeTests {
      */
     @Test
     public void testRangeMinSegmentTree() {
-        java.util.List<Data.RangeMinimumData<Integer>> segments = new ArrayList<Data.RangeMinimumData<Integer>>();
-        segments.add(new Data.RangeMinimumData<Integer>(0,  (Integer) 4));
-        segments.add(new Data.RangeMinimumData<Integer>(1,  (Integer) 2));
-        segments.add(new Data.RangeMinimumData<Integer>(2,  (Integer) 6));
-        segments.add(new Data.RangeMinimumData<Integer>(3,  (Integer) 3));
-        segments.add(new Data.RangeMinimumData<Integer>(4,  (Integer) 1));
-        segments.add(new Data.RangeMinimumData<Integer>(5,  (Integer) 5));
-        segments.add(new Data.RangeMinimumData<Integer>(6,  (Integer) 0));
-        segments.add(new Data.RangeMinimumData<Integer>(17, (Integer) 7));    
+        java.util.List<RangeMinimumData<Integer>> segments = new ArrayList<RangeMinimumData<Integer>>();
+        segments.add(new RangeMinimumData<Integer>(0,  (Integer) 4));
+        segments.add(new RangeMinimumData<Integer>(1,  (Integer) 2));
+        segments.add(new RangeMinimumData<Integer>(2,  (Integer) 6));
+        segments.add(new RangeMinimumData<Integer>(3,  (Integer) 3));
+        segments.add(new RangeMinimumData<Integer>(4,  (Integer) 1));
+        segments.add(new RangeMinimumData<Integer>(5,  (Integer) 5));
+        segments.add(new RangeMinimumData<Integer>(6,  (Integer) 0));
+        segments.add(new RangeMinimumData<Integer>(17, (Integer) 7));    
 
         // No matter which order the data is given, all tests should pass
 
@@ -158,10 +163,10 @@ public class SegmentTreeTests {
         testRangeMinSegmentTree(segments);
     }
 
-    private void testRangeMinSegmentTree(java.util.List<Data.RangeMinimumData<Integer>> segments) {   // Range Minimum Segment tree
-        FlatSegmentTree<Data.RangeMinimumData<Integer>> tree = new FlatSegmentTree<Data.RangeMinimumData<Integer>>(segments, 5);
+    private void testRangeMinSegmentTree(java.util.List<RangeMinimumData<Integer>> segments) {   // Range Minimum Segment tree
+        FlatSegmentTree<RangeMinimumData<Integer>> tree = new FlatSegmentTree<RangeMinimumData<Integer>>(segments, 5);
 
-        Data.RangeMinimumData<Integer> query = tree.query(0, 7);
+        RangeMinimumData<Integer> query = tree.query(0, 7);
         assertTrue("Segment tree query error. query=0->7 result="+query, tree, query.minimum==0);
 
         query = tree.query(0, 17);
@@ -191,15 +196,15 @@ public class SegmentTreeTests {
      */
     @Test
     public void testRangeSumSegmentTree() {
-        java.util.List<Data.RangeSumData<Integer>> segments = new ArrayList<Data.RangeSumData<Integer>>();
-        segments.add(new Data.RangeSumData<Integer>(0,  (Integer) 4));
-        segments.add(new Data.RangeSumData<Integer>(1,  (Integer) 2));
-        segments.add(new Data.RangeSumData<Integer>(2,  (Integer) 6));
-        segments.add(new Data.RangeSumData<Integer>(3,  (Integer) 3));
-        segments.add(new Data.RangeSumData<Integer>(4,  (Integer) 1));
-        segments.add(new Data.RangeSumData<Integer>(5,  (Integer) 5));
-        segments.add(new Data.RangeSumData<Integer>(6,  (Integer) 0));
-        segments.add(new Data.RangeSumData<Integer>(17, (Integer) 7));   
+        java.util.List<RangeSumData<Integer>> segments = new ArrayList<RangeSumData<Integer>>();
+        segments.add(new RangeSumData<Integer>(0,  (Integer) 4));
+        segments.add(new RangeSumData<Integer>(1,  (Integer) 2));
+        segments.add(new RangeSumData<Integer>(2,  (Integer) 6));
+        segments.add(new RangeSumData<Integer>(3,  (Integer) 3));
+        segments.add(new RangeSumData<Integer>(4,  (Integer) 1));
+        segments.add(new RangeSumData<Integer>(5,  (Integer) 5));
+        segments.add(new RangeSumData<Integer>(6,  (Integer) 0));
+        segments.add(new RangeSumData<Integer>(17, (Integer) 7));   
 
         // No matter which order the data is given, all tests should pass
 
@@ -219,10 +224,10 @@ public class SegmentTreeTests {
         testRangeSumSegmentTree(segments);
     }
 
-    private void testRangeSumSegmentTree(java.util.List<Data.RangeSumData<Integer>> segments) {   // Range Sum Segment tree
-        FlatSegmentTree<Data.RangeSumData<Integer>> tree = new FlatSegmentTree<Data.RangeSumData<Integer>>(segments, 10);
+    private void testRangeSumSegmentTree(java.util.List<RangeSumData<Integer>> segments) {   // Range Sum Segment tree
+        FlatSegmentTree<RangeSumData<Integer>> tree = new FlatSegmentTree<RangeSumData<Integer>>(segments, 10);
 
-        Data.RangeSumData<Integer> query = tree.query(0, 8);
+        RangeSumData<Integer> query = tree.query(0, 8);
         assertTrue("Segment tree query error. query=0->8 result="+query, tree, query.sum==21);
 
         query = tree.query(0, 17);
@@ -253,13 +258,13 @@ public class SegmentTreeTests {
      */
     @Test
     public void testLifespanSegmentTree() {
-        java.util.List<Data.IntervalData<String>> segments = new ArrayList<Data.IntervalData<String>>();
-        segments.add((new Data.IntervalData<String>(1888, 1971, stravinsky)));
-        segments.add((new Data.IntervalData<String>(1874, 1951, schoenberg)));
-        segments.add((new Data.IntervalData<String>(1843, 1907, grieg)));
-        segments.add((new Data.IntervalData<String>(1779, 1828, schubert)));
-        segments.add((new Data.IntervalData<String>(1756, 1791, mozart)));
-        segments.add((new Data.IntervalData<String>(1585, 1672, schuetz)));
+        java.util.List<IntervalData<String>> segments = new ArrayList<IntervalData<String>>();
+        segments.add((new IntervalData<String>(1888, 1971, stravinsky)));
+        segments.add((new IntervalData<String>(1874, 1951, schoenberg)));
+        segments.add((new IntervalData<String>(1843, 1907, grieg)));
+        segments.add((new IntervalData<String>(1779, 1828, schubert)));
+        segments.add((new IntervalData<String>(1756, 1791, mozart)));
+        segments.add((new IntervalData<String>(1585, 1672, schuetz)));
 
         // No matter which order the data is given, all tests should pass
 
@@ -279,10 +284,10 @@ public class SegmentTreeTests {
         testLifespanSegmentTree(segments);
     }
 
-    private void testLifespanSegmentTree(java.util.List<Data.IntervalData<String>> segments) {   // Lifespan Interval Segment tree
-        DynamicSegmentTree<Data.IntervalData<String>> tree = new DynamicSegmentTree<Data.IntervalData<String>>(segments, 25);
+    private void testLifespanSegmentTree(java.util.List<IntervalData<String>> segments) {   // Lifespan Interval Segment tree
+        DynamicSegmentTree<IntervalData<String>> tree = new DynamicSegmentTree<IntervalData<String>>(segments, 25);
 
-        Data.IntervalData<String> query = tree.query(1890); // Stabbing
+        IntervalData<String> query = tree.query(1890); // Stabbing
         assertTrue("Segment tree query error. query=1890 result="+query, tree, collectionsEqual(query.getData(), Arrays.asList(stravinsky, schoenberg, grieg)));
 
         query = tree.query(1909); // Stabbing query
@@ -311,14 +316,14 @@ public class SegmentTreeTests {
      */
     @Test
     public void testIntervalSegmentTree() { 
-        java.util.List<Data.IntervalData<String>> segments = new ArrayList<Data.IntervalData<String>>();
-        segments.add((new Data.IntervalData<String>(2,  6,  RED)));
-        segments.add((new Data.IntervalData<String>(3,  5,  ORANGE)));
-        segments.add((new Data.IntervalData<String>(4,  11, GREEN)));
-        segments.add((new Data.IntervalData<String>(5,  10, DARK_GREEN)));
-        segments.add((new Data.IntervalData<String>(8,  12, BLUE)));
-        segments.add((new Data.IntervalData<String>(9,  14, PURPLE)));
-        segments.add((new Data.IntervalData<String>(13, 15, BLACK)));
+        java.util.List<IntervalData<String>> segments = new ArrayList<IntervalData<String>>();
+        segments.add((new IntervalData<String>(2,  6,  RED)));
+        segments.add((new IntervalData<String>(3,  5,  ORANGE)));
+        segments.add((new IntervalData<String>(4,  11, GREEN)));
+        segments.add((new IntervalData<String>(5,  10, DARK_GREEN)));
+        segments.add((new IntervalData<String>(8,  12, BLUE)));
+        segments.add((new IntervalData<String>(9,  14, PURPLE)));
+        segments.add((new IntervalData<String>(13, 15, BLACK)));
 
         // No matter which order the data is given, all tests should pass
 
@@ -338,10 +343,10 @@ public class SegmentTreeTests {
         testIntervalSegmentTree(segments);
     }
 
-    private void testIntervalSegmentTree(java.util.List<Data.IntervalData<String>> segments) {   // Interval Segment tree
-        DynamicSegmentTree<Data.IntervalData<String>> tree = new DynamicSegmentTree<Data.IntervalData<String>>(segments);
+    private void testIntervalSegmentTree(java.util.List<IntervalData<String>> segments) {   // Interval Segment tree
+        DynamicSegmentTree<IntervalData<String>> tree = new DynamicSegmentTree<IntervalData<String>>(segments);
 
-        Data.IntervalData<String> query = tree.query(2); // Stabbing
+        IntervalData<String> query = tree.query(2); // Stabbing
         assertTrue("Segment tree query error. query=2 result="+query, tree, collectionsEqual(query.getData(), Arrays.asList(RED)));
 
         query = tree.query(4); // Stabbing query
@@ -365,16 +370,16 @@ public class SegmentTreeTests {
      */
     @Test
     public void testIntervalSegmentTree2() {
-        List<Data.IntervalData<String>> intervals = new ArrayList<Data.IntervalData<String>>();
-        intervals.add((new Data.IntervalData<String>(1, 5, "a")));
-        intervals.add((new Data.IntervalData<String>(2, 6, "b")));
-        intervals.add((new Data.IntervalData<String>(3, 7, "c")));
-        intervals.add((new Data.IntervalData<String>(7, 7, "d")));
-        intervals.add((new Data.IntervalData<String>(8, 8, "e")));
+        List<IntervalData<String>> intervals = new ArrayList<IntervalData<String>>();
+        intervals.add((new IntervalData<String>(1, 5, "a")));
+        intervals.add((new IntervalData<String>(2, 6, "b")));
+        intervals.add((new IntervalData<String>(3, 7, "c")));
+        intervals.add((new IntervalData<String>(7, 7, "d")));
+        intervals.add((new IntervalData<String>(8, 8, "e")));
 
-        DynamicSegmentTree<Data.IntervalData<String>> tree = new DynamicSegmentTree<Data.IntervalData<String>>(intervals);
+        DynamicSegmentTree<IntervalData<String>> tree = new DynamicSegmentTree<IntervalData<String>>(intervals);
 
-        Data.IntervalData<String> query = tree.query(5); // Stabbing query
+        IntervalData<String> query = tree.query(5); // Stabbing query
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("b","c","a")));
 
         query = tree.query(6); // Stabbing query
@@ -395,17 +400,17 @@ public class SegmentTreeTests {
      */
     @Test
     public void testIntervalSegmentTree3() {
-        List<Data.IntervalData<String>> intervals = new ArrayList<Data.IntervalData<String>>();
-        intervals.add((new Data.IntervalData<String>(5,  20, "a")));
-        intervals.add((new Data.IntervalData<String>(10, 30, "b")));
-        intervals.add((new Data.IntervalData<String>(12, 15, "c")));
-        intervals.add((new Data.IntervalData<String>(15, 20, "d")));
-        intervals.add((new Data.IntervalData<String>(17, 19, "e")));
-        intervals.add((new Data.IntervalData<String>(30, 40, "f")));
+        List<IntervalData<String>> intervals = new ArrayList<IntervalData<String>>();
+        intervals.add((new IntervalData<String>(5,  20, "a")));
+        intervals.add((new IntervalData<String>(10, 30, "b")));
+        intervals.add((new IntervalData<String>(12, 15, "c")));
+        intervals.add((new IntervalData<String>(15, 20, "d")));
+        intervals.add((new IntervalData<String>(17, 19, "e")));
+        intervals.add((new IntervalData<String>(30, 40, "f")));
 
-        DynamicSegmentTree<Data.IntervalData<String>> tree = new DynamicSegmentTree<Data.IntervalData<String>>(intervals);
+        DynamicSegmentTree<IntervalData<String>> tree = new DynamicSegmentTree<IntervalData<String>>(intervals);
 
-        Data.IntervalData<String> query = tree.query(6,7); // Range query
+        IntervalData<String> query = tree.query(6,7); // Range query
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("a")));
     }
 
@@ -414,14 +419,14 @@ public class SegmentTreeTests {
      */
     @Test
     public void testIntervalSegmentTree4() {
-        List<Data.IntervalData<String>> intervals = new ArrayList<Data.IntervalData<String>>();
-        intervals.add((new Data.IntervalData<String>(15, 20, "a")));
-        intervals.add((new Data.IntervalData<String>(4,  25, "b")));
-        intervals.add((new Data.IntervalData<String>(3,  30, "c")));
+        List<IntervalData<String>> intervals = new ArrayList<IntervalData<String>>();
+        intervals.add((new IntervalData<String>(15, 20, "a")));
+        intervals.add((new IntervalData<String>(4,  25, "b")));
+        intervals.add((new IntervalData<String>(3,  30, "c")));
 
-        DynamicSegmentTree<Data.IntervalData<String>> tree = new DynamicSegmentTree<Data.IntervalData<String>>(intervals);
+        DynamicSegmentTree<IntervalData<String>> tree = new DynamicSegmentTree<IntervalData<String>>(intervals);
 
-        Data.IntervalData<String> query = tree.query(26,27); // Range query
+        IntervalData<String> query = tree.query(26,27); // Range query
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("c")));
     }
 
@@ -430,17 +435,17 @@ public class SegmentTreeTests {
      */
     @Test
     public void testIntervalSegmentTree5() {
-        List<Data.IntervalData<String>> intervals = new ArrayList<Data.IntervalData<String>>();
-        intervals.add((new Data.IntervalData<String>(17, 19, "a")));
-        intervals.add((new Data.IntervalData<String>(5,  11, "b")));
-        intervals.add((new Data.IntervalData<String>(23, 23, "c")));
-        intervals.add((new Data.IntervalData<String>(4,  8, "d")));
-        intervals.add((new Data.IntervalData<String>(15, 18, "e")));
-        intervals.add((new Data.IntervalData<String>(7,  10, "f")));
+        List<IntervalData<String>> intervals = new ArrayList<IntervalData<String>>();
+        intervals.add((new IntervalData<String>(17, 19, "a")));
+        intervals.add((new IntervalData<String>(5,  11, "b")));
+        intervals.add((new IntervalData<String>(23, 23, "c")));
+        intervals.add((new IntervalData<String>(4,  8, "d")));
+        intervals.add((new IntervalData<String>(15, 18, "e")));
+        intervals.add((new IntervalData<String>(7,  10, "f")));
 
-        DynamicSegmentTree<Data.IntervalData<String>> tree = new DynamicSegmentTree<Data.IntervalData<String>>(intervals);
+        DynamicSegmentTree<IntervalData<String>> tree = new DynamicSegmentTree<IntervalData<String>>(intervals);
 
-        Data.IntervalData<String> query = tree.query(14,16); // Range query
+        IntervalData<String> query = tree.query(14,16); // Range query
         assertTrue("Segment Tree query error. returned=" + query, tree, collectionsEqual(query.getData(), Arrays.asList("e")));
 
         query = tree.query(12,14); // Range query
