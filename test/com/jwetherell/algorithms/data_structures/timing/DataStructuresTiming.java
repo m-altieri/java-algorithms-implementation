@@ -17,14 +17,11 @@ import com.jwetherell.algorithms.data_structures.ArrayList;
 import com.jwetherell.algorithms.data_structures.BTree;
 import com.jwetherell.algorithms.data_structures.BinaryHeap;
 import com.jwetherell.algorithms.data_structures.BinaryHeapArray;
-import com.jwetherell.algorithms.data_structures.BinaryHeapTree;
 import com.jwetherell.algorithms.data_structures.BinarySearchTree;
 import com.jwetherell.algorithms.data_structures.DoublyLinkedList;
 import com.jwetherell.algorithms.data_structures.HashArrayMappedTrie;
 import com.jwetherell.algorithms.data_structures.HashMap;
-import com.jwetherell.algorithms.data_structures.PatriciaTrie;
 import com.jwetherell.algorithms.data_structures.Queue;
-import com.jwetherell.algorithms.data_structures.RadixTrie;
 import com.jwetherell.algorithms.data_structures.RedBlackTree;
 import com.jwetherell.algorithms.data_structures.SinglyLinkedList;
 import com.jwetherell.algorithms.data_structures.SkipList;
@@ -37,7 +34,6 @@ import com.jwetherell.algorithms.data_structures.Trie;
 import com.jwetherell.algorithms.data_structures.TrieMap;
 import com.jwetherell.algorithms.data_structures.test.common.Utils;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DataStructuresTiming.
  */
@@ -157,9 +153,6 @@ public class DataStructuresTiming {
         if (!runTests(new TestTrie(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
-        if (!runTests(new TestPatriciaTrie(), tests, unsorteds, sorteds, strings)) return false;
-        putOutTheGarbage();
-
         // Sets
 
         if (!runTests(new TestJavaSkipList(), tests, unsorteds, sorteds, strings)) return false;
@@ -176,16 +169,10 @@ public class DataStructuresTiming {
         if (!runTests(new TestMinHeapArray(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
-        if (!runTests(new TestMinHeapTree(), tests, unsorteds, sorteds, strings)) return false;
-        putOutTheGarbage();
-
         if (!runTests(new TestJavaMaxHeap(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
         if (!runTests(new TestMaxHeapArray(), tests, unsorteds, sorteds, strings)) return false;
-        putOutTheGarbage();
-
-        if (!runTests(new TestMaxHeapTree(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
         // Lists
@@ -248,9 +235,6 @@ public class DataStructuresTiming {
         putOutTheGarbage();
 
         if (!runTests(new TestTrieMap(), tests, unsorteds, sorteds, strings)) return false;
-        putOutTheGarbage();
-
-        if (!runTests(new TestRadixTrie(), tests, unsorteds, sorteds, strings)) return false;
         putOutTheGarbage();
 
         if (!runTests(new TestJavaSkipListMap(), tests, unsorteds, sorteds, strings)) return false;
@@ -395,23 +379,6 @@ public class DataStructuresTiming {
 
     }
 
-    private static class TestMinHeapTree extends Testable {
-        String name = "Min-Heap <Integer> [tree]";
-
-        public String getName() {
-            return name;
-        }
-
-        public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
-            this.input = input;
-            BinaryHeapTree<Integer> tHeapMin = new BinaryHeapTree<Integer>(BinaryHeap.Type.MIN);
-            Collection<Integer> tCollectionMin = tHeapMin.toCollection();
-            if (!testJavaCollection(tCollectionMin,Integer.class,name, unsorted, sorted, input)) return false;
-            return true;
-        }
-
-    }
-
     private static class TestMaxHeapArray extends Testable {
         String name = "Max-Heap <Integer> [array]";
 
@@ -424,23 +391,6 @@ public class DataStructuresTiming {
             BinaryHeapArray<Integer> aHeapMax = new BinaryHeapArray<Integer>(BinaryHeap.Type.MAX);
             Collection<Integer> aCollectionMax = aHeapMax.toCollection();
             if (!testJavaCollection(aCollectionMax,Integer.class,name, unsorted, sorted, input)) return false;
-            return true;
-        }
-
-    }
-
-    private static class TestMaxHeapTree extends Testable {
-        String name = "Max-Heap <Integer> [tree]";
-
-        public String getName() {
-            return name;
-        }
-
-        public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
-            this.input = input;
-            BinaryHeapTree<Integer> tHeapMax = new BinaryHeapTree<Integer>(BinaryHeap.Type.MAX);
-            Collection<Integer> tCollectionMax = tHeapMax.toCollection();
-            if (!testJavaCollection(tCollectionMax,Integer.class,name, unsorted, sorted, input)) return false;
             return true;
         }
 
@@ -727,23 +677,6 @@ public class DataStructuresTiming {
 
     }
 
-    private static class TestPatriciaTrie extends Testable {
-        String name = "PatriciaTrie <String>";
-
-        public String getName() {
-            return name;
-        }
-
-        public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
-            this.input = input;
-            PatriciaTrie<String> patriciaTrie = new PatriciaTrie<String>();
-            Collection<String> bstCollection = patriciaTrie.toCollection();
-            if (!testJavaCollection(bstCollection,String.class,name, unsorted, sorted, input)) return false;
-            return true;
-        }
-
-    }
-
     private static class TestArrayQueue extends Testable {
         String name = "Queue <Integer> [array]";
 
@@ -777,24 +710,7 @@ public class DataStructuresTiming {
         }
 
     }
-
-    private static class TestRadixTrie extends Testable {
-        String name = "RadixTrie <String>";
-
-        public String getName() {
-            return name;
-        }
-
-        public boolean run(Integer[] unsorted, Integer[] sorted, String input) {
-            this.input = input;
-            RadixTrie<String,Integer> radixTrie = new RadixTrie<String,Integer>();
-            java.util.Map<String,Integer> jMap = radixTrie.toMap();
-            if (!testJavaMap(jMap,String.class,Integer.class,name, unsorted, sorted, input)) return false;
-            return true;
-        }
-
-    }
-
+    
     private static class TestRedBlackTree extends Testable {
         String name = "Red-Black Tree <Integer>";
 

@@ -1,12 +1,5 @@
 package com.jwetherell.algorithms.data_structures;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-import java.util.TreeSet;
-
 // TODO: Auto-generated Javadoc
 /**
  * The Class Data.
