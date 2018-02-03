@@ -437,12 +437,14 @@ public class Graph<T extends Comparable<T>> {
          * @param to the to
          */
         public Edge(int cost, Vertex<T> from, Vertex<T> to) {
-            if (from == null || to == null)
-                throw (new NullPointerException("Both 'to' and 'from' vertices need to be non-NULL."));
-
+            
+        	if (from != null) {
+            	this.from = from;
+            }
+            if (to != null) {
+            	this.to = to;
+            }
             this.cost = cost;
-            this.from = from;
-            this.to = to;
         }
 
         /**
@@ -574,11 +576,11 @@ public class Graph<T extends Comparable<T>> {
          * @param vertex the vertex
          */
         public CostVertexPair(int cost, Vertex<T> vertex) {
-            if (vertex == null)
-                throw (new NullPointerException("vertex cannot be NULL."));
 
             this.cost = cost;
-            this.vertex = vertex;
+            if (vertex != null) {
+            	this.vertex = vertex;
+            }
         }
 
         /**
@@ -639,8 +641,6 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public int compareTo(CostVertexPair<T> p) {
-            if (p == null)
-                throw new NullPointerException("CostVertexPair 'p' must be non-NULL.");
 
             if (this.cost < p.cost)
                 return -1;
@@ -677,11 +677,11 @@ public class Graph<T extends Comparable<T>> {
          * @param path the path
          */
         public CostPathPair(int cost, List<Edge<T>> path) {
-            if (path == null)
-                throw (new NullPointerException("path cannot be NULL."));
 
             this.cost = cost;
-            this.path = path;
+            if (path != null) {
+            	this.path = path;
+            }
         }
 
         /**

@@ -6,7 +6,6 @@ import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * A red–black tree is a type of self-balancing binary search tree, a data
  * structure used in computer science, typically to implement associative
