@@ -141,7 +141,8 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
             int medianIndex = list.size() / 2;
             node = new KdNode(list.get(medianIndex), theK, depth);
             // Process list to see where each non-median point lies
-            for (int i = 0; i < list.size(); i++) {
+            int listSize = list.size();
+            for (int i = 0; i < listSize; i++) {
                 if (i == medianIndex)
                     continue;
                 XYZPoint p = list.get(i);
@@ -601,6 +602,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         public boolean equals(Object obj) {
             if (obj == null)
                 return false;
+            if (getClass() != obj.getClass()) {
+            	return false;
+            }
             if (!(obj instanceof KdNode))
                 return false;
 
@@ -743,6 +747,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         public boolean equals(Object obj) {
             if (obj == null)
                 return false;
+            if (getClass() != obj.getClass()) {
+            	return false;
+            }
             if (!(obj instanceof XYZPoint))
                 return false;
 
@@ -815,7 +822,8 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
                     children.add(node.greater);
             }
             if (children != null) {
-                for (int i = 0; i < children.size() - 1; i++) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
                     builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 }
                 if (children.size() >= 1) {

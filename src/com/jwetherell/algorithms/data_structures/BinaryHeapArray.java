@@ -376,7 +376,8 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 				}
 			}
 			if (children != null) {
-				for (int i = 0; i < children.size() - 1; i++) {
+				int size = children.size();
+				for (int i = 0; i < size - 1; i++) {
 					builder.append(getString(tree, children.get(i), prefix + (isTail ? "    " : "│   "), false));
 				}
 				if (children.size() >= 1) {

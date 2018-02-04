@@ -483,7 +483,8 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
                     Node child = arrayNode.getChild(i);
                     if (child != null) children.add(child);
                 }
-                for (int i = 0; i<(children.size()-1); i++) {
+                int size = children.size();
+                for (int i = 0; i < (size - 1); i++) {
                     builder.append(getString(arrayNode, children.get(i), height+1, prefix+(isTail ? "    " : "│   "), false));
                 }
                 if (children.size() >= 1) {

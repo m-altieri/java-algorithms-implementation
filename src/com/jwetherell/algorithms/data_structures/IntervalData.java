@@ -132,8 +132,9 @@ public final class IntervalData<O extends Object> extends Data {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (!(obj instanceof IntervalData))
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 
 		final IntervalData<O> data = (IntervalData<O>) obj;
 		if (this.start == data.start && this.end == data.end) {

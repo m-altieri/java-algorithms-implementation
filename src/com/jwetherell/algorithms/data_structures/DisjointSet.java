@@ -142,6 +142,9 @@ public class DisjointSet<T extends Object> {
          */
         @Override
         public boolean equals(Object o) {
+        	if (getClass() != o.getClass()) {
+        		return false;
+        	}
             if (!(o instanceof Item))
                 return false;
 

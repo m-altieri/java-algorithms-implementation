@@ -205,7 +205,8 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
                 if (node.greater != null) children.add((TreeMapNode<K, V>) node.greater);
             }
             if (children != null) {
-                for (int i = 0; i < children.size() - 1; i++) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
                     builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 }
                 if (children.size() >= 1) {

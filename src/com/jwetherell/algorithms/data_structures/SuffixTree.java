@@ -10,7 +10,6 @@ import java.util.TreeSet;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ISuffixTree;
 
-// TODO: Auto-generated Javadoc
 /**
  * A suffix tree is a data structure that presents the suffixes of a given
  * string in a way that allows for a particularly fast implementation of many
@@ -84,8 +83,9 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
      */
     @Override
     public boolean doesSubStringExist(C sub) {
-        char[] chars = new char[sub.length()];
-        for (int i = 0; i < sub.length(); i++) {
+        int subLength = sub.length();
+        char[] chars = new char[subLength];
+        for (int i = 0; i < subLength; i++) {
             chars[i] = sub.charAt(i);
         }
         int[] indices = searchEdges(chars);
@@ -439,10 +439,12 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
          */
         @Override
         public boolean equals(Object obj) {
-            if (obj == null)
+            if (obj == null) {
                 return false;
-            if (obj instanceof Edge)
+            }
+            if (getClass() != obj.getClass()) {
                 return false;
+            }
 
             @SuppressWarnings("unchecked")
             Edge<C> e = (Edge<C>) obj;
@@ -533,7 +535,8 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                     }
                 }
                 if (children.size() > 0) {
-                    for (int i = 0; i < children.size() - 1; i++) {
+                	int size = children.size();
+                    for (int i = 0; i < size - 1; i++) {
                         Edge<C> edge = children.get(i);
                         builder.append(getString(tree, edge, prefix + (isTail ? "    " : "│   "), false));
                     }

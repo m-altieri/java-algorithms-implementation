@@ -100,7 +100,8 @@ public class SuffixTrie<C extends CharSequence> implements ISuffixTree<C> {
         if (node.isWord) {
             set.add(builder.toString());
         }
-        for (int i = 0; i < node.getChildrenSize(); i++) {
+        int childrenSize = node.getChildrenSize();
+        for (int i = 0; i < childrenSize; i++) {
             Trie.Node c = node.getChild(i);
             set.addAll(getSuffixes(c, builder.toString()));
         }
@@ -123,7 +124,8 @@ public class SuffixTrie<C extends CharSequence> implements ISuffixTree<C> {
         if (node.isWord) {
             set.add(builder.toString());
         }
-        for (int i = 0; i < node.getChildrenSize(); i++) {
+        int childrenSize = node.getChildrenSize();
+        for (int i = 0; i < childrenSize; i++) {
             Trie.Node c = node.getChild(i);
             set.addAll(getSuffixes(c, builder.toString()));
         }

@@ -7,7 +7,6 @@ import java.util.Deque;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
-// TODO: Auto-generated Javadoc
 /**
  * B-tree is a tree data structure that keeps data sorted and allows searches,
  * sequential access, insertions, and deletions in logarithmic time. The B-tree
@@ -91,7 +90,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
                 }
 
                 // Search internal nodes
-                for (int i = 1; i < node.numberOfKeys(); i++) {
+                for (int i = 1; i < numberOfKeys; i++) {
                     T prev = node.getKey(i - 1);
                     T next = node.getKey(i);
                     if (between(value, prev, next)) {
@@ -131,12 +130,13 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         for (int i = medianIndex + 1; i < numberOfKeys; i++) {
             right.addKey(node.getKey(i));
         }
-        if (node.numberOfChildren() > 0) {
+        int numberOfChildren = node.numberOfChildren();
+        if (numberOfChildren > 0) {
             for (int j = 0; j <= medianIndex; j++) {
                 Node<T> c = node.getChild(j);
                 left.addChild(c);
             }
-            for (int j = medianIndex + 1; j < node.numberOfChildren(); j++) {
+            for (int j = medianIndex + 1; j < numberOfChildren; j++) {
                 Node<T> c = node.getChild(j);
                 right.addChild(c);
             }
@@ -455,7 +455,8 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
      * @return index of previous key or -1 if not found.
      */
     private int getIndexOfPreviousValue(Node<T> node, T value) {
-        for (int i = 1; i < node.numberOfKeys(); i++) {
+    	int numberOfKeys = node.numberOfKeys();
+        for (int i = 1; i < numberOfKeys; i++) {
             T t = node.getKey(i);
             if (t.compareTo(value) >= 0)
                 return i - 1;
@@ -473,7 +474,8 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
      * @return index of next key or -1 if not found.
      */
     private int getIndexOfNextValue(Node<T> node, T value) {
-        for (int i = 0; i < node.numberOfKeys(); i++) {
+    	int numberOfKeys = node.numberOfKeys();
+        for (int i = 0; i < numberOfKeys; i++) {
             T t = node.getKey(i);
             if (t.compareTo(value) >= 0)
                 return i;
@@ -561,7 +563,8 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
             return false;
 
         // Check that each node's first and last key holds it's invariance
-        for (int i = 1; i < node.numberOfKeys(); i++) {
+        int numberOfKeys = node.numberOfKeys();
+        for (int i = 1; i < numberOfKeys; i++) {
             T p = node.getKey(i - 1);
             T n = node.getKey(i);
             Node<T> c = node.getChild(i);
@@ -746,7 +749,8 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
             StringBuilder builder = new StringBuilder();
 
             builder.append("keys=[");
-            for (int i = 0; i < numberOfKeys(); i++) {
+            int numberOfKeys = numberOfKeys();
+            for (int i = 0; i < numberOfKeys; i++) {
                 T value = getKey(i);
                 builder.append(value);
                 if (i < numberOfKeys() - 1)
@@ -756,10 +760,11 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
 
             if (parent != null) {
                 builder.append("parent=[");
-                for (int i = 0; i < parent.numberOfKeys(); i++) {
+                int parentNumberOfKeys = parent.numberOfKeys();
+                for (int i = 0; i < parentNumberOfKeys; i++) {
                     T value = parent.getKey(i);
                     builder.append(value);
-                    if (i < parent.numberOfKeys() - 1)
+                    if (i < parentNumberOfKeys - 1)
                         builder.append(", ");
                 }
                 builder.append("]\n");
@@ -784,10 +789,11 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
             StringBuilder builder = new StringBuilder();
 
             builder.append(prefix).append((isTail ? "└── " : "├── "));
-            for (int i = 0; i < node.numberOfKeys(); i++) {
+            int numberOfKeys = node.numberOfKeys();
+            for (int i = 0; i < numberOfKeys; i++) {
                 T value = node.getKey(i);
                 builder.append(value);
-                if (i < node.numberOfKeys() - 1) {
+                if (i < numberOfKeys - 1) {
                     builder.append(", ");
                 }
             }
@@ -899,7 +905,8 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
                     lastValue = lastNode.getKey(index++);
                     return lastValue;
                 }
-                while (toVisit.size()>0) {
+                int size = toVisit.size();
+                while (size > 0) {
                     // Go thru the current nodes
                     BTree.Node<C> n = toVisit.pop();
 

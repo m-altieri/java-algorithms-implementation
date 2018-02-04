@@ -715,6 +715,9 @@ public abstract class QuadTree<G extends XYPoint> {
         public boolean equals(Object obj) {
             if (obj == null)
                 return false;
+            if (getClass() != obj.getClass()) {
+            	return false;
+            }
             if (!(obj instanceof QuadNode))
                 return false;
 
@@ -883,6 +886,9 @@ public abstract class QuadTree<G extends XYPoint> {
         public boolean equals(Object obj) {
             if (obj == null)
                 return false;
+            if (getClass() != obj.getClass()) {
+            	return false;
+            }
             if (!(obj instanceof AxisAlignedBoundingBox))
                 return false;
 
@@ -976,7 +982,8 @@ public abstract class QuadTree<G extends XYPoint> {
                 if (node.southEast != null) children.add(node.southEast);
             }
             if (children != null) {
-                for (int i = 0; i < children.size() - 1; i++) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
                     builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 }
                 if (children.size() >= 1) {

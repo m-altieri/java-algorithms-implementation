@@ -147,7 +147,8 @@ public class IntervalTree<O extends Object> {
             if (interval.right != null)
                 children.add(interval.right);
             if (children.size() > 0) {
-                for (int i = 0; i < children.size() - 1; i++)
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++)
                     builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 if (children.size() > 0)
                     builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
@@ -434,8 +435,9 @@ public class IntervalTree<O extends Object> {
         @SuppressWarnings("unchecked")
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof IntervalData))
-                return false;
+            if (getClass() != obj.getClass()) {
+            	return false;
+            }
 
             IntervalData<O> data = (IntervalData<O>) obj;
             if (this.start == data.start && this.end == data.end) {

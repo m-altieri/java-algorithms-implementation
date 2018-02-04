@@ -157,7 +157,8 @@ public class FenwickTree<D extends FenwickTree.Data> {
                 children.add(next);
                 next = next(next);
             }
-            for (int i = 0; i < children.size() - 1; i++)
+            int size = children.size();
+            for (int i = 0; i < size - 1; i++)
                 builder.append(getString(tree, children.get(i),                 children.get(i+1), prefix + (isTail ? "    " : "│   "), false));
             if (children.size() >= 1)
                 builder.append(getString(tree, children.get(children.size()-1), end,               prefix + (isTail ? "    " : "│   "), true));
@@ -416,6 +417,9 @@ public class FenwickTree<D extends FenwickTree.Data> {
              */
             @Override
             public boolean equals(Object obj) {
+            	if (getClass() != obj.getClass()) {
+            		return false;
+            	}
                 if (!(obj instanceof RangeSumData))
                     return false;
 

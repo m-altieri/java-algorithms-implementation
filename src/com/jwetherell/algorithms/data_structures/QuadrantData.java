@@ -123,7 +123,10 @@ public final class QuadrantData extends Data {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (!(obj instanceof QuadrantData))
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass())
 			return false;
 		QuadrantData data = (QuadrantData) obj;
 		if (this.start == data.start && this.end == data.end && this.quad0 == data.quad0

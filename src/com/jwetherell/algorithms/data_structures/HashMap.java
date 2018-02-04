@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
-// TODO: Auto-generated Javadoc
 /**
  * Hash Map using either chaining or probing. hash map is a data structure that
  * uses a hash function to map identifying values, known as keys, to their
@@ -262,7 +261,8 @@ public class HashMap<K, V> implements IMap<K,V> {
             StringBuilder builder = new StringBuilder();
             for (int key = 0; key < array.length; key++) {
                 List<Pair<K, V>> list = array[key];
-                for (int item = 0; item < list.size(); item++) {
+                int listSize = list.size();
+                for (int item = 0; item < listSize; item++) {
                     Pair<K, V> p = list.get(item);
                     V value = p.value;
                     if (value != null) builder.append(key).append("=").append(value).append(", ");
@@ -861,6 +861,9 @@ public class HashMap<K, V> implements IMap<K,V> {
         public boolean equals(Object obj) {
             if (obj == null) 
                 return false;
+            if (getClass() != obj.getClass()) {
+            	return false;
+            }
             if (!(obj instanceof Pair)) 
                 return false;
 

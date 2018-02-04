@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.data_structures;
 
 import java.util.ArrayList;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, the longest common prefix array (LCP array) is an auxiliary
  * data structure to the suffix array. It stores the lengths of the longest common

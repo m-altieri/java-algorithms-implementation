@@ -157,6 +157,9 @@ public class Graph<T extends Comparable<T>> {
      */
     @Override
     public boolean equals(Object g1) {
+    	if (getClass() != g1.getClass()) {
+    		return false;
+    	}
         if (!(g1 instanceof Graph))
             return false;
 
@@ -341,6 +344,9 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public boolean equals(Object v1) {
+        	if (getClass() != v1.getClass()) {
+        		return false;
+        	}
             if (!(v1 instanceof Vertex))
                 return false;
 
@@ -506,6 +512,9 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public boolean equals(Object e1) {
+        	if (getClass() != e1.getClass()) {
+        		return false;
+        	}
             if (!(e1 instanceof Edge))
                 return false;
 
@@ -623,6 +632,9 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public boolean equals(Object e1) {
+        	if (getClass() != e1.getClass()) {
+        		return false;
+        	}
             if (!(e1 instanceof CostVertexPair))
                 return false;
 
@@ -727,6 +739,9 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public boolean equals(Object obj) {
+        	if (getClass() != obj.getClass()) {
+        		return false;
+        	}
             if (!(obj instanceof CostPathPair))
                 return false;
 

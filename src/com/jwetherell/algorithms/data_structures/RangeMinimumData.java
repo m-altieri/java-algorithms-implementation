@@ -137,7 +137,10 @@ public final class RangeMinimumData<N extends Number> extends Data {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (!(obj instanceof RangeMinimumData))
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass())
 			return false;
 
 		final RangeMinimumData<N> data = (RangeMinimumData<N>) obj;

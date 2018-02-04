@@ -696,10 +696,11 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
                     children.add(node.greater);
             }
             if (children != null) {
-                for (int i = 0; i < children.size() - 1; i++) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
                     builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 }
-                if (children.size() >= 1) {
+                if (size >= 1) {
                     builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
                 }
             }

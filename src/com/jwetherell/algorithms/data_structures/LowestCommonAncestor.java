@@ -102,13 +102,13 @@ public class LowestCommonAncestor<T> {
             this.ancestors.add(parent);
             this.depth = parent.depth + 1;
             int dist = 0;
-            while (true) {
-                try {
+            try {
+            	while (true) {
                     this.ancestors.add(this.ancestors.get(dist).ancestors.get(dist));
                     dist++;
-                } catch (Exception e){
-                    break;
-                }
+            	}
+            } catch (Exception e){
+                ;
             }
         }
 

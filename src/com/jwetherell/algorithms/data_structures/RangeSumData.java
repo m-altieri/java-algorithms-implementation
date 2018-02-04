@@ -137,7 +137,10 @@ public final class RangeSumData<N extends Number> extends Data {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (!(obj instanceof RangeSumData))
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass())
 			return false;
 
 		final RangeSumData<N> data = (RangeSumData<N>) obj;

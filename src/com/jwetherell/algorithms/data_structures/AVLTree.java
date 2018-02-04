@@ -367,7 +367,8 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
                     children.add(node.greater);
             }
             if (children != null) {
-                for (int i = 0; i < children.size() - 1; i++) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
                     builder.append(getString((AVLNode<T>) children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 }
                 if (children.size() >= 1) {

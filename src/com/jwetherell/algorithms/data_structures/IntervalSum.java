@@ -80,7 +80,8 @@ public class IntervalSum {
      */
     public void add(int val) {
         values.add(val);
-        for (int i = 1; i<greatestPowerOfTwoDividing(size()+1); i*=2)
+        int n = greatestPowerOfTwoDividing(size() + 1);
+        for (int i = 1; i < n; i*=2)
             val += prefSums.get(size() + 1 - i);
         prefSums.add(val);
     }
@@ -99,7 +100,8 @@ public class IntervalSum {
         index++;
         int diff = val - values.get(index);
         values.set(index, val);
-        while (index <= size()) {
+        int size = size();
+        while (index <= size) {
             int oldPrefSum = prefSums.get(index);
             prefSums.set(index, oldPrefSum + diff);
             index = successor(index);

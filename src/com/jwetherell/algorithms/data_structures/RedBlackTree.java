@@ -553,7 +553,8 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
                     children.add(node.greater);
             }
             if (children != null) {
-                for (int i = 0; i < children.size() - 1; i++) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
                     builder.append(getString((RedBlackNode<T>) children.get(i), prefix + (isTail ? "    " : "│   "), false));
                 }
                 if (children.size() >= 1) {
@@ -657,7 +658,8 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
              */
             @Override
             public C next() {
-                while (toVisit.size()>0) {
+            	int size = toVisit.size();
+                while (size > 0) {
                     // Go thru the current nodes
                     RedBlackTree.Node<C> n = toVisit.pop();
 
