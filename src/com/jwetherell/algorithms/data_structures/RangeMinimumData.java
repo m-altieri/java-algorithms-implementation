@@ -100,7 +100,7 @@ public final class RangeMinimumData<N extends Number> extends Data {
 		else if (this.minimum == null && data.minimum != null)
 			this.minimum = data.minimum;
 		else {
-			/* TODO: This is ugly */
+			/* This is ugly */
 			if (this.minimum instanceof BigDecimal || data.minimum instanceof BigDecimal) {
 				if (((BigDecimal)data.minimum).compareTo(((BigDecimal)this.minimum))==-1)
 					this.minimum = data.minimum;

@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.jwetherell.algorithms.data_structures.Matrix;
 
-// TODO: Auto-generated Javadoc
 /**
  * LU decomposition of matrix M produces 2 matrices L and U such that M = L*U
  * where L is lower triangular matrix and U is upper triangular matrix

@@ -7,7 +7,6 @@ import java.util.Set;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
-// TODO: Auto-generated Javadoc
 /**
  * In the mathematical discipline of graph theory, a matching or independent edge set
  * in a graph is a set of edges without common vertices. In some matchings, all the vertices

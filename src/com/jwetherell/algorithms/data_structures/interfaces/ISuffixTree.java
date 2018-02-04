@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.data_structures.interfaces;
 
 import java.util.Set;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, a suffix tree (also called PAT tree or, in an earlier form, position tree) is a compressed trie 
  * containing all the suffixes of the given text as their keys and positions in the text as their values. Suffix trees 

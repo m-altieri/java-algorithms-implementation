@@ -19,7 +19,7 @@ public class LowestCommonAncestor<T> {
      * nodes are in different trees.
      *
      */
-    public static class NodesNotInSameTreeException extends Exception {
+    public static final class NodesNotInSameTreeException extends Exception {
         private static final long serialVersionUID = -5366787886097250564L;
     }
 
@@ -43,7 +43,7 @@ public class LowestCommonAncestor<T> {
             int diff = node1.depth - node2.depth;
             int jump = 0;
             while (diff > 0) {
-                if (diff % 2 == 1)
+                if (diff % 2 != 0)
                     node1 = node1.ancestors.get(jump);
                 jump++;
                 diff /= 2;

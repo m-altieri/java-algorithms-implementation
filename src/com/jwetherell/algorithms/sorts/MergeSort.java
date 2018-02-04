@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.sorts;
 
-// TODO: Auto-generated Javadoc
 /**
  * Merge sort is an O(n log n) comparison-based sorting algorithm. Most
  * implementations produce a stable sort, which means that the implementation

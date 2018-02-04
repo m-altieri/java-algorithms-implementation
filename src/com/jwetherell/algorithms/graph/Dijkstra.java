@@ -10,7 +10,6 @@ import java.util.Queue;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
-// TODO: Auto-generated Javadoc
 /**
  * Dijkstra's shortest path. Only works on non-negative path weights. Returns a
  * tuple of total cost of shortest path and the path.

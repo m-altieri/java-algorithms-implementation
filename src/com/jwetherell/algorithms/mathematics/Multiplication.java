@@ -5,7 +5,6 @@ import java.util.Collections;
 
 import com.jwetherell.algorithms.numbers.Complex;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Multiplication.
  */

@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
-// TODO: Auto-generated Javadoc
 /**
  * Johnson's algorithm is a way to find the shortest paths between all pairs of
  * vertices in a sparse directed graph. It allows some of the edge weights to be

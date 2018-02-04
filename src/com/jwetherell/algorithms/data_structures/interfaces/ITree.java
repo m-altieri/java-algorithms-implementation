@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.data_structures.interfaces;
 
-// TODO: Auto-generated Javadoc
 /**
  * A tree can be defined recursively (locally) as a collection of nodes (starting at a root node), 
  * where each node is a data structure consisting of a value, together with a list of nodes (the "children"), 

@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Comparator;
 
-// TODO: Auto-generated Javadoc
 /**
  * Matrx. This Matrix implementation is designed to be more efficient
  * in cache. A matrix is a rectangular array of numbers, symbols, or expressions.
@@ -129,9 +128,9 @@ public class Matrix<T extends Number> {
      * @return the matrix
      * @throws Exception the exception
      */
-    public Matrix<T> identity() throws Exception{
+    public Matrix<T> identity() throws NonSquareMatrixException {
         if (this.rows != this.cols) {
-            throw new Exception("Matrix should be a square");
+            throw new NonSquareMatrixException();
         }
 
         final T element = this.get(0, 0);
@@ -188,7 +187,7 @@ public class Matrix<T extends Number> {
                     T m2 = input.get(r, c);
                     T result;
                     Object result2;
-                    /* TODO: This is ugly and how to handle number overflow? */
+                    /* This is ugly and how to handle number overflow? */
                     if (m1 instanceof BigDecimal || m2 instanceof BigDecimal) {
                         result2 = ((BigDecimal)m1).add((BigDecimal)m2);
                         result = (T)result2;
@@ -234,7 +233,7 @@ public class Matrix<T extends Number> {
                     T m1 = this.get(r, c);
                     T m2 = input.get(r, c);
                     T result;
-                    /* TODO: This is ugly and how to handle number overflow? */
+                    /* This is ugly and how to handle number overflow? */
                     if (m1 instanceof BigDecimal || m2 instanceof BigDecimal) {
                         BigDecimal result2 = ((BigDecimal)m1).subtract((BigDecimal)m2);
                         result = (T)result2;
@@ -278,7 +277,7 @@ public class Matrix<T extends Number> {
                 T[] row = getRow(r);
                 T[] column = input.getColumn(c);
                 T test = row[0];
-                /* TODO: This is ugly and how to handle number overflow? */
+                /* This is ugly and how to handle number overflow? */
                 if (test instanceof BigDecimal) {
                     BigDecimal result = BigDecimal.ZERO;
                     for (int i = 0; i < cols; i++) {

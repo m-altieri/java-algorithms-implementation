@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.search;
 
-// TODO: Auto-generated Javadoc
 /**
  * Lower bound search algorithm.<br>
  * Lower bound is kind of binary search algorithm but:<br>

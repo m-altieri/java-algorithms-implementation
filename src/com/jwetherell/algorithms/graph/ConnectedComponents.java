@@ -9,7 +9,6 @@ import com.jwetherell.algorithms.data_structures.Graph;
 import com.jwetherell.algorithms.data_structures.Graph.Edge;
 import com.jwetherell.algorithms.data_structures.Graph.Vertex;
 
-// TODO: Auto-generated Javadoc
 /**
  * In graph theory, a connected component (or just component) of an undirected graph is a subgraph in which any two vertices are connected to each 
  * other by paths, and which is connected to no additional vertices in the supergraph. A vertex with no incident edges is itself a connected 

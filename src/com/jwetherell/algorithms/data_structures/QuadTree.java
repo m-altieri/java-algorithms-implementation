@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * A quadtree is a tree data structure in which each internal node has exactly four children. Quadtrees 
  * are most often used to partition a two dimensional space by recursively subdividing it into four 
@@ -902,7 +901,7 @@ public abstract class QuadTree<G extends XYPoint> {
         @Override
         public int compareTo(Object o) {
             if ((o instanceof AxisAlignedBoundingBox)==false)
-                throw new RuntimeException("Cannot compare object.");
+                throw new IncomparableObjectsException();
 
             AxisAlignedBoundingBox a = (AxisAlignedBoundingBox) o;
             int p = super.compareTo(a);

@@ -3,7 +3,6 @@ package com.jwetherell.algorithms.strings;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * This class implements KMP algorithm for finding length of maximal prefix-suffix for each prefix of the string.
  * Prefix-suffix of string S is a substring which occurs at the beginning and at the end of S.

@@ -100,7 +100,7 @@ public final class RangeSumData<N extends Number> extends Data {
 		else if (this.sum == null && data.sum != null)
 			this.sum = data.sum;
 		else {
-			/* TODO: This is ugly and how to handle number overflow? */
+			/* This is ugly and how to handle number overflow? */
 			if (this.sum instanceof BigDecimal || data.sum instanceof BigDecimal) {
 				BigDecimal result = ((BigDecimal)this.sum).add((BigDecimal)data.sum);
 				this.sum = (N)result;

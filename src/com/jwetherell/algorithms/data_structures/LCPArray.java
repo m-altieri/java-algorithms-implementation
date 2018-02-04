@@ -68,7 +68,7 @@ public class LCPArray<C extends CharSequence> {
 
         int startingValue = 0;
         for (int i=0; i<length; i++) {
-            if(KMRArrayList.get(i).equals(0)) {
+        	if(KMRArrayList.get(i).equals(0)) {
                 LCPR.add(0);
                 startingValue = 0;
             } else {

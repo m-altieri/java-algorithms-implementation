@@ -1,8 +1,5 @@
 package demo;
 
-import com.jwetherell.algorithms.data_structures.*;
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class Demo.
  */

@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.mathematics;
 
-// TODO: Auto-generated Javadoc
 /**
  * Recursive function of exponentiation is just an implementation of definition.
  * <p>

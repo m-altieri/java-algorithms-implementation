@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.mathematics;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Distance.
  */

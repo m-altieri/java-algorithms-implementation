@@ -3,7 +3,6 @@ package com.jwetherell.algorithms.data_structures;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * Implementation of array holding integer values which allows to count sum of elements in given
  * interval in O(log n) complexity.
@@ -46,8 +45,8 @@ public class IntervalSum {
      * @param values sequence of values for IntervalSumArray.
      */
     public IntervalSum(Iterable<Integer> values) {
-        for (Integer v: values)
-            add(v);
+        for (Integer v : values)
+            addNumber(v);
     }
 
     private static int greatestPowerOfTwoDividing(int x) {
@@ -70,6 +69,14 @@ public class IntervalSum {
     public int size() {
         return prefSums.size() - 1;
     }
+    
+    private void addNumber(int val) {
+    	values.add(val);
+        int n = greatestPowerOfTwoDividing(size() + 1);
+        for (int i = 1; i < n; i*=2)
+            val += prefSums.get(size() + 1 - i);
+        prefSums.add(val);
+    }
 
     /**
      * Adds value at the end of IntervalSumArray.
@@ -79,11 +86,7 @@ public class IntervalSum {
      * @param val value to be added at the end of array.
      */
     public void add(int val) {
-        values.add(val);
-        int n = greatestPowerOfTwoDividing(size() + 1);
-        for (int i = 1; i < n; i*=2)
-            val += prefSums.get(size() + 1 - i);
-        prefSums.add(val);
+        addNumber(val);
     }
 
     /**

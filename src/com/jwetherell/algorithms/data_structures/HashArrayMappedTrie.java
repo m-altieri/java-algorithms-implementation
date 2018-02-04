@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IMap;
 
-// TODO: Auto-generated Javadoc
 /**
  * A hash array mapped trie (HAMT) is an implementation of an associative 
  * array that combines the characteristics of a hash table and an array mapped 
@@ -79,9 +78,9 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
             while (oldParentPosition == childPosition) {
                 // Handle the case when the new children map to same position.
                 newHeight++;
-                if (newHeight>MAX_DEPTH) {
+                if (newHeight > MAX_DEPTH) {
                     // We have found two keys which match exactly. I really don't know what to do.
-                    throw new RuntimeException("Yikes! Found two keys which match exactly.");
+                    throw new MatchingKeysException();
                 }
                 newParentPosition = getPosition(newHeight-1, key);
                 ArrayNode newParent2 = new ArrayNode(newParent, key, newHeight);

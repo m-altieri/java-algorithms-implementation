@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.numbers;
 
 import java.math.BigDecimal;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Longs.
  */

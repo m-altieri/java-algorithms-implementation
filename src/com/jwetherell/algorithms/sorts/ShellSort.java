@@ -3,7 +3,6 @@ package com.jwetherell.algorithms.sorts;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * Shellsort, also known as Shell sort or Shell's method, is an in-place
  * comparison sort. It generalizes an exchanging sort, such as insertion or

@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * A Fenwick tree or binary indexed tree is a data structure providing efficient methods 
  * for calculation and manipulation of the prefix sums of a table of values. Fenwick trees 
@@ -323,7 +322,7 @@ public class FenwickTree<D extends FenwickTree.Data> {
                 else if (this.sum == null && data.sum != null)
                     this.sum = data.sum;
                 else {
-                    /* TODO: This is ugly and how to handle number overflow? */
+                    /* This is ugly and how to handle number overflow? */
                     if (this.sum instanceof BigDecimal || data.sum instanceof BigDecimal) {
                         BigDecimal result = ((BigDecimal)this.sum).add((BigDecimal)data.sum);
                         this.sum = (N)result;
@@ -361,7 +360,7 @@ public class FenwickTree<D extends FenwickTree.Data> {
                 else if (this.sum == null && data.sum != null)
                     this.sum = data.sum;
                 else {
-                    /* TODO: This is ugly and how to handle number overflow? */
+                    /* This is ugly and how to handle number overflow? */
                     if (this.sum instanceof BigDecimal || data.sum instanceof BigDecimal) {
                         BigDecimal result = ((BigDecimal)this.sum).subtract((BigDecimal)data.sum);
                         this.sum = (N)result;

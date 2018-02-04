@@ -12,7 +12,6 @@ import java.util.Set;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
-// TODO: Auto-generated Javadoc
 /**
  * A binary search tree (BST), which may sometimes also be called an ordered or
  * sorted binary tree, is a node-based binary tree data structure which has the
@@ -180,7 +179,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
             } else if (node == parent.greater) {
                 parent.greater = greater;
             } else {
-                throw new RuntimeException("Yikes! I'm not related to my parent. " + node.toString());
+                throw new UnrelatedParentNodeException(node.toString());
             }
             greater.parent = parent;
         } else {
@@ -214,7 +213,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
             } else if (node == parent.greater) {
                 parent.greater = lesser;
             } else {
-                throw new RuntimeException("Yikes! I'm not related to my parent. " + node.toString());
+                throw new UnrelatedParentNodeException(node.toString());
             }
             lesser.parent = parent;
         } else {

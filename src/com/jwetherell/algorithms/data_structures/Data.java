@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.data_structures;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Data.
  */
@@ -84,5 +83,19 @@ public abstract class Data implements Comparable<Data> {
 		if (d.end < this.end)
 			return 1;
 		return 0;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o == null) {
+			return false;
+		}
+		if (getClass() != o.getClass()) {
+			return false;
+		}
+		if (compareTo((Data) o) != 0) {
+			return false;
+		}
+		return true;
 	}
 }

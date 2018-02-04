@@ -13,7 +13,6 @@ import com.jwetherell.algorithms.data_structures.Graph;
 import com.jwetherell.algorithms.data_structures.Graph.Edge;
 import com.jwetherell.algorithms.data_structures.Graph.Vertex;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, A* is a computer algorithm that is widely used in path finding and graph traversal, the process 
  * of plotting an efficiently traversable path between multiple points, called nodes.

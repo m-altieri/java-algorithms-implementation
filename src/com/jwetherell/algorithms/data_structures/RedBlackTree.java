@@ -312,7 +312,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
                 parent = (RedBlackNode<T>) node.parent;
                 sibling = node.getSibling();
             } else {
-                throw new RuntimeException("Yikes! I'm not related to my parent. " + node.toString());
+                throw new UnrelatedParentNodeException(node.toString());
             }
         }
 
@@ -379,7 +379,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
             ((RedBlackNode<T>) sibling.lesser).color = BLACK;
             rotateRight(node.parent);
         } else {
-            throw new RuntimeException("Yikes! I'm not related to my parent. " + node.toString());
+            throw new UnrelatedParentNodeException(node.toString());
         }
 
         return true;
@@ -499,7 +499,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
             } else if (parent.greater == this) {
                 return (RedBlackNode<T>) parent.lesser;
             } else {
-                throw new RuntimeException("Yikes! I'm not related to my parent. " + this.toString());
+                throw new UnrelatedParentNodeException(this.toString());
             }
         }
 

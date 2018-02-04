@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.data_structures;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ITree;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, a ternary search tree is a type of trie (sometimes called a prefix tree) where nodes are arranged in a manner similar to a binary search tree, but with up to three 
  * children rather than the binary tree's limit of two.

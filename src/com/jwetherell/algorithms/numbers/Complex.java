@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.numbers;
 
-// TODO: Auto-generated Javadoc
 /**
  * A complex number is a number that can be expressed in the form a + bi, where a and b are real numbers and i is the 
  * imaginary unit, satisfying the equation i2 = −1.[1] In this expression, a is the real part and b is the imaginary 

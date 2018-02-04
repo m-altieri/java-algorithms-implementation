@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, a topological sort (sometimes abbreviated topsort or
  * toposort) or topological ordering of a directed graph is a linear ordering of

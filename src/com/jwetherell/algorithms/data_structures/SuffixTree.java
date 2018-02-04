@@ -345,6 +345,20 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
 
             return 0;
         }
+        
+        @Override
+    	public boolean equals(Object o) {
+    		if (o == null) {
+    			return false;
+    		}
+    		if (getClass() != o.getClass()) {
+    			return false;
+    		}
+    		if (compareTo((Link) o) != 0) {
+    			return false;
+    		}
+    		return true;
+    	}
     }
 
     private static class Edge<C extends CharSequence> implements Comparable<Edge<C>> {
@@ -524,7 +538,7 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                     string = string.substring(0, index + 1);
                 builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + value + ") " + string + "\n");
             } else {
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + 0 + ")" + "\n");
+                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + "0" + ")" + "\n");
             }
 
             if (tree.edgeMap.size() > 0) {

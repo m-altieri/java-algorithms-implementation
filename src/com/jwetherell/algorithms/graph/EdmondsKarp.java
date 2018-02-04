@@ -4,7 +4,6 @@ package com.jwetherell.algorithms.graph;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, the Edmonds–Karp algorithm is an implementation of the Ford–Fulkerson method for 
  * computing the maximum flow in a flow network in O(V*E^2) time.

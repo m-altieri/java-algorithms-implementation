@@ -10,7 +10,6 @@ import java.util.TreeMap;
 
 import com.jwetherell.algorithms.data_structures.Graph;
 
-// TODO: Auto-generated Javadoc
 /**
  * In mathematical optimization, the push–relabel algorithm (alternatively, preflow–push 
  * algorithm) is an algorithm for computing maximum flows. The name "push–relabel" comes 

@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.jwetherell.algorithms.data_structures.interfaces.ISet;
 
-// TODO: Auto-generated Javadoc
 /**
  * Skip List. A skip list is a data structure for storing a sorted list of items
  * using a hierarchy of linked lists that connect increasingly sparse

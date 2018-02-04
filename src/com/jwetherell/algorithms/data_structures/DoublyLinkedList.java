@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.data_structures;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IList;
 
-// TODO: Auto-generated Javadoc
 /**
  * Linked List (doubly link). A linked list is a data structure consisting
  * of a group of nodes which together represent a sequence.

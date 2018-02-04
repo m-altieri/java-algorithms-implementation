@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.sequence;
 
-// TODO: Auto-generated Javadoc
 /**
  * Finds the number of times a string occurs as a subsequence in a text.
  * <p>

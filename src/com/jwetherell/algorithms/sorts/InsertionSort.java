@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.sorts;
 
-// TODO: Auto-generated Javadoc
 /**
  * Insertion sort is a simple sorting algorithm: a comparison sort in which the
  * sorted array (or list) is built one entry at a time. It is much less

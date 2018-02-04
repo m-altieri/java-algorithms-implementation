@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.search;
 
-// TODO: Auto-generated Javadoc
 /**
  * Upper bound search algorithm.<br>
  * Upper bound is kind of binary search algorithm but:<br>

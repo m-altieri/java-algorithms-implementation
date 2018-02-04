@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.sorts;
 
 import java.util.Random;
 
-// TODO: Auto-generated Javadoc
 /**
  * Quicksort is a sorting algorithm which, on average, makes O(n*log n) comparisons to sort
  * n items. In the worst case, it makes O(n^2) comparisons, though this behavior is

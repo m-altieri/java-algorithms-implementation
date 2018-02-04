@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.sorts;
 
-// TODO: Auto-generated Javadoc
 /**
  * An American flag sort is an efficient, in-place variant of radix sort that
  * distributes items into hundreds of buckets. Non-comparative sorting

@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.mathematics;
 
-// TODO: Auto-generated Javadoc
 /**
  * In number theory, two integers a and b are said to be relatively prime, mutually prime, or coprime (also spelled 
  * co-prime) if the only positive integer that divides both of them is 1. That is, the only common positive factor 

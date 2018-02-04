@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.sorts;
 
-// TODO: Auto-generated Javadoc
 /**
  * Bubble sort is a simple sorting algorithm that works by repeatedly stepping
  * through the list to be sorted, comparing each pair of adjacent items and

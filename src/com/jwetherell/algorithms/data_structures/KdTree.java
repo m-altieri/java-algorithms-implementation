@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-// TODO: Auto-generated Javadoc
 /**
  * A k-d tree (short for k-dimensional tree) is a space-partitioning data
  * structure for organizing points in a k-dimensional space. k-d trees are a

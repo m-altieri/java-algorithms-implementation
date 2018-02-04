@@ -3,7 +3,6 @@ package com.jwetherell.algorithms.data_structures;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * The treap and the randomized binary search tree are two closely related forms
  * of binary search tree data structures that maintain a dynamic set of ordered
@@ -104,7 +103,7 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
                     grandParent.lesser = current;
                     current.parent = grandParent;
                 } else {
-                    throw new RuntimeException("YIKES! Grandparent should have at least one non-NULL child which should be my parent.");
+                    throw new UnrelatedGrandparentNodeException();
                 }
                 current.parent = grandParent;
             } else {
@@ -144,7 +143,7 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
                 }
             } else {
                 // We really shouldn't get here
-                throw new RuntimeException("YIKES! Parent should have at least one non-NULL child which should be me.");
+                throw new UnrelatedGrandparentNodeException();
             }
 
             parent = (TreapNode<T>) current.parent;

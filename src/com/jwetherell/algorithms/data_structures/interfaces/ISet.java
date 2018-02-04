@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.data_structures.interfaces;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, a set is an abstract data structure that can store certain values, without 
  * any particular order, and no repeated values. It is a computer implementation of the mathematical 

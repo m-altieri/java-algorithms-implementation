@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.data_structures;
 
-// TODO: Auto-generated Javadoc
 /**
  * In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that keeps track of a set of 
  * elements partitioned into a number of disjoint (non-overlapping) subsets. 
@@ -154,6 +153,11 @@ public class DisjointSet<T extends Object> {
             if ((i.value!=null && value!=null) && !(i.value.equals(value)))
                 return false;
             return true;
+        }
+        
+        @Override
+        public int hashCode() {
+        	return super.hashCode();
         }
 
         /**

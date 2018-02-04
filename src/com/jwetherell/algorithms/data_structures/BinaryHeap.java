@@ -2,7 +2,6 @@ package com.jwetherell.algorithms.data_structures;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IHeap;
 
-// TODO: Auto-generated Javadoc
 /**
  * A binary heap is a heap data structure created using a binary tree. It can be
  * seen as a binary tree with two additional constraints: 1) The shape property:

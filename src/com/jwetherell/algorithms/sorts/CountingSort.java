@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.sorts;
 
-// TODO: Auto-generated Javadoc
 /**
  * Counting sort is an algorithm for sorting a collection of objects according
  * to keys that are small integers; that is, it is an integer sorting algorithm.

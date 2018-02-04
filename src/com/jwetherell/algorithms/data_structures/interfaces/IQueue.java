@@ -1,6 +1,5 @@
 package com.jwetherell.algorithms.data_structures.interfaces;
 
-// TODO: Auto-generated Javadoc
 /**
  * A queue is a particular kind of abstract data type or collection in
  * which the entities in the collection are kept in order and the principal (or

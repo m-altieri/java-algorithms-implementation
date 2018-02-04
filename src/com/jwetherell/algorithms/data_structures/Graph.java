@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * Graph. Could be directed or undirected depending on the TYPE enum. A graph is
  * an abstract representation of a set of objects where some pairs of the
@@ -58,9 +57,9 @@ public class Graph<T extends Comparable<T>> {
 
         // Copy the vertices which also copies the edges
         for (Vertex<T> v : g.getVertices())
-            this.allVertices.add(new Vertex<T>(v));
+            allVertices.add(new Vertex<T>(v));
 
-        for (Vertex<T> v : this.getVertices()) {
+        for (Vertex<T> v : allVertices) {
             for (Edge<T> e : v.getEdges()) {
                 this.allEdges.add(e);
             }

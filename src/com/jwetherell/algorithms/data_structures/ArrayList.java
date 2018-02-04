@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import com.jwetherell.algorithms.data_structures.interfaces.IList;
 
-// TODO: Auto-generated Javadoc
 /**
  * A dynamic array, growable array, resizable array, dynamic table, or array
  * list is a random access, variable-size list data structure that allows

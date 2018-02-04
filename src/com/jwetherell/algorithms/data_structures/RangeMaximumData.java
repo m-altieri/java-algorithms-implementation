@@ -100,7 +100,7 @@ public final class RangeMaximumData<N extends Number> extends Data {
 		else if (this.maximum == null && data.maximum != null)
 			this.maximum = data.maximum;
 		else {
-			/* TODO: This is ugly */
+			/* This is ugly */
 			if (this.maximum instanceof BigDecimal || data.maximum instanceof BigDecimal) {
 				if (((BigDecimal)data.maximum).compareTo(((BigDecimal)this.maximum))==1)
 					this.maximum = data.maximum;

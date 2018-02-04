@@ -3,7 +3,6 @@ package com.jwetherell.algorithms.data_structures;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * An AVL tree is a self-balancing binary search tree, and it was the first such
  * data structure to be invented. In an AVL tree, the heights of the two child
