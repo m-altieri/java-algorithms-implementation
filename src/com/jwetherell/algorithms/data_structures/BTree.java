@@ -61,49 +61,53 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
             root = new Node<T>(null, maxKeySize, maxChildrenSize);
             root.addKey(value);
         } else {
-            Node<T> node = root;
-            while (node != null) {
-                if (node.numberOfChildren() == 0) {
-                    node.addKey(value);
-                    if (node.numberOfKeys() > maxKeySize) {
-                    	// Need to split up
-                    	split(node);
-                    }                         
-                    break;
-                }
-                // Navigate
-
-                // Lesser or equal
-                T lesser = node.getKey(0);
-                if (value.compareTo(lesser) <= 0) {
-                    node = node.getChild(0);
-                    continue;
-                }
-
-                // Greater
-                int numberOfKeys = node.numberOfKeys();
-                int last = numberOfKeys - 1;
-                T greater = node.getKey(last);
-                if (value.compareTo(greater) > 0) {
-                    node = node.getChild(numberOfKeys);
-                    continue;
-                }
-
-                // Search internal nodes
-                for (int i = 1; i < numberOfKeys; i++) {
-                    T prev = node.getKey(i - 1);
-                    T next = node.getKey(i);
-                    if (between(value, prev, next)) {
-                        node = node.getChild(i);
-                        break;
-                    }
-                }
-            }
+            addNode(value);
         }
 
         size++;
 
         return true;
+    }
+    
+    private void addNode(T value) {
+    	Node<T> node = root;
+        while (node != null) {
+            if (node.numberOfChildren() == 0) {
+                node.addKey(value);
+                if (node.numberOfKeys() > maxKeySize) {
+                	// Need to split up
+                	split(node);
+                }                         
+                break;
+            }
+            // Navigate
+
+            // Lesser or equal
+            T lesser = node.getKey(0);
+            if (value.compareTo(lesser) <= 0) {
+                node = node.getChild(0);
+                continue;
+            }
+
+            // Greater
+            int numberOfKeys = node.numberOfKeys();
+            int last = numberOfKeys - 1;
+            T greater = node.getKey(last);
+            if (value.compareTo(greater) > 0) {
+                node = node.getChild(numberOfKeys);
+                continue;
+            }
+
+            // Search internal nodes
+            for (int i = 1; i < numberOfKeys; i++) {
+                T prev = node.getKey(i - 1);
+                T next = node.getKey(i);
+                if (between(value, prev, next)) {
+                    node = node.getChild(i);
+                    break;
+                }
+            }
+        }
     }
     
     private static <U extends Comparable<U>> boolean between(U value, U c1, U c2) {
@@ -444,6 +448,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         
         return true;
     }
+    
 
     /**
      * Get the index of previous key in node.
@@ -802,16 +807,20 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
             if (node.children != null) {
                 for (int i = 0; i < node.numberOfChildren() - 1; i++) {
                     Node<T> obj = node.getChild(i);
-                    builder.append(getString(obj, prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(obj, prefix + getStringUtility(isTail), false));
                 }
                 if (node.numberOfChildren() >= 1) {
                     Node<T> obj = node.getChild(node.numberOfChildren() - 1);
-                    builder.append(getString(obj, prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString(obj, prefix + getStringUtility(isTail), true));
                 }
             }
 
             return builder.toString();
         }
+    }
+    
+    private static String getStringUtility(boolean isTail) {
+    	return (isTail ? "    " : "│   ");
     }
 
     /**

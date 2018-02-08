@@ -215,8 +215,7 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                 // Current node is not root, follow link
                 currentNode = linksMap.get(currentNode).suffixNode;
             }
-            if (!isExplicit())
-                canonize();
+            canonizeIfNotExplicit(isExplicit());
         }
         if (lastParentIndex > 0) {
             // Last parent is not root, create a link.
@@ -224,8 +223,13 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
         }
         lastParentIndex = parentNodeIndex;
         lastCharIndex++; // Now the endpoint is the next active point
-        if (!isExplicit())
-            canonize();
+        canonizeIfNotExplicit(isExplicit());
+    }
+    
+    private void canonizeIfNotExplicit(boolean isExplicit) {
+    	if (!isExplicit()) {
+    		canonize();
+    	}
     }
 
     /**
@@ -408,16 +412,19 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                     if (e == null)
                         return;
                     int r = key(e.startNode, tree.characters[e.firstCharIndex]);
-                    if (i >= r && r > j)
-                        continue;
-                    if (r > j && j > i)
-                        continue;
-                    if (j > i && i >= r)
-                        continue;
+                    if (removeUtility(i, r, j)) {
+                    	continue;
+                    }
                     break;
                 }
                 tree.edgeMap.put(j, e);
             }
+        }
+        
+        private boolean removeUtility(int i,int r, int j) {
+        	return 	(i >= r && r > j) ||
+        			(r > j && j > i) ||
+        			(j > i && i >= r);
         }
 
         private static <C extends CharSequence> Edge<C> find(SuffixTree<C> theTree, int node, char c) {
@@ -474,30 +481,41 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
          */
         @Override
         public int compareTo(Edge<C> edge) {
+        	int res = 0;
+        	
             if (edge == null)
-                return -1;
+                res = -1;
 
-            if (startNode < edge.startNode)
-                return -1;
-            if (startNode > edge.startNode)
-                return 1;
+            res = compareToUtility(edge);
 
             if (endNode < edge.endNode)
-                return -1;
+                res = -1;
             if (endNode > edge.endNode)
-                return 1;
+                res = 1;
 
             if (firstCharIndex < edge.firstCharIndex)
-                return -1;
+                res = -1;
             if (firstCharIndex > edge.firstCharIndex)
-                return 1;
+                res = 1;
 
             if (lastCharIndex < edge.lastCharIndex)
-                return -1;
+                res = -1;
             if (lastCharIndex > edge.lastCharIndex)
-                return 1;
+                res = 1;
 
-            return 0;
+            return res;
+        }
+        
+        private int compareToUtility(Edge<C> edge) {
+        	int res = 0;
+        	
+        	if (startNode < edge.startNode) {
+        		res = -1;
+        	}
+        	if (startNode > edge.startNode) {
+        		res = 1;
+        	}
+        	return res;
         }
 
         /**

@@ -325,15 +325,8 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
             // Two children.
             // Add some randomness to deletions, so we don't always use the
             // greatest/least on deletion
-            if (modifications % 2 != 0) {
-                replacement = this.getGreatest(nodeToRemoved.lesser);
-                if (replacement == null)
-                    replacement = nodeToRemoved.lesser;
-            } else {
-                replacement = this.getLeast(nodeToRemoved.greater);
-                if (replacement == null)
-                    replacement = nodeToRemoved.greater;
-            }
+        	replacement = replacementUtility(nodeToRemoved);
+            
             modifications++;
         } else if (nodeToRemoved.lesser != null && nodeToRemoved.greater == null) {
             // Using the less subtree
@@ -343,6 +336,20 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
             replacement = nodeToRemoved.greater;
         }
         return replacement;
+    }
+    
+    private Node<T> replacementUtility(Node<T> nodeToRemoved) {
+    	Node<T> replacement = null;
+    	if (modifications % 2 != 0) {
+            replacement = this.getGreatest(nodeToRemoved.lesser);
+            if (replacement == null)
+                replacement = nodeToRemoved.lesser;
+        } else {
+            replacement = this.getLeast(nodeToRemoved.greater);
+            if (replacement == null)
+                replacement = nodeToRemoved.greater;
+        }
+    	return replacement;
     }
 
     /**

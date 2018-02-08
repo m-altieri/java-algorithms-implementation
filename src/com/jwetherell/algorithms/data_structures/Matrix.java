@@ -157,17 +157,21 @@ public class Matrix<T extends Number> {
         }
 
         final T array[][] = (T[][])new Number[this.rows][this.cols];
-        for(int i = 0; i < this.rows; ++i) {
-            for(int j = 0 ; j < this.cols; ++j){
-                array[i][j] = zero;
-            }
-        }
+        fillArray(array, zero);
 
         final Matrix<T> identityMatrix = new Matrix<T>(this.rows, this.cols, array);
         for(int i = 0; i < this.rows;++i){
             identityMatrix.set(i, i, one);
         }
         return identityMatrix;
+    }
+    
+    private void fillArray(T[][] array, T n) {
+    	for(int i = 0; i < this.rows; ++i) {
+            for(int j = 0 ; j < this.cols; ++j){
+                array[i][j] = n;
+            }
+        }
     }
 
     /**

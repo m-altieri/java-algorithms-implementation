@@ -78,7 +78,7 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
             // If new node represents a "word", increase the size
             if (isWord)
                 size++;
-        } else if (c==node.character && isWord && !node.isWord) {
+        } else if (nodeToChange(c, node, isWord)) {
             // Changing an existing node into a "word" node
             node.isWord = true;
             // Increase the size
@@ -94,6 +94,10 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
             node.kid = insert(node, node.kid, value, ++idx);
         }
         return node;
+    }
+    
+    private boolean nodeToChange(char c, Node node, boolean isWord) {
+    	return c==node.character && isWord && !node.isWord;
     }
 
     /**
@@ -124,7 +128,7 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
             return;
 
         // If node has at least one child, we cannot prune it.
-        if (node.loKid!=null || node.kid!=null || node.hiKid!=null) 
+        if (hasOneChild(node)) 
             return;
 
         // Node has no children, prune the node
@@ -146,6 +150,10 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
             // If node doesn't have a parent, it's root.
             this.root = null;
         }
+    }
+    
+    private boolean hasOneChild(Node node) {
+    	return node.loKid != null || node.kid != null || node.hiKid != null;
     }
 
     /**
@@ -208,30 +216,25 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
     }
 
     private boolean validate(Node node) {
-        boolean result = false;
+        boolean result = true;
+        
         if (node.loKid != null) {
             if (node.loKid.character >= node.character)
-                return false;
+                result = false;
             result = validate(node.loKid);
-            if (!result)
-                return false;
         }
 
         if (node.kid != null) {
             result = validate(node.kid);
-            if (!result)
-                return false;
         }
 
         if (node.hiKid != null) {
             if (node.hiKid.character <= node.character)
-                return false;
+                result = false;
             result = validate(node.hiKid);
-            if (!result)
-                return false;
         }
 
-        return true;
+        return result;
     }
 
     /**
@@ -289,13 +292,17 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
                               node.character) + "\n"
             );
             if (node.loKid != null)
-                builder.append(getString(node.loKid, prefix + (isTail ? "    " : "│   "), string, false));
+                builder.append(getString(node.loKid, prefix + getStringUtility(isTail), string, false));
             if (node.kid != null)
-                builder.append(getString(node.kid, prefix + (isTail ? "    " : "│   "), string+String.valueOf(node.character), false));
+                builder.append(getString(node.kid, prefix + getStringUtility(isTail), string+String.valueOf(node.character), false));
             if (node.hiKid != null)
-                builder.append(getString(node.hiKid, prefix + (isTail ? "    " : "│   "), string, true));
+                builder.append(getString(node.hiKid, prefix + getStringUtility(isTail), string, true));
             return builder.toString();
         }
+    }
+    
+    private static String getStringUtility(boolean isTail) {
+    	return isTail ? "    " : "│   ";
     }
 
     protected static class Node {

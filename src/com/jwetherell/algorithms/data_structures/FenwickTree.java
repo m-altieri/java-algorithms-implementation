@@ -158,12 +158,16 @@ public class FenwickTree<D extends FenwickTree.Data> {
             }
             int size = children.size();
             for (int i = 0; i < size - 1; i++)
-                builder.append(getString(tree, children.get(i),                 children.get(i+1), prefix + (isTail ? "    " : "│   "), false));
+                builder.append(getString(tree, children.get(i),                 children.get(i+1), prefix + getStringUtility(isTail), false));
             if (children.size() >= 1)
-                builder.append(getString(tree, children.get(children.size()-1), end,               prefix + (isTail ? "    " : "│   "), true));
+                builder.append(getString(tree, children.get(children.size()-1), end,               prefix + getStringUtility(isTail), true));
 
             return builder.toString();
         }
+    }
+    
+    private static String getStringUtility(boolean isTail) {
+    	return isTail ? "    " : "│   ";
     }
 
     /**

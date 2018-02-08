@@ -103,24 +103,28 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
                     balance = Balance.RIGHT_RIGHT;
             }
 
-            if (balance == Balance.LEFT_RIGHT) {
-                // Left-Right (Left rotation, right rotation)
-                rotateLeft(child);
-                rotateRight(node);
-            } else if (balance == Balance.RIGHT_LEFT) {
-                // Right-Left (Right rotation, left rotation)
-                rotateRight(child);
-                rotateLeft(node);
-            } else if (balance == Balance.LEFT_LEFT) {
-                // Left-Left (Right rotation)
-                rotateRight(node);
-            } else {
-                // Right-Right (Left rotation)
-                rotateLeft(node);
-            }
+            balanceAfterInsertUtility(balance, child, node);
 
             child.updateHeight();
             node.updateHeight();
+        }
+    }
+    
+    private void balanceAfterInsertUtility(Balance balance, AVLNode<T> child, AVLNode<T> node) {
+    	if (balance == Balance.LEFT_RIGHT) {
+            // Left-Right (Left rotation, right rotation)
+            rotateLeft(child);
+            rotateRight(node);
+        } else if (balance == Balance.RIGHT_LEFT) {
+            // Right-Left (Right rotation, left rotation)
+            rotateRight(child);
+            rotateLeft(node);
+        } else if (balance == Balance.LEFT_LEFT) {
+            // Left-Left (Right rotation)
+            rotateRight(node);
+        } else {
+            // Right-Right (Left rotation)
+            rotateLeft(node);
         }
     }
 
@@ -220,18 +224,18 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
      */
     @Override
     protected boolean validateNode(Node<T> node) {
+    	
+    	boolean res = true;
+    	
         boolean bst = super.validateNode(node);
-        if (!bst)
-            return false;
+        res &= bst;
 
         AVLNode<T> avlNode = (AVLNode<T>) node;
         int balanceFactor = avlNode.getBalanceFactor();
-        if (balanceFactor > 1 || balanceFactor < -1) {
-            return false;
-        }
+        res = validateNodeUtility(res, balanceFactor);
+        
         if (avlNode.isLeaf()) {
-            if (avlNode.height != 1)
-                return false;
+        	res &= avlNode.height == 1;
         } else {
             AVLNode<T> avlNodeLesser = (AVLNode<T>) avlNode.lesser;
             int lesserHeight = 1;
@@ -243,14 +247,19 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
             if (avlNodeGreater != null)
                 greaterHeight = avlNodeGreater.height;
 
-            if (avlNode.height == (lesserHeight + 1) || avlNode.height == (greaterHeight + 1))
-                return true;
-            return false;
+            if (avlNode.height == (lesserHeight + 1) || avlNode.height == (greaterHeight + 1)) {
+                res = true;
+        	} else {
+        		res = false;
+        	}
         }
 
-        return true;
+        return res;
     }
 
+    private boolean validateNodeUtility(boolean res, int balanceFactor) {
+    	return res &= (balanceFactor < 1 && balanceFactor > -1);
+    }
     /**
      * {@inheritDoc}
      */
