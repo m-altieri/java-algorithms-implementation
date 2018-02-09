@@ -195,7 +195,7 @@ public abstract class QuadTree<G extends XYPoint> {
             @Override
             protected boolean insert(XY p) {
                 // Ignore objects which do not belong in this quad tree
-                if (!aabb.containsPoint(p) || (isLeaf() && points.contains(p))) 
+                if (!belongs(p)) 
                     return false; // object cannot be added
 
                 // If there is space in this quad tree, add the object here
@@ -208,6 +208,14 @@ public abstract class QuadTree<G extends XYPoint> {
                 if (isLeaf() && height<maxHeight) 
                     subdivide();
                 return insertIntoChildren(p);
+            }
+            
+            private boolean belongs(XY p) {
+            	if (!aabb.containsPoint(p) || (isLeaf() && points.contains(p))) {
+            		return false;
+            	} else {
+            		return true;
+            	}
             }
 
             /**
@@ -586,11 +594,18 @@ public abstract class QuadTree<G extends XYPoint> {
 
             private boolean insertIntoChildren(AABB b) {
                 //Try to insert into all children
-                if (northWest.aabb.insideThis(b) && northWest.insert(b)) return true;
-                if (northEast.aabb.insideThis(b) && northEast.insert(b)) return true;
-                if (southWest.aabb.insideThis(b) && southWest.insert(b)) return true;
-                if (southEast.aabb.insideThis(b) && southEast.insert(b)) return true;
-                return false;
+                if (insertableIntoChildren(northWest, b) ||
+                	insertableIntoChildren(northEast, b) ||
+                	insertableIntoChildren(southWest, b) ||
+                	insertableIntoChildren(southEast, b)) {
+                	return true;
+                } else {
+                	return false;
+                }
+            }
+            
+            private boolean insertableIntoChildren(QuadNode<AABB> node, AABB children) {
+            	return node.aabb.insideThis(children) && node.insert(children);
             }
 
             private boolean removeFromChildren(AABB b) {

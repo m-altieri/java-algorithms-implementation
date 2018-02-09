@@ -504,8 +504,7 @@ public class HashMap<K, V> implements IMap<K,V> {
 
                     int loadFactored = (int)(size/loadFactor);
                     int smallerSize = getSmallerSize(array.length);
-                    if (loadFactored < smallerSize && smallerSize > minimumSize)
-                        reduce();
+                    reduceIfContained(loadFactored, smallerSize);
 
                     return prev.value;
                 }
@@ -513,6 +512,12 @@ public class HashMap<K, V> implements IMap<K,V> {
             }
             // If we get here, probing failed.
             return null;
+        }
+        
+        private void reduceIfContained(int loadFactored, int smallerSize) {
+        	if (loadFactored < smallerSize && smallerSize > minimumSize) {
+        		reduce();
+        	}
         }
 
         /**

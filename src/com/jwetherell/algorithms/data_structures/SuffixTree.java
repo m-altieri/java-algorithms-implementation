@@ -274,8 +274,8 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                 stop = true;
                 break;
             }
-            if (startNode == 0)
-                startIndex = edge.firstCharIndex;
+            startIndex = initializeIfZero(startIndex, startNode, edge);
+            
             for (int i = edge.firstCharIndex; i <= edge.lastCharIndex; i++) {
                 if (queryPosition >= query.length) {
                     stop = true;
@@ -290,11 +290,24 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
             }
             if (!stop) { // proceed with next node
                 startNode = edge.endNode;
-                if (startNode == -1)
-                    stop = true;
+                stop = stopIfStartNodeNegative(stop, startNode);
             }
         }
         return (new int[] { startIndex, endIndex });
+    }
+    
+    private boolean stopIfStartNodeNegative(boolean stop, int startNode) {
+    	if (startNode == -1) {
+    		stop = true;
+    	}
+    	return stop;
+    }
+    
+    private int initializeIfZero(int startIndex, int startNode, Edge<C> edge) {
+    	if (startNode == 0) {
+    		startIndex = edge.firstCharIndex;
+    	}
+    	return startIndex;
     }
 
     /**
@@ -546,6 +559,7 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
 
         private static <C extends CharSequence> String getString(SuffixTree<C> tree, Edge<C> e, String prefix,
                 boolean isTail) {
+        	
             StringBuilder builder = new StringBuilder();
             int value = 0;
             if (e != null) {
@@ -554,9 +568,9 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                 int index = string.indexOf(tree.endSeqChar);
                 if (index >= 0)
                     string = string.substring(0, index + 1);
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + value + ") " + string + "\n");
+                builder.append(prefix + getStringUtility(isTail) + "(" + value + ") " + string + "\n");
             } else {
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + "0" + ")" + "\n");
+                builder.append(prefix + getStringUtility(isTail) + "(" + "0" + ")" + "\n");
             }
 
             if (tree.edgeMap.size() > 0) {
@@ -566,19 +580,32 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                         children.add(edge);
                     }
                 }
-                if (children.size() > 0) {
-                	int size = children.size();
-                    for (int i = 0; i < size - 1; i++) {
-                        Edge<C> edge = children.get(i);
-                        builder.append(getString(tree, edge, prefix + (isTail ? "    " : "│   "), false));
-                    }
-                    if (children.size() >= 1) {
-                        Edge<C> edge = children.get(children.size() - 1);
-                        builder.append(getString(tree, edge, prefix + (isTail ? "    " : "│   "), true));
-                    }
-                }
+                builder = appendIfChildrenPositive(builder, children, tree, prefix, isTail);
+                
             }
             return builder.toString();
+        }
+        
+        private static <C extends CharSequence> StringBuilder appendIfChildrenPositive(
+        		StringBuilder sb, List<Edge<C>> children, SuffixTree<C> tree, 
+        		String prefix, boolean isTail) {
+        	
+        	if (children.size() > 0) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
+                    Edge<C> edge = children.get(i);
+                    sb.append(getString(tree, edge, prefix + getStringUtility(isTail), false));
+                }
+                if (children.size() >= 1) {
+                    Edge<C> edge = children.get(children.size() - 1);
+                    sb.append(getString(tree, edge, prefix + getStringUtility(isTail), true));
+                }
+            }
+        	return sb;
+        }
+        
+        private static String getStringUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
         }
     }
 }

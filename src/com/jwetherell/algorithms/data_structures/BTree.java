@@ -433,11 +433,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
 
         // Try to borrow neighbor
         if (rightNeighbor != null) {
-        	if (rightNeighborSize > minKeySize) {
-        		borrowFromRightNeighbor(node, parent, rightNeighbor);
-        	} else if (parent.numberOfKeys() > 0) {
-        		combinedWithRightNeighbor(node, parent, rightNeighbor);
-        	}
+        	borrowOrCombinedRight(node, parent, rightNeighbor, rightNeighborSize);
         } else if (leftNeighbor != null) {
         	if (leftNeighborSize > minKeySize) {
         		borrowFromLeftNeighbor(node, parent, leftNeighbor);
@@ -447,6 +443,16 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         }
         
         return true;
+    }
+    
+    private void borrowOrCombinedRight(Node<T> node, Node<T> parent, 
+    		Node<T> neighbor, int neighborSize) {
+    	
+    	if (neighborSize > minKeySize) {
+    		borrowFromRightNeighbor(node, parent, neighbor);
+    	} else if (parent.numberOfKeys() > 0) {
+    		combinedWithRightNeighbor(node, parent, neighbor);
+    	}
     }
     
 

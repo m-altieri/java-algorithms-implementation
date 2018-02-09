@@ -156,51 +156,60 @@ public class Graph<T extends Comparable<T>> {
      */
     @Override
     public boolean equals(Object g1) {
-    	if (getClass() != g1.getClass()) {
-    		return false;
-    	}
-        if (!(g1 instanceof Graph))
-            return false;
-
+    	
+    	boolean res = true;
+    	
+    	res &= getClass() == g1.getClass();
+    	res &= g1 instanceof Graph;
+    	
         final Graph<T> g = (Graph<T>) g1;
 
         final boolean typeEquals = this.type == g.type;
-        if (!typeEquals)
-            return false;
+        res &= typeEquals;;
 
         final boolean verticesSizeEquals = this.allVertices.size() == g.allVertices.size();
-        if (!verticesSizeEquals)
-            return false;
-
+        res &= verticesSizeEquals;
+        
         final boolean edgesSizeEquals = this.allEdges.size() == g.allEdges.size();
-        if (!edgesSizeEquals)
-            return false;
-
+        res &= edgesSizeEquals;
+        
         // Vertices can contain duplicates and appear in different order but both arrays should contain the same elements
         final Object[] ov1 = this.allVertices.toArray();
         Arrays.sort(ov1);
         final Object[] ov2 = g.allVertices.toArray();
         Arrays.sort(ov2);
-        for (int i=0; i<ov1.length; i++) {
-            final Vertex<T> v1 = (Vertex<T>) ov1[i];
-            final Vertex<T> v2 = (Vertex<T>) ov2[i];
-            if (!v1.equals(v2))
-                return false;
-        }
+        res &= haveSameVertexes(ov1, ov2);
 
         // Edges can contain duplicates and appear in different order but both arrays should contain the same elements
         final Object[] oe1 = this.allEdges.toArray();
         Arrays.sort(oe1);
         final Object[] oe2 = g.allEdges.toArray();
         Arrays.sort(oe2);
-        for (int i=0; i<oe1.length; i++) {
+        res &= haveSameEdges(oe1, oe2);
+
+        return res;
+    }
+    
+    private boolean haveSameVertexes(Object[] ov1, Object[] ov2) {
+
+    	boolean res = true;
+        for (int i = 0; i < ov1.length; i++) {
+            final Vertex<T> v1 = (Vertex<T>) ov1[i];
+            final Vertex<T> v2 = (Vertex<T>) ov2[i];
+            res &= v1.equals(v2);
+        }
+        return res;
+    }
+    
+    private boolean haveSameEdges(Object[] oe1, Object[] oe2) {
+    	
+    	boolean res = true;
+    	for (int i = 0; i < oe1.length; i++) {
             final Edge<T> e1 = (Edge<T>) oe1[i];
             final Edge<T> e2 = (Edge<T>) oe2[i];
-            if (!e1.equals(e2))
-                return false;
+            res &= e1.equals(e2);
         }
-
-        return true;
+    	return res;
     }
 
     /**
@@ -343,37 +352,41 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public boolean equals(Object v1) {
-        	if (getClass() != v1.getClass()) {
-        		return false;
-        	}
-            if (!(v1 instanceof Vertex))
-                return false;
+        	
+        	boolean res = true;
+        	
+        	res &= getClass() == v1.getClass();
+        	res &= v1 instanceof Vertex;
 
             final Vertex<T> v = (Vertex<T>) v1;
 
             final boolean weightEquals = this.weight == v.weight;
-            if (!weightEquals)
-                return false;
+            res &= weightEquals;
 
             final boolean edgesSizeEquals = this.edges.size() == v.edges.size();
-            if (!edgesSizeEquals)
-                return false;
+            res &= edgesSizeEquals;
 
             final boolean valuesEquals = this.value.equals(v.value);
-            if (!valuesEquals)
-                return false;
+            res &= valuesEquals;
 
             final Iterator<Edge<T>> iter1 = this.edges.iterator();
             final Iterator<Edge<T>> iter2 = v.edges.iterator();
-            while (iter1.hasNext() && iter2.hasNext()) {
+            res &= haveSameCost(iter1, iter2);
+
+            return res;
+        }
+        
+        private boolean haveSameCost(Iterator<Edge<T>> iter1, Iterator<Edge<T>> iter2) {
+        	
+        	boolean res = true;
+        	
+        	while (iter1.hasNext() && iter2.hasNext()) {
                 // Only checking the cost
                 final Edge<T> e1 = iter1.next();
                 final Edge<T> e2 = iter2.next();
-                if (e1.cost != e2.cost)
-                    return false;
+                res &= e1.cost == e2.cost;
             }
-
-            return true;
+        	return res;
         }
 
         /**
@@ -381,6 +394,7 @@ public class Graph<T extends Comparable<T>> {
          */
         @Override
         public int compareTo(Vertex<T> v) {
+        	
             final int valueComp = this.value.compareTo(v.value);
             if (valueComp != 0)
                 return valueComp;
@@ -397,7 +411,17 @@ public class Graph<T extends Comparable<T>> {
 
             final Iterator<Edge<T>> iter1 = this.edges.iterator();
             final Iterator<Edge<T>> iter2 = v.edges.iterator();
-            while (iter1.hasNext() && iter2.hasNext()) {
+            if (leastExpensive(iter1, iter2) == -1) {
+            	return -1;
+            } else if (leastExpensive(iter1, iter2) == 1) {
+            	return 1;
+            }
+
+            return 0;
+        }
+        
+        private int leastExpensive(Iterator<Edge<T>> iter1, Iterator<Edge<T>> iter2) {
+        	while (iter1.hasNext() && iter2.hasNext()) {
                 // Only checking the cost
                 final Edge<T> e1 = iter1.next();
                 final Edge<T> e2 = iter2.next();
@@ -406,8 +430,7 @@ public class Graph<T extends Comparable<T>> {
                 if (e1.cost > e2.cost)
                     return 1;
             }
-
-            return 0;
+        	return 0;
         }
 
         /**

@@ -365,7 +365,7 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         private static <T extends Comparable<T>> String getString(AVLNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + node.height + ") " + node.id + "\n");
+            builder.append(prefix + getStringUtility(isTail) + "(" + node.height + ") " + node.id + "\n");
             List<Node<T>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<Node<T>>(2);
@@ -377,14 +377,18 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
             if (children != null) {
             	int size = children.size();
                 for (int i = 0; i < size - 1; i++) {
-                    builder.append(getString((AVLNode<T>) children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString((AVLNode<T>) children.get(i), prefix + getStringUtility(isTail), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString((AVLNode<T>) children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString((AVLNode<T>) children.get(children.size() - 1), prefix + getStringUtility(isTail), true));
                 }
             }
 
             return builder.toString();
+        }
+        
+        private static String getStringUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
         }
     }
 }

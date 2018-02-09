@@ -2,6 +2,7 @@ package com.jwetherell.algorithms.data_structures;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.jwetherell.algorithms.data_structures.BinarySearchTree.INodeCreator;
 import com.jwetherell.algorithms.data_structures.BinarySearchTree.Node;
@@ -132,23 +133,35 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
     }
 
     private boolean validate(Node<K> node, java.util.Set<K> keys) {
-        if (!(node instanceof TreeMapNode)) 
-            return false;
+    	
+    	boolean res = true;
+    	
+    	res &= node instanceof TreeMapNode;
 
-        TreeMapNode<K,V> tmn = (TreeMapNode<K,V>)node;
+        TreeMapNode<K,V> tmn = (TreeMapNode<K,V>) node;
         K k = tmn.id;
         V v = tmn.value;
-        if (k==null || v==null) 
-            return false;
-        if (keys.contains(k)) 
-            return false;
+        res &= k != null && v != null;
+        
+        res &= !keys.contains(k);
         keys.add(k);
-        if (tmn.lesser!=null && !validate(tmn.lesser,keys)) 
-            return false;
-        if (tmn.greater!=null && !validate(tmn.greater,keys)) 
-            return false;
-        return true;
+        
+        res &= validateUtilityLesser(tmn, keys);
+        res &= validateUtilityGreater(tmn, keys);
+        
+        return res;
     }
+    
+    private boolean validateUtilityLesser(TreeMapNode<K, V> node, Set<K> keys) {
+    	
+    	return node.lesser == null || validate(node.lesser, keys);
+    }
+    
+    private boolean validateUtilityGreater(TreeMapNode<K, V> node, Set<K> keys) {
+    	
+    	return node.greater == null || validate(node.greater, keys);
+    }
+    
 
     /**
      * {@inheritDoc}
@@ -197,7 +210,7 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
         private static <K extends Comparable<K>, V> String getString(TreeMapNode<K, V> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + ((node.id != null) ? (node.id + " = " + node.value) : node.id) + "\n");
+            builder.append(prefix + getStringUtility(isTail) + nullNodeUtility(node) + "\n");
             List<TreeMapNode<K, V>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<TreeMapNode<K, V>>(2);
@@ -207,14 +220,26 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
             if (children != null) {
             	int size = children.size();
                 for (int i = 0; i < size - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + getStringUtility(isTail), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString(children.get(children.size() - 1), prefix + getStringUtility(isTail), true));
                 }
             }
 
             return builder.toString();
+        }
+        
+        private static <K extends Comparable<K>, V> String nullNodeUtility(TreeMapNode<K, V> node) {
+        	if (node.id != null) {
+        		return node.id + " = " + node.value;
+        	} else {
+        		return (String) node.id;
+        	}
+        }
+        
+        private static String getStringUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
         }
     }
 

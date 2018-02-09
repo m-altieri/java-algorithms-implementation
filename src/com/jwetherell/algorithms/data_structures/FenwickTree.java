@@ -148,7 +148,7 @@ public class FenwickTree<D extends FenwickTree.Data> {
 
             final D value = (D) tree.array[start];
             if (value != null)
-                builder.append(prefix + (isTail ? "└── " : "├── ") + value + "\n");
+                builder.append(prefix + getStringUtility(isTail) + value + "\n");
 
             int next = start + 1;
             final List<Integer> children = new ArrayList<Integer>(2);
@@ -158,9 +158,9 @@ public class FenwickTree<D extends FenwickTree.Data> {
             }
             int size = children.size();
             for (int i = 0; i < size - 1; i++)
-                builder.append(getString(tree, children.get(i),                 children.get(i+1), prefix + getStringUtility(isTail), false));
+                builder.append(getString(tree, children.get(i),                 children.get(i + 1), prefix + getStringUtility(isTail), false));
             if (children.size() >= 1)
-                builder.append(getString(tree, children.get(children.size()-1), end,               prefix + getStringUtility(isTail), true));
+                builder.append(getString(tree, children.get(children.size() - 1), end,               prefix + getStringUtility(isTail), true));
 
             return builder.toString();
         }

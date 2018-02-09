@@ -73,17 +73,22 @@ public class DisjointSet<T extends Object> {
         if (xRoot.equals(yRoot))
             return xRoot;
 
-        if (xRoot.rank < yRoot.rank) {
+        return unionUtility(xRoot, yRoot);
+    }
+    
+    private static <T extends Object> Item<T> unionUtility(Item<T> xRoot, Item<T> yRoot) {
+    	
+    	if (xRoot.rank < yRoot.rank) {
             xRoot.parent = yRoot;
             return yRoot;
         } else if (xRoot.rank > yRoot.rank) {
             yRoot.parent = xRoot;
             return xRoot;
+        } else {
+	        yRoot.parent = xRoot;
+	        xRoot.rank = xRoot.rank + 1;
+	        return xRoot;
         }
-        // else
-        yRoot.parent = xRoot;
-        xRoot.rank = xRoot.rank + 1;
-        return xRoot;
     }
 
     /**
@@ -141,18 +146,22 @@ public class DisjointSet<T extends Object> {
          */
         @Override
         public boolean equals(Object o) {
-        	if (getClass() != o.getClass()) {
-        		return false;
-        	}
-            if (!(o instanceof Item))
-                return false;
-
+        	
+        	boolean res = true;
+        	
+        	res &= getClass() == o.getClass();
+        	res &= o instanceof Item;
+        	
             final Item<T> i = (Item<T>) o;
-            if ((i.parent!=null && parent!=null) && !(i.parent.value.equals(parent.value)))
-                return false;
-            if ((i.value!=null && value!=null) && !(i.value.equals(value)))
-                return false;
-            return true;
+            res &= parentCheck(i);
+
+            res &= i.value == null || value == null || i.value.equals(value);
+            
+            return res;
+        }
+        
+        private boolean parentCheck(Item<T> i) {
+        	return i.parent == null || parent == null || i.parent.value.equals(parent.value);
         }
         
         @Override

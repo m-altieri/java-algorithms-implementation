@@ -79,18 +79,7 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
             else node = creator.createNewNode(level, value);
 
             Node<T> prev = head;
-            if (head.data.compareTo(value)>0) {
-                // handle case where head is greater than new node, just swap values
-                //T oldHeadValue = head.data;
-                //head.data = value;
-                // Swap the old head value into the new node
-                //node.data = oldHeadValue;
-                if (creator==null) swapNode(node,head);
-                else creator.swapNode(node, head);
-                toReturn = head;
-            } else {
-                toReturn = node;
-            }
+            toReturn = swapIfHeadGreater(node, value);
 
             // Start from the top and work down to update the pointers
             for (int i=MAX; i>=0; i--) {
@@ -111,6 +100,26 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
         }
         size++;
         return toReturn;
+    }
+    
+    private Node<T> swapIfHeadGreater(Node<T> node, T value) {
+    	Node<T> toReturn = null;
+    	if (head.data.compareTo(value) > 0) {
+            // handle case where head is greater than new node, just swap values
+            //T oldHeadValue = head.data;
+            //head.data = value;
+            // Swap the old head value into the new node
+            //node.data = oldHeadValue;
+            if (creator == null) {
+            	swapNode(node,head);
+            } else {
+            	creator.swapNode(node, head);
+            }
+            toReturn = head;
+        } else {
+            toReturn = node;
+        }
+    	return toReturn;
     }
 
     /**

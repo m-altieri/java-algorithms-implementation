@@ -139,7 +139,7 @@ public class IntervalTree<O extends Object> {
         private static <O extends Object> String getString(Interval<O> interval, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + interval.toString() + "\n");
+            builder.append(prefix + getStringUtility(isTail) + interval.toString() + "\n");
             List<Interval<O>> children = new ArrayList<Interval<O>>();
             if (interval.left != null)
                 children.add(interval.left);
@@ -148,13 +148,17 @@ public class IntervalTree<O extends Object> {
             if (children.size() > 0) {
             	int size = children.size();
                 for (int i = 0; i < size - 1; i++)
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + getStringUtility(isTail), false));
                 if (children.size() > 0)
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString(children.get(children.size() - 1), prefix + getStringUtility(isTail), true));
             }
 
             return builder.toString();
         }
+    }
+    
+    private static String getStringUtility(boolean isTail) {
+    	return isTail ? "└── " : "├── ";
     }
 
     /**
