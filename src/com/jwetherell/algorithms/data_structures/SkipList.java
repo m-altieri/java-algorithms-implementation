@@ -130,20 +130,28 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
         Node<T> node = addValue(value);
         return (node!=null);
     }
+    
+    private boolean nullCheck(Node<T> node, T value) {
+    	return node == null || node.data.compareTo(value) == 0;
+    }
 
     private NodeLevelPair<T> getPredecessor(T value) {
         Node<T> node = head;
-        if (node==null) return null; 
-        if (node.data.compareTo(value)==0) return null;
+        if (nullCheck(node, value)) {
+        	return null;
+        }
 
         // Current node is not the node we are looking for; Keep moving down
         // until you find a node with a non-null "next" pointer.
         int level = node.getLevel();
         Node<T> next = node.getNext(level);
-        while (next==null) {
+        while (next == null) {
             // If next is null, move down
-            if (level>0) next = node.getNext(--level);
-            else break;
+            if (level > 0) {
+            	next = node.getNext(--level);
+            } else {
+            	break;
+            }
         }
 
         // Found a node with a next node OR I reached the bottom level
@@ -155,21 +163,27 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
                 return pair;
             } else if (comp>=1) {
                 // Found a node that's greater, move down a level
-                if (level>0) level--;
-                else return null;
-
+                if (level > 0) {
+                	level--;
+                } else {
+                	return null;
+                }
                 // Update the next pointer
                 next = node.getNext(level);
             } else {
                 // Next is less then the value we are looking for, keep moving to next.
                 node = next;
                 next = node.getNext(level);
-                while (next==null && level>0) {
+                while (getPredecessorUtility(next, level)) {
                     next = node.getNext(--level);
                 }
             }
         }
         return null;
+    }
+    
+    private boolean getPredecessorUtility(Node<T> next, int level) {
+    	return next == null && level > 0;
     }
 
     protected Node<T> getNode(T value) {

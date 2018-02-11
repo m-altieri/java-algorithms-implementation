@@ -163,6 +163,41 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
 
         return nodeToRemoved;
     }
+    
+    private void lesserOrGreaterLeftActions(int lesser, int greater, AVLNode<T> node) {
+    	if (lesser >= greater) {
+    		rotateRight(node);
+    		node.updateHeight();
+    		if (node.parent != null) {
+    			((AVLNode<T>) node.parent).updateHeight();
+    		}
+    	} else {
+    		rotateLeft(node.lesser);
+    		rotateRight(node);
+    		AVLNode<T> p = (AVLNode<T>) node.parent;
+    		if (p.lesser != null) ((AVLNode<T>) p.lesser).updateHeight();
+    		if (p.greater != null) ((AVLNode<T>) p.greater).updateHeight();
+    		p.updateHeight();
+    	}
+    }
+    
+    private void lesserOrGreaterRightActions(int lesser, int greater, AVLNode<T> node) {
+    	if (greater >= lesser) {
+            rotateLeft(node);
+            node.updateHeight();
+            if (node.parent != null) {
+                ((AVLNode<T>) node.parent).updateHeight();
+            }
+        } else {
+            rotateRight(node.greater);
+            rotateLeft(node);
+
+            AVLNode<T> p = (AVLNode<T>) node.parent;
+            if (p.lesser != null) ((AVLNode<T>) p.lesser).updateHeight();
+            if (p.greater != null) ((AVLNode<T>) p.greater).updateHeight();
+            p.updateHeight();
+        }
+    }
 
     /**
      * Balance the tree according to the AVL post-delete algorithm.
@@ -171,51 +206,20 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
      *            Root of tree to balance.
      */
     private void balanceAfterDelete(AVLNode<T> node) {
+    	
         int balanceFactor = node.getBalanceFactor();
-        if (balanceFactor == -2 || balanceFactor == 2) {
-            if (balanceFactor == -2) {
-                AVLNode<T> ll = (AVLNode<T>) node.lesser.lesser;
-                int lesser = (ll != null) ? ll.height : 0;
-                AVLNode<T> lr = (AVLNode<T>) node.lesser.greater;
-                int greater = (lr != null) ? lr.height : 0;
-                if (lesser >= greater) {
-                    rotateRight(node);
-                    node.updateHeight();
-                    if (node.parent != null)
-                        ((AVLNode<T>) node.parent).updateHeight();
-                } else {
-                    rotateLeft(node.lesser);
-                    rotateRight(node);
-
-                    AVLNode<T> p = (AVLNode<T>) node.parent;
-                    if (p.lesser != null)
-                        ((AVLNode<T>) p.lesser).updateHeight();
-                    if (p.greater != null)
-                        ((AVLNode<T>) p.greater).updateHeight();
-                    p.updateHeight();
-                }
-            } else if (balanceFactor == 2) {
-                AVLNode<T> rr = (AVLNode<T>) node.greater.greater;
-                int greater = (rr != null) ? rr.height : 0;
-                AVLNode<T> rl = (AVLNode<T>) node.greater.lesser;
-                int lesser = (rl != null) ? rl.height : 0;
-                if (greater >= lesser) {
-                    rotateLeft(node);
-                    node.updateHeight();
-                    if (node.parent != null)
-                        ((AVLNode<T>) node.parent).updateHeight();
-                } else {
-                    rotateRight(node.greater);
-                    rotateLeft(node);
-
-                    AVLNode<T> p = (AVLNode<T>) node.parent;
-                    if (p.lesser != null)
-                        ((AVLNode<T>) p.lesser).updateHeight();
-                    if (p.greater != null)
-                        ((AVLNode<T>) p.greater).updateHeight();
-                    p.updateHeight();
-                }
-            }
+        if (balanceFactor == -2) {
+            AVLNode<T> ll = (AVLNode<T>) node.lesser.lesser;
+            int lesser = ll != null ? ll.height : 0;
+            AVLNode<T> lr = (AVLNode<T>) node.lesser.greater;
+            int greater = lr != null ? lr.height : 0;
+            lesserOrGreaterLeftActions(lesser, greater, node);
+        } else if (balanceFactor == 2) {
+            AVLNode<T> rr = (AVLNode<T>) node.greater.greater;
+            int greater = rr != null ? rr.height : 0;
+            AVLNode<T> rl = (AVLNode<T>) node.greater.lesser;
+            int lesser = rl != null ? rl.height : 0;
+            lesserOrGreaterRightActions(lesser, greater, node);
         }
     }
 

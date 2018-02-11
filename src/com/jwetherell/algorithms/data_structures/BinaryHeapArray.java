@@ -276,24 +276,40 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 		// We shouldn't ever have a right node without a left in a heap
 		if (rightIndex != Integer.MIN_VALUE && leftIndex == Integer.MIN_VALUE) return false;
 
-		if (leftIndex != Integer.MIN_VALUE && leftIndex < size) {
+		if (minValueLeftCheck(leftIndex)) {
 			T left = this.array[leftIndex];
-			if ((type == Type.MIN && value.compareTo(left) < 0) 
-					|| (type == Type.MAX && value.compareTo(left) > 0)) {
+			if (typeLeftCheck(value, left)) {
 				return validateNode(leftIndex);
 			}
 			return false;
 		}
-		if (rightIndex != Integer.MIN_VALUE && rightIndex < size) {
+		if (minValueRightCheck(rightIndex)) {
 			T right = this.array[rightIndex];
-			if ((type == Type.MIN && value.compareTo(right) < 0)
-					|| (type == Type.MAX && value.compareTo(right) > 0)) {
+			if (typeRightCheck(value, right)) {
 				return validateNode(rightIndex);
 			}
 			return false;
 		}
 
 		return true;
+	}
+	
+	private boolean typeRightCheck(T value, T right) {
+		return (type == Type.MIN && value.compareTo(right) < 0)
+				|| (type == Type.MAX && value.compareTo(right) > 0);
+	}
+	
+	private boolean typeLeftCheck(T value, T left) {
+		return (type == Type.MIN && value.compareTo(left) < 0) 
+				|| (type == Type.MAX && value.compareTo(left) > 0);
+	}
+	
+	private boolean minValueRightCheck(int rightIndex) {
+		return rightIndex != Integer.MIN_VALUE && rightIndex < size;
+	}
+	
+	private boolean minValueLeftCheck(int leftIndex) {
+		return leftIndex != Integer.MIN_VALUE && leftIndex < size;
 	}
 
 	/**
