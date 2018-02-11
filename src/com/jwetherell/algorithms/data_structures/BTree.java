@@ -525,6 +525,44 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         if (root == null) return true;
         return validateNode(root);
     }
+    
+    private int rootCheck(int keySize, int childrenSize) {
+    	int res = 0;
+    	if (keySize > maxKeySize) {
+            // check max key size. root does not have a min key size
+            res = -1;
+        } else if (childrenSize == 0) {
+            // if root, no children, and keys are valid
+            res = 1;
+        } else if (childrenSize < 2) {
+            // root should have zero or at least two children
+            res = -1;
+        } else if (childrenSize > maxChildrenSize) {
+            res = -1;
+        }
+    	return res;
+    }
+    
+    private int nonRootCheck(int keySize, int childrenSize) {
+    	int res = 0;
+    	// non-root
+        if (keySize < minKeySize) {
+            res = -1;
+        } else if (keySize > maxKeySize) {
+            res = -1;
+        } else if (childrenSize == 0) {
+            res = 1;
+        } else if (keySize != (childrenSize - 1)) {
+            // If there are chilren, there should be one more child then
+            // keys
+            res = -1;
+        } else if (childrenSize < minChildrenSize) {
+            res = -1;
+        } else if (childrenSize > maxChildrenSize) {
+            res = -1;
+        }
+        return res;
+    }
 
     /**
      * Validate the node according to the B-Tree invariants.
@@ -546,35 +584,18 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         }
         int childrenSize = node.numberOfChildren();
         if (node.parent == null) {
-            // root
-            if (keySize > maxKeySize) {
-                // check max key size. root does not have a min key size
-                return false;
-            } else if (childrenSize == 0) {
-                // if root, no children, and keys are valid
-                return true;
-            } else if (childrenSize < 2) {
-                // root should have zero or at least two children
-                return false;
-            } else if (childrenSize > maxChildrenSize) {
-                return false;
-            }
+        	int res = rootCheck(keySize, childrenSize);
+        	if (res == 1) {
+        		return true;
+        	} else if (res == -1) {
+        		return false;
+        	}
         } else {
-            // non-root
-            if (keySize < minKeySize) {
-                return false;
-            } else if (keySize > maxKeySize) {
-                return false;
-            } else if (childrenSize == 0) {
-                return true;
-            } else if (keySize != (childrenSize - 1)) {
-                // If there are chilren, there should be one more child then
-                // keys
-                return false;
-            } else if (childrenSize < minChildrenSize) {
-                return false;
-            } else if (childrenSize > maxChildrenSize) {
-                return false;
+            int res = nonRootCheck(keySize, childrenSize);
+            if (res == 1) {
+            	return true;
+            } else if (res == -1) {
+            	return false;
             }
         }
 

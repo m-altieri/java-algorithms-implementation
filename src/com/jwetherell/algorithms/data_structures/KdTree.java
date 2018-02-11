@@ -415,6 +415,27 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
             collection.add((T) kdNode.id);
         return collection;
     }
+    
+    private static TreeSet<KdNode> resultsSelectiveAdd(Double nodeDistance, TreeSet<KdNode> results, KdNode lastNode, Double lastDistance, KdNode node, int K) {
+    	if (nodeDistance.compareTo(lastDistance) < 0) {
+            if (results.size() == K && lastNode != null)
+                results.remove(lastNode);
+            results.add(node);
+        } else if (nodeDistance.equals(lastDistance)) {
+            results.add(node);
+        } else if (results.size() < K) {
+            results.add(node);
+        }
+    	return results;
+    }
+    
+    private static boolean lesserCheck(KdNode lesser, Set<KdNode> examined) {
+    	return lesser != null && !examined.contains(lesser);
+    }
+    
+    private static boolean greaterCheck(KdNode greater, Set<KdNode> examined) {
+    	return greater != null && !examined.contains(greater);
+    }
 
     private static final <T extends KdTree.XYZPoint> void searchNode(T value, KdNode node, int K, TreeSet<KdNode> results, Set<KdNode> examined) {
         examined.add(node);
@@ -427,15 +448,8 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
             lastDistance = lastNode.id.euclideanDistance(value);
         }
         Double nodeDistance = node.id.euclideanDistance(value);
-        if (nodeDistance.compareTo(lastDistance) < 0) {
-            if (results.size() == K && lastNode != null)
-                results.remove(lastNode);
-            results.add(node);
-        } else if (nodeDistance.equals(lastDistance)) {
-            results.add(node);
-        } else if (results.size() < K) {
-            results.add(node);
-        }
+        results = resultsSelectiveAdd(nodeDistance, results, lastNode, lastDistance, node, K);
+        
         lastNode = results.last();
         lastDistance = lastNode.id.euclideanDistance(value);
 
@@ -445,48 +459,73 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
 
         // Search children branches, if axis aligned distance is less than
         // current distance
-        if (lesser != null && !examined.contains(lesser)) {
+        if (lesserCheck(lesser, examined)) {
             examined.add(lesser);
 
             double nodePoint = Double.MIN_VALUE;
             double valuePlusDistance = Double.MIN_VALUE;
-            if (axis == X_AXIS) {
-                nodePoint = node.id.x;
-                valuePlusDistance = value.x - lastDistance;
-            } else if (axis == Y_AXIS) {
-                nodePoint = node.id.y;
-                valuePlusDistance = value.y - lastDistance;
-            } else {
-                nodePoint = node.id.z;
-                valuePlusDistance = value.z - lastDistance;
-            }
+            
+            nodePoint = getNodePoint(axis, nodePoint, node);
+            valuePlusDistance = getValuePlusDistance(axis, valuePlusDistance, value, lastDistance);
+            
             boolean lineIntersectsCube = ((valuePlusDistance <= nodePoint) ? true : false);
 
             // Continue down lesser branch
             if (lineIntersectsCube)
                 searchNode(value, lesser, K, results, examined);
         }
-        if (greater != null && !examined.contains(greater)) {
+        if (greaterCheck(greater, examined)) {
             examined.add(greater);
 
             double nodePoint = Double.MIN_VALUE;
             double valuePlusDistance = Double.MIN_VALUE;
-            if (axis == X_AXIS) {
-                nodePoint = node.id.x;
-                valuePlusDistance = value.x + lastDistance;
-            } else if (axis == Y_AXIS) {
-                nodePoint = node.id.y;
-                valuePlusDistance = value.y + lastDistance;
-            } else {
-                nodePoint = node.id.z;
-                valuePlusDistance = value.z + lastDistance;
-            }
+            
+            nodePoint = getNodePoint(axis, nodePoint, node);
+            valuePlusDistance = getValuePlusDistance2(axis, valuePlusDistance, value, lastDistance);
+            
             boolean lineIntersectsCube = ((valuePlusDistance >= nodePoint) ? true : false);
 
             // Continue down greater branch
             if (lineIntersectsCube)
                 searchNode(value, greater, K, results, examined);
         }
+    }
+    
+    
+    
+    private static double getNodePoint(int axis, double nodePoint, KdNode node) {
+
+    	if (axis == X_AXIS) {
+            nodePoint = node.id.x;
+        } else if (axis == Y_AXIS) {
+            nodePoint = node.id.y;
+        } else {
+            nodePoint = node.id.z;
+        }
+    	return nodePoint;
+    }
+    
+    private static <T extends KdTree.XYZPoint> double getValuePlusDistance2(int axis, double valuePlusDistance, T value, Double lastDistance) {
+
+    	if (axis == X_AXIS) {
+            valuePlusDistance = value.x + lastDistance;
+        } else if (axis == Y_AXIS) {
+            valuePlusDistance = value.y + lastDistance;
+        } else {
+            valuePlusDistance = value.z + lastDistance;
+        }
+    	return valuePlusDistance;
+    }
+    
+    private static <T extends KdTree.XYZPoint> double getValuePlusDistance(int axis, double valuePlusDistance, T value, Double lastDistance) {
+    	if (axis == X_AXIS) {
+            valuePlusDistance = value.x - lastDistance;
+        } else if (axis == Y_AXIS) {
+            valuePlusDistance = value.y - lastDistance;
+        } else {
+            valuePlusDistance = value.z - lastDistance;
+        }
+    	return valuePlusDistance;
     }
 
     /** 
