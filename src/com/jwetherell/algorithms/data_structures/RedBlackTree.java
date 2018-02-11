@@ -96,6 +96,33 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         return nodeAdded;
     }
 
+    private boolean colorCheck(RedBlackNode<T> parent, RedBlackNode<T> uncle, boolean color1, boolean color2) {
+    	return parent.color == color1 && uncle.color == color2;
+    }
+    
+    private boolean greaterLesserCheck(RedBlackNode<T> node, RedBlackNode<T> parent, RedBlackNode<T> grandParent) {
+    	return node == parent.greater && parent == grandParent.lesser;
+    }
+    
+    private boolean lesserGreaterCheck(RedBlackNode<T> node, RedBlackNode<T> parent, RedBlackNode<T> grandParent) {
+    	return node == parent.lesser && parent == grandParent.greater;
+    }
+    
+    private boolean lesserLesserCheck(RedBlackNode<T> node, RedBlackNode<T> parent, RedBlackNode<T> grandParent) {
+    	return node == parent.lesser && parent == grandParent.lesser;
+    }
+    
+    private boolean greaterGreaterCheck(RedBlackNode<T> node, RedBlackNode<T> parent, RedBlackNode<T> grandParent) {
+    	return node == parent.greater && parent == grandParent.greater;
+    }
+    
+    private void setGrandParent(RedBlackNode<T> grandParent) {
+    	if (grandParent != null) {
+            grandParent.color = RED;
+            balanceAfterInsert(grandParent);
+        }
+    }
+    
     /**
      * Post insertion balancing algorithm.
      * 
@@ -121,25 +148,23 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
 
         RedBlackNode<T> grandParent = node.getGrandParent();
         RedBlackNode<T> uncle = node.getUncle(grandParent);
-        if (parent.color == RED && uncle.color == RED) {
+        if (colorCheck(parent, uncle, RED, RED)) {
             // Case 3 - If both the parent and the uncle are red, then both of
             // them can be repainted black and the grandparent becomes
             // red (to maintain property 5 (all paths from any given node to its
             // leaf nodes contain the same number of black nodes)).
             parent.color = BLACK;
             uncle.color = BLACK;
-            if (grandParent != null) {
-                grandParent.color = RED;
-                balanceAfterInsert(grandParent);
-            }
+            setGrandParent(grandParent);
+            
             return;
         }
 
-        if (parent.color == RED && uncle.color == BLACK) {
+        if (colorCheck(parent, uncle, RED, BLACK)) {
             // Case 4 - The parent is red but the uncle is black; also, the
             // current node is the right child of parent, and parent in turn
             // is the left child of its parent grandparent.
-            if (node == parent.greater && parent == grandParent.lesser) {
+            if (greaterLesserCheck(node, parent, grandParent)) {
                 // right-left
                 rotateLeft(parent);
  
@@ -147,7 +172,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
                 parent = (RedBlackNode<T>) node.parent;
                 grandParent = node.getGrandParent();
                 uncle = node.getUncle(grandParent);
-            } else if (node == parent.lesser && parent == grandParent.greater) {
+            } else if (lesserGreaterCheck(node, parent, grandParent)) {
                 // left-right
                 rotateRight(parent);
 
@@ -157,20 +182,29 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
                 uncle = node.getUncle(grandParent);
             }
         }
-
-        if (parent.color == RED && uncle.color == BLACK) {
+        
+        redBlackBalance(node, uncle, parent, grandParent);
+    }
+    
+    private void redBlackBalance(RedBlackNode<T> node, RedBlackNode<T> uncle, RedBlackNode<T> parent, RedBlackNode<T> grandParent) {
+    	if (colorCheck(parent, uncle, RED, BLACK)) {
             // Case 5 - The parent is red but the uncle is black, the
             // current node is the left child of parent, and parent is the
             // left child of its parent G.
             parent.color = BLACK;
             grandParent.color = RED;
-            if (node == parent.lesser && parent == grandParent.lesser) {
-                // left-left
-                rotateRight(grandParent);
-            } else if (node == parent.greater && parent == grandParent.greater) {
-                // right-right
-                rotateLeft(grandParent);
-            }
+            rotateRightDirection(node, parent, grandParent);
+        }
+    }
+    
+    private void rotateRightDirection(RedBlackNode<T> node, RedBlackNode<T> parent, RedBlackNode<T> grandParent) {
+
+        if (lesserLesserCheck(node, parent, grandParent)) {
+            // left-left
+            rotateRight(grandParent);
+        } else if (greaterGreaterCheck(node, parent, grandParent)) {
+            // right-right
+            rotateLeft(grandParent);
         }
     }
 

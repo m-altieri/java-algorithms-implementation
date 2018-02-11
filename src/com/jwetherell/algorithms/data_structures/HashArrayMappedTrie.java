@@ -45,7 +45,7 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
         byte newHeight = height;
         if (node instanceof KeyValueNode) {
             KeyValueNode<V> kvNode = (KeyValueNode<V>) node;
-            if (key==kvNode.key) {
+            if (key == kvNode.key) {
                 // Key already exists as key-value pair, replace value
                 kvNode.value = value;
                 return value;
@@ -59,13 +59,7 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
             ArrayNode newParent = new ArrayNode(parent, key, newHeight);
             newParent.parent = parent;
 
-            if (parent==null) {
-                // Only the root doesn't have a parent, so new root
-                root = newParent;
-            } else {
-                // Add the child to the parent in it's parent's position
-                parent.addChild(newParentPosition, newParent);
-            }
+            parent = addChildToParentIfNotNull(parent, newParent, newParentPosition);
 
             if (oldParentPosition != childPosition) {
                 // The easy case, the two children have different positions in parent
@@ -78,10 +72,8 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
             while (oldParentPosition == childPosition) {
                 // Handle the case when the new children map to same position.
                 newHeight++;
-                if (newHeight > MAX_DEPTH) {
-                    // We have found two keys which match exactly. I really don't know what to do.
-                    throw new MatchingKeysException();
-                }
+                throwExceptionIfTooHigh(newHeight);
+                
                 newParentPosition = getPosition(newHeight-1, key);
                 ArrayNode newParent2 = new ArrayNode(newParent, key, newHeight);
                 newParent.addChild(newParentPosition, newParent2);
@@ -111,6 +103,24 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
             return put(arrayRoot, child, (byte)(newHeight+1), key, value);
         }
         return null;
+    }
+    
+    private ArrayNode addChildToParentIfNotNull(ArrayNode parent, ArrayNode newParent, int newParentPosition) {
+    	if (parent == null) {
+            // Only the root doesn't have a parent, so new root
+            root = newParent;
+        } else {
+            // Add the child to the parent in it's parent's position
+            parent.addChild(newParentPosition, newParent);
+        }
+    	return parent;
+    }
+    
+    private void throwExceptionIfTooHigh(byte newHeight) {
+    	if (newHeight > MAX_DEPTH) {
+            // We have found two keys which match exactly. I really don't know what to do.
+            throw new MatchingKeysException();
+        }
     }
 
     /**

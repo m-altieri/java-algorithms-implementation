@@ -158,35 +158,63 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 		}
 	}
 
+	private boolean heapDownCheck1(T left, T right, T value) {
+		return (type == Type.MIN && left != null && right != null && value.compareTo(left) > 0 && value.compareTo(right) > 0)
+		|| (type == Type.MAX && left != null && right != null && value.compareTo(left) < 0 && value.compareTo(right) < 0);
+	}
+	
+	private boolean heapDownCheck2(T left, T right, T value) {
+		return (type == Type.MIN && right != null && value.compareTo(right) > 0)
+				|| (type == Type.MAX && right != null && value.compareTo(right) < 0);
+	}
+	
+	private boolean rightGreaterThanLeft(T left, T right) {
+		return ((right != null) && type == Type.MIN && (right.compareTo(left) < 0)) || ((type == Type.MAX && right.compareTo(left) > 0));
+	}
+	
+	private boolean leftGreaterThanRight(T left, T right) {
+		return (left!=null) && 
+				((type == Type.MIN && left.compareTo(right) < 0) || (type == Type.MAX && left.compareTo(right) > 0));
+	}
+	
+	private T getLeft(int leftIndex) {
+		return leftIndex != Integer.MIN_VALUE && leftIndex < this.size ? this.array[leftIndex] : null;
+	}
+	
+	private T getRight(int rightIndex) {
+		return rightIndex != Integer.MIN_VALUE && rightIndex < this.size ? this.array[rightIndex] : null;
+	}
+	
+	private boolean leftGreaterThanNode(T left, T value) {
+		return (type == Type.MIN && left != null && value.compareTo(left) > 0)
+		|| (type == Type.MAX && left != null && value.compareTo(left) < 0);	
+	}
+	
+	private boolean nullCheck(T left, T right, T value) {
+		return value == null || (left == null && right == null);
+	}
 	protected void heapDown(int index) {
+		
 		T value = this.array[index];
-		if (value==null)
-			return;
 
 		int leftIndex = getLeftIndex(index);
 		int rightIndex = getRightIndex(index);
-		T left = (leftIndex != Integer.MIN_VALUE && leftIndex < this.size) ? this.array[leftIndex] : null;
-		T right = (rightIndex != Integer.MIN_VALUE && rightIndex < this.size) ? this.array[rightIndex] : null;
+		T left = getLeft(leftIndex);
+		T right = getRight(rightIndex);
 
-		if (left == null && right == null) {
-			// Nothing to do here
+		if (nullCheck(left, right, value)) {
 			return;
 		}
 
 		T nodeToMove = null;
 		int nodeToMoveIndex = -1;
-		if ((type == Type.MIN && left != null && right != null && value.compareTo(left) > 0 && value.compareTo(right) > 0)
-				|| (type == Type.MAX && left != null && right != null && value.compareTo(left) < 0 && value.compareTo(right) < 0)) {
+		if (heapDownCheck1(left, right, value)) {
 			// Both children are greater/lesser than node
-			if ((right!=null) && 
-					((type == Type.MIN && (right.compareTo(left) < 0)) || ((type == Type.MAX && right.compareTo(left) > 0)))
-					) {
+			if (rightGreaterThanLeft(left, right)) {
 				// Right is greater/lesser than left
 				nodeToMove = right;
 				nodeToMoveIndex = rightIndex;
-			} else if ((left!=null) && 
-					((type == Type.MIN && left.compareTo(right) < 0) || (type == Type.MAX && left.compareTo(right) > 0))
-					) {
+			} else if (leftGreaterThanRight(left, right)) {
 				// Left is greater/lesser than right
 				nodeToMove = left;
 				nodeToMoveIndex = leftIndex;
@@ -195,15 +223,11 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 				nodeToMove = right;
 				nodeToMoveIndex = rightIndex;
 			}
-		} else if ((type == Type.MIN && right != null && value.compareTo(right) > 0)
-				|| (type == Type.MAX && right != null && value.compareTo(right) < 0)
-				) {
+		} else if (heapDownCheck2(left, right, value)) {
 			// Right is greater/lesser than node
 			nodeToMove = right;
 			nodeToMoveIndex = rightIndex;
-		} else if ((type == Type.MIN && left != null && value.compareTo(left) > 0)
-				|| (type == Type.MAX && left != null && value.compareTo(left) < 0)
-				) {
+		} else if (leftGreaterThanNode(left, value)) {
 			// Left is greater/lesser than node
 			nodeToMove = left;
 			nodeToMoveIndex = leftIndex;

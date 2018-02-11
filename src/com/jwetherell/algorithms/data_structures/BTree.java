@@ -256,6 +256,26 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         Node<T> node = getNode(value);
         return (node != null);
     }
+    
+    private Node<T> getNodeUtility1(Node<T> node) {
+    	if (node.numberOfChildren() > 0)
+            node = node.getChild(0);
+        else
+            node = null;
+    	return node;
+    }
+    
+    private Node<T> getNodeUtility2(Node<T> node, int numberOfKeys) {
+    	if (node.numberOfChildren() > numberOfKeys)
+            node = node.getChild(numberOfKeys);
+        else
+            node = null;
+    	return node;
+    }
+    
+    private boolean getNodeCheck(T currentValue, T value, T nextValue) {
+    	return currentValue.compareTo(value) < 0 && nextValue.compareTo(value) > 0;
+    }
 
     /**
      * Get the node with value.
@@ -269,10 +289,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
         while (node != null) {
             T lesser = node.getKey(0);
             if (value.compareTo(lesser) < 0) {
-                if (node.numberOfChildren() > 0)
-                    node = node.getChild(0);
-                else
-                    node = null;
+                node = getNodeUtility1(node);
                 continue;
             }
 
@@ -280,10 +297,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
             int last = numberOfKeys - 1;
             T greater = node.getKey(last);
             if (value.compareTo(greater) > 0) {
-                if (node.numberOfChildren() > numberOfKeys)
-                    node = node.getChild(numberOfKeys);
-                else
-                    node = null;
+                node = getNodeUtility2(node, numberOfKeys);
                 continue;
             }
 
@@ -296,11 +310,12 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
                 int next = i + 1;
                 if (next <= last) {
                     T nextValue = node.getKey(next);
-                    if (currentValue.compareTo(value) < 0 && nextValue.compareTo(value) > 0) {
+                    if (getNodeCheck(currentValue, value, nextValue)) {
                         if (next < node.numberOfChildren()) {
                             node = node.getChild(next);
                             break;
                         }
+                        
                         return null;
                     }
                 }
