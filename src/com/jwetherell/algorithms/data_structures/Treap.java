@@ -94,24 +94,13 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
         while (parent != null && current.priority > parent.priority) {
             Node<T> grandParent = parent.parent;
             if (grandParent != null) {
-                if (grandParent.greater != null && grandParent.greater == parent) {
-                    // My parent is my grandparents greater branch
-                    grandParent.greater = current;
-                    current.parent = grandParent;
-                } else if (grandParent.lesser != null && grandParent.lesser == parent) {
-                    // My parent is my grandparents lesser branch
-                    grandParent.lesser = current;
-                    current.parent = grandParent;
-                } else {
-                    throw new UnrelatedGrandparentNodeException();
-                }
-                current.parent = grandParent;
+                heapifyUtiity(grandParent, parent, current);
             } else {
                 root = current;
                 root.parent = null;
             }
 
-            if (parent.lesser != null && parent.lesser == current) {
+            if (lesserNullCheck(parent, current)) {
                 // LEFT
                 parent.lesser = null;
 
@@ -126,7 +115,7 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
                     parent.lesser = lost;
                     lost.parent = parent;
                 }
-            } else if (parent.greater != null && parent.greater == current) {
+            } else if (greaterNullCheck(parent, current)) {
                 // RIGHT
                 parent.greater = null;
 
@@ -149,8 +138,33 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
             parent = (TreapNode<T>) current.parent;
         }
     }
+    
+    private boolean greaterNullCheck(TreapNode<T> parent, TreapNode<T> current) {
+    	return parent.greater != null && parent.greater == current;
+    }
+    
+    private boolean lesserNullCheck(TreapNode<T> parent, TreapNode<T> current) {
+    	return parent.lesser != null && parent.lesser == current;
+    }
 
-    /**
+    private void heapifyUtiity(com.jwetherell.algorithms.data_structures.BinarySearchTree.Node<T> grandParent,
+			TreapNode<T> parent, TreapNode<T> current) {
+		
+    	if (grandParent.greater != null && grandParent.greater == parent) {
+            // My parent is my grandparents greater branch
+            grandParent.greater = current;
+            current.parent = grandParent;
+        } else if (grandParent.lesser != null && grandParent.lesser == parent) {
+            // My parent is my grandparents lesser branch
+            grandParent.lesser = current;
+            current.parent = grandParent;
+        } else {
+            throw new UnrelatedGrandparentNodeException();
+        }
+        current.parent = grandParent;
+	}
+
+	/**
      * {@inheritDoc}
      */
     @Override

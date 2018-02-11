@@ -109,6 +109,18 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         super();
         root = createNode(list, k, 0);
     }
+    
+    private static void conditionalSort(int axis, List<XYZPoint> list, 
+    		Comparator<XYZPoint> compX, Comparator<XYZPoint> compY, Comparator<XYZPoint> compZ) {
+    	
+    	if (axis == X_AXIS) {
+    		Collections.sort(list, compX);
+    	} else if (axis == Y_AXIS) {
+    		Collections.sort(list, compY);
+    	} else {
+    		Collections.sort(list, compZ);
+    	}
+    }
 
     /**
      * Creates node from list of XYZPoints.
@@ -126,12 +138,7 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
             return null;
 
         int axis = depth % theK;
-        if (axis == X_AXIS)
-            Collections.sort(list, X_COMPARATOR);
-        else if (axis == Y_AXIS)
-            Collections.sort(list, Y_COMPARATOR);
-        else
-            Collections.sort(list, Z_COMPARATOR);
+        conditionalSort(axis, list, X_COMPARATOR, Y_COMPARATOR, Z_COMPARATOR);
 
         KdNode node = null;
         List<XYZPoint> less = new ArrayList<XYZPoint>(list.size());
@@ -153,18 +160,31 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
                 }
             }
 
-            if ((medianIndex-1 >= 0) && less.size() > 0) {
-                node.lesser = createNode(less, theK, depth + 1);
-                node.lesser.parent = node;
-            }
-
-            if ((medianIndex <= list.size()-1) && more.size() > 0) {
-                node.greater = createNode(more, theK, depth + 1);
-                node.greater.parent = node;
-            }
+            node.lesser = getLesser(medianIndex, less, node, theK, depth);
+            node.greater = getGreater(medianIndex, list, more, node, theK, depth);            
         }
 
         return node;
+    }
+    
+    private static KdNode getGreater(int medianIndex, List<XYZPoint> list, List<XYZPoint> more, KdNode node,
+    		int theK, int depth) {
+    
+    	if ((medianIndex <= list.size()-1) && more.size() > 0) {
+            node.greater = createNode(more, theK, depth + 1);
+            node.greater.parent = node;
+        }
+    	return node.greater;
+    }
+    
+    private static KdNode getLesser(int medianIndex, List<XYZPoint> less, KdNode node,
+    		int theK, int depth) {
+    	
+    	if ((medianIndex - 1 >= 0) && less.size() > 0) {
+    		node.lesser = createNode(less, theK, depth + 1);
+    		node.lesser.parent = node;
+    	}
+    	return node.lesser;
     }
 
     /**
@@ -257,6 +277,14 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         }
     }
 
+    private boolean nullCheck(T value) {
+    	return value == null || root == null || getNode(this, value) == null;
+    }
+    
+    private boolean removeUtility(KdNode parent, KdNode node) {
+    	return parent.lesser != null && node.equals(parent.lesser);
+    }
+    
     /**
      * Removes first occurrence of value in the tree.
      *
@@ -265,16 +293,15 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
      * @return True if value was removed from the tree.
      */
     public boolean remove(T value) {
-        if (value == null || root == null)
-            return false;
 
         KdNode node = getNode(this, value);
-        if (node == null)
-            return false;
-
+    	if (nullCheck(value)) {
+    		return false;
+    	}
+    	
         KdNode parent = node.parent;
         if (parent != null) {
-            if (parent.lesser != null && node.equals(parent.lesser)) {
+            if (removeUtility(parent, node)) {
                 List<XYZPoint> nodes = getTree(node);
                 if (nodes.size() > 0) {
                     parent.lesser = createNode(nodes, node.k, node.depth);
@@ -298,13 +325,17 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
         } else {
             // root
             List<XYZPoint> nodes = getTree(node);
-            if (nodes.size() > 0)
-                root = createNode(nodes, node.k, node.depth);
-            else
-                root = null;
+            putRoot(nodes, node);
         }
 
         return true;
+    }
+    
+    private void putRoot(List<XYZPoint> nodes, KdNode node) {
+    	if (nodes.size() > 0)
+            root = createNode(nodes, node.k, node.depth);
+        else
+            root = null;
     }
 
     /**
@@ -813,13 +844,7 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
                 builder.append(prefix + getStringTailUtility(isTail) + "depth=" + node.depth + " id=" + node.id + "\n");
             }
             List<KdNode> children = null;
-            if (node.lesser != null || node.greater != null) {
-                children = new ArrayList<KdNode>(2);
-                if (node.lesser != null)
-                    children.add(node.lesser);
-                if (node.greater != null)
-                    children.add(node.greater);
-            }
+
             children = initialize(node, children);
             if (children != null) {
             	int size = children.size();
