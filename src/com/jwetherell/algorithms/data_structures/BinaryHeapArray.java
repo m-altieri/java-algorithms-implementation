@@ -361,10 +361,30 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 			StringBuilder builder = new StringBuilder();
 
 			T value = tree.array[index];
-			builder.append(prefix + (isTail ? "└── " : "├── ") + value + "\n");
+			builder.append(prefix + getStringTailUtility(isTail) + value + "\n");
 			List<Integer> children = null;
+			
+			children = initialize(tree, children, index);
+			
+			if (children != null) {
+				int size = children.size();
+				for (int i = 0; i < size - 1; i++) {
+					builder.append(getString(tree, children.get(i), prefix + getStringTailUtility2(isTail), false));
+				}
+				if (children.size() >= 1) {
+					builder.append(getString(tree, children.get(children.size() - 1), prefix
+							+ getStringTailUtility2(isTail), true));
+				}
+			}
+
+			return builder.toString();
+		}
+		
+		private static <T extends Comparable<T>> List<Integer> initialize(BinaryHeapArray<T> tree, List<Integer> children, int index) {
+
 			int leftIndex = getLeftIndex(index);
 			int rightIndex = getRightIndex(index);
+			
 			if (leftIndex != Integer.MIN_VALUE || rightIndex != Integer.MIN_VALUE) {
 				children = new ArrayList<Integer>(2);
 				if (leftIndex != Integer.MIN_VALUE && leftIndex < tree.size) {
@@ -374,18 +394,15 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 					children.add(rightIndex);
 				}
 			}
-			if (children != null) {
-				int size = children.size();
-				for (int i = 0; i < size - 1; i++) {
-					builder.append(getString(tree, children.get(i), prefix + (isTail ? "    " : "│   "), false));
-				}
-				if (children.size() >= 1) {
-					builder.append(getString(tree, children.get(children.size() - 1), prefix
-							+ (isTail ? "    " : "│   "), true));
-				}
-			}
-
-			return builder.toString();
+			return children;
+		}
+		
+		private static String getStringTailUtility(boolean isTail) {
+			return isTail ? "└── " : "├── ";
+		}
+		
+		private static String getStringTailUtility2(boolean isTail) {
+			return isTail ? "    " : "│   ";
 		}
 	}
 

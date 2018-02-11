@@ -240,15 +240,15 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
     }
 
     private static <V> boolean validate(ArrayNode parent, ArrayNode node) {
-        if (parent!=null) {
-            if (parent.key != (node.parent.key)) return false;
-            if (parent.height+1 != node.height) return false;
-        }
+    	
+    	boolean res = true;
+    	
+    	res = validateNull(parent, node);
 
         int children = 0;
-        for (int i=0; i<node.children.length; i++) {
+        for (int i = 0; i < node.children.length; i++) {
             Node child = node.children[i];
-            if (child!=null) {
+            if (child != null) {
                 children++;
                 if (child instanceof KeyValueNode) {
                     KeyValueNode<V> kvChild = (KeyValueNode<V>) child;
@@ -261,11 +261,22 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
                 }
             }
         }
-        boolean result = (children==node.getNumberOfChildren());
-        if (!result) {
-            return false;
+        res &= (children==node.getNumberOfChildren());
+        
+        return res;
+    }
+    
+    private static boolean validateNull(ArrayNode parent, ArrayNode node) {
+    	boolean res = true;
+    	if (parent != null) {
+            if (parent.key != (node.parent.key)) {
+            	res = false;
+            }
+            if (parent.height+1 != node.height) {
+            	res = false;
+            }
         }
-        return true;
+    	return res;
     }
 
     /**
@@ -472,11 +483,11 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
             if (node instanceof KeyValueNode) {
                 KeyValueNode<V> kvNode = (KeyValueNode<V>) node;
                 int position = getPosition(height,kvNode.key);
-                builder.append(prefix + (isTail ? "└── " : "├── ") + ((parent==null)?null:toBinaryString(position)) + "=" + toBinaryString(kvNode.key) + "=" + kvNode.value + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + getStringNullUtility(parent, position) + "=" + toBinaryString(kvNode.key) + "=" + kvNode.value + "\n");
             } else {
                 ArrayNode arrayNode = (ArrayNode) node;
                 int position = (arrayNode.parent==null)?-1:getPosition(height,arrayNode.key);
-                builder.append(prefix + (isTail ? "└── " : "├── ") + ((parent==null)?null:toBinaryString(position)) + " height=" + ((height<0)?null:height) + " bitmap=" + toBinaryString(arrayNode.bitmap) + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + getStringNullUtility(parent, position) + " height=" + ((height<0)?null:height) + " bitmap=" + toBinaryString(arrayNode.bitmap) + "\n");
                 List<Node> children = new LinkedList<Node>();
                 for (int i=0; i<MAX_BITS; i++) {
                     Node child = arrayNode.getChild(i);
@@ -484,13 +495,25 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
                 }
                 int size = children.size();
                 for (int i = 0; i < (size - 1); i++) {
-                    builder.append(getString(arrayNode, children.get(i), height+1, prefix+(isTail ? "    " : "│   "), false));
+                    builder.append(getString(arrayNode, children.get(i), height + 1, prefix + getStringTailUtility2(isTail), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString(arrayNode, children.get(children.size()-1), height+1, prefix+(isTail ? "    " : "│   "), true));
+                    builder.append(getString(arrayNode, children.get(children.size() - 1), height + 1, prefix + getStringTailUtility2(isTail), true));
                 }
             }
             return builder.toString();
+        }
+        
+        private static String getStringNullUtility(Node parent, int position) {
+        	return (parent==null)?null:toBinaryString(position);
+        }
+        
+        private static String getStringTailUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
+        }
+        
+        private static String getStringTailUtility2(boolean isTail) {
+        	return isTail ? "    " : "│   ";
         }
     }
 

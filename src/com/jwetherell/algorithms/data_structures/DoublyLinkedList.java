@@ -52,6 +52,22 @@ public class DoublyLinkedList<T> implements IList<T> {
 		size++;
 		return true;
 	}
+	
+	private Node<T> findNode(T value) {
+		Node<T> node = head;
+		while (node != null && (!node.value.equals(value))) {
+			node = node.next;
+		}
+		return node;
+	}
+	
+	private Node<T> prevIfTail(Node<T> node) {
+		if (node.equals(tail)) {
+			return node.prev;
+		} else {
+			return tail;
+		}
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -59,16 +75,13 @@ public class DoublyLinkedList<T> implements IList<T> {
 	@Override
 	public boolean remove(T value) {
 		// Find the node
-		Node<T> node = head;
-		while (node != null && (!node.value.equals(value))) {
-			node = node.next;
-		}
+		Node<T> node = findNode(value);
+		
 		if (node == null)
 			return false;
 
 		// Update the tail, if needed
-		if (node.equals(tail))
-			tail = node.prev;
+		tail = prevIfTail(node);
 
 		Node<T> prev = node.prev;
 		Node<T> next = node.next;

@@ -807,10 +807,10 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
                 String side = "left";
                 if (node.parent.greater != null && node.id.equals(node.parent.greater.id))
                     side = "right";
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "[" + side + "] " + "depth=" + node.depth + " id="
+                builder.append(prefix + getStringTailUtility(isTail) + "[" + side + "] " + "depth=" + node.depth + " id="
                         + node.id + "\n");
             } else {
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "depth=" + node.depth + " id=" + node.id + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + "depth=" + node.depth + " id=" + node.id + "\n");
             }
             List<KdNode> children = null;
             if (node.lesser != null || node.greater != null) {
@@ -820,18 +820,42 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
                 if (node.greater != null)
                     children.add(node.greater);
             }
+            children = initialize(node, children);
             if (children != null) {
             	int size = children.size();
                 for (int i = 0; i < size - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + getStringTailUtility2(isTail), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "),
+                    builder.append(getString(children.get(children.size() - 1), prefix + getStringTailUtility2(isTail),
                             true));
                 }
             }
+            
+           
 
             return builder.toString();
+        }
+        
+        private static List<KdNode> initialize(KdNode node, List<KdNode> children) {
+        	if (node.lesser != null || node.greater != null) {
+        		children = new ArrayList<KdNode>(2);
+        		if (node.lesser != null) {
+        			children.add(node.lesser);
+        		}
+        		if (node.greater != null) {
+        			children.add(node.greater);
+        		}
+        	}
+        	return children;
+        }
+        
+        private static String getStringTailUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
+        }
+        
+        private static String getStringTailUtility2(boolean isTail) {
+        	return isTail ? "    " : "│   ";
         }
     }
 }

@@ -71,16 +71,15 @@ public class SinglyLinkedList<T> implements IList<T> {
 		// Update the tail, if needed
 		if (node.equals(tail)) {
 			tail = prev;
-			if (prev != null)
-				prev.next = null;
+			prev = prevNullCheck(prev);
 		}
 
 		Node<T> next = node.next;
-		if (prev != null && next != null) {
+		if (removeCheck1(prev, next)) {
 			prev.next = next;
-		} else if (prev != null && next == null) {
+		} else if (removeCheck2(prev, next)) {
 			prev.next = null;
-		} else if (prev == null && next != null) {
+		} else if (removeCheck3(prev, next)) {
 			// Node is the head
 			head = next;
 		} else {
@@ -90,6 +89,25 @@ public class SinglyLinkedList<T> implements IList<T> {
 
 		size--;
 		return true;
+	}
+	
+	private Node<T> prevNullCheck(Node<T> prev) {
+		if (prev != null) {
+			prev.next = null;
+		}
+		return prev;
+	}
+	
+	private boolean removeCheck1(Node<T> prev, Node<T> next) {
+		return prev != null && next != null;
+	}
+	
+	private boolean removeCheck2(Node<T> prev, Node<T> next) {
+		return prev != null && next == null;
+	}
+	
+	private boolean removeCheck3(Node<T> prev, Node<T> next) {
+		return prev == null && next != null;
 	}
 
 	/**

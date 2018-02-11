@@ -689,29 +689,43 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
                 String side = "left";
                 if (node.equals(node.parent.greater))
                     side = "right";
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + side + ") " + node.id + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + "(" + side + ") " + node.id + "\n");
             } else {
-                builder.append(prefix + (isTail ? "└── " : "├── ") + node.id + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + node.id + "\n");
             }
             List<Node<T>> children = null;
-            if (node.lesser != null || node.greater != null) {
+            children = initialize(node, children);
+            
+            if (children != null) {
+            	int size = children.size();
+                for (int i = 0; i < size - 1; i++) {
+                    builder.append(getString(children.get(i), prefix + getStringTailUtility2(isTail), false));
+                }
+                if (size >= 1) {
+                    builder.append(getString(children.get(children.size() - 1), prefix + getStringTailUtility2(isTail), true));
+                }
+            }
+
+            return builder.toString();
+        }
+        
+        private static <T extends Comparable<T>> List<Node<T>> initialize(Node<T> node, List<Node<T>> children) {
+        	if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<Node<T>>(2);
                 if (node.lesser != null)
                     children.add(node.lesser);
                 if (node.greater != null)
                     children.add(node.greater);
             }
-            if (children != null) {
-            	int size = children.size();
-                for (int i = 0; i < size - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
-                }
-                if (size >= 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
-                }
-            }
-
-            return builder.toString();
+        	return children;
+        }
+        
+        private static String getStringTailUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
+        }
+        
+        private static String getStringTailUtility2(boolean isTail) {
+        	return isTail ? "    " : "│   ";
         }
     }
 

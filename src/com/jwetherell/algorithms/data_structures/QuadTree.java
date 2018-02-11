@@ -986,26 +986,39 @@ public abstract class QuadTree<G extends XYPoint> {
         private static <T extends XYPoint> String getString(QuadNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + " node={" + node.toString() + "}\n");
+            builder.append(prefix + getStringTailUtility(isTail) + " node={" + node.toString() + "}\n");
             List<QuadNode<T>> children = null;
             if (node.northWest != null || node.northEast != null || node.southWest != null || node.southEast != null) {
                 children = new ArrayList<QuadNode<T>>(4);
-                if (node.northWest != null) children.add(node.northWest);
-                if (node.northEast != null) children.add(node.northEast);
-                if (node.southWest != null) children.add(node.southWest);
-                if (node.southEast != null) children.add(node.southEast);
+                children = addDirections(children, node);
             }
             if (children != null) {
             	int size = children.size();
                 for (int i = 0; i < size - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + getStringTailUtility2(isTail), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString(children.get(children.size() - 1), prefix + getStringTailUtility2(isTail), true));
                 }
             }
 
             return builder.toString();
+        }
+        
+        private static <T extends XYPoint> List<QuadNode<T>> addDirections(List<QuadNode<T>> children, QuadNode<T> node) {
+        	if (node.northWest != null) children.add(node.northWest);
+            if (node.northEast != null) children.add(node.northEast);
+            if (node.southWest != null) children.add(node.southWest);
+            if (node.southEast != null) children.add(node.southEast);
+            return children;
+        }
+        
+        private static String getStringTailUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
+        }
+        
+        private static String getStringTailUtility2(boolean isTail) {
+        	return isTail ? "    " : "│   ";
         }
     }
 }

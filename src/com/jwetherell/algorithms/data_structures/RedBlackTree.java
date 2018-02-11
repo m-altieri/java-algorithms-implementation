@@ -406,44 +406,49 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
      */
     @Override
     protected boolean validateNode(Node<T> node) {
+    	
+    	boolean res = true;
+    	
         RedBlackNode<T> rbNode = (RedBlackNode<T>) node;
         RedBlackNode<T> lesser = (RedBlackNode<T>) rbNode.lesser;
         RedBlackNode<T> greater = (RedBlackNode<T>) rbNode.greater;
 
-        if (rbNode.isLeaf() && rbNode.color == RED) {
-            // Leafs should not be red
-            return false;
-        }
+        // Leafs should not be red
+        res &= !rbNode.isLeaf() || !rbNode.color == RED;
 
-        if (rbNode.color == RED) {
-            // You should not have two red nodes in a row
-            if (lesser.color == RED) return false;
-            if (greater.color == RED) return false;
-        }
-
-        if (!lesser.isLeaf()) {
-            // Check BST property
-            boolean lesserCheck = lesser.id.compareTo(rbNode.id) <= 0;
-            if (!lesserCheck) 
-                return false;
-            // Check red-black property
-            lesserCheck = this.validateNode(lesser);
-            if (!lesserCheck) 
-                return false;
-        }
+        res &= notTwoRedInARow(rbNode, lesser, greater);
+        
+        res &= lesserChecks(rbNode, lesser);
 
         if (!greater.isLeaf()) {
             // Check BST property
-            boolean greaterCheck = greater.id.compareTo(rbNode.id) > 0;
-            if (!greaterCheck) 
-                return false;
+            res &= greater.id.compareTo(rbNode.id) > 0;
             // Check red-black property
-            greaterCheck = this.validateNode(greater);
-            if (!greaterCheck) 
-                return false;
+            res &= this.validateNode(greater);
         }
 
-        return true;
+        return res;
+    }
+    
+    private boolean lesserChecks(RedBlackNode<T> rbNode, RedBlackNode<T> lesser) {
+    	boolean res = true;
+    	if (!lesser.isLeaf()) {
+            // Check BST property
+            res &= lesser.id.compareTo(rbNode.id) <= 0;
+            // Check red-black property
+            res &= this.validateNode(lesser);
+        }
+    	return res;
+    }
+    
+    private boolean notTwoRedInARow(RedBlackNode<T> node, RedBlackNode<T> lesser, RedBlackNode<T> greater) {
+    	boolean res = true;
+    	if (node.color == RED) {
+            // You should not have two red nodes in a row
+            if (lesser.color == RED) res = false;
+            if (greater.color == RED) res = false;
+        }
+    	return res;
     }
 
     /**
@@ -539,9 +544,9 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         private static <T extends Comparable<T>> String getString(RedBlackNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + ((node.color == RED) ? "RED" : "BLACK") + ") " + node.id
-                           + " [parent=" + ((node.parent!=null)?node.parent.id:"NULL") 
-                           + " grand-parent=" + ((node.parent!=null && node.parent.parent!=null)?node.parent.parent.id:"NULL")
+            builder.append(prefix + getStringTailUtility(isTail) + "(" + getStringColorUtility(node) + ") " + node.id
+                           + " [parent=" + getStringParentUtility(node) 
+                           + " grand-parent=" + getStringGrandparentUtility(node)
                            + "]\n"
             );
             List<Node<T>> children = null;
@@ -555,14 +560,34 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
             if (children != null) {
             	int size = children.size();
                 for (int i = 0; i < size - 1; i++) {
-                    builder.append(getString((RedBlackNode<T>) children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString((RedBlackNode<T>) children.get(i), prefix + getStringTail2Utility(isTail), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString((RedBlackNode<T>) children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString((RedBlackNode<T>) children.get(children.size() - 1), prefix + getStringTail2Utility(isTail), true));
                 }
             }
 
             return builder.toString();
+        }
+        
+        private static <T extends Comparable<T>> String getStringGrandparentUtility(RedBlackNode<T> node) {
+        	return (String) ((node.parent != null && node.parent.parent != null) ? node.parent.parent.id : "NULL");
+        }
+        
+        private static <T extends Comparable<T>> String getStringParentUtility(RedBlackNode<T> node) {
+        	return (String) (node.parent != null ? node.parent.id : "NULL");
+        }
+        
+        private static <T extends Comparable<T>> String getStringColorUtility(RedBlackNode<T> node) {
+        	return (node.color == RED) ? "RED" : "BLACK";
+        }
+        
+        private static String getStringTailUtility(boolean isTail) {
+        	return isTail ? "└── " : "├── ";
+        }
+        
+        private static String getStringTail2Utility(boolean isTail) {
+        	return isTail ? "    " : "│   ";
         }
     }
 

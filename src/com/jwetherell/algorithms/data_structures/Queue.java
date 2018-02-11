@@ -187,10 +187,7 @@ public interface Queue<T> extends IQueue<T> {
                 realLast = lastIndex%array.length;
             for (int i=0; i<array.length; i++) {
                 T t = array[i];
-                if ((realFirst==realLast) || 
-                    (realFirst<realLast && (i>=realFirst && i<realLast)) || 
-                    (realLast<realFirst && (i<realLast || i>=realFirst))
-                ) {
+                if (validateCheck(realFirst, realLast, i)) {
                     if (t==null)
                         return false;
                     localSize++;
@@ -200,6 +197,12 @@ public interface Queue<T> extends IQueue<T> {
                 }
             }
             return (localSize==size());
+        }
+        
+        private boolean validateCheck(int realFirst, int realLast, int i) {
+        	return (realFirst == realLast) || 
+        			(realFirst < realLast && (i >= realFirst && i < realLast)) || 
+            (realLast < realFirst && (i < realLast || i >= realFirst));
         }
 
         /**

@@ -35,11 +35,11 @@ public class LowestCommonAncestor<T> {
      * @throws NodesNotInSameTreeException if nodes don't have common root
      */
     public static <S> TreeNode<S> lowestCommonAncestor(TreeNode<S> node1, TreeNode<S> node2) throws NodesNotInSameTreeException {
-        if (node1 == node2) 
+        if (node1 == node2) {
             return node1;
-        else if (node1.depth < node2.depth) 
+        } else if (node1.depth < node2.depth) {
             return lowestCommonAncestor(node2, node1);
-        else if (node1.depth > node2.depth) {
+        } else if (node1.depth > node2.depth) {
             int diff = node1.depth - node2.depth;
             int jump = 0;
             while (diff > 0) {
@@ -50,22 +50,25 @@ public class LowestCommonAncestor<T> {
             }
             return lowestCommonAncestor(node1, node2);
         } else {
-            try {
-                int step = 0;
-                while (1<<(step+1) <= node1.depth)
-                    step++;
-                while (step >= 0) {
-                    if(step < node1.ancestors.size() && node1.ancestors.get(step) != node2.ancestors.get(step)) {
-                        node1 = node1.ancestors.get(step);
-                        node2 = node2.ancestors.get(step);
-                    }
-                    step--;
+            return commonAncestorUtility(node1, node2);
+        }  
+    }
+    
+    private static <S> TreeNode<S> commonAncestorUtility(TreeNode<S> node1, TreeNode<S> node2) throws NodesNotInSameTreeException {
+    	try {
+            int step = 0;
+            while (1<<(step+1) <= node1.depth)
+                step++;
+            while (step >= 0) {
+                if(step < node1.ancestors.size() && node1.ancestors.get(step) != node2.ancestors.get(step)) {
+                    node1 = node1.ancestors.get(step);
+                    node2 = node2.ancestors.get(step);
                 }
-                return node1.ancestors.get(0);
-            } catch (Exception e) {
-                throw new NodesNotInSameTreeException();
+                step--;
             }
-
+            return node1.ancestors.get(0);
+        } catch (Exception e) {
+            throw new NodesNotInSameTreeException();
         }
     }
 
