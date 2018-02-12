@@ -193,10 +193,7 @@ public class IntervalTree<O extends Object> {
                         break;
 
                     IntervalData<O> temp = data.query(index);
-                    if (results == null && temp != null)
-                        results = temp;
-                    else if (results != null && temp != null)
-                        results.combined(temp);
+                    results = getResultsUtility1(results, temp);
                 }
             } else if (index >= center) {
                 // overlap is reverse sorted by end point
@@ -206,31 +203,28 @@ public class IntervalTree<O extends Object> {
                         break;
 
                     IntervalData<O> temp = data.query(index);
-                    if (results == null && temp != null)
-                        results = temp;
-                    else if (results != null && temp != null)
-                        results.combined(temp);
+                    results = getResultsUtility1(results, temp);
                 }
             }
 
-            if (index < center) {
+            results = getResultsFromIndex(results, index);
+            
+            return results;
+        }
+        
+        private IntervalData<O> getResultsFromIndex(IntervalData<O> results, long index) {
+        	if (index < center) {
                 if (left != null) {
                     IntervalData<O> temp = left.query(index);
-                    if (results == null && temp != null)
-                        results = temp;
-                    else if (results != null && temp != null)
-                        results.combined(temp);
+                    results = getResultsUtility1(results, temp);
                 }
             } else if (index >= center) {
                 if (right != null) {
                     IntervalData<O> temp = right.query(index);
-                    if (results == null && temp != null)
-                        results = temp;
-                    else if (results != null && temp != null)
-                        results.combined(temp);
+                    results = getResultsUtility1(results, temp);
                 }
             }
-            return results;
+        	return results;
         }
 
         /**
@@ -246,31 +240,38 @@ public class IntervalTree<O extends Object> {
                 if (data.start > end)
                     break;
                 IntervalData<O> temp = data.query(start, end);
-                if (results == null && temp != null)
-                    results = temp;
-                else if (results != null && temp != null)
-                    results.combined(temp);
+                results = getResultsUtility1(results, temp);
             }
 
             if (left != null && start < center) {
                 IntervalData<O> temp = left.query(start, end);
-                if (temp != null && results == null)
-                    results = temp;
-                else if (results != null && temp != null)
-                    results.combined(temp);
+                results = getResultsUtility2(results, temp);
             }
 
             if (right != null && end >= center) {
                 IntervalData<O> temp = right.query(start, end);
-                if (temp != null && results == null)
-                    results = temp;
-                else if (results != null && temp != null)
-                    results.combined(temp);
+                results = getResultsUtility2(results, temp);
             }
 
             return results;
         }
-
+	        
+		private IntervalData<O> getResultsUtility1(IntervalData<O> results, IntervalData<O> temp) {
+			if (results == null && temp != null)
+                results = temp;
+            else if (results != null && temp != null)
+                results.combined(temp);
+			return results;
+        }
+		        
+		private IntervalData<O> getResultsUtility2(IntervalData<O> results, IntervalData<O> temp) {
+			if (temp != null && results == null)
+                results = temp;
+            else if (results != null && temp != null)
+                results.combined(temp);
+			return results;
+		}
+	
         /**
          * {@inheritDoc}
          */

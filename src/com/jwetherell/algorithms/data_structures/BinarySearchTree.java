@@ -351,6 +351,20 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
         }
     	return replacement;
     }
+    
+    private boolean lesserNodeCheck(Node<T> nodeToRemoveLesser, Node<T> replacementNode) {
+    	return nodeToRemoveLesser != null && nodeToRemoveLesser != replacementNode;
+    }
+    
+    private boolean greaterNodeCheck(Node<T> nodeToRemoveGreater, Node<T> replacementNode) {
+    	return nodeToRemoveGreater != null && nodeToRemoveGreater != replacementNode;
+    }
+    
+    private Node<T> replaceIfNotNull(Node<T> replacementNode, Node<T> replacementParent) {
+    	if (replacementNode != null)
+            replacementNode.parent = replacementParent;
+    	return replacementNode;
+    }
 
     /**
      * Replace nodeToRemoved with replacementNode in the tree.
@@ -370,29 +384,27 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
 
             // Replace replacementNode's branches with nodeToRemove's branches
             Node<T> nodeToRemoveLesser = nodeToRemoved.lesser;
-            if (nodeToRemoveLesser != null && nodeToRemoveLesser != replacementNode) {
+            if (lesserNodeCheck(nodeToRemoveLesser, replacementNode)) {
                 replacementNode.lesser = nodeToRemoveLesser;
                 nodeToRemoveLesser.parent = replacementNode;
             }
             Node<T> nodeToRemoveGreater = nodeToRemoved.greater;
-            if (nodeToRemoveGreater != null && nodeToRemoveGreater != replacementNode) {
+            if (greaterNodeCheck(nodeToRemoveGreater, replacementNode)) {
                 replacementNode.greater = nodeToRemoveGreater;
                 nodeToRemoveGreater.parent = replacementNode;
             }
 
             // Remove link from replacementNode's parent to replacement
             Node<T> replacementParent = replacementNode.parent;
-            if (replacementParent != null && replacementParent != nodeToRemoved) {
+            if (parentCheck1(replacementParent, nodeToRemoved)) {
                 Node<T> replacementParentLesser = replacementParent.lesser;
                 Node<T> replacementParentGreater = replacementParent.greater;
-                if (replacementParentLesser != null && replacementParentLesser == replacementNode) {
+                if (parentCheck2(replacementParentLesser, replacementNode)) {
                     replacementParent.lesser = replacementNodeGreater;
-                    if (replacementNodeGreater != null)
-                        replacementNodeGreater.parent = replacementParent;
-                } else if (replacementParentGreater != null && replacementParentGreater == replacementNode) {
+                    replacementNodeGreater = replaceIfNotNull(replacementNodeGreater, replacementParent);
+                } else if (parentCheck3(replacementParentGreater, replacementNode)) {
                     replacementParent.greater = replacementNodeLesser;
-                    if (replacementNodeLesser != null)
-                        replacementNodeLesser.parent = replacementParent;
+                    replacementNodeLesser = replaceIfNotNull(replacementNodeLesser, replacementParent);
                 }
             }
         }
@@ -400,21 +412,49 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
         // Update the link in the tree from the nodeToRemoved to the
         // replacementNode
         Node<T> parent = nodeToRemoved.parent;
-        if (parent == null) {
-            // Replacing the root node
-            root = replacementNode;
-            if (root != null)
-                root.parent = null;
-        } else if (parent.lesser != null && (parent.lesser.id.compareTo(nodeToRemoved.id) == 0)) {
+        ParentReplacement<T> pr = updateLink(parent, replacementNode, nodeToRemoved);
+        parent = pr.parent;
+        replacementNode = pr.replacementNode;
+    }
+    
+    private boolean parentCheck3(Node<T> replacementParentGreater, Node<T> replacementNode) {
+    	return replacementParentGreater != null && replacementParentGreater == replacementNode;
+    }
+    
+    private boolean parentCheck2(Node<T> replacementParentLesser, Node<T> replacementNode) {
+    	return replacementParentLesser != null && replacementParentLesser == replacementNode;
+    }
+    
+    private boolean parentCheck1(Node<T> replacementParent, Node<T> nodeToRemoved) {
+    	return replacementParent != null && replacementParent != nodeToRemoved;
+    }
+    
+    private class ParentReplacement<Q extends Comparable<Q>> {
+    	private Node<Q> parent;
+    	private Node<Q> replacementNode;
+    	
+    	private ParentReplacement(Node<Q> parent, Node<Q> replacementNode) {
+    		this.parent = parent;
+    		this.replacementNode = replacementNode;
+    	}
+    }
+    
+    private ParentReplacement<T> updateLink(Node<T> parent, Node<T> replacementNode, Node<T> nodeToRemoved) {
+    	if (parent == null) {
+    		root = replacementNode;
+    		if (root != null) {
+    			root.parent = null;
+    		}
+    	} else if (parent.lesser != null && (parent.lesser.id.compareTo(nodeToRemoved.id) == 0)) {
             parent.lesser = replacementNode;
-            if (replacementNode != null)
-                replacementNode.parent = parent;
+            replacementNode = replaceIfNotNull(replacementNode, parent);
         } else if (parent.greater != null && (parent.greater.id.compareTo(nodeToRemoved.id) == 0)) {
             parent.greater = replacementNode;
-            if (replacementNode != null)
-                replacementNode.parent = parent;
+            replacementNode = replaceIfNotNull(replacementNode, parent);
         }
         size--;
+        ParentReplacement<T> pr = new ParentReplacement<T>(parent, replacementNode);
+        return pr;
     }
 
     /**
@@ -541,7 +581,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
         final Set<Node<T>> added = new HashSet<Node<T>>(2);
         final T[] nodes = (T[])Array.newInstance(start.id.getClass(), theSize);
         int index = 0;
-        Node<T> node = start;
+        com.jwetherell.algorithms.data_structures.BinarySearchTree.Node<T> node = start;
         while (index < theSize && node != null) {
             Node<T> parent = node.parent;
             Node<T> lesser = (node.lesser != null && !added.contains(node.lesser)) ? node.lesser : null;
@@ -604,7 +644,9 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
         return nodes;
     }
 
-    /**
+    
+
+	/**
      * Get an array representation of the tree in sorted order.
      * 
      * @return sorted array representing the tree.

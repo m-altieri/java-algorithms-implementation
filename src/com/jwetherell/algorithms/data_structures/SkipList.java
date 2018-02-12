@@ -195,18 +195,21 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
     }
 
     protected Node<T> removeValue(T value) {
-        if (head==null) return null;
+    	
+        if (head == null) {
+        	return null;
+        }
 
         Node<T> node = null;
         Node<T> prev = null;
         int lvl = 0;
-        if (head.data.compareTo(value)==0) {
+        if (head.data.compareTo(value) == 0) {
             node = head;
         } else {
             // Find the predecessor of the node we are looking for and
             // which level it is found on.
             NodeLevelPair<T> pair = getPredecessor(value);
-            if (pair!=null) {
+            if (pair != null) {
                 prev = pair.node;
                 lvl = pair.level;
             }
@@ -216,7 +219,7 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
             // Use predecessor to get actual node
             node = prev.getNext(lvl);
             // Node doesn't exist
-            if (node == null || node.data.compareTo(value)!=0) 
+            if (node == null || node.data.compareTo(value) != 0) 
                 return null;
         }
 
@@ -227,8 +230,11 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
             // Removing head
             if (next != null) {
                 // Switch the value of the next into the head node
-                if (creator==null) swapNode(node,next);
-                else creator.swapNode(node, next);
+                if (creator == null) {
+                	swapNode(node,next);
+                } else {
+                	creator.swapNode(node, next);
+                }
                 // Update the prev and node pointer
                 prev = node;
                 node = next;
@@ -243,9 +249,9 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
 
         // Start from the top level and move down removing the node
         int level = node.getLevel();
-        for (int i=level; i>=0; i--) {
+        for (int i = level; i >= 0; i--) {
             next = node.getNext(i);
-            if (prev!=null) {
+            if (prev != null) {
                 prev.setNext(i, next);
                 if (i > 0) {
                     // Move down a level and look for the 'next' previous node
