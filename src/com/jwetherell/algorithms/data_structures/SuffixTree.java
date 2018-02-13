@@ -376,6 +376,11 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
     		}
     		return true;
     	}
+        
+        @Override
+        public int hashCode() {
+        	return super.hashCode();
+        }
     }
 
     private static class Edge<C extends CharSequence> implements Comparable<Edge<C>> {

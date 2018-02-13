@@ -98,4 +98,9 @@ public abstract class Data implements Comparable<Data> {
 		}
 		return true;
 	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
 }
