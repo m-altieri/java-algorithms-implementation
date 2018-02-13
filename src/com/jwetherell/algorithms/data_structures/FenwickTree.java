@@ -135,7 +135,7 @@ public class FenwickTree<D extends FenwickTree.Data> {
                 return "Tree has no nodes.";
 
             final StringBuilder builder = new StringBuilder();
-            builder.append("└── dummy \n");
+            builder.append("└── dummy " + System.getProperty("line.separator"));
             builder.append(getString(tree, 0, tree.array.length, "", true));
             return builder.toString();
         }
@@ -148,7 +148,7 @@ public class FenwickTree<D extends FenwickTree.Data> {
 
             final D value = (D) tree.array[start];
             if (value != null)
-                builder.append(prefix + getStringUtility(isTail) + value + "\n");
+                builder.append(prefix + getStringUtility(isTail) + value + System.getProperty("line.separator"));
 
             int next = start + 1;
             final List<Integer> children = new ArrayList<Integer>(2);

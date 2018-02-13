@@ -401,7 +401,7 @@ public class BinaryHeapArray<T extends Comparable<T>> implements BinaryHeap<T> {
 			StringBuilder builder = new StringBuilder();
 
 			T value = tree.array[index];
-			builder.append(prefix + getStringTailUtility(isTail) + value + "\n");
+			builder.append(prefix + getStringTailUtility(isTail) + value + System.getProperty("line.separator"));
 			List<Integer> children = null;
 			
 			children = initialize(tree, children, index);

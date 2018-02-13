@@ -439,7 +439,7 @@ public class Graph<T extends Comparable<T>> {
         @Override
         public String toString() {
             final StringBuilder builder = new StringBuilder();
-            builder.append("Value=").append(value).append(" weight=").append(weight).append("\n");
+            builder.append("Value=").append(value).append(" weight=").append(weight).append(System.getProperty("line.separator"));
             for (Edge<T> e : edges)
                 builder.append("\t").append(e.toString());
             return builder.toString();
@@ -585,7 +585,7 @@ public class Graph<T extends Comparable<T>> {
         public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append("[ ").append(from.value).append("(").append(from.weight).append(") ").append("]").append(" -> ")
-                   .append("[ ").append(to.value).append("(").append(to.weight).append(") ").append("]").append(" = ").append(cost).append("\n");
+                   .append("[ ").append(to.value).append("(").append(to.weight).append(") ").append("]").append(" = ").append(cost).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }
@@ -689,7 +689,7 @@ public class Graph<T extends Comparable<T>> {
         @Override
         public String toString() {
             final StringBuilder builder = new StringBuilder();
-            builder.append(vertex.getValue()).append(" (").append(vertex.weight).append(") ").append(" cost=").append(cost).append("\n");
+            builder.append(vertex.getValue()).append(" (").append(vertex.weight).append(") ").append(" cost=").append(cost).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }
@@ -789,7 +789,7 @@ public class Graph<T extends Comparable<T>> {
         @Override
         public String toString() {
             final StringBuilder builder = new StringBuilder();
-            builder.append("Cost = ").append(cost).append("\n");
+            builder.append("Cost = ").append(cost).append(System.getProperty("line.separator"));
             for (Edge<T> e : path)
                 builder.append("\t").append(e);
             return builder.toString();

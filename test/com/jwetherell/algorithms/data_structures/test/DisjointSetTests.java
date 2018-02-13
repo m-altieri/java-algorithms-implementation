@@ -139,11 +139,11 @@ public class DisjointSetTests {
 
     private static final String toString(DisjointSet.Item<Integer>[] items) {
         final StringBuilder builder = new StringBuilder();
-        builder.append("{\n");
+        builder.append("{" + System.getProperty("line.separator"));
         for (DisjointSet.Item<Integer> item : items) {
-            builder.append('\t').append(item.toString()).append('\n');
+            builder.append('\t').append(item.toString()).append(System.getProperty("line.separator"));
         }
-        builder.append("}\n");
+        builder.append("}" + System.getProperty("line.separator"));
         return builder.toString();
     }
 }

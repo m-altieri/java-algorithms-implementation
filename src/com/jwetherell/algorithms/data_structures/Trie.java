@@ -325,7 +325,7 @@ public class Trie<C extends CharSequence> implements ITree<C> {
         @Override
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            if (isWord == true) builder.append("Node=").append(isWord).append("\n");
+            if (isWord == true) builder.append("Node=").append(isWord).append(System.getProperty("line.separator"));
             for (int i = 0; i < childrenSize; i++) {
                 Node c = children[i];
                 builder.append(c.toString());
@@ -375,7 +375,7 @@ public class Trie<C extends CharSequence> implements ITree<C> {
             builder.append(prefix + getStringUtility(isTail) + ((node.isWord == true) ? 
                               ("(" + node.character + ") " + string)
                           : 
-                              node.character) + "\n"
+                              node.character) + System.getProperty("line.separator")
             );
             if (node.children != null) {
                 for (int i = 0; i < node.childrenSize - 1; i++) {

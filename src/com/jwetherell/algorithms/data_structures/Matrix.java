@@ -405,13 +405,13 @@ public class Matrix<T extends Number> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Matrix:\n");
+        builder.append("Matrix:" + System.getProperty("line.separator"));
         for (int r = 0; r < rows; r++) {
             builder.append("row=[").append(r).append("] ");
             for (int c = 0; c < cols; c++) {
                 builder.append(this.get(r, c)).append("\t");
             }
-            builder.append("\n");
+            builder.append(System.getProperty("line.separator"));
         }
         return builder.toString();
     }

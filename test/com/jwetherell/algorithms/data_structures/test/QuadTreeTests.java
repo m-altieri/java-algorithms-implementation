@@ -126,7 +126,7 @@ public class QuadTreeTests {
 	 private static final <P extends XYPoint> void assertFalse(String msg, QuadTree<P> obj, boolean isFalse) {
 		 String toString = "";
 		 if (isFalse==true)
-			 toString = "\n"+obj.toString();
+			 toString = System.getProperty("line.separator")+obj.toString();
 		 Assert.assertFalse(msg+toString, isFalse);
 	 }
 
@@ -134,7 +134,7 @@ public class QuadTreeTests {
 	 private static final <P extends XYPoint> void assertTrue(String msg, QuadTree<P> obj, boolean isTrue) {
 		 String toString = "";
 		 if (isTrue==false)
-			 toString = "\n"+obj.toString();
+			 toString = System.getProperty("line.separator")+obj.toString();
 		 Assert.assertTrue(msg+toString, isTrue);
 	 }
 }

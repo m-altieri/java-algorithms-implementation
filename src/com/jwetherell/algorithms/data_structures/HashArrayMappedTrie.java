@@ -442,7 +442,7 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
         @Override
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            builder.append("height=").append(height).append(" key=").append(toBinaryString(key)).append("\n");
+            builder.append("height=").append(height).append(" key=").append(toBinaryString(key)).append(System.getProperty("line.separator"));
             for (int i=0; i<MAX_BITS; i++) {
                 Node c = getChild(i);
                 if (c!=null) builder.append(c.toString()).append(", ");
@@ -493,11 +493,11 @@ public class HashArrayMappedTrie<K, V> implements IMap<K,V> {
             if (node instanceof KeyValueNode) {
                 KeyValueNode<V> kvNode = (KeyValueNode<V>) node;
                 int position = getPosition(height,kvNode.key);
-                builder.append(prefix + getStringTailUtility(isTail) + getStringNullUtility(parent, position) + "=" + toBinaryString(kvNode.key) + "=" + kvNode.value + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + getStringNullUtility(parent, position) + "=" + toBinaryString(kvNode.key) + "=" + kvNode.value + System.getProperty("line.separator"));
             } else {
                 ArrayNode arrayNode = (ArrayNode) node;
                 int position = (arrayNode.parent==null)?-1:getPosition(height,arrayNode.key);
-                builder.append(prefix + getStringTailUtility(isTail) + getStringNullUtility(parent, position) + " height=" + ((height<0)?null:height) + " bitmap=" + toBinaryString(arrayNode.bitmap) + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + getStringNullUtility(parent, position) + " height=" + ((height<0)?null:height) + " bitmap=" + toBinaryString(arrayNode.bitmap) + System.getProperty("line.separator"));
                 List<Node> children = new LinkedList<Node>();
                 for (int i=0; i<MAX_BITS; i++) {
                     Node child = arrayNode.getChild(i);

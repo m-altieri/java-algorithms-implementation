@@ -648,7 +648,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
             builder.append(prefix + getStringTailUtility(isTail) + "(" + getStringColorUtility(node) + ") " + node.id
                            + " [parent=" + getStringParentUtility(node) 
                            + " grand-parent=" + getStringGrandparentUtility(node)
-                           + "]\n"
+                           + "]" + System.getProperty("line.separator")
             );
             List<Node<T>> children = null;
             if (node.lesser != null || node.greater != null) {

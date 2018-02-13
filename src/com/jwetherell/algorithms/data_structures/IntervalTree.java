@@ -139,7 +139,7 @@ public class IntervalTree<O extends Object> {
         private static <O extends Object> String getString(Interval<O> interval, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + getStringUtility(isTail) + interval.toString() + "\n");
+            builder.append(prefix + getStringUtility(isTail) + interval.toString() + System.getProperty("line.separator"));
             List<Interval<O>> children = new ArrayList<Interval<O>>();
             if (interval.left != null)
                 children.add(interval.left);

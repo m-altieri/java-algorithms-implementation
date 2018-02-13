@@ -731,9 +731,9 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
                 String side = "left";
                 if (node.equals(node.parent.greater))
                     side = "right";
-                builder.append(prefix + getStringTailUtility(isTail) + "(" + side + ") " + node.id + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + "(" + side + ") " + node.id + System.getProperty("line.separator"));
             } else {
-                builder.append(prefix + getStringTailUtility(isTail) + node.id + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + node.id + System.getProperty("line.separator"));
             }
             List<Node<T>> children = null;
             children = initialize(node, children);

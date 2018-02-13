@@ -289,7 +289,7 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
             builder.append(prefix + (isTail ? "└── " : "├── ") + ((node.isWord == true) ? 
                               ("(" + node.character + ") " + string+String.valueOf(node.character))
                           : 
-                              node.character) + "\n"
+                              node.character) + System.getProperty("line.separator")
             );
             if (node.loKid != null)
                 builder.append(getString(node.loKid, prefix + getStringUtility(isTail), string, false));
@@ -328,13 +328,13 @@ public class TernarySearchTree<C extends CharSequence> implements ITree<C> {
         @Override
         public String toString() {
             final StringBuilder builder = new StringBuilder();
-            builder.append("char=").append(this.character).append('\n');
+            builder.append("char=").append(this.character).append(System.getProperty("line.separator"));
             if (this.loKid != null)
-                builder.append('\t').append("lo=").append(this.loKid.character).append('\n');
+                builder.append('\t').append("lo=").append(this.loKid.character).append(System.getProperty("line.separator"));
             if (this.kid != null)
-                builder.append('\t').append("eq=").append(this.kid.character).append('\n');
+                builder.append('\t').append("eq=").append(this.kid.character).append(System.getProperty("line.separator"));
             if (this.hiKid != null)
-                builder.append('\t').append("hi=").append(this.hiKid.character).append('\n');
+                builder.append('\t').append("hi=").append(this.hiKid.character).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }

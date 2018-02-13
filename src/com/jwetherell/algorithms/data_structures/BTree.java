@@ -803,7 +803,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
                 if (i < numberOfKeys() - 1)
                     builder.append(", ");
             }
-            builder.append("]\n");
+            builder.append("]" + System.getProperty("line.separator"));
 
             if (parent != null) {
                 builder.append("parent=[");
@@ -814,11 +814,11 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
                     if (i < parentNumberOfKeys - 1)
                         builder.append(", ");
                 }
-                builder.append("]\n");
+                builder.append("]" + System.getProperty("line.separator"));
             }
 
             if (children != null) {
-                builder.append("keySize=").append(numberOfKeys()).append(" children=").append(numberOfChildren()).append("\n");
+                builder.append("keySize=").append(numberOfKeys()).append(" children=").append(numberOfChildren()).append(System.getProperty("line.separator"));
             }
 
             return builder.toString();
@@ -844,7 +844,7 @@ public class BTree<T extends Comparable<T>> implements ITree<T> {
                     builder.append(", ");
                 }
             }
-            builder.append("\n");
+            builder.append(System.getProperty("line.separator"));
 
             if (node.children != null) {
                 for (int i = 0; i < node.numberOfChildren() - 1; i++) {

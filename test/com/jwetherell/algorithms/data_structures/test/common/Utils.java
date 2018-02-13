@@ -38,7 +38,7 @@ public class Utils {
      * @param obj the obj
      */
     public static void handleError(Object obj) {
-        System.err.println("Object={\n"+obj.toString()+"\n}");
+        System.err.println("Object={" + System.getProperty("line.separator") + obj.toString()+ System.getProperty("line.separator") + "}");
         throw new RuntimeException("Error in test.");
     }
 
@@ -50,7 +50,7 @@ public class Utils {
      */
     public static void handleError(Object data, Object obj) {
         System.err.println("Data={"+data+"}");
-        System.err.println("Object={\n"+obj.toString()+"\n}");
+        System.err.println("Object={" + System.getProperty("line.separator") + obj.toString() + System.getProperty("line.separator") + "}");
         throw new RuntimeException("Error in test.");
     }
 
@@ -64,8 +64,8 @@ public class Utils {
         System.err.println("Data={");
         for (Object o : data)
             System.err.print(o.toString()+", ");
-        System.err.println("\n}");
-        System.err.println("Object={\n"+obj.toString()+"\n}");
+        System.err.println(System.getProperty("line.separator")+"}");
+        System.err.println("Object={" + System.getProperty("line.separator")+obj.toString()+System.getProperty("line.separator") + "}");
         throw new RuntimeException("Error in test.");
     }
 
@@ -92,7 +92,7 @@ public class Utils {
         }
         set.clear();
         set = null;
-        builder.append('\n');
+        builder.append(System.getProperty("line.separator"));
         data.string = builder.toString();
 
         data.sorted = Arrays.copyOf(data.unsorted, data.unsorted.length);
@@ -133,7 +133,7 @@ public class Utils {
         }
         set.clear();
         set = null;
-        builder.append('\n');
+        builder.append(System.getProperty("line.separator"));
         data.string = builder.toString();
 
         data.sorted = Arrays.copyOf(data.unsorted, data.unsorted.length);
@@ -202,7 +202,7 @@ public class Utils {
                 Integer d = _unsorted[i];
                 if (i != _unsorted.length-1) builder.append(d).append(',');
             }
-            builder.append('\n');
+            builder.append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }

@@ -193,9 +193,9 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
             StringBuilder builder = new StringBuilder();
             builder.append("priorty=").append(priority).append(" value=").append(id);
             if (parent != null) builder.append(" parent=").append(parent.id);
-            builder.append("\n");
-            if (lesser != null) builder.append("left=").append(lesser.toString()).append("\n");
-            if (greater != null) builder.append("right=").append(greater.toString()).append("\n");
+            builder.append(System.getProperty("line.separator"));
+            if (lesser != null) builder.append("left=").append(lesser.toString()).append(System.getProperty("line.separator"));
+            if (greater != null) builder.append("right=").append(greater.toString()).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }
@@ -211,7 +211,7 @@ public class Treap<T extends Comparable<T>> extends BinarySearchTree<T> {
         private static <T extends Comparable<T>> String getString(TreapNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + getStringUtility(isTail) + "(" + node.priority + ") " + node.id + "\n");
+            builder.append(prefix + getStringUtility(isTail) + "(" + node.priority + ") " + node.id + System.getProperty("line.separator"));
             List<Node<T>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<Node<T>>(2);

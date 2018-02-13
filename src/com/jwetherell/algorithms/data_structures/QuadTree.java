@@ -986,7 +986,7 @@ public abstract class QuadTree<G extends XYPoint> {
         private static <T extends XYPoint> String getString(QuadNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + getStringTailUtility(isTail) + " node={" + node.toString() + "}\n");
+            builder.append(prefix + getStringTailUtility(isTail) + " node={" + node.toString() + "}" + System.getProperty("line.separator"));
             List<QuadNode<T>> children = null;
             if (node.northWest != null || node.northEast != null || node.southWest != null || node.southEast != null) {
                 children = new ArrayList<QuadNode<T>>(4);

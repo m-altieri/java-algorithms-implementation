@@ -155,7 +155,7 @@ public class SkipListMap<K extends Comparable<K>, V> implements SkipList.INodeCr
                 builder.append(sln.data).append("=").append(sln.value);
 
                 node = node.getNext(0);
-                if (node!=null) builder.append("\n");
+                if (node!=null) builder.append(System.getProperty("line.separator"));
             }
         }
         return builder.toString();
@@ -201,7 +201,7 @@ public class SkipListMap<K extends Comparable<K>, V> implements SkipList.INodeCr
         public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append(super.toString());
-            builder.append("value = ").append(value).append("\n");
+            builder.append("value = ").append(value).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }

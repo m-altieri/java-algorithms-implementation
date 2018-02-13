@@ -195,7 +195,7 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
         public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append(super.toString());
-            builder.append("value = ").append(value).append("\n");
+            builder.append("value = ").append(value).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }
@@ -210,7 +210,7 @@ public class TreeMap<K extends Comparable<K>, V> implements IMap<K,V> {
         private static <K extends Comparable<K>, V> String getString(TreeMapNode<K, V> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + getStringUtility(isTail) + nullNodeUtility(node) + "\n");
+            builder.append(prefix + getStringUtility(isTail) + nullNodeUtility(node) + System.getProperty("line.separator"));
             List<TreeMapNode<K, V>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<TreeMapNode<K, V>>(2);

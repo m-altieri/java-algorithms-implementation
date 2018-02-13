@@ -878,9 +878,9 @@ public class KdTree<T extends KdTree.XYZPoint> implements Iterable<T> {
                 if (node.parent.greater != null && node.id.equals(node.parent.greater.id))
                     side = "right";
                 builder.append(prefix + getStringTailUtility(isTail) + "[" + side + "] " + "depth=" + node.depth + " id="
-                        + node.id + "\n");
+                        + node.id + System.getProperty("line.separator"));
             } else {
-                builder.append(prefix + getStringTailUtility(isTail) + "depth=" + node.depth + " id=" + node.id + "\n");
+                builder.append(prefix + getStringTailUtility(isTail) + "depth=" + node.depth + " id=" + node.id + System.getProperty("line.separator"));
             }
             List<KdNode> children = null;
 

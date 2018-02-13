@@ -340,8 +340,8 @@ public class SortsTiming {
 
     private static final void showComparison() {
         StringBuilder resultsBuilder = new StringBuilder();
-        resultsBuilder.append("Number of integers = ").append(SIZE).append("\n");
-        String format = "%-32s%-15s%-15s%-15s\n";
+        resultsBuilder.append("Number of integers = ").append(SIZE).append(System.getProperty("line.separator"));
+        String format = "%-32s%-15s%-15s%-15s" + System.getProperty("line.separator");
         Formatter formatter = new Formatter(resultsBuilder, Locale.US);
 
         formatter.format(format, "Algorithm","Random","Sorted","Reverse Sorted");

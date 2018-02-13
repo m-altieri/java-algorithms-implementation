@@ -179,7 +179,7 @@ public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IM
         public String toString() {
             StringBuilder builder = new StringBuilder();
             if (value != null)
-                builder.append("key=").append(character).append(" value=").append(value).append("\n");
+                builder.append("key=").append(character).append(" value=").append(value).append(System.getProperty("line.separator"));
             for (int i = 0; i < getChildrenSize(); i++) {
                 Trie.Node c = getChild(i);
                 builder.append(c.toString());
@@ -213,7 +213,7 @@ public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IM
                               ("(" + String.valueOf(node.character) + ") " + string + " = {" + hashNode.value + "}")
                           : 
                               string)
-                        + "\n");
+                        + System.getProperty("line.separator"));
             }
             if (node.getChildrenSize() > 0) {
                 for (int i = 0; i < node.getChildrenSize() - 1; i++) {

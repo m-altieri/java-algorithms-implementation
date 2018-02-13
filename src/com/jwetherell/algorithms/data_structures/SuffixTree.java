@@ -153,7 +153,7 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
         StringBuilder builder = new StringBuilder();
         if (edgeMap.size() > 0) {
             int charsLength = characters.length;
-            builder.append("Edge\tStart\tEnd\tSuf\tfirst\tlast\tString\n");
+            builder.append("Edge\tStart\tEnd\tSuf\tfirst\tlast\tString" + System.getProperty("line.separator"));
             for (int key : edgeMap.keySet()) {
                 Edge<C> e = edgeMap.get(key);
                 Link link = linksMap.get(e.endNode);
@@ -163,12 +163,12 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                 int begin = e.firstCharIndex;
                 int end = (charsLength < e.lastCharIndex) ? charsLength : e.lastCharIndex;
                 builder.append(string.substring(begin, end + 1));
-                builder.append("\n");
+                builder.append(System.getProperty("line.separator"));
             }
-            builder.append("Link\tStart\tEnd\n");
+            builder.append("Link\tStart\tEnd" + System.getProperty("line.separator"));
             for (int key : linksMap.keySet()) {
                 Link link = linksMap.get(key);
-                builder.append("\t" + link.node + "\t" + link.suffixNode + "\n");
+                builder.append("\t" + link.node + "\t" + link.suffixNode + System.getProperty("line.separator"));
             }
         }
         return builder.toString();
@@ -316,8 +316,8 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("String = ").append(this.string).append("\n");
-        builder.append("End of word character = ").append(endSeqChar).append("\n");
+        builder.append("String = ").append(this.string).append(System.getProperty("line.separator"));
+        builder.append("End of word character = ").append(endSeqChar).append(System.getProperty("line.separator"));
         builder.append(TreePrinter.getString(this));
         return builder.toString();
     }
@@ -337,8 +337,8 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
         @Override
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            builder.append("node=").append(node).append("\n");
-            builder.append("suffixNode=").append(suffixNode).append("\n");
+            builder.append("node=").append(node).append(System.getProperty("line.separator"));
+            builder.append("suffixNode=").append(suffixNode).append(System.getProperty("line.separator"));
             return builder.toString();
         }
 
@@ -537,12 +537,12 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
         @Override
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            builder.append("startNode=").append(startNode).append("\n");
-            builder.append("endNode=").append(endNode).append("\n");
-            builder.append("firstCharIndex=").append(firstCharIndex).append("\n");
-            builder.append("lastCharIndex=").append(lastCharIndex).append("\n");
+            builder.append("startNode=").append(startNode).append(System.getProperty("line.separator"));
+            builder.append("endNode=").append(endNode).append(System.getProperty("line.separator"));
+            builder.append("firstCharIndex=").append(firstCharIndex).append(System.getProperty("line.separator"));
+            builder.append("lastCharIndex=").append(lastCharIndex).append(System.getProperty("line.separator"));
             String s = tree.string.substring(firstCharIndex, lastCharIndex + 1);
-            builder.append("string=").append(s).append("\n");
+            builder.append("string=").append(s).append(System.getProperty("line.separator"));
             return builder.toString();
         }
     }
@@ -568,9 +568,9 @@ public class SuffixTree<C extends CharSequence> implements ISuffixTree<C> {
                 int index = string.indexOf(tree.endSeqChar);
                 if (index >= 0)
                     string = string.substring(0, index + 1);
-                builder.append(prefix + getStringUtility(isTail) + "(" + value + ") " + string + "\n");
+                builder.append(prefix + getStringUtility(isTail) + "(" + value + ") " + string + System.getProperty("line.separator"));
             } else {
-                builder.append(prefix + getStringUtility(isTail) + "(" + "0" + ")" + "\n");
+                builder.append(prefix + getStringUtility(isTail) + "(" + "0" + ")" + System.getProperty("line.separator"));
             }
 
             if (tree.edgeMap.size() > 0) {

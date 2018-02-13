@@ -243,7 +243,7 @@ public class IntervalTreeTests {
     private static final void assertTrue(String msg, IntervalTree<String> obj, boolean isTrue) {
         String toString = "";
         if (isTrue==false)
-            toString = "\n"+obj.toString();
+            toString = System.getProperty("line.separator")+obj.toString();
         Assert.assertTrue(msg+toString, isTrue);
     }
 }

@@ -56,16 +56,16 @@ public class Numbers {
         String check = Integer.toBinaryString(a);
 
         String result1 = Integers.toBinaryUsingBigDecimal(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot=\n"+result1+"\n", (check.equals(result1)));
+        assertTrue("toBinary using BigDecimal error. random=" + a + " expected=" + System.getProperty("line.separator") + check + System.getProperty("line.separator") + "got=" + System.getProperty("line.separator")+result1+System.getProperty("line.separator"), (check.equals(result1)));
 
         String result2 = Integers.toBinaryUsingDivideAndDouble(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot="+result2+"\n", (check.equals(result2)));
+        assertTrue("toBinary using BigDecimal error. random="+ a + " expected=" + System.getProperty("line.separator") + check + System.getProperty("line.separator") + "got=" + result2 + System.getProperty("line.separator"), (check.equals(result2)));
 
         String result3 = Integers.toBinaryUsingDivideAndModulus(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot="+result3+"\n", (check.equals(result3)));
+        assertTrue("toBinary using BigDecimal error. random="+a+" expected=" + System.getProperty("line.separator")+check+System.getProperty("line.separator") + "got="+result3+System.getProperty("line.separator"), (check.equals(result3)));
 
         String result4 = Integers.toBinaryUsingShiftsAndModulus(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot="+result4+"\n", (check.equals(result4)));
+        assertTrue("toBinary using BigDecimal error. random="+a+" expected=" + System.getProperty("line.separator")+check+System.getProperty("line.separator") + "got="+result4+System.getProperty("line.separator"), (check.equals(result4)));
     }
 
     /**
@@ -77,13 +77,13 @@ public class Numbers {
         String check = Long.toBinaryString(a);
 
         String result1 = Longs.toBinaryUsingBigDecimal(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot=\n"+result1+"\n", (check.equals(result1)));
+        assertTrue("toBinary using BigDecimal error. random="+a+" expected="+ System.getProperty("line.separator")+check+System.getProperty("line.separator") + "got=" + System.getProperty("line.separator")+result1+System.getProperty("line.separator"), (check.equals(result1)));
 
         String result2 = Longs.toBinaryUsingDivideAndModulus(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot=\n"+result2+"\n", (check.equals(result2)));
+        assertTrue("toBinary using BigDecimal error. random="+a+" expected=" + System.getProperty("line.separator")+check+System.getProperty("line.separator")+"got="+System.getProperty("line.separator")+result2+System.getProperty("line.separator"), (check.equals(result2)));
 
         String result3 = Longs.toBinaryUsingShiftsAndModulus(a);
-        assertTrue("toBinary using BigDecimal error. random="+a+" expected=\n"+check+"\ngot=\n"+result3+"\n", (check.equals(result3)));
+        assertTrue("toBinary using BigDecimal error. random="+a+" expected=" + System.getProperty("line.separator")+check+System.getProperty("line.separator") + "got=" + System.getProperty("line.separator")+result3+System.getProperty("line.separator"), (check.equals(result3)));
     }
 
     /**

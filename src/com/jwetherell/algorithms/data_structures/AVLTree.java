@@ -369,7 +369,7 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> {
         private static <T extends Comparable<T>> String getString(AVLNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + getStringUtility(isTail) + "(" + node.height + ") " + node.id + "\n");
+            builder.append(prefix + getStringUtility(isTail) + "(" + node.height + ") " + node.id + System.getProperty("line.separator"));
             List<Node<T>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<Node<T>>(2);

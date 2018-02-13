@@ -203,7 +203,7 @@ public class LongestCommonSubsequence {
         public String getSequenceMatrixString() {
             StringBuilder builder = new StringBuilder();
             if (seqMatrix == null) {
-                builder.append("Sequence matrix is NULL.\n");
+                builder.append("Sequence matrix is NULL\n");
             } else {
                 for (int i = 0; i < seqMatrix.length; i++) {
                     int length = seqMatrix[i].length;
@@ -213,7 +213,7 @@ public class LongestCommonSubsequence {
                         if (j < length - 1)
                             builder.append(", ");
                     }
-                    builder.append("\n");
+                    builder.append(System.getProperty("line.separator"));
                 }
             }
             return builder.toString();

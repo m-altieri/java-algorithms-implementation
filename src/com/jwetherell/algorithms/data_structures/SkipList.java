@@ -350,7 +350,7 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
     // then output with that node highlighted.
     public String getString(T value, int level) {
         StringBuilder builder = new StringBuilder();
-        builder.append("size=").append(size).append("\n");
+        builder.append("size=").append(size).append(System.getProperty("line.separator"));
         Node<T> node = head;
         if (node!=null) {
             int iLevel = node.getLevel();
@@ -367,10 +367,10 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
                         builder.append("->");
                     node = next;
                 }
-                if (i>0) builder.append("\n");
+                if (i>0) builder.append(System.getProperty("line.separator"));
             }
         }
-        builder.append("\n");
+        builder.append(System.getProperty("line.separator"));
         return builder.toString();
     }
 
@@ -413,7 +413,7 @@ public class SkipList<T extends Comparable<T>> implements ISet<T> {
             StringBuilder builder = new StringBuilder();
             builder.append("data=").append(data);
             if (next!=null) {
-                builder.append("\n").append("next=[");
+                builder.append(System.getProperty("line.separator")).append("next=[");
                 int size = next.length;
                 for (int i=0; i<size; i++) {
                     Node<T> n = next[i];

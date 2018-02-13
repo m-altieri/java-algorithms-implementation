@@ -99,7 +99,7 @@ public class DataStructuresTiming {
         }
         set.clear();
         set = null;
-        builder.append('\n');
+        builder.append(System.getProperty("line.separator"));
         strings[idx] = builder.toString();
         if (debug > 1) System.out.println(strings[idx]);
 
@@ -1682,7 +1682,7 @@ public class DataStructuresTiming {
 
     private static final String getTestResults(int number, String[] names, long[][] results) {
         StringBuilder resultsBuilder = new StringBuilder();
-        String format = "%-35s %-10s %-15s %-15s %-25s %-15s %-15s\n";
+        String format = "%-35s %-10s %-15s %-15s %-25s %-15s %-15s"+ System.getProperty("line.separator");
         Formatter formatter = new Formatter(resultsBuilder, Locale.US);
         formatter.format(format, "Data Structure ("+ARRAY_SIZE+" items)", "Add time", "Remove time", "Sorted add time", "Sorted remove time", "Lookup time", "Size");
 

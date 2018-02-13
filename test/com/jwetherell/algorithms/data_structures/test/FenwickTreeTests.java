@@ -143,7 +143,7 @@ public class FenwickTreeTests {
     private static final <D extends FenwickTree.Data> void assertTrue(String msg, FenwickTree<D> obj, boolean isTrue) {
         String toString = "";
         if (isTrue==false)
-            toString = "\n"+obj.toString();
+            toString = System.getProperty("line.separator")+obj.toString();
         Assert.assertTrue(msg+toString, isTrue);
     }
 }
