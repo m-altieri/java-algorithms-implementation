@@ -164,10 +164,7 @@ public class DisjointSet<T extends Object> {
         	return i.parent == null || parent == null || i.parent.value.equals(parent.value);
         }
         
-        @Override
-        public int hashCode() {
-        	return super.hashCode();
-        }
+        
 
         /**
          * {@inheritDoc}

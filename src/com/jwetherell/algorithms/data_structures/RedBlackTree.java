@@ -231,7 +231,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> {
     }
     
     private RedBlackNode<T> getChild(RedBlackNode<T> lesser, RedBlackNode<T> greater) {
-    	return (RedBlackNode<T>) ((lesser.id != null) ? lesser : greater);
+    	return lesser.id != null ? lesser : greater;
     }
     
     private RedBlackNode<T> getNodeToRemovedColor(RedBlackNode<T> nodeToRemoved, RedBlackNode<T> child) {
